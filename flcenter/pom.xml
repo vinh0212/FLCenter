@@ -5,7 +5,14 @@
     <groupId>vn.tad_sebs</groupId>
     <artifactId>flcenter</artifactId>
     <version>1.0</version>
-    <packaging>war</packaging>
+    
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+    <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-core</artifactId>
+    <version>5.5.0-RC2</version>
+    </dependency>
 
 
 
