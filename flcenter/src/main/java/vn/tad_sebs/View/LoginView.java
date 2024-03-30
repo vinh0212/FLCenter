@@ -48,7 +48,7 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
-        Username.setText("Username");
+        
         Username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsernameActionPerformed(evt);
