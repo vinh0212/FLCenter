@@ -150,7 +150,7 @@ public class StudentView extends javax.swing.JFrame {
 
         BtnAddStudent.setText("Thêm");
 
-        CbbSeacrchStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Lớp", "Quê quán" }));
+        CbbSeacrchStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Lớp", "Quê quán", "Ngày sinh" }));
 
         BtnSearchStudent.setText("Tìm");
 
