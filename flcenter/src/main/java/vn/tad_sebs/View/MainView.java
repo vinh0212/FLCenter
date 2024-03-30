@@ -4,6 +4,8 @@
  */
 package vn.tad_sebs.View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author ASUS
@@ -131,6 +133,21 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_QLLHActionPerformed
 
+    public void addQLHVListener(ActionListener listener) {
+        QLHV.addActionListener(listener);
+    }
+    public void addQLCTHListener(ActionListener listener) {
+        QLCTH.addActionListener(listener);
+    }
+    public void addQLLHListener(ActionListener listener) {
+        QLLH.addActionListener(listener);
+    }
+    public void addQLKTListener(ActionListener listener) {
+        QLKT.addActionListener(listener);
+    }
+    public void addQLCBGVListener(ActionListener listener) {
+        QLCBGV.addActionListener(listener);
+    }
     /**
      * @param args the command line arguments
      */
