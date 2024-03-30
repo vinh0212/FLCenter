@@ -117,6 +117,13 @@ public class LoginView extends javax.swing.JFrame {
 
     private void EnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterActionPerformed
 
+            String username = Username.getText();
+            String password = new String(Password.getPassword());
+            if (username.equals("admin") && password.equals("admin123")) {
+                showMessage("Login successful!");
+            } else {
+                showMessage("Invalid username or password!");
+            }
     }//GEN-LAST:event_EnterActionPerformed
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
