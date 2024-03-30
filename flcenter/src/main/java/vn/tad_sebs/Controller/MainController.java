@@ -11,10 +11,10 @@ public class MainController {
 
     public MainController(MainView mainView) {
         this.mainView = mainView;
-        this.mainView.addQLHVListener(new QLHVListener());
-        //this.mainView.addQLLHListener(new QLLHListener());
-        //this.mainView.addQLCBGVListener(new QLCBGVListener());
-        //this.mainView.addQLCTHListener(new QLCTHListener());
-        //this.mainView.addQLKTListener(new QLKTListener());
+        mainView.addQLHVListener(new QLHVListener());
+        //mainView.addQLLHListener(new QLLHListener());
+        //mainView.addQLCBGVListener(new QLCBGVListener());
+        //mainView.addQLCTHListener(new QLCTHListener());
+        //mainView.addQLKTListener(new QLKTListener());
     }
 }
