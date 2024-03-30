@@ -11,6 +11,7 @@ public class Student
     private float Diem;
     private String Gioitinh;
     private String Lop;
+    public Student(){}
     public Student(int id, String name, String Date , String Gioitinh,String Address, String Lop, String GVCN, float Diem) {
         super();
         this.id = id;

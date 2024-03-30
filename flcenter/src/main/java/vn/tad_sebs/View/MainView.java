@@ -41,34 +41,18 @@ public class MainView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         QLHV.setText("Quản lý học viên");
-        QLHV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QLHVActionPerformed(evt);
-            }
-        });
+        
 
         QLLH.setText("quản lý lớp học ");
-        QLLH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QLLHActionPerformed(evt);
-            }
-        });
+       
 
         QLCBGV.setText("quản lý cán bộ giáo viên");
-        QLCBGV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QLCBGVActionPerformed(evt);
-            }
-        });
+       
 
         QLCTH.setText("quản lý chương trình học");
 
         QLKT.setText("quản lý kì thi");
-        QLKT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QLKTActionPerformed(evt);
-            }
-        });
+        
 
         jLabel1.setText("Các Ffame khác");
 
@@ -117,24 +101,12 @@ public class MainView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void QLHVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QLHVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_QLHVActionPerformed
-
-    private void QLKTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QLKTActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_QLKTActionPerformed
-
-    private void QLCBGVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QLCBGVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_QLCBGVActionPerformed
-
-    private void QLLHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QLLHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_QLLHActionPerformed
+   
 
     public void addQLHVListener(ActionListener listener) {
+        
         QLHV.addActionListener(listener);
+        
     }
     public void addQLCTHListener(ActionListener listener) {
         QLCTH.addActionListener(listener);
@@ -151,37 +123,7 @@ public class MainView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainView().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton QLCBGV;

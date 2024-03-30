@@ -8,6 +8,7 @@ import vn.tad_sebs.View.MainView;
 
 public class MainController {
     private MainView mainView;
+    
 
     public MainController(MainView mainView) {
         this.mainView = mainView;
@@ -26,7 +27,12 @@ public class MainController {
         public void actionPerformed(ActionEvent e) {
             // hiển thị màn hình quản lý học viên
             StudentView studentView = new StudentView();
-            studentView.setVisible(true);
+            StudentController studentController = new StudentController(studentView);
+            studentController.showStudentView();
+
+
+
+            
         }
     }
 
