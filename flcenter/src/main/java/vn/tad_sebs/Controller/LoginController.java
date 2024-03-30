@@ -19,7 +19,7 @@ public class LoginController {
     }
 
     public void showLoginView() {
-        view.showLoginView();
+        view.setVisible(true);
     }
 
     class LoginListener implements ActionListener {
