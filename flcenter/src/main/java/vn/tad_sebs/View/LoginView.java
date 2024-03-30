@@ -116,21 +116,19 @@ public class LoginView extends javax.swing.JFrame {
     }//GEN-LAST:event_UsernameActionPerformed
 
     private void EnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_EnterActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                User ADMIN = new User("Admin","123");
-                new LoginView().setVisible(true);
-            }
-        });
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
     }
+    public User getUser()
+    {
+        return new User(Username.getText(),String.copyValueOf(Password.getPassword()));
+    }
+    public void addLoginListener(ActionListener listener) {
+        Enter.addActionListener(listener);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Enter;
