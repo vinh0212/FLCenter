@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import vn.tad_sebs.DAO.UserDao;
 import vn.tad_sebs.Model.User;
 import vn.tad_sebs.View.LoginView;
-//import vn.tad_sebs.View.MainView;
+import vn.tad_sebs.View.MainView;
 
 public class LoginController {
     private LoginView view;
@@ -28,8 +28,9 @@ public class LoginController {
             if (userDao.checkUser(user)) {
                 view.showMessage("Đăng nhập thành công");
                 // hiển thị màn hình chính
-                // MainView mainView = new MainView();
-                // mainView.showMainView();
+                MainView mainView = new MainView();
+                view.setVisible(false);
+                mainView.setVisible(true);
             } else {
                 view.showMessage("Đăng nhập thất bại");
             }
