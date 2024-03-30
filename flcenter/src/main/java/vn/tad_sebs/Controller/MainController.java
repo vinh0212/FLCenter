@@ -11,7 +11,7 @@ public class MainController {
 
     public MainController(MainView mainView) {
         this.mainView = mainView;
-        mainView.addQLHVListener(new QLHVListener());
+        mainView.addQLHVListener(new StudentListener());
         //mainView.addQLLHListener(new QLLHListener());
         //mainView.addQLCBGVListener(new QLCBGVListener());
         //mainView.addQLCTHListener(new QLCTHListener());
