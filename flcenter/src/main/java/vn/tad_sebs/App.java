@@ -1,5 +1,7 @@
 package vn.tad_sebs;
 
+import java.awt.EventQueue;
+
 import vn.tad_sebs.Controller.LoginController;
 import vn.tad_sebs.View.LoginView;
 
