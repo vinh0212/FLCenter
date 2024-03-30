@@ -37,9 +37,9 @@ public class Student
     public String getAddress(){
         return this.Address;
     }
-    //public String getLop(){
-    //   return this.Lop;
-    //}
+    public String getLop(){
+       return this.Lop;
+    }
     public String getGVCN(){
         return this.GVCN;
     }
@@ -61,7 +61,9 @@ public class Student
     public void setAddress(String Address){
         this.Address=Address;
     }
-    //public void setLop(String Lop)
+    public void setLop(String Lop){
+        this.Lop=Lop;
+    }
     public void setGVCN(String GVCN){
         this.GVCN=GVCN;
     }      

@@ -6,6 +6,10 @@ package vn.tad_sebs.View;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import vn.tad_sebs.Model.Student;
 
 /**
  *
@@ -55,11 +59,10 @@ public class StudentView extends javax.swing.JFrame {
         FScoreSearchStudent = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        CbSexSearchStudent2 = new javax.swing.JCheckBox();
         jLabel12 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        CbSexSearchStudent1 = new javax.swing.JCheckBox();
         BtnClearStudent = new javax.swing.JButton();
+        FSexStudent = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -88,7 +91,7 @@ public class StudentView extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -144,13 +147,9 @@ public class StudentView extends javax.swing.JFrame {
 
         jLabel9.setText("Điểm");
 
-        CbSexSearchStudent2.setText("Nữ");
-
         jLabel12.setText("Họ và tên");
 
         jLabel17.setText("GVCN");
-
-        CbSexSearchStudent1.setText("Nam");
 
         BtnClearStudent.setText("Clear");
 
@@ -195,14 +194,11 @@ public class StudentView extends javax.swing.JFrame {
                             .addComponent(FTeacherSearchStudent)
                             .addComponent(FClassSearchStudent)
                             .addComponent(FAddressSearchStudent)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(CbSexSearchStudent1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(CbSexSearchStudent2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(FDateSearchStudent)
                             .addComponent(FScoreSearchStudent)
                             .addComponent(FIDSearchStudent)
-                            .addComponent(FNameSearchStudent)))
+                            .addComponent(FNameSearchStudent)
+                            .addComponent(FSexStudent)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BtnDeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -239,11 +235,10 @@ public class StudentView extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(FDateSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CbSexSearchStudent2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
-                            .addComponent(CbSexSearchStudent1))
+                            .addComponent(FSexStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(FAddressSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,6 +281,73 @@ public class StudentView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FTeacherSearchStudentActionPerformed
 
+    private String [] columnNames = new String [] {
+            "ID", "Họ và tên ", "Ngày sinh", "Giới tính", "Quê quán","Lớp","GVCN","Điểm"};
+    public void showListStudents(List<Student> list) {
+        int size = list.size();
+        Object [][] students = new Object[size][8];
+        for (int i = 0; i < size; i++) {
+            students[i][0] = list.get(i).getId();
+            students[i][1] = list.get(i).getName();
+            students[i][2] = list.get(i).getDate();
+            students[i][3] = list.get(i).getGioitinh();
+            students[i][4] = list.get(i).getAddress();
+            students[i][5] = list.get(i).getLop();
+            students[i][6] = list.get(i).getGVCN();
+            students[i][7] = list.get(i).getDiem();
+        }
+       Studenttable.setModel(new DefaultTableModel(students,columnNames));
+    }
+    public void fillStudentFromSelectedRow() {
+        // lấy chỉ số của hàng được chọn 
+        int row = Studenttable.getSelectedRow();
+        if (row >= 0) {
+            FIDSearchStudent.setText(Studenttable.getModel().getValueAt(row, 0).toString());
+            FNameSearchStudent.setText(Studenttable.getModel().getValueAt(row, 1).toString());
+            FDateSearchStudent.setText(Studenttable.getModel().getValueAt(row, 2).toString());
+            FSexStudent.setText(Studenttable.getModel().getValueAt(row, 3).toString());
+            FAddressSearchStudent.setText(Studenttable.getModel().getValueAt(row, 4).toString());
+            FClassSearchStudent.setText(Studenttable.getModel().getValueAt(row, 5).toString());
+            FTeacherSearchStudent.setText(Studenttable.getModel().getValueAt(row, 6).toString());
+            FScoreSearchStudent.setText(Studenttable.getModel().getValueAt(row, 7).toString());
+            // enable Edit and Delete buttons
+            BtnEditStudent.setEnabled(true);
+            BtnDeleteStudent.setEnabled(true);
+            // disable Add button
+            BtnAddStudent.setEnabled(false);
+        }
+    }
+    public void clearStudentInfo() {
+        FIDSearchStudent.setText("");
+        FNameSearchStudent.setText("");
+        FDateSearchStudent.setText("");
+        FSexStudent.setText("");
+        FAddressSearchStudent.setText("");
+        FClassSearchStudent.setText("");
+        FTeacherSearchStudent.setText("");
+         FScoreSearchStudent.setText("");
+        // disable Edit and Delete buttons
+        BtnEditStudent.setEnabled(false);
+         BtnDeleteStudent.setEnabled(false);
+        // enable Add button
+        BtnAddStudent.setEnabled(true);
+    }
+    public void addAddStudentListener(ActionListener listener) {
+        BtnAddStudent.addActionListener(listener);
+    }
+    
+    public void addEditStudentListener(ActionListener listener) {
+        BtnEditStudent.addActionListener(listener);
+    }
+    
+    public void addDeleteStudentListener(ActionListener listener) {
+        BtnDeleteStudent.addActionListener(listener);
+    }
+    
+    public void addClearListener(ActionListener listener) {
+        BtnClearStudent.addActionListener(listener);
+    }
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -294,8 +356,6 @@ public class StudentView extends javax.swing.JFrame {
     private javax.swing.JButton BtnDeleteStudent;
     private javax.swing.JButton BtnEditStudent;
     private javax.swing.JButton BtnSearchStudent;
-    private javax.swing.JCheckBox CbSexSearchStudent1;
-    private javax.swing.JCheckBox CbSexSearchStudent2;
     private javax.swing.JComboBox<String> CbbSeacrchStudent;
     private javax.swing.JTextField FAddressSearchStudent;
     private javax.swing.JTextField FClassSearchStudent;
@@ -304,6 +364,7 @@ public class StudentView extends javax.swing.JFrame {
     private javax.swing.JTextField FNameSearchStudent;
     private javax.swing.JTextField FScoreSearchStudent;
     private javax.swing.JTextField FSearchStudent;
+    private javax.swing.JTextField FSexStudent;
     private javax.swing.JTextField FTeacherSearchStudent;
     private javax.swing.JTable Studenttable;
     private javax.swing.JLabel jLabel12;
