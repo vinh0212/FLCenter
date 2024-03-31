@@ -59,8 +59,8 @@ public class Student implements Serializable
     public void setId(int id){
         this.id=id;
     }
-    public void setName(String name){
-        this.name=name;
+    public void setName(String Name){
+        this.name=Name;
     }
     public void setDate(String Date){
         this.Date=Date;
