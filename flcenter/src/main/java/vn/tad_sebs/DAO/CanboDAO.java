@@ -17,6 +17,7 @@ public class CanboDAO {
     {
         private List<Teacher> listTeachers;
         private static final String TEACHER_FILE_NAME = "canbo.xml";
+        //private static final String CLASS_FILE_NAME = "class.xml";
 
         public TeacherDAO() {
             this.listTeachers = readListTeachers();
@@ -55,9 +56,13 @@ public class CanboDAO {
             try {
                 for (Teacher t : listTeachers) {
                 if (t.getId() == teacher.getId()) {
-                    t.setName(teacher.getName();
+                    t.setName(teacher.getName());
                     t.setDate(teacher.getDate());
-                    
+                    t.setSex(teacher.getSex());
+                    t.setAddress(teacher.getAddress());
+                    t.setCapbacham(teacher.getCapbacham());
+                    t.setLop(teacher.getLop());
+                    t.setMon(teacher.getMon());
                     writeListTeachers(listTeachers);
                 }
             }
@@ -65,6 +70,34 @@ public class CanboDAO {
                 e.printStackTrace();
             }
         }
-        
+
+        public boolean delete(Teacher teacher)
+        {
+            boolean isFound = false;
+            for (Teacher t : listTeachers)
+            {
+                if (t.getId() == teacher.getId())
+                {
+                    listTeachers.remove(t);
+                    isFound = true;
+                    break;
+                }
+            }
+            if (isFound)
+            {
+                listTeachers.remove(teacher);
+                writeListTeachers(listTeachers);
+                return true;
+            }
+            return false;
+        }
+        public List<Teacher> getListTeachers()
+        {
+            return listTeachers;
+        }
+        public void setListTeachers(List<Teacher> listTeachers)
+        {
+            this.listTeachers = listTeachers;
+        }
     }
 }
