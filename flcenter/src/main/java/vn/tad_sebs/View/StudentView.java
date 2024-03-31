@@ -83,10 +83,7 @@ public class StudentView extends javax.swing.JFrame {
 
         Studenttable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Họ và tên", "Ngày sinh", "Giới tính", "Quê quán", "Lớp", "Giáo viên chủ nhiệm", "Điểm"
@@ -145,6 +142,11 @@ public class StudentView extends javax.swing.JFrame {
         CbbSeacrchStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Lớp", "Quê quán", "Ngày sinh" }));
 
         BtnSearchStudent.setText("Tìm");
+        BtnSearchStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSearchStudentActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("ID");
 
@@ -278,6 +280,10 @@ public class StudentView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnEditStudentActionPerformed
 
+    private void BtnSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSearchStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnSearchStudentActionPerformed
+
     private void FIDSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_FIDSearchStudentActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_FIDSearchStudentActionPerformed
@@ -393,46 +399,11 @@ public class StudentView extends javax.swing.JFrame {
         return CbbSeacrchStudent.getSelectedItem().toString();
     }
     
-    public void searchwithCriteria()
+    public String getSearchBox()
     {
-        String criteria = getSelectedText();
-        String value = FSearchStudent.getText();
-        List<Student> list = new ArrayList<>();
-        if (criteria.equals("ID")) {
-            for (Student s : list) {
-                if (s.getId() == Integer.parseInt(value)) {
-                    list.add(s);
-                }
-            }
-            
-        } else if (criteria.equals("Tên")) {
-            for (Student s : list) {
-                if (s.getName().equals(value)) {
-                    list.add(s);
-                }
-            }
-        } else if (criteria.equals("Lớp")) {
-            for (Student s : list) {
-                if (s.getLop().equals(value)) {
-                    list.add(s);
-                }
-            }
-        } else if (criteria.equals("Quê quán")) {
-            for (Student s : list) {
-                if (s.getAddress().equals(value)) {
-                    list.add(s);
-                }
-            }
-        } else if (criteria.equals("Ngày sinh")) {
-            for (Student s : list) {
-                if (s.getDate().equals(value)) {
-                    list.add(s);
-                }
-            }   
-        }
-        showListStudents(list);
-
+        return FSearchStudent.getText().trim();
     }
+    
 
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);

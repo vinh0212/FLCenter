@@ -2,6 +2,7 @@ package vn.tad_sebs.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.event.ListSelectionEvent;
@@ -12,6 +13,7 @@ import vn.tad_sebs.Model.Student;
 import vn.tad_sebs.View.StudentView;
 
 public class StudentController {
+
     private StudentView studentView;
     private StudentDAO studentDao;
 
@@ -34,6 +36,7 @@ public class StudentController {
     }
 
     class AddStudentListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             Student student = studentView.getStudentInfo();
             if (student != null) {
@@ -47,8 +50,8 @@ public class StudentController {
     }
 
     class EditStudentListener implements ActionListener {
-        public void actionPerformed(ActionEvent e)
-        {
+
+        public void actionPerformed(ActionEvent e) {
             Student student = studentView.getStudentInfo();
             if (student != null) {
                 studentDao.edit(student);
@@ -60,6 +63,7 @@ public class StudentController {
     }
 
     class DeleteStudentListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             Student student = studentView.getStudentInfo();
             if (student != null) {
@@ -72,21 +76,78 @@ public class StudentController {
     }
 
     class ClearStudentListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             studentView.clearStudentInfo();
         }
     }
 
     class ListStudentSelectionListener implements ListSelectionListener {
+
         public void valueChanged(ListSelectionEvent e) {
             studentView.fillStudentFromSelectedRow();
         }
     }
 
     class SearchStudentListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            studentView.searchwithCriteria();
-        }
-    }
 
+        public void actionPerformed(ActionEvent e) {
+            String criteria = studentView.getSelectedText();
+            String value = studentView.getSearchBox();
+            List<Student> list = new ArrayList<>();
+            List<Student> oldlist = studentDao.getListStudents();
+            if("".equals(value))
+            {
+                studentView.showListStudents(oldlist);
+            }
+            else
+            {
+                switch (criteria) {
+                case "ID":
+                    for (Student s : oldlist) {
+                        if (s.getId() == Integer.parseInt(value)) {
+                            list.add(s);
+                        }
+                    }
+                    break;
+                case "Tên":
+                    for (Student s : oldlist) {
+                        if (s.getName().equals(value)) {
+                            list.add(s);
+                        }
+                    }
+                    break;
+                case "Lớp":
+                    for (Student s : oldlist) {
+                        if (s.getLop().equals(value)) {
+                            list.add(s);
+                        }
+                    }
+                    break;
+                case "Quê quán":
+                    for (Student s : oldlist) {
+                        if (s.getAddress().equals(value)) {
+                            list.add(s);
+                        }
+                    }
+                    break;
+                case "Ngày sinh":
+                    for (Student s : oldlist) {
+                        if (s.getDate().equals(value)) {
+                            list.add(s);
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+            studentView.showListStudents(list);
+            }
+            
+
+        }
+        
+    }
 }
+
+    
