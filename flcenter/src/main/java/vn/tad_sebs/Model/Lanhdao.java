@@ -22,7 +22,7 @@ public class Lanhdao extends Canbo
         
         return this.Chucvu;
     }
-    public void setChucvu()
+    public void setChucvu(String Chucvu)
     {
         this.Chucvu=Chucvu;
     }

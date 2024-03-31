@@ -13,11 +13,10 @@ import vn.tad_sebs.Model.LanhdaoXML;
 import vn.tad_sebs.Utils.FileUtils;
 
 public class CanboDAO {
-    class TeacherDAO
-    {
+    class TeacherDAO {
         private List<Teacher> listTeachers;
         private static final String TEACHER_FILE_NAME = "canbo.xml";
-        //private static final String CLASS_FILE_NAME = "class.xml";
+        // private static final String CLASS_FILE_NAME = "class.xml";
 
         public TeacherDAO() {
             this.listTeachers = readListTeachers();
@@ -55,49 +54,129 @@ public class CanboDAO {
         public void edit(Teacher teacher) {
             try {
                 for (Teacher t : listTeachers) {
-                if (t.getId() == teacher.getId()) {
-                    t.setName(teacher.getName());
-                    t.setDate(teacher.getDate());
-                    t.setSex(teacher.getSex());
-                    t.setAddress(teacher.getAddress());
-                    t.setCapbacham(teacher.getCapbacham());
-                    t.setLop(teacher.getLop());
-                    t.setMon(teacher.getMon());
-                    writeListTeachers(listTeachers);
+                    if (t.getId() == teacher.getId()) {
+                        t.setName(teacher.getName());
+                        t.setDate(teacher.getDate());
+                        t.setSex(teacher.getSex());
+                        t.setAddress(teacher.getAddress());
+                        t.setCapbacham(teacher.getCapbacham());
+                        t.setLop(teacher.getLop());
+                        t.setMon(teacher.getMon());
+                        writeListTeachers(listTeachers);
+                    }
                 }
-            }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
 
-        public boolean delete(Teacher teacher)
-        {
+        public boolean delete(Teacher teacher) {
             boolean isFound = false;
-            for (Teacher t : listTeachers)
-            {
-                if (t.getId() == teacher.getId())
-                {
+            for (Teacher t : listTeachers) {
+                if (t.getId() == teacher.getId()) {
                     listTeachers.remove(t);
                     isFound = true;
                     break;
                 }
             }
-            if (isFound)
-            {
+            if (isFound) {
                 listTeachers.remove(teacher);
                 writeListTeachers(listTeachers);
                 return true;
             }
             return false;
         }
-        public List<Teacher> getListTeachers()
-        {
+
+        public List<Teacher> getListTeachers() {
             return listTeachers;
         }
-        public void setListTeachers(List<Teacher> listTeachers)
-        {
+
+        public void setListTeachers(List<Teacher> listTeachers) {
             this.listTeachers = listTeachers;
         }
     }
+
+    class LanhdaoDAO
+    {
+        private List<Lanhdao> listLanhdaos;
+        private static final String LANHDAO_FILE_NAME = "canbo.xml";
+
+        public LanhdaoDAO() {
+            this.listLanhdaos = readListLanhdaos();
+            if (listLanhdaos == null) {
+                listLanhdaos = new ArrayList<Lanhdao>();
+            }
+        }
+
+        public List<Lanhdao> readListLanhdaos() {
+            List<Lanhdao> list = new ArrayList<Lanhdao>();
+            LanhdaoXML lanhdaoXML = (LanhdaoXML) FileUtils.readXMLFile(
+                    LANHDAO_FILE_NAME, LanhdaoXML.class);
+            if (lanhdaoXML != null) {
+                list = lanhdaoXML.getLanhdao();
+            }
+            return list;
+        }
+
+        public void writeListLanhdaos(List<Lanhdao> lanhdaos) {
+            LanhdaoXML lanhdaoXML = new LanhdaoXML();
+            lanhdaoXML.setLanhdao(lanhdaos);
+            FileUtils.writeXMLtoFile(LANHDAO_FILE_NAME, lanhdaoXML);
+        }
+
+        public void add(Lanhdao lanhdao) {
+            int id = 1;
+            if (listLanhdaos != null && listLanhdaos.size() > 0) {
+                id = listLanhdaos.size() + 1;
+            }
+            lanhdao.setId(id);
+            listLanhdaos.add(lanhdao);
+            writeListLanhdaos(listLanhdaos);
+        }
+
+        public void edit(Lanhdao lanhdao) {
+            try {
+                for (Lanhdao l : listLanhdaos) {
+                if (l.getId() == lanhdao.getId()) {
+                    l.setName(lanhdao.getName());
+                    l.setDate(lanhdao.getDate());
+                    l.setSex(lanhdao.getSex());
+                    l.setAddress(lanhdao.getAddress());
+                    l.setCapbacham(lanhdao.getCapbacham());
+                    l.setChucvu(lanhdao.getChucvu());
+                    writeListLanhdaos(listLanhdaos);
+                }
+            }
+            }
+            catch (Exception ex)
+            {
+                ex.printStackTrace();
+            }
+        }
+        public boolean delete(Lanhdao lanhdao) {
+            boolean isFound = false;
+            for (Lanhdao l : listLanhdaos) {
+                if (l.getId() == lanhdao.getId()) {
+                    listLanhdaos.remove(l);
+                    isFound = true;
+                    break;
+                }
+            }
+            if (isFound) {
+                listLanhdaos.remove(lanhdao);
+                writeListLanhdaos(listLanhdaos);
+                return true;
+            }
+            return false;
+        }
+
+        public List<Lanhdao> getListLanhdaos() {
+            return listLanhdaos;
+        }
+
+        public void setListLanhdaos(List<Lanhdao> listLanhdaos) {
+            this.listLanhdaos = listLanhdaos;
+        }
+    }
+
 }
