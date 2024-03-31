@@ -13,9 +13,9 @@ public class Teacher extends Canbo
     private String Lop;
     private String Mon;
     public Teacher(){}
-    public Teacher(int Id,String Name,String Date,String Address, String Capbacham,String Lop,String Mon)
+    public Teacher(int Id,String Name,String Date,String Sex,String Address, String Capbacham,String Lop,String Mon)
     {
-        super(Id,Name,Date,Address,Capbacham);
+        super(Id,Name,Date,Sex,Address,Capbacham);
         this.Lop=Lop;
         this.Mon=Mon;
     }

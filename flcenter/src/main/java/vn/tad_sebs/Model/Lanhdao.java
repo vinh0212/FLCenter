@@ -12,9 +12,9 @@ public class Lanhdao extends Canbo
 {
     private String Chucvu;
     public Lanhdao(){}
-    public Lanhdao(int Id,String Name,String Date,String Address, String Capbacham,String Chucvu)
+    public Lanhdao(int Id,String Name,String Date,String Sex,String Address, String Capbacham,String Chucvu)
     {
-        super(Id,Name,Date,Address,Capbacham);
+        super(Id,Name,Date,Sex,Address,Capbacham);
         this.Chucvu=Chucvu;
     }
     public String getChucvu()
