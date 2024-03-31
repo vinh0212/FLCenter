@@ -26,7 +26,9 @@ public class StudentController {
         studentView.addClearListener(new ClearStudentListener());
         studentView.addSearchStudentListener(new SearchStudentListener());
         studentView.addListStudentSelectionListener(new ListStudentSelectionListener());
-
+        studentView.addSortStudentByIDListener(new SortStudentByID());
+        studentView.addSortStudentByNameListener(new SortStudentByName());
+        studentView.addSortStudentByDiemListener(new SortStudentByDiem());
     }
 
     public void showStudentView() {
@@ -147,6 +149,30 @@ public class StudentController {
 
         }
         
+    }
+    class SortStudentByID implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            studentDao.sortListStudentsByID();
+            studentView.showListStudents(studentDao.getListStudents());
+        }
+    }
+    class SortStudentByName implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            studentDao.sortListStudentsByName();
+            studentView.showListStudents(studentDao.getListStudents());
+        }
+    }
+    class SortStudentByDiem implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            studentDao.sortListStudentsByDiem();
+            studentView.showListStudents(studentDao.getListStudents());
+        }
     }
 }
 

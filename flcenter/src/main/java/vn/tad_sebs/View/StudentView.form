@@ -100,6 +100,15 @@
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <Component id="btnSortbyid" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              <Component id="btnSortbyName" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+              <Component id="btnSortbyDiem" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -166,7 +175,13 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="85" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnSortbyid" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSortbyName" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSortbyDiem" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -369,6 +384,21 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="FSexStudent">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSortbyid">
+      <Properties>
+        <Property name="label" type="java.lang.String" value="Sort By ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSortbyName">
+      <Properties>
+        <Property name="label" type="java.lang.String" value="Sort by Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSortbyDiem">
+      <Properties>
+        <Property name="label" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo &#x110;i&#x1ec3;m"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

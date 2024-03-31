@@ -68,6 +68,9 @@ public class StudentView extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         BtnClearStudent = new javax.swing.JButton();
         FSexStudent = new javax.swing.JTextField();
+        btnSortbyid = new javax.swing.JButton();
+        btnSortbyName = new javax.swing.JButton();
+        btnSortbyDiem = new javax.swing.JButton();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -172,6 +175,12 @@ public class StudentView extends javax.swing.JFrame {
 
         BtnClearStudent.setText("Clear");
 
+        btnSortbyid.setLabel("Sort By ID");
+
+        btnSortbyName.setLabel("Sort by Name");
+
+        btnSortbyDiem.setLabel("Sắp xếp theo Điểm");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -220,6 +229,14 @@ public class StudentView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnClearStudent)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(btnSortbyid)
+                .addGap(53, 53, 53)
+                .addComponent(btnSortbyName)
+                .addGap(66, 66, 66)
+                .addComponent(btnSortbyDiem)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,7 +289,12 @@ public class StudentView extends javax.swing.JFrame {
                             .addComponent(BtnEditStudent)
                             .addComponent(BtnDeleteStudent)
                             .addComponent(BtnClearStudent))))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSortbyid)
+                    .addComponent(btnSortbyName)
+                    .addComponent(btnSortbyDiem))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -394,6 +416,20 @@ public class StudentView extends javax.swing.JFrame {
     public void addSearchStudentListener(ActionListener listener) {
         BtnSearchStudent.addActionListener(listener);
     }
+    public void addSortStudentByIDListener(ActionListener listener)
+    {
+        btnSortbyid.addActionListener(listener);
+    }
+    public void addSortStudentByNameListener(ActionListener listener)
+    {
+        btnSortbyName.addActionListener(listener);
+    }
+    public void addSortStudentByDiemListener(ActionListener listener)
+    {
+        btnSortbyDiem.addActionListener(listener);
+    }
+    
+
 
     public String getSelectedText() {
         return CbbSeacrchStudent.getSelectedItem().toString();
@@ -454,6 +490,9 @@ public class StudentView extends javax.swing.JFrame {
     private javax.swing.JTextField FSexStudent;
     private javax.swing.JTextField FTeacherSearchStudent;
     private javax.swing.JTable Studenttable;
+    private javax.swing.JButton btnSortbyDiem;
+    private javax.swing.JButton btnSortbyName;
+    private javax.swing.JButton btnSortbyid;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
