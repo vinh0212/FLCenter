@@ -1,73 +1,38 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package vn.tad_sebs.Model;
 
-import java.io.Serializable;
-
-public class Teacher implements Serializable
+/**
+ *
+ * @author ASUS
+ */
+public class Teacher extends Canbo
 {
-    private static final long serialVersionUID = 1L;
-    private int Id;
-    private String Name;
-    private String Date;
-    private String Address;
-    private String Capbacham;
-    private String Chucvu;
+    private String Lop;
+    private String Mon;
     public Teacher(){}
-    public Teacher(int Id,String Name,String Date,String Address,String Capbacham,String Chucvu)
+    public Teacher(int Id,String Name,String Date,String Address, String Capbacham,String Lop,String Mon)
     {
-        super();
-        this.Id=Id;
-        this.Name=Name;
-        this.Date=Date;
-        this.Address=Address;
-        this.Capbacham=Capbacham;
+        super(Id,Name,Date,Address,Capbacham);
+        this.Lop=Lop;
+        this.Mon=Mon;
     }
-    public int getId()
+    public String getLop()
     {
-        return this.Id;
+        return this.Lop;
     }
-    public String getName()
+    public String getMon()
     {
-        return this.Name;
+        return this.Mon;
     }
-    public String getDate()
+    public void setLop(String Lop)
     {
-        return this.Date;
+        this.Lop=Lop;
     }
-    public String getAddress()
+    public void setMon(String Mon)
     {
-        return this.Address;
+        this.Mon=Mon;
     }
-    public String getCapbacham()
-    {
-        return this.Capbacham;
-    }
-    public String getChucvu()
-    {
-        return this.Chucvu;
-    }
-    public void setId(int Id)
-    {
-        this.Id=Id;
-    }
-    public void setName(String Name)
-    {
-        this.Name=Name;
-    }
-    public void setDate(String Date)
-    {
-        this.Date=Date;
-    }
-    public void setAddress(String Address)
-    {
-        this.Address=Address;
-    }
-    public void setCapbacham(String Capbacham)
-    {
-        this.Capbacham=Capbacham;
-    }
-    public void setChucvu(String Chucvu)
-    {
-        this.Chucvu=Chucvu;
-    }
-    
 }
