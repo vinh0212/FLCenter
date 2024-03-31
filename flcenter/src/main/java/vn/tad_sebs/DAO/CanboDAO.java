@@ -13,7 +13,7 @@ import vn.tad_sebs.Model.LanhdaoXML;
 import vn.tad_sebs.Utils.FileUtils;
 
 public class CanboDAO {
-    class TeacherDAO {
+    public static class TeacherDAO {
         private List<Teacher> listTeachers;
         private static final String TEACHER_FILE_NAME = "canbo.xml";
         // private static final String CLASS_FILE_NAME = "class.xml";
@@ -96,7 +96,7 @@ public class CanboDAO {
         }
     }
 
-    class LanhdaoDAO
+    public static class LanhdaoDAO
     {
         private List<Lanhdao> listLanhdaos;
         private static final String LANHDAO_FILE_NAME = "canbo.xml";
