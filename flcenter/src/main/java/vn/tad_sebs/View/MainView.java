@@ -4,6 +4,7 @@
  */
 package vn.tad_sebs.View;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
@@ -101,10 +102,8 @@ public class MainView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   
 
-    public void addQLHVListener(ActionListener listener) {
-        
+    public void addQLHVListener(ActionListener listener) {      
         QLHV.addActionListener(listener);
         
     }

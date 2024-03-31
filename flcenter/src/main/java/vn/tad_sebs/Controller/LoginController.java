@@ -30,7 +30,8 @@ public class LoginController {
                 // hiển thị màn hình chính
                 MainView mainView = new MainView();
                 view.setVisible(false);
-                mainView.setVisible(true);
+                MainController mainController = new MainController(mainView);
+                mainController.showMainView();
             } else {
                 view.showMessage("Đăng nhập thất bại");
             }

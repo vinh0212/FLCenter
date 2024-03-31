@@ -20,20 +20,6 @@
         </Menu>
       </SubComponents>
     </Container>
-    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
-      <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="File"/>
-          </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Edit"/>
-          </Properties>
-        </Menu>
-      </SubComponents>
-    </Menu>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -45,7 +31,6 @@
     </Property>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="2"/>
   </SyntheticProperties>
   <AuxValues>
@@ -181,7 +166,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="62" max="32767" attributes="0"/>
+              <EmptySpace pref="85" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -198,14 +183,14 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="8" rowCount="4">
-                <Column editable="true" title="ID" type="java.lang.String"/>
-                <Column editable="true" title="H&#x1ecd; v&#xe0; t&#xea;n" type="java.lang.String"/>
-                <Column editable="true" title="Ng&#xe0;y sinh" type="java.lang.String"/>
-                <Column editable="true" title="Gi&#x1edb;i t&#xed;nh" type="java.lang.String"/>
-                <Column editable="true" title="Qu&#xea; qu&#xe1;n" type="java.lang.String"/>
-                <Column editable="true" title="L&#x1edb;p" type="java.lang.String"/>
-                <Column editable="true" title="Gi&#xe1;o vi&#xea;n ch&#x1ee7; nhi&#x1ec7;m" type="java.lang.String"/>
-                <Column editable="true" title="&#x110;i&#x1ec3;m" type="java.lang.Float"/>
+                <Column editable="false" title="ID" type="java.lang.String"/>
+                <Column editable="false" title="H&#x1ecd; v&#xe0; t&#xea;n" type="java.lang.String"/>
+                <Column editable="false" title="Ng&#xe0;y sinh" type="java.lang.String"/>
+                <Column editable="false" title="Gi&#x1edb;i t&#xed;nh" type="java.lang.String"/>
+                <Column editable="false" title="Qu&#xea; qu&#xe1;n" type="java.lang.String"/>
+                <Column editable="false" title="L&#x1edb;p" type="java.lang.String"/>
+                <Column editable="false" title="Gi&#xe1;o vi&#xea;n ch&#x1ee7; nhi&#x1ec7;m" type="java.lang.String"/>
+                <Column editable="false" title="&#x110;i&#x1ec3;m" type="java.lang.Float"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -255,6 +240,8 @@
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
+            <Property name="showGrid" type="boolean" value="false"/>
+            <Property name="showHorizontalLines" type="boolean" value="true"/>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
@@ -264,6 +251,9 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JTextField" name="FIDSearchStudent">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FIDSearchStudentActionPerformed"/>
       </Events>
@@ -280,6 +270,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ch&#x1ec9;nh s&#x1eed;a"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnEditStudentActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="FNameSearchStudent">
     </Component>

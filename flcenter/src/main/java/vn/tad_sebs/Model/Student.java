@@ -1,8 +1,17 @@
 package vn.tad_sebs.Model;
 import java.io.Serializable;
 
-public class Student
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "student")
+@XmlAccessorType(XmlAccessType.FIELD)
+
+public class Student implements Serializable
 {
+    private static final long serialVersionUID = 1L;
     private int id;
     private String name;
     private String Date;
@@ -19,33 +28,33 @@ public class Student
         this.Date = Date;
         this.Gioitinh=Gioitinh;
         this.Address = Address;
-        this.Lop = null;
+        this.Lop = Lop;
         this.GVCN=GVCN;
         this.Diem=Diem;
     }
     public int getId() {
-        return this.id;
+        return id;
     }
     public String getName(){
-        return this.name;
+        return name;
     }
     public String getDate(){
-        return this.Date;
+        return Date;
     }
     public String getGioitinh(){
-        return this.Gioitinh;
+        return Gioitinh;
     }
     public String getAddress(){
-        return this.Address;
+        return Address;
     }
     public String getLop(){
-       return this.Lop;
+       return Lop;
     }
     public String getGVCN(){
-        return this.GVCN;
+        return GVCN;
     }
     public float getDiem(){
-        return this.Diem;
+        return Diem;
     }
     public void setId(int id){
         this.id=id;

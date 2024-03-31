@@ -11,7 +11,6 @@ import vn.tad_sebs.Utils.FileUtils;
 
 public class StudentDAO {
     private List<Student> listStudents;
-    private StudentXML studentXML;
     private static final String STUDENT_FILE_NAME = "student.xml";
 
     public StudentDAO() {
@@ -20,7 +19,7 @@ public class StudentDAO {
             listStudents = new ArrayList<Student>();
         }
     }
-
+    
     public List<Student> readListStudents() {
         List<Student> list = new ArrayList<Student>();
         StudentXML studentXML = (StudentXML) FileUtils.readXMLFile(
@@ -48,7 +47,8 @@ public class StudentDAO {
     }
 
     public void edit(Student student) {
-        for (Student s : listStudents) {
+        try {
+            for (Student s : listStudents) {
             if (s.getId() == student.getId()) {
                 s.setName(student.getName());
                 s.setDate(student.getDate());
@@ -61,6 +61,10 @@ public class StudentDAO {
                 break;
             }
         }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
         
     }
 

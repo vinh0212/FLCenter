@@ -15,19 +15,21 @@ public class StudentController {
     private StudentView studentView;
     private StudentDAO studentDao;
 
-    public StudentController(StudentView view) {
-        this.studentView = view;
+    public StudentController(StudentView studentView) {
+        this.studentView = studentView;
         studentDao = new StudentDAO();
         studentView.addAddStudentListener(new AddStudentListener());
         studentView.addEditStudentListener(new EditStudentListener());
         studentView.addDeleteStudentListener(new DeleteStudentListener());
         studentView.addClearListener(new ClearStudentListener());
-
+        studentView.addSearchStudentListener(new SearchStudentListener());
         studentView.addListStudentSelectionListener(new ListStudentSelectionListener());
 
     }
 
     public void showStudentView() {
+        List<Student> studentList = studentDao.getListStudents();
+        studentView.showListStudents(studentList);
         studentView.setVisible(true);
     }
 
@@ -36,6 +38,7 @@ public class StudentController {
             Student student = studentView.getStudentInfo();
             if (student != null) {
                 studentDao.add(student);
+                studentView.showStudent(student);
                 studentView.showListStudents(studentDao.getListStudents());
                 studentView.showMessage("Thêm thành công!");
             }
@@ -51,7 +54,7 @@ public class StudentController {
                 studentDao.edit(student);
                 studentView.clearStudentInfo();
                 studentView.showListStudents(studentDao.getListStudents());
-                studentView.showMessage("Thêm thành công!");
+                studentView.showMessage("Sửa thành công!");
             }
         }
     }
@@ -77,6 +80,12 @@ public class StudentController {
     class ListStudentSelectionListener implements ListSelectionListener {
         public void valueChanged(ListSelectionEvent e) {
             studentView.fillStudentFromSelectedRow();
+        }
+    }
+
+    class SearchStudentListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            studentView.searchwithCriteria();
         }
     }
 
