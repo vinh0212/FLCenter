@@ -8,15 +8,17 @@ public class Canbo implements Serializable
     private int Id;
     private String Name;
     private String Date;
+    private String Sex;
     private String Address;
     private String Capbacham;
     public Canbo(){}
-    public Canbo(int Id,String Name,String Date,String Address,String Capbacham)
+    public Canbo(int Id,String Name,String Date,String Sex,String Address,String Capbacham)
     {
         super();
         this.Id=Id;
         this.Name=Name;
         this.Date=Date;
+        this.Sex=Sex;
         this.Address=Address;
         this.Capbacham=Capbacham;
     }
@@ -32,6 +34,10 @@ public class Canbo implements Serializable
     {
         return this.Date;
     }
+    public String getSex()
+    {
+        return this.Sex;
+    }
     public String getAddress()
     {
         return this.Address;
@@ -43,6 +49,10 @@ public class Canbo implements Serializable
     public void setId(int Id)
     {
         this.Id=Id;
+    }
+    public void setSex(String Sex)
+    {
+        this.Sex=Sex;
     }
     public void setName(String Name)
     {
