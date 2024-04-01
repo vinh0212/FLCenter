@@ -5,11 +5,11 @@ public class Monhoc implements Serializable
     private static final long serialVersionUID = 1L;
     private int Id;
     private String Name;
-    private String Tinchi;
+    private int Tinchi;
     private String Khoa;
     private String Giangvien;
     public Monhoc(){}
-    public Monhoc(int Id,String Name,String Tinchi,String Khoa,String Giangvien)
+    public Monhoc(int Id,String Name,int Tinchi,String Khoa,String Giangvien)
     {
         this.Id = Id;
         this.Name = Name;
@@ -34,11 +34,11 @@ public class Monhoc implements Serializable
         this.Name = Name;
     }
 
-    public String getTinchi() {
+    public int getTinchi() {
         return Tinchi;
     }
 
-    public void setTinchi(String Tinchi) {
+    public void setTinchi(int Tinchi) {
         this.Tinchi = Tinchi;
     }
 
