@@ -29,7 +29,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="FSearchMon" min="-2" pref="115" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="BtnSearchMon" min="-2" max="-2" attributes="0"/>
+              <Component id="btnSearchMon" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
@@ -59,7 +59,7 @@
                       <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="FTeacherSearchMon" alignment="0" max="32767" attributes="0"/>
-                          <Component id="FDateSearchMon" alignment="0" max="32767" attributes="0"/>
+                          <Component id="FTinchiSearch" alignment="0" max="32767" attributes="0"/>
                           <Component id="FNameSearchMon" alignment="0" max="32767" attributes="0"/>
                           <Component id="FKhoaSearch" alignment="0" max="32767" attributes="0"/>
                           <Component id="FIDSearchMon" alignment="1" max="32767" attributes="0"/>
@@ -86,7 +86,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="CbbSearchMon" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="FSearchMon" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BtnSearchMon" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSearchMon" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -106,7 +106,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="FDateSearchMon" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="FTinchiSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -226,7 +226,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="FNameSearchMon">
     </Component>
-    <Component class="javax.swing.JTextField" name="FDateSearchMon">
+    <Component class="javax.swing.JTextField" name="FTinchiSearch">
     </Component>
     <Component class="javax.swing.JTextField" name="FTeacherSearchMon">
       <Events>
@@ -255,12 +255,12 @@
     </Component>
     <Component class="javax.swing.JTextField" name="FSearchMon">
     </Component>
-    <Component class="javax.swing.JButton" name="BtnSearchMon">
+    <Component class="javax.swing.JButton" name="btnSearchMon">
       <Properties>
         <Property name="text" type="java.lang.String" value="T&#xec;m"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSearchMonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchMonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">

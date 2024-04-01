@@ -4,10 +4,13 @@
  */
 package vn.tad_sebs.View;
 
-/**
- *
- * @author ASUS
- */
+import java.awt.event.ActionListener;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
+import vn.tad_sebs.Model.Monhoc;
+
 public class MonView extends javax.swing.JFrame {
 
     /**
@@ -32,12 +35,12 @@ public class MonView extends javax.swing.JFrame {
         btnDeleteMon = new javax.swing.JButton();
         btnEditMon = new javax.swing.JButton();
         FNameSearchMon = new javax.swing.JTextField();
-        FDateSearchMon = new javax.swing.JTextField();
+        FTinchiSearch = new javax.swing.JTextField();
         FTeacherSearchMon = new javax.swing.JTextField();
         btnAddMon = new javax.swing.JButton();
         CbbSearchMon = new javax.swing.JComboBox<>();
         FSearchMon = new javax.swing.JTextField();
-        BtnSearchMon = new javax.swing.JButton();
+        btnSearchMon = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -112,10 +115,10 @@ public class MonView extends javax.swing.JFrame {
 
         CbbSearchMon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên môn", "Số tín chỉ", "Khoa" }));
 
-        BtnSearchMon.setText("Tìm");
-        BtnSearchMon.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchMon.setText("Tìm");
+        btnSearchMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSearchMonActionPerformed(evt);
+                btnSearchMonActionPerformed(evt);
             }
         });
 
@@ -147,7 +150,7 @@ public class MonView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(FSearchMon, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(BtnSearchMon)
+                .addComponent(btnSearchMon)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -173,7 +176,7 @@ public class MonView extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(FTeacherSearchMon)
-                            .addComponent(FDateSearchMon)
+                            .addComponent(FTinchiSearch)
                             .addComponent(FNameSearchMon)
                             .addComponent(FKhoaSearch)
                             .addComponent(FIDSearchMon, javax.swing.GroupLayout.Alignment.TRAILING))))
@@ -194,7 +197,7 @@ public class MonView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CbbSearchMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FSearchMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnSearchMon))
+                    .addComponent(btnSearchMon))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
@@ -210,7 +213,7 @@ public class MonView extends javax.swing.JFrame {
                             .addComponent(jLabel12))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FDateSearchMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FTinchiSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -251,59 +254,158 @@ public class MonView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FTeacherSearchMonActionPerformed
 
-    private void BtnSearchMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSearchMonActionPerformed
+    private void btnSearchMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchMonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnSearchMonActionPerformed
+    }//GEN-LAST:event_btnSearchMonActionPerformed
+    private String[] columnNamesMon = new String[] {
+            "ID", "Tên môn", "Số tín chỉ", "Khoa", "Giảng viên"};
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MonView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MonView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MonView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MonView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    public void showListMon(List<Monhoc> list) {
+        int size = list.size();
+        Object[][] mon = new Object[size][5];
+        for (int i = 0; i < size; i++) {
+            mon[i][0] = list.get(i).getId();
+            mon[i][1] = list.get(i).getName();
+            mon[i][2] = list.get(i).getTinchi();
+            mon[i][3] = list.get(i).getKhoa();
+            mon[i][4] = list.get(i).getGiangvien();
         }
-        //</editor-fold>
+        Montable.setModel(new DefaultTableModel(mon, columnNamesMon));
+    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MonView().setVisible(true);
+    public void fillMonFromSelectedRow() {
+        // lấy chỉ số của hàng được chọn
+        int row = Montable.getSelectedRow();
+        if (row >= 0) {
+            FIDSearchMon.setText(Montable.getModel().getValueAt(row, 0).toString());
+            FNameSearchMon.setText(Montable.getModel().getValueAt(row, 1).toString());
+            FTinchiSearch.setText(Montable.getModel().getValueAt(row, 2).toString());
+            FKhoaSearch.setText(Montable.getModel().getValueAt(row, 3).toString());
+            FTeacherSearchMon.setText(Montable.getModel().getValueAt(row, 4).toString());
+            // enable Edit and Delete buttons
+            btnEditMon.setEnabled(true);
+            btnDeleteMon.setEnabled(true);
+            // disable Add button
+            btnAddMon.setEnabled(false);
+        }
+    }
+    public void showMon(Monhoc mon)
+    {
+        FIDSearchMon.setText(String.valueOf(mon.getId()));
+        FNameSearchMon.setText(mon.getName());
+        FTinchiSearch.setText(String.valueOf(mon.getTinchi()));
+        FKhoaSearch.setText(mon.getKhoa());
+        FTeacherSearchMon.setText(mon.getGiangvien());
+        //enable Delete and edit button
+        btnEditMon.setEnabled(true);
+        btnDeleteMon.setEnabled(true);
+        //disable Add button
+        btnAddMon.setEnabled(false);
+    }
+
+    public void clearMonInfo() {
+        FIDSearchMon.setText("");
+        FNameSearchMon.setText("");
+        FTinchiSearch.setText("");
+        FKhoaSearch.setText("");
+        FTeacherSearchMon.setText("");
+        // disable Edit and Delete buttons
+        btnEditMon.setEnabled(false);
+        btnDeleteMon.setEnabled(false);
+        // enable Add button
+        btnAddMon.setEnabled(true);
+    }
+
+    public void addAddMonListener(ActionListener listener) {
+        btnAddMon.addActionListener(listener);
+    }
+
+    public void addEditMonListener(ActionListener listener) {
+        btnEditMon.addActionListener(listener);
+    }
+
+    public void addDeleteMonListener(ActionListener listener) {
+        btnDeleteMon.addActionListener(listener);
+    }
+
+    public void addClearMonListener(ActionListener listener) {
+        btnClearMon.addActionListener(listener);
+    }
+
+    public void addListMonSelectionListener(ListSelectionListener listener) {
+      Montable.getSelectionModel().addListSelectionListener(listener);
+    }
+
+    public void addSearchMonListener(ActionListener listener) {
+        btnSearchMon.addActionListener(listener);
+    }
+    public void addSortMonByIDListener(ActionListener listener)
+    {
+        btnSortbyidMon.addActionListener(listener);
+    }
+    public void addSortMonByNameListener(ActionListener listener)
+    {
+        btnSortbyNameMon.addActionListener(listener);
+    }
+    public void addSortMonByTinchiListener(ActionListener listener)
+    {
+        btnSortbyTinchi.addActionListener(listener);
+    }
+    
+
+
+    public String getSelectedText() {
+        return CbbSearchMon.getSelectedItem().toString();
+    }
+    
+    public String getSearchBox()
+    {
+        return FSearchMon.getText().trim();
+    }
+    
+
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
+    public Monhoc getMonInfo()
+    {
+        try
+        {
+            
+            Monhoc mon = new Monhoc();
+            if(FIDSearchMon.getText()!=null && !"".equals(FIDSearchMon.getText()))
+            {
+                mon.setId(Integer.parseInt(FIDSearchMon.getText()));
             }
-        });
+
+            mon.setName(FNameSearchMon.getText());
+            mon.setTinchi(Integer.parseInt(FTinchiSearch.getText()));
+            mon.setKhoa(FKhoaSearch.getText());
+            mon.setGiangvien(FTeacherSearchMon.getText());
+            return mon;
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        return null;
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnSearchMon;
     private javax.swing.JComboBox<String> CbbSearchMon;
-    private javax.swing.JTextField FDateSearchMon;
     private javax.swing.JTextField FIDSearchMon;
     private javax.swing.JTextField FKhoaSearch;
     private javax.swing.JTextField FNameSearchMon;
     private javax.swing.JTextField FSearchMon;
     private javax.swing.JTextField FTeacherSearchMon;
+    private javax.swing.JTextField FTinchiSearch;
     private javax.swing.JTable Montable;
     private javax.swing.JButton btnAddMon;
     private javax.swing.JButton btnClearMon;
     private javax.swing.JButton btnDeleteMon;
     private javax.swing.JButton btnEditMon;
+    private javax.swing.JButton btnSearchMon;
     private javax.swing.JButton btnSortbyNameMon;
     private javax.swing.JButton btnSortbyTinchi;
     private javax.swing.JButton btnSortbyidMon;
