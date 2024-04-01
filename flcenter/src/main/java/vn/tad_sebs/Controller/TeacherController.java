@@ -21,7 +21,9 @@ public class TeacherController {
     public TeacherController(TeacherView teacherView) {
         this.teacherView = teacherView;
         teacherDao = new CanboDAO.TeacherDAO();
+        
         lanhdaoDao = new CanboDAO.LanhdaoDAO();
+        
         teacherView.addAddGVListener(new AddGVListener());
         teacherView.addEditGVListener(new EditGVListener());
         teacherView.addDeleteGVListener(new DeleteGVListener());
@@ -33,7 +35,7 @@ public class TeacherController {
         teacherView.addSortGVByLevelListener(new SortGVByLevelListener());
 
         // Lanhdao
-        /* 
+        
         teacherView.addAddLDListener(new AddLDListener());
         teacherView.addEditLDListener(new EditLDListener());
         teacherView.addDeleteLDListener(new DeleteLDListener());
@@ -43,7 +45,7 @@ public class TeacherController {
         teacherView.addSortLDByIDListener(new SortLDByIDListener());
         teacherView.addSortLDByNameListener(new SortLDByNameListener());
         teacherView.addSortLDByLevelListener(new SortLDByLevelListener());
-        teacherView.addSortLDByRoleListener(new SortLDByRoleListener());*/
+        teacherView.addSortLDByRoleListener(new SortLDByRoleListener());
     }
 
     public void showTeacherView() {
@@ -198,4 +200,140 @@ public class TeacherController {
         }
     }
 
+    class AddLDListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            Lanhdao lanhdao = teacherView.getLDInfo();
+            if (lanhdao != null) {
+                lanhdaoDao.add(lanhdao);
+                teacherView.showLD(lanhdao);
+                teacherView.showListLD(lanhdaoDao.getListLanhdaos());
+                teacherView.showMessage("Thêm thành công!");
+            }
+        }
+    }
+
+    class EditLDListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            Lanhdao lanhdao = teacherView.getLDInfo();
+            if (lanhdao != null) {
+                lanhdaoDao.edit(lanhdao);
+                teacherView.clearLDInfo();
+                teacherView.showListLD(lanhdaoDao.getListLanhdaos());
+                teacherView.showMessage("Sửa thành công!");
+            }
+        }
+    }
+
+    class DeleteLDListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            Lanhdao lanhdao = teacherView.getLDInfo();
+            if (lanhdao != null) {
+                lanhdaoDao.delete(lanhdao);
+                teacherView.clearLDInfo();
+                teacherView.showListLD(lanhdaoDao.getListLanhdaos());
+                teacherView.showMessage("Xóa thành công!");
+            }
+        }
+    }
+
+    class ClearLDListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            teacherView.clearLDInfo();
+        }
+    }
+
+    class ListLDSelectionListener implements ListSelectionListener {
+        public void valueChanged(ListSelectionEvent e) {
+            teacherView.fillLDFromSelectedRow();
+        }
+    }
+
+    class SearchLDListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String criteria = teacherView.getSelectedTextLD();
+            String value = teacherView.getSearchBoxLD();
+            List<Lanhdao> list = new ArrayList<>();
+            List<Lanhdao> oldlist = lanhdaoDao.getListLanhdaos();
+
+            if ("".equals(value)) {
+                teacherView.showListLD(oldlist);
+            } else {
+                switch (criteria) {
+                    case "ID":
+                        for (Lanhdao t : oldlist) {
+                            if (t.getId() == Integer.parseInt(value)) {
+                                list.add(t);
+                            }
+                        }
+                        break;
+                    case "Tên":
+                        for (Lanhdao t : oldlist) {
+                            if (t.getName().equals(value)) {
+                                list.add(t);
+                            }
+                        }
+                        break;
+                    case "Quê quán":
+                        for (Lanhdao t : oldlist) {
+                            if (t.getAddress().equals(value))
+                                list.add(t);
+
+                        }
+                        break;
+                    case "Cấp bậc hàm":
+                        for (Lanhdao t : oldlist) {
+                            if (t.getCapbacham().equals(value))
+                                list.add(t);
+                        }
+                        break;
+                    case "Giới tính":
+                        for (Lanhdao t : oldlist) {
+                            if (t.getSex().equals(value))
+                                list.add(t);
+                        }
+                        break;
+                    default:
+                        break;
+
+                }
+                teacherView.showListLD(list);
+            }
+        }
+    }
+
+    class SortLDByIDListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            lanhdaoDao.sortListLanhdaosByID();
+            teacherView.showListLD(lanhdaoDao.getListLanhdaos());
+        }
+    }
+
+    class SortLDByNameListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            lanhdaoDao.sortListLanhdaosByName();
+            teacherView.showListLD(lanhdaoDao.getListLanhdaos());
+        }
+    }
+
+    class SortLDByLevelListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            lanhdaoDao.sortListLanhdaosByCapbacham();
+            teacherView.showListLD(lanhdaoDao.getListLanhdaos());
+        }
+    }
+
+    class SortLDByRoleListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            lanhdaoDao.sortListLanhdaosByChucvu();
+            teacherView.showListLD(lanhdaoDao.getListLanhdaos());
+        }
+    }
 }

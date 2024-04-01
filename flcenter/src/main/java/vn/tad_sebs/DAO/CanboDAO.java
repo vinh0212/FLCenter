@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import vn.tad_sebs.Model.Canbo;
 import vn.tad_sebs.Model.Lanhdao;
 import vn.tad_sebs.Model.Teacher;
 import vn.tad_sebs.Model.TeacherXML;
@@ -15,7 +14,7 @@ import vn.tad_sebs.Utils.FileUtils;
 public class CanboDAO {
     public static class TeacherDAO {
         private List<Teacher> listTeachers;
-        private static final String TEACHER_FILE_NAME = "canbo.xml";
+        private static final String TEACHER_FILE_NAME = "teacher.xml";
         // private static final String CLASS_FILE_NAME = "class.xml";
 
         public TeacherDAO() {
@@ -26,6 +25,7 @@ public class CanboDAO {
         }
 
         public List<Teacher> readListTeachers() {
+            
             List<Teacher> list = new ArrayList<Teacher>();
             TeacherXML teacherXML = (TeacherXML) FileUtils.readXMLFile(
                     TEACHER_FILE_NAME, TeacherXML.class);
@@ -124,11 +124,11 @@ public class CanboDAO {
             this.listTeachers = listTeachers;
         }
     }
-
+    
     public static class LanhdaoDAO
     {
         private List<Lanhdao> listLanhdaos;
-        private static final String LANHDAO_FILE_NAME = "canbo.xml";
+        private static final String LANHDAO_FILE_NAME = "lanhdao.xml";
 
         public LanhdaoDAO() {
             this.listLanhdaos = readListLanhdaos();
@@ -205,6 +205,44 @@ public class CanboDAO {
 
         public void setListLanhdaos(List<Lanhdao> listLanhdaos) {
             this.listLanhdaos = listLanhdaos;
+        }
+
+        public void sortListLanhdaosByID() {
+            Collections.sort(listLanhdaos, new Comparator<Lanhdao>() {
+                @Override
+                public int compare(Lanhdao l1, Lanhdao l2) {
+                    return l1.getId() - l2.getId();
+                }
+            });
+        }
+
+        public void sortListLanhdaosByName() {
+            Collections.sort(listLanhdaos, new Comparator<Lanhdao>() {
+                @Override
+                public int compare(Lanhdao l1, Lanhdao l2) {
+                    return l1.getName().compareTo(l2.getName());
+                }
+            });
+        }
+
+        public void sortListLanhdaosByCapbacham() // need more attention
+        {
+            Collections.sort(listLanhdaos, new Comparator<Lanhdao>() {
+                @Override
+                public int compare(Lanhdao l1, Lanhdao l2) {
+                    return l1.getCapbacham().compareTo(l2.getCapbacham());
+                }
+            });
+        }
+
+        public void sortListLanhdaosByChucvu() // need more attention
+        {
+            Collections.sort(listLanhdaos, new Comparator<Lanhdao>() {
+                @Override
+                public int compare(Lanhdao l1, Lanhdao l2) {
+                    return l1.getChucvu().compareTo(l2.getChucvu());
+                }
+            });
         }
     }
 

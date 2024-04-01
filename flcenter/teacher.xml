@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<teachers>
+    <teacher>
+        <Id>1</Id>
+        <Name>Vinh</Name>
+        <Date>1</Date>
+        <Sex>1</Sex>
+        <Address>1</Address>
+        <Capbacham>Thiếu uý</Capbacham>
+        <Lop>01</Lop>
+        <Mon>CC</Mon>
+    </teacher>
+</teachers>

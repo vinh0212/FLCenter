@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lanhdaos>
+    <lanhdao>
+        <Id>1</Id>
+        <Name>Đạt</Name>
+        <Date>3</Date>
+        <Sex>3</Sex>
+        <Address>3</Address>
+        <Capbacham>3</Capbacham>
+        <Chucvu>Giám đốc</Chucvu>
+    </lanhdao>
+</lanhdaos>
