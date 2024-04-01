@@ -32,7 +32,9 @@ public class CanboDAO {
             if (teacherXML != null) {
                 list = teacherXML.getTeacher();
             }
+            
             return list;
+            
         }
 
         public void writeListTeachers(List<Teacher> teachers) {
@@ -85,6 +87,33 @@ public class CanboDAO {
                 return true;
             }
             return false;
+        }
+        public void sortListTeachersByID() {
+            Collections.sort(listTeachers, new Comparator<Teacher>() {
+                @Override
+                public int compare(Teacher t1, Teacher t2) {
+                    return t1.getId() - t2.getId();
+                }
+            });
+        }
+
+        public void sortListTeachersByName() {
+            Collections.sort(listTeachers, new Comparator<Teacher>() {
+                @Override
+                public int compare(Teacher t1, Teacher t2) {
+                    return t1.getName().compareTo(t2.getName());
+                }
+            });
+        }
+
+        public void sortListTeachersByCapbacham() // need more attention
+        {
+            Collections.sort(listTeachers, new Comparator<Teacher>() {
+                @Override
+                public int compare(Teacher t1, Teacher t2) {
+                    return t1.getCapbacham().compareTo(t2.getCapbacham());
+                }
+            });
         }
 
         public List<Teacher> getListTeachers() {
