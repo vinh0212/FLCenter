@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import vn.tad_sebs.Model.Lanhdao;
 import vn.tad_sebs.Model.Teacher;
 
 /**
@@ -98,11 +99,11 @@ public class TeacherView extends javax.swing.JFrame {
         btnSortbyidLD = new javax.swing.JButton();
         btnSortbyNameLD = new javax.swing.JButton();
         btnSortbyLevelLD = new javax.swing.JButton();
-        FSexLD = new javax.swing.JTextField();
+        FSexSearchLD = new javax.swing.JTextField();
         btnEditLD = new javax.swing.JButton();
         FNameSearchLD = new javax.swing.JTextField();
         FDateSearchLD = new javax.swing.JTextField();
-        FAddressLD = new javax.swing.JTextField();
+        FAddressSearchLD = new javax.swing.JTextField();
         btnAddLD = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -172,7 +173,6 @@ public class TeacherView extends javax.swing.JFrame {
         jLabel17.setText("GVCN");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
         setResizable(false);
 
         GVtable.setModel(new javax.swing.table.DefaultTableModel(
@@ -456,9 +456,9 @@ public class TeacherView extends javax.swing.JFrame {
 
         btnSortbyLevelLD.setText("Sắp xếp theo Cấp bậc hàm");
 
-        FSexLD.addActionListener(new java.awt.event.ActionListener() {
+        FSexSearchLD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FSexLDActionPerformed(evt);
+                FSexSearchLDActionPerformed(evt);
             }
         });
 
@@ -469,9 +469,9 @@ public class TeacherView extends javax.swing.JFrame {
             }
         });
 
-        FAddressLD.addActionListener(new java.awt.event.ActionListener() {
+        FAddressSearchLD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FAddressLDActionPerformed(evt);
+                FAddressSearchLDActionPerformed(evt);
             }
         });
 
@@ -543,8 +543,8 @@ public class TeacherView extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FRoleSearchLD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                                     .addComponent(FLevelSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FAddressLD, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FSexLD, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(FAddressSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(FSexSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(FIDSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(FNameSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(FDateSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)))
@@ -608,10 +608,10 @@ public class TeacherView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(FSexLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(FSexSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FAddressLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FAddressSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -652,7 +652,7 @@ public class TeacherView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
+            .addComponent(jTabbedPane4, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jTabbedPane4.getAccessibleContext().setAccessibleName("Lãnh đạo");
@@ -686,9 +686,9 @@ public class TeacherView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditLDActionPerformed
 
-    private void FAddressLDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FAddressLDActionPerformed
+    private void FAddressSearchLDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FAddressSearchLDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FAddressLDActionPerformed
+    }//GEN-LAST:event_FAddressSearchLDActionPerformed
 
     private void FRoleSearchLDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FRoleSearchLDActionPerformed
         // TODO add your handling code here:
@@ -702,9 +702,9 @@ public class TeacherView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteLDActionPerformed
 
-    private void FSexLDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FSexLDActionPerformed
+    private void FSexSearchLDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FSexSearchLDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FSexLDActionPerformed
+    }//GEN-LAST:event_FSexSearchLDActionPerformed
 
     private void FAddressSearchGVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FAddressSearchGVActionPerformed
         // TODO add your handling code here:
@@ -873,7 +873,147 @@ public class TeacherView extends javax.swing.JFrame {
     {
         btnSortbyNameGV.addActionListener(listener);
     }
+      public void addSortGVByLevelListener(ActionListener listener)
+    {
+        btnSortbyLevelGV.addActionListener(listener);
+    }
+    // ----- Lanh Dao
 
+    private String[] columnNamesLD = new String[] {
+            "ID", "Họ và tên ", "Ngày sinh", "Giới tính", "Quê quán", "Cấp bậc hàm", "Chức vụ" };
+    public void showListLD(List<Lanhdao> list) {
+        int size = list.size();
+        Object[][] lanhdao = new Object[size][7];
+        for (int i = 0; i < size; i++) {
+            lanhdao[i][0] = list.get(i).getId();
+            lanhdao[i][1] = list.get(i).getName();
+            lanhdao[i][2] = list.get(i).getDate();
+            lanhdao[i][3] = list.get(i).getSex();
+            lanhdao[i][4] = list.get(i).getAddress();
+            lanhdao[i][5] = list.get(i).getCapbacham();
+            lanhdao[i][6] = list.get(i).getChucvu();
+        }
+        LDtable.setModel(new DefaultTableModel(lanhdao, columnNamesLD));
+    }
+    public void fillLDFromSelectedRow() {
+        // lấy chỉ số của hàng được chọn
+        int row = LDtable.getSelectedRow();
+        if (row >= 0) {
+            FIDSearchLD.setText(LDtable.getModel().getValueAt(row, 0).toString());
+            FNameSearchLD.setText(LDtable.getModel().getValueAt(row, 1).toString());
+            FDateSearchLD.setText(LDtable.getModel().getValueAt(row, 2).toString());
+            FSexSearchLD.setText(LDtable.getModel().getValueAt(row, 3).toString());
+            FAddressSearchLD.setText(LDtable.getModel().getValueAt(row, 4).toString());
+            FLevelSearchLD.setText(LDtable.getModel().getValueAt(row, 5).toString());
+            FRoleSearchLD.setText(LDtable.getModel().getValueAt(row, 6).toString());
+            // enable Edit and Delete buttons
+            btnEditLD.setEnabled(true);
+            btnDeleteLD.setEnabled(true);
+            // disable Add button
+            btnAddLD.setEnabled(false);
+        }
+    }
+    public void showLD(Lanhdao lanhdao)
+    {
+        FIDSearchLD.setText(String.valueOf(lanhdao.getId()));
+        FNameSearchLD.setText(lanhdao.getName());
+        FDateSearchLD.setText(lanhdao.getDate());
+        FSexSearchLD.setText(lanhdao.getSex());
+        FAddressSearchLD.setText(lanhdao.getAddress());
+        FLevelSearchLD.setText(lanhdao.getCapbacham());
+        FRoleSearchLD.setText(lanhdao.getChucvu());
+        //enable Delete and edit button
+        btnEditLD.setEnabled(true);
+        btnDeleteLD.setEnabled(true);
+        //disable Add button
+        btnAddLD.setEnabled(false);
+    }
+    public void clearLDInfo() {
+        FIDSearchLD.setText("");
+        FNameSearchLD.setText("");
+        FDateSearchLD.setText("");
+        FSexSearchLD.setText("");
+        FAddressSearchLD.setText("");
+        FLevelSearchLD.setText("");
+        FRoleSearchLD.setText("");
+        // disable Edit and Delete buttons
+        btnEditLD.setEnabled(false);
+        btnDeleteLD.setEnabled(false);
+        // enable Add button
+        btnAddLD.setEnabled(true);
+    }
+     public String getSelectedTextLD() {
+        return CbbSeacrchLD.getSelectedItem().toString();
+    }
+    
+    public String getSearchBoxLD()
+    {
+        return FSearchLD.getText().trim();
+    }
+     public void addAddLDListener(ActionListener listener) {
+        btnAddLD.addActionListener(listener);
+    }
+    public Lanhdao getLDInfo()
+    {
+        try
+        {
+            
+            Lanhdao lanhdao = new Lanhdao();
+            if(FIDSearchLD.getText()!=null && !"".equals(FIDSearchLD.getText()))
+            {
+                lanhdao.setId(Integer.parseInt(FIDSearchLD.getText()));
+            }
+
+            lanhdao.setName(FNameSearchLD.getText());
+            lanhdao.setDate(FDateSearchLD.getText());
+            lanhdao.setSex(FSexSearchLD.getText());
+            lanhdao.setAddress(FAddressSearchLD.getText());
+            lanhdao.setCapbacham(FLevelSearchLD.getText());
+            lanhdao.setChucvu(FRoleSearchLD.getText());
+            return lanhdao;
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        return null;
+        
+    }
+    public void addEditLDListener(ActionListener listener) {
+        btnEditLD.addActionListener(listener);
+    }
+
+    public void addDeleteLDListener(ActionListener listener) {
+        btnDeleteLD.addActionListener(listener);
+    }
+
+    public void addClearLDListener(ActionListener listener) {
+        btnClearLD.addActionListener(listener);
+    }
+
+    public void addListLDSelectionListener(ListSelectionListener listener) {
+        LDtable.getSelectionModel().addListSelectionListener(listener);
+    }
+
+    public void addSearchLDListener(ActionListener listener) {
+        btnSearchLD.addActionListener(listener);
+    }
+    public void addSortLDByIDListener(ActionListener listener)
+    {
+        btnSortbyidLD.addActionListener(listener);
+    }
+    public void addSortLDByNameListener(ActionListener listener)
+    {
+        btnSortbyNameLD.addActionListener(listener);
+    }
+    public void addSortLDByLevelListener(ActionListener listener)
+    {
+        btnSortbyLevelLD.addActionListener(listener);
+    }
+    public void addSortLDByRoleListener(ActionListener listener)
+    {
+        btnSortbyRole.addActionListener(listener);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAddStudent;
     private javax.swing.JButton BtnClearStudent;
@@ -881,8 +1021,8 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.JButton BtnEditStudent;
     private javax.swing.JComboBox<String> CbbSeacrchGV;
     private javax.swing.JComboBox<String> CbbSeacrchLD;
-    private javax.swing.JTextField FAddressLD;
     private javax.swing.JTextField FAddressSearchGV;
+    private javax.swing.JTextField FAddressSearchLD;
     private javax.swing.JTextField FAddressSearchStudent;
     private javax.swing.JTextField FClassSearchGV;
     private javax.swing.JTextField FClassSearchStudent;
@@ -902,8 +1042,8 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.JTextField FScoreSearchStudent;
     private javax.swing.JTextField FSearchGV;
     private javax.swing.JTextField FSearchLD;
-    private javax.swing.JTextField FSexLD;
     private javax.swing.JTextField FSexSearchGV;
+    private javax.swing.JTextField FSexSearchLD;
     private javax.swing.JTextField FSexStudent;
     private javax.swing.JTextField FTeacherSearchStudent;
     private javax.swing.JTable GVtable;

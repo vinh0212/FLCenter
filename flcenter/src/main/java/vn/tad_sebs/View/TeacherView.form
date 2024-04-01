@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.JButton" name="BtnDeleteStudent">
       <Properties>
@@ -99,9 +99,6 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1366, 768]"/>
-    </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -131,7 +128,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane4" alignment="1" pref="768" max="32767" attributes="0"/>
+          <Component id="jTabbedPane4" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -576,8 +573,8 @@
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="FRoleSearchLD" alignment="1" pref="172" max="32767" attributes="0"/>
                                           <Component id="FLevelSearchLD" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FAddressLD" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FSexLD" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="FAddressSearchLD" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="FSexSearchLD" alignment="1" max="32767" attributes="0"/>
                                           <Component id="FIDSearchLD" alignment="1" max="32767" attributes="0"/>
                                           <Component id="FNameSearchLD" alignment="1" max="32767" attributes="0"/>
                                           <Component id="FDateSearchLD" alignment="1" max="32767" attributes="0"/>
@@ -658,11 +655,11 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FSexLD" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FSexSearchLD" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="FAddressLD" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FAddressSearchLD" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -808,9 +805,9 @@
                 <Property name="text" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo C&#x1ea5;p b&#x1ead;c h&#xe0;m"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="FSexLD">
+            <Component class="javax.swing.JTextField" name="FSexSearchLD">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FSexLDActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FSexSearchLDActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEditLD">
@@ -825,9 +822,9 @@
             </Component>
             <Component class="javax.swing.JTextField" name="FDateSearchLD">
             </Component>
-            <Component class="javax.swing.JTextField" name="FAddressLD">
+            <Component class="javax.swing.JTextField" name="FAddressSearchLD">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FAddressLDActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FAddressSearchLDActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnAddLD">
