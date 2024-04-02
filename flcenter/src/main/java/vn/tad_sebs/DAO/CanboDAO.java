@@ -142,6 +142,8 @@ public class CanboDAO {
         public void setListTeachers(List<Teacher> listTeachers) {
             this.listTeachers = listTeachers;
         }
+        
+        
     }
     
     public static class LanhdaoDAO

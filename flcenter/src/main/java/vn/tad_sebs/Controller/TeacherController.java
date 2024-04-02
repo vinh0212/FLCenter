@@ -69,6 +69,19 @@ public class TeacherController {
             
         }
     }
+    
+    public void dothesamething()
+    {
+            int value = teacherView.getDPChoice();
+            List<Teacher> list = new ArrayList<>();
+            List<Teacher> oldlist = teacherDao.getListTeachers();
+            for (Teacher t : oldlist) {
+                if(t.getDp() == value) {
+                    list.add(t);
+                }
+            }
+            teacherView.showListGV(list);
+    }
 
     public void showTeacherView() {
         List<Teacher> teacherList = teacherDao.getListTeachers();
@@ -86,7 +99,7 @@ public class TeacherController {
             if (teacher != null) {
                 teacherDao.add(teacher);
                 teacherView.showGV(teacher);
-                teacherView.showListGV(teacherDao.getListTeachers());
+                dothesamething();
                 teacherView.showMessage("Thêm thành công!");
             }
         }
@@ -98,7 +111,7 @@ public class TeacherController {
             if (teacher != null) {
                 teacherDao.edit(teacher);
                 teacherView.clearGVInfo();
-                teacherView.showListGV(teacherDao.getListTeachers());
+                dothesamething();
                 teacherView.showMessage("Sửa thành công!");
             }
         }
@@ -110,7 +123,7 @@ public class TeacherController {
             if (teacher != null) {
                 teacherDao.delete(teacher);
                 teacherView.clearGVInfo();
-                teacherView.showListGV(teacherDao.getListTeachers());
+                dothesamething();
                 teacherView.showMessage("Xóa thành công!");
             }
         }
@@ -202,7 +215,7 @@ public class TeacherController {
         public void actionPerformed(ActionEvent e)
         {
             teacherDao.sortListTeachersByID();
-            teacherView.showListGV(teacherDao.getListTeachers());
+            dothesamething();
         }
     }
 
@@ -211,7 +224,7 @@ public class TeacherController {
         public void actionPerformed(ActionEvent e)
         {
             teacherDao.sortListTeachersByName();
-            teacherView.showListGV(teacherDao.getListTeachers());
+            dothesamething();
         }
     }
 
@@ -220,7 +233,7 @@ public class TeacherController {
         public void actionPerformed(ActionEvent e)
         {
             teacherDao.sortListTeachersByCapbacham();
-            teacherView.showListGV(teacherDao.getListTeachers());
+            dothesamething();
         }
     }
 

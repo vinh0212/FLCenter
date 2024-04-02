@@ -1,21 +1,29 @@
 package vn.tad_sebs.Model;
+
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "subject")
+@XmlAccessorType(XmlAccessType.FIELD)
+
 public class Monhoc implements Serializable
 {
     private static final long serialVersionUID = 1L;
     private int Id;
     private String Name;
     private int Tinchi;
-    private String Khoa;
-    private String Giangvien;
+    private int Khoa;
+    
     public Monhoc(){}
-    public Monhoc(int Id,String Name,int Tinchi,String Khoa,String Giangvien)
+    public Monhoc(int Id,String Name,int Tinchi,int Khoa,String Giangvien)
     {
         this.Id = Id;
         this.Name = Name;
         this.Tinchi = Tinchi;
         this.Khoa = Khoa;
-        this.Giangvien = Giangvien;
+        
     }
 
     public int getId() {
@@ -42,19 +50,11 @@ public class Monhoc implements Serializable
         this.Tinchi = Tinchi;
     }
 
-    public String getKhoa() {
+    public int getKhoa() {
         return Khoa;
     }
 
-    public void setKhoa(String Khoa) {
+    public void setKhoa(int Khoa) {
         this.Khoa = Khoa;
-    }
-
-    public String getGiangvien() {
-        return Giangvien;
-    }
-
-    public void setGiangvien(String Giangvien) {
-        this.Giangvien = Giangvien;
     }
 }

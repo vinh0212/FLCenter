@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import vn.tad_sebs.View.StudentView;
 import vn.tad_sebs.View.MainView;
 import vn.tad_sebs.View.TeacherView;
+import vn.tad_sebs.View.MonView;
 
 public class MainController {
     private MainView mainView;
@@ -15,7 +16,7 @@ public class MainController {
         mainView.addQLHVListener(new QLHVListener());
         // mainView.addQLLHListener(new QLLHListener());
         mainView.addQLCBGVListener(new QLCBGVListener());
-        // mainView.addQLCTHListener(new QLCTHListener());
+        mainView.addQLCTHListener(new QLCTHListener());
         // mainView.addQLKTListener(new QLKTListener());
     }
 
@@ -49,5 +50,21 @@ public class MainController {
             }
         }
     }
+    
+    class QLCTHListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            // hiển thị màn hình quản lý chương trình học
+            try {
+                MonView monView = new MonView();
+                SubjectController subjectController = new SubjectController(monView);
+                subjectController.showMonView();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+    
 
 }

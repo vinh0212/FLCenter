@@ -22,4 +22,26 @@
         <Mon>3</Mon>
         <dp>3</dp>
     </teacher>
+    <teacher>
+        <Id>3</Id>
+        <Name>Đạt</Name>
+        <Date>3</Date>
+        <Sex>3</Sex>
+        <Address>3</Address>
+        <Capbacham>3</Capbacham>
+        <Lop>3</Lop>
+        <Mon>3</Mon>
+        <dp>1</dp>
+    </teacher>
+    <teacher>
+        <Id>4</Id>
+        <Name>An</Name>
+        <Date>4</Date>
+        <Sex>4</Sex>
+        <Address>4</Address>
+        <Capbacham>4</Capbacham>
+        <Lop>4</Lop>
+        <Mon>4</Mon>
+        <dp>1</dp>
+    </teacher>
 </teachers>

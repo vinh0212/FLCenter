@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<subjects>
+    <monhoc>
+        <Id>1</Id>
+        <Name>Reading</Name>
+        <Tinchi>42</Tinchi>
+        <Khoa>3</Khoa>
+    </monhoc>
+    <monhoc>
+        <Id>2</Id>
+        <Name>Listening</Name>
+        <Tinchi>48</Tinchi>
+        <Khoa>3</Khoa>
+    </monhoc>
+    <monhoc>
+        <Id>4</Id>
+        <Name>Reading</Name>
+        <Tinchi>42</Tinchi>
+        <Khoa>4</Khoa>
+    </monhoc>
+    <monhoc>
+        <Id>5</Id>
+        <Name>Listening</Name>
+        <Tinchi>30</Tinchi>
+        <Khoa>4</Khoa>
+    </monhoc>
+    <monhoc>
+        <Id>6</Id>
+        <Name>Writing</Name>
+        <Tinchi>35</Tinchi>
+        <Khoa>3</Khoa>
+    </monhoc>
+</subjects>

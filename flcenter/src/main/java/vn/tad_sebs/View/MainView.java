@@ -45,12 +45,12 @@ public class MainView extends javax.swing.JFrame {
         
 
         QLLH.setText("quản lý lớp học ");
-       
+        
 
         QLCBGV.setText("quản lý cán bộ giáo viên");
-       
+        
 
-        QLCTH.setText("quản lý chương trình học");
+        QLCTH.setText("Quản lý môn học");
 
         QLKT.setText("quản lý kì thi");
         
@@ -66,7 +66,7 @@ public class MainView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(QLHV)
                     .addComponent(QLLH))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(QLCBGV, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(QLCTH, javax.swing.GroupLayout.Alignment.TRAILING))

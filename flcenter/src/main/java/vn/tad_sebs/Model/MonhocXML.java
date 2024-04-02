@@ -5,16 +5,16 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-@XmlRootElement(name = "teachers")
+@XmlRootElement(name = "subjects")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class TeacherXML {
-    private List<Teacher> teacher;
+public class MonhocXML {
+    private List<Monhoc> monhoc;
     
-    public List<Teacher> getTeacher() {
-        return teacher;
+    public List<Monhoc> getMonhoc() {
+        return monhoc;
     }
 
-    public void setTeacher(List<Teacher> teacher) {
-        this.teacher = teacher;
+    public void setMonhoc(List<Monhoc> monhoc) {
+        this.monhoc = monhoc;
     }
 }

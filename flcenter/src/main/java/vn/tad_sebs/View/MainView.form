@@ -36,7 +36,7 @@
                   <Component id="QLHV" min="-2" max="-2" attributes="0"/>
                   <Component id="QLLH" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="73" max="32767" attributes="0"/>
+              <EmptySpace pref="77" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="QLCBGV" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="QLCTH" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -107,7 +107,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="QLCTH">
       <Properties>
-        <Property name="text" type="java.lang.String" value="qu&#x1ea3;n l&#xfd; ch&#x1b0;&#x1a1;ng tr&#xec;nh h&#x1ecd;c"/>
+        <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; m&#xf4;n h&#x1ecd;c"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="QLKT">
