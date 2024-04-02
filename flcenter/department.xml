@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<departments>
+    <department>
+        <Id>1</Id>
+        <Name>Ban kĩ thuật</Name>
+        <Detail>None none</Detail>
+    </department>
+<department>
+        <Id>2</Id>
+        <Name>Phòng khảo thí</Name>
+        <Detail>None none</Detail>
+    </department>
+<department>
+        <Id>3</Id>
+        <Name>Tổ VSTEP</Name>
+        <Detail>None none</Detail>
+    </department>
+<department>
+        <Id>4</Id>
+        <Name>Tổ IELTS</Name>
+        <Detail>None none</Detail>
+    </department>
+<department>
+        <Id>5</Id>
+        <Name>Khác</Name>
+        <Detail>None none</Detail>
+    </department>
+</departments>

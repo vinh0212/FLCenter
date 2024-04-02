@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import vn.tad_sebs.Model.Department;
+import vn.tad_sebs.Model.DepartmentXML;
 import vn.tad_sebs.Model.Lanhdao;
 import vn.tad_sebs.Model.Teacher;
 import vn.tad_sebs.Model.TeacherXML;
@@ -14,11 +16,14 @@ import vn.tad_sebs.Utils.FileUtils;
 public class CanboDAO {
     public static class TeacherDAO {
         private List<Teacher> listTeachers;
+        private List<Department> listDepartments;
         private static final String TEACHER_FILE_NAME = "teacher.xml";
+        private static final String DP_FILE_NAME = "department.xml";
         // private static final String CLASS_FILE_NAME = "class.xml";
 
         public TeacherDAO() {
             this.listTeachers = readListTeachers();
+            this.listDepartments = readListDepartments();
             if (listTeachers == null) {
                 listTeachers = new ArrayList<Teacher>();
             }
@@ -35,6 +40,15 @@ public class CanboDAO {
             
             return list;
             
+        }
+        public List<Department> readListDepartments() {
+            List<Department> list = new ArrayList<Department>();
+            DepartmentXML departmentXML = (DepartmentXML) FileUtils.readXMLFile(
+                    DP_FILE_NAME, DepartmentXML.class);
+            if (departmentXML != null) {
+                list = departmentXML.getDepartment();
+            }
+            return list;
         }
 
         public void writeListTeachers(List<Teacher> teachers) {
@@ -64,6 +78,7 @@ public class CanboDAO {
                         t.setCapbacham(teacher.getCapbacham());
                         t.setLop(teacher.getLop());
                         t.setMon(teacher.getMon());
+                        t.setDp(teacher.getDp());
                         writeListTeachers(listTeachers);
                     }
                 }
@@ -118,6 +133,10 @@ public class CanboDAO {
 
         public List<Teacher> getListTeachers() {
             return listTeachers;
+        }
+
+        public List<Department> getListDepartments() {
+            return listDepartments;
         }
 
         public void setListTeachers(List<Teacher> listTeachers) {

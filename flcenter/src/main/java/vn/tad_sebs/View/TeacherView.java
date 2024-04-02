@@ -9,6 +9,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+
+import vn.tad_sebs.Model.Department;
 import vn.tad_sebs.Model.Lanhdao;
 import vn.tad_sebs.Model.Teacher;
 
@@ -114,9 +116,9 @@ public class TeacherView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbDpChoose = new javax.swing.JComboBox<>();
         jLabel25 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbDpEdit = new javax.swing.JComboBox<>();
 
         BtnDeleteStudent.setText("Xóa");
         BtnDeleteStudent.addActionListener(new java.awt.event.ActionListener() {
@@ -409,20 +411,17 @@ public class TeacherView extends javax.swing.JFrame {
 
         GVtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "ID", "Họ và tên", "Ngày sinh", "Giới tính", "Quê quán", "Cấp bậc hàm", "Môn giảng dạy", "Lớp phụ trách"
+                "ID", "Họ và tên", "Ngày sinh", "Giới tính", "Quê quán", "Cấp bậc hàm", "Môn giảng dạy", "Lớp phụ trách", "Phòng ban"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true
+                false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -518,7 +517,12 @@ public class TeacherView extends javax.swing.JFrame {
 
         jLabel24.setText("Chọn phòng ban:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbDpChoose.setToolTipText("");
+        cbDpChoose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbDpChooseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -527,12 +531,12 @@ public class TeacherView extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel24)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel24))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(cbDpChoose, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -540,85 +544,82 @@ public class TeacherView extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel24)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbDpChoose, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jLabel25.setText("Phòng ban");
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1046, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(btnSortbyidGV)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSortbyNameGV)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSortbyLevelGV))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addComponent(CbbSeacrchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(FSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSearchGV)
-                        .addGap(670, 670, 670)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnSearchGV)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1046, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(btnSortbyidGV)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnSortbyNameGV)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSortbyLevelGV)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnDeleteGV, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnAddGV, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnEditGV)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnClearGV, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(2, 2, 2))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel25)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(FClassSearchGV)
-                                    .addComponent(FRoleSearchGV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                                    .addComponent(FLevelSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FAddressSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FSexSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FIDSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FNameSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FDateSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(FClassSearchGV)
+                            .addComponent(FRoleSearchGV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                            .addComponent(FLevelSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FAddressSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FSexSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FIDSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FNameSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FDateSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cbDpEdit, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(btnDeleteGV, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAddGV, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnEditGV)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnClearGV, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel25)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(40, 40, 40))
         );
         jPanel2Layout.setVerticalGroup(
@@ -674,7 +675,7 @@ public class TeacherView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel25)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbDpEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(73, 73, 73)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnDeleteGV)
@@ -793,11 +794,15 @@ public class TeacherView extends javax.swing.JFrame {
     private void btnAddLDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddLDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddLDActionPerformed
+
+    private void cbDpChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDpChooseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbDpChooseActionPerformed
     private String[] columnNamesGV = new String[] {
-            "ID", "Họ và tên ", "Ngày sinh", "Giới tính", "Quê quán", "Cấp bậc hàm", "Môn giảng dạy", "Lớp phụ trách" };
+            "ID", "Họ và tên ", "Ngày sinh", "Giới tính", "Quê quán", "Cấp bậc hàm", "Môn giảng dạy", "Lớp phụ trách", "Phòng ban" };
     public void showListGV(List<Teacher> list) {
         int size = list.size();
-        Object[][] teachers = new Object[size][8];
+        Object[][] teachers = new Object[size][9];
         for (int i = 0; i < size; i++) {
             teachers[i][0] = list.get(i).getId();
             teachers[i][1] = list.get(i).getName();
@@ -807,6 +812,7 @@ public class TeacherView extends javax.swing.JFrame {
             teachers[i][5] = list.get(i).getCapbacham();
             teachers[i][6] = list.get(i).getMon();
             teachers[i][7] = list.get(i).getLop();
+            teachers[i][8] = list.get(i).getDp();
         }
         GVtable.setModel(new DefaultTableModel(teachers, columnNamesGV));
     }
@@ -822,6 +828,7 @@ public class TeacherView extends javax.swing.JFrame {
             FLevelSearchGV.setText(GVtable.getModel().getValueAt(row, 5).toString());
             FRoleSearchGV.setText(GVtable.getModel().getValueAt(row, 6).toString());
             FClassSearchGV.setText(GVtable.getModel().getValueAt(row, 7).toString());
+            cbDpEdit.setSelectedIndex(Integer.parseInt(GVtable.getModel().getValueAt(row, 8).toString())-1);
             // enable Edit and Delete buttons
             btnEditGV.setEnabled(true);
             btnDeleteGV.setEnabled(true);
@@ -839,6 +846,7 @@ public class TeacherView extends javax.swing.JFrame {
         FLevelSearchGV.setText(teacher.getCapbacham());
         FRoleSearchGV.setText(teacher.getMon());
         FClassSearchGV.setText(String.valueOf(teacher.getLop()));
+        cbDpEdit.setSelectedIndex(teacher.getDp()-1);
         //enable Delete and edit button
         btnEditGV.setEnabled(true);
         btnDeleteGV.setEnabled(true);
@@ -854,6 +862,7 @@ public class TeacherView extends javax.swing.JFrame {
         FClassSearchGV.setText("");
         FLevelSearchGV.setText("");
         FRoleSearchGV.setText("");
+        cbDpEdit.setSelectedIndex(0);
         // disable Edit and Delete buttons
         btnEditGV.setEnabled(false);
         btnDeleteGV.setEnabled(false);
@@ -893,6 +902,7 @@ public class TeacherView extends javax.swing.JFrame {
             teacher.setCapbacham(FLevelSearchGV.getText());
             teacher.setMon(FRoleSearchGV.getText());
             teacher.setLop(FClassSearchGV.getText());
+            teacher.setDp(cbDpEdit.getSelectedIndex() + 1);
             return teacher;
         }
         catch (Exception ex)
@@ -933,9 +943,27 @@ public class TeacherView extends javax.swing.JFrame {
     {
         btnSortbyLevelGV.addActionListener(listener);
     }
+    public void addListDPSelectionListener(ActionListener listener)
+    {
+        cbDpChoose.addActionListener(listener);
+    }
+
+    public void showListDP(List<Department> list)
+    {
+        int size = list.size();
+        Object[][] departments = new Object[size][3];
+        for (int i = 0; i < size; i++) {
+            cbDpChoose.addItem(list.get(i).getId() + " - " + list.get(i).getName());
+            cbDpEdit.addItem(list.get(i).getId() + " - " + list.get(i).getName());
+        }
+    }
+    public int getDPChoice()
+    {
+        return cbDpChoose.getSelectedIndex() + 1;
+    }
     // ----- Lanh Dao
 
-    private String[] columnNamesLD = new String[] {
+    private String[] columnNamesLD = new String[] { 
             "ID", "Họ và tên ", "Ngày sinh", "Giới tính", "Quê quán", "Cấp bậc hàm", "Chức vụ" };
     public void showListLD(List<Lanhdao> list) {
         int size = list.size();
@@ -1070,6 +1098,8 @@ public class TeacherView extends javax.swing.JFrame {
     {
         btnSortbyRole.addActionListener(listener);
     }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAddStudent;
     private javax.swing.JButton BtnClearStudent;
@@ -1121,8 +1151,8 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.JButton btnSortbyRole;
     private javax.swing.JButton btnSortbyidGV;
     private javax.swing.JButton btnSortbyidLD;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> cbDpChoose;
+    private javax.swing.JComboBox<String> cbDpEdit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

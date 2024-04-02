@@ -533,7 +533,19 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="1046" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                              <Component id="btnSortbyidGV" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnSortbyNameGV" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnSortbyLevelGV" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                               <Component id="CbbSeacrchGV" min="-2" max="-2" attributes="0"/>
@@ -541,78 +553,64 @@
                               <Component id="FSearchGV" min="-2" pref="115" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnSearchGV" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="670" max="-2" attributes="0"/>
-                              <Component id="jPanel3" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" min="-2" pref="1046" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                      <Component id="btnSortbyidGV" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnSortbyNameGV" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnSortbyLevelGV" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btnDeleteGV" min="-2" pref="59" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnAddGV" min="-2" pref="72" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="btnEditGV" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="btnClearGV" min="-2" pref="57" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="jLabel14" min="-2" pref="51" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jLabel14" min="-2" pref="51" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jLabel1" min="-2" pref="82" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jLabel20" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="jLabel22" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="jLabel21" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="jLabel16" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jLabel23" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" min="-2" pref="82" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="FClassSearchGV" max="32767" attributes="0"/>
-                                          <Component id="FRoleSearchGV" alignment="1" pref="172" max="32767" attributes="0"/>
-                                          <Component id="FLevelSearchGV" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FAddressSearchGV" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FSexSearchGV" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FIDSearchGV" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FNameSearchGV" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FDateSearchGV" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jComboBox2" max="32767" attributes="0"/>
+                                          <Component id="jLabel20" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jLabel22" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jLabel21" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jLabel16" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel23" alignment="0" max="32767" attributes="0"/>
                                       </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="FClassSearchGV" max="32767" attributes="0"/>
+                                  <Component id="FRoleSearchGV" alignment="1" pref="172" max="32767" attributes="0"/>
+                                  <Component id="FLevelSearchGV" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="FAddressSearchGV" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="FSexSearchGV" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="FIDSearchGV" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="FNameSearchGV" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="FDateSearchGV" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="cbDpEdit" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="btnDeleteGV" min="-2" pref="59" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnAddGV" min="-2" pref="72" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnEditGV" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnClearGV" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -685,7 +683,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbDpEdit" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -718,7 +716,7 @@
                 <Component class="javax.swing.JTable" name="GVtable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="8" rowCount="4">
+                      <Table columnCount="9" rowCount="0">
                         <Column editable="false" title="ID" type="java.lang.Integer"/>
                         <Column editable="false" title="H&#x1ecd; v&#xe0; t&#xea;n" type="java.lang.String"/>
                         <Column editable="false" title="Ng&#xe0;y sinh" type="java.lang.String"/>
@@ -726,7 +724,8 @@
                         <Column editable="false" title="Qu&#xea; qu&#xe1;n" type="java.lang.String"/>
                         <Column editable="false" title="C&#x1ea5;p b&#x1ead;c h&#xe0;m" type="java.lang.String"/>
                         <Column editable="false" title="M&#xf4;n gi&#x1ea3;ng d&#x1ea1;y" type="java.lang.String"/>
-                        <Column editable="true" title="L&#x1edb;p ph&#x1ee5; tr&#xe1;ch" type="java.lang.Object"/>
+                        <Column editable="false" title="L&#x1edb;p ph&#x1ee5; tr&#xe1;ch" type="java.lang.Object"/>
+                        <Column editable="false" title="Ph&#xf2;ng ban" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -938,15 +937,15 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" pref="256" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="cbDpChoose" min="-2" pref="218" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="24" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -956,7 +955,7 @@
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="cbDpChoose" min="-2" pref="53" max="-2" attributes="0"/>
                           <EmptySpace pref="72" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -968,17 +967,16 @@
                     <Property name="text" type="java.lang.String" value="Ch&#x1ecd;n ph&#xf2;ng ban:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="cbDpChoose">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbDpChooseActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -990,15 +988,10 @@
                 <Property name="text" type="java.lang.String" value="Ph&#xf2;ng ban"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox2">
+            <Component class="javax.swing.JComboBox" name="cbDpEdit">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>

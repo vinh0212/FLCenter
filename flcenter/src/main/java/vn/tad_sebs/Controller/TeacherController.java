@@ -2,6 +2,7 @@ package vn.tad_sebs.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import vn.tad_sebs.DAO.CanboDAO;
+import vn.tad_sebs.Model.Department;
 import vn.tad_sebs.Model.Lanhdao;
 import vn.tad_sebs.Model.Teacher;
 import vn.tad_sebs.View.TeacherView;
@@ -33,6 +35,7 @@ public class TeacherController {
         teacherView.addSortGVByIDListener(new SortGVByIDListener());
         teacherView.addSortGVByNameListener(new SortGVByNameListener());
         teacherView.addSortGVByLevelListener(new SortGVByLevelListener());
+        teacherView.addListDPSelectionListener(new DPChoiceListener());
 
         // Lanhdao
         
@@ -48,11 +51,32 @@ public class TeacherController {
         teacherView.addSortLDByRoleListener(new SortLDByRoleListener());
     }
 
+    class DPChoiceListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            int value = teacherView.getDPChoice();
+            List<Teacher> list = new ArrayList<>();
+            List<Teacher> oldlist = teacherDao.getListTeachers();
+            for (Teacher t : oldlist)
+            {
+                if(t.getDp() == value)
+                {
+                    list.add(t);
+                }
+            }
+            teacherView.showListGV(list);
+            
+        }
+    }
+
     public void showTeacherView() {
         List<Teacher> teacherList = teacherDao.getListTeachers();
         List<Lanhdao> lanhdaoList = lanhdaoDao.getListLanhdaos();
-        teacherView.showListGV(teacherList);
+        List<Department> departmentList = teacherDao.getListDepartments();
+        //teacherView.showListGV(teacherList);
         teacherView.showListLD(lanhdaoList);
+        teacherView.showListDP(departmentList);
         teacherView.setVisible(true);
     }
 
@@ -199,6 +223,10 @@ public class TeacherController {
             teacherView.showListGV(teacherDao.getListTeachers());
         }
     }
+
+
+
+
 
     class AddLDListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {

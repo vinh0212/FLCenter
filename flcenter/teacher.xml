@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <teachers>
     <teacher>
-        <Id>1</Id>
+        <Id>2</Id>
         <Name>Vinh</Name>
         <Date>1</Date>
         <Sex>1</Sex>
         <Address>1</Address>
-        <Capbacham>Thiếu uý</Capbacham>
-        <Lop>01</Lop>
-        <Mon>CC</Mon>
+        <Capbacham>1</Capbacham>
+        <Lop>1</Lop>
+        <Mon>1</Mon>
+        <dp>1</dp>
+    </teacher>
+    <teacher>
+        <Id>3</Id>
+        <Name>Vũ</Name>
+        <Date>3</Date>
+        <Sex>1</Sex>
+        <Address>3</Address>
+        <Capbacham>3</Capbacham>
+        <Lop>3</Lop>
+        <Mon>3</Mon>
+        <dp>3</dp>
     </teacher>
 </teachers>
