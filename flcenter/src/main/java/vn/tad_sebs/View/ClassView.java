@@ -4,6 +4,15 @@
  */
 package vn.tad_sebs.View;
 
+import java.awt.event.ActionListener;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
+import vn.tad_sebs.Model.Lop;
+import vn.tad_sebs.Model.Student;
+import vn.tad_sebs.Model.Monhoc;
+
 /**
  *
  * @author Sebs
@@ -537,40 +546,98 @@ public class ClassView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSortbyNameCTActionPerformed
 
+    public void addAddClassListener(ActionListener listener) {
+        btnAddClass.addActionListener(listener);
+    }
+    public void addEditClassListener(ActionListener listener) {
+        btnEditClass.addActionListener(listener);
+    }
+
+    public void addDeleteClassListener(ActionListener listener) {
+        btnDeleteClass.addActionListener(listener);
+    }
+
+    public void addClearClassListener(ActionListener listener) {
+        btnClearClass.addActionListener(listener);
+    }
+
+    public void addSortClassbyIDListener(ActionListener listener) {
+        btnSortbyIDClass.addActionListener(listener);
+    }
+
+    public void addSortClassbySLListener(ActionListener listener) {
+        btnSortbySLClass.addActionListener(listener);
+    }
+
+    public void addCbChonlopListener(ActionListener listener) {
+        cbChonlop.addActionListener(listener);
+    }
+
+    public void addFindStudentListener(ActionListener listener)
+    {
+        btnFind.addActionListener(listener);
+    }
+
+    public void addUpdateCLListener(ActionListener listener) {
+        btnUpdateCL.addActionListener(listener);
+    }
+
+    public void addClearCLListener(ActionListener listener) {
+        btnClearCL.addActionListener(listener);
+    }
+
+    public void addSortCLbyIDListener(ActionListener listener) {
+        btnSortbyIDCL.addActionListener(listener);
+    }
+
+    public void addSortCLbyNameListener(ActionListener listener) {
+        btnSortbyNameCL.addActionListener(listener);
+    }
+
+    public void addSortCLbyPtsListener(ActionListener listener) {
+        btnSortbyPtsCL.addActionListener(listener);
+    }
+
+    public void addCbChonlop1Listener(ActionListener listener) {
+        cbChonlop1.addActionListener(listener);
+    }
+
+    public void addThemsubListener(ActionListener listener) {
+        btnThemSub.addActionListener(listener);
+    }
+
+    public void addXoasubListener(ActionListener listener) {
+        btnXoaSub.addActionListener(listener);
+    }
+
+    public void addSortCTbyIDListener(ActionListener listener) {
+        btnSortbyIDCT.addActionListener(listener);
+    }
+
+    public void addSortCTbyNameListener(ActionListener listener) {
+        btnSortbyNameCT.addActionListener(listener);
+    }
+
+    public void addSortCTbyPtsListener(ActionListener listener) {
+        btnSortbyPtsCT.addActionListener(listener);
+    }
+
+    public void addListTBClassSelectionListener(ListSelectionListener listener) {
+        tbClassList.getSelectionModel().addListSelectionListener(listener);
+    }
+
+    public void addListTBStudentSelectionListener(ListSelectionListener listener) {
+        tbListStudents.getSelectionModel().addListSelectionListener(listener);
+    }
+
+    public void addListTBSubjectSelectionListener(ListSelectionListener listener) {
+        tbSubjectsList.getSelectionModel().addListSelectionListener(listener);
+    }
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClassView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClassView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClassView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClassView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ClassView().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddClass;

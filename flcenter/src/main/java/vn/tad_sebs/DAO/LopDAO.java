@@ -24,8 +24,7 @@ public class LopDAO {
 
     public LopDAO() {
         this.listLops = readListLops();
-        
-        
+
         if (listLops == null) {
             listLops = new ArrayList<Lop>();
         }
@@ -47,12 +46,9 @@ public class LopDAO {
         return list;
     }
 
-
-    public void addA(Lop lop)
-    {
+    public void addA(Lop lop) {
         int id = 1;
-        if(listLops.size() > 0)
-        {
+        if (listLops.size() > 0) {
             id = listLops.get(listLops.size() - 1).getId() + 1;
         }
         lop.setId(id);
@@ -60,13 +56,9 @@ public class LopDAO {
         writeListLops(listLops);
     }
 
-
-    public void editA(Lop lop)
-    {
-        for(Lop l : listLops)
-        {
-            if(l.getId() == lop.getId())
-            {
+    public void editA(Lop lop) {
+        for (Lop l : listLops) {
+            if (l.getId() == lop.getId()) {
                 l.setName(lop.getName());
                 l.setNote(lop.getNote());
             }
@@ -74,38 +66,42 @@ public class LopDAO {
         writeListLops(listLops);
     }
 
-    public void editC(Lop lop)
-    {
-        for(Lop l : listLops)
-        {
-            if(l.getId() == lop.getId())
-            {
+    public void editC(Lop lop) {
+        for (Lop l : listLops) {
+            if (l.getId() == lop.getId()) {
                 l.setIdMonhoc(lop.getIdMonhoc());
             }
         }
         writeListLops(listLops);
     }
 
-    public boolean deleteA(Lop lop)
-    {
-        boolean isFound = false;
-            for (Lop c : listLops) {
-                if (c.getId() == lop.getId()) {
-                    listLops.remove(c);
-                    isFound = true;
-                    break;
-                }
+    public void deleteC(Lop lop, int idMonhoc) {
+        for (Lop l : listLops) {
+            if (l.getId() == lop.getId()) {
+                List<Integer> idMonhocList = l.getIdMonhoc();
+                idMonhocList.remove(Integer.valueOf(idMonhoc));
+                l.setIdMonhoc(idMonhocList);
+                break;
             }
-            if (isFound) {
-                writeListLops(listLops);
-                return true;
-            }
-            return false;
+        }
+        writeListLops(listLops);
     }
 
-
-
-
+    public boolean deleteA(Lop lop) {
+        boolean isFound = false;
+        for (Lop c : listLops) {
+            if (c.getId() == lop.getId()) {
+                listLops.remove(c);
+                isFound = true;
+                break;
+            }
+        }
+        if (isFound) {
+            writeListLops(listLops);
+            return true;
+        }
+        return false;
+    }
 
     public List<Lop> getListLops() {
         return listLops;
@@ -114,6 +110,5 @@ public class LopDAO {
     public void setListLops(List<Lop> listLops) {
         this.listLops = listLops;
     }
-
 
 }
