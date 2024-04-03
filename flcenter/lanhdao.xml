@@ -9,4 +9,13 @@
         <Capbacham>3</Capbacham>
         <Chucvu>Giám đốc</Chucvu>
     </lanhdao>
+    <lanhdao>
+        <Id>2</Id>
+        <Name>Vinh</Name>
+        <Date>4</Date>
+        <Sex>4</Sex>
+        <Address>4</Address>
+        <Capbacham>Thiếu uý</Capbacham>
+        <Chucvu>Phó Giám đốc</Chucvu>
+    </lanhdao>
 </lanhdaos>

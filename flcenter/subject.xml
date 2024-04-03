@@ -30,4 +30,10 @@
         <Tinchi>35</Tinchi>
         <Khoa>3</Khoa>
     </monhoc>
+    <monhoc>
+        <Id>7</Id>
+        <Name>Writing</Name>
+        <Tinchi>38</Tinchi>
+        <Khoa>4</Khoa>
+    </monhoc>
 </subjects>
