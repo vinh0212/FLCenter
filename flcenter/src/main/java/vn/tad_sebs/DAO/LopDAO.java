@@ -24,8 +24,8 @@ public class LopDAO {
 
     public LopDAO() {
         this.listLops = readListLops();
-        this.listStudents = readListStudents();
-        this.listTeachers = readListTeachers();
+        
+        
         if (listLops == null) {
             listLops = new ArrayList<Lop>();
         }
@@ -47,29 +47,8 @@ public class LopDAO {
         return list;
     }
 
-    public List<Teacher> readListTeachers() {
-            
-        List<Teacher> list = new ArrayList<Teacher>();
-        TeacherXML teacherXML = (TeacherXML) FileUtils.readXMLFile(
-                TEACHER_FILE_NAME, TeacherXML.class);
-        if (teacherXML != null) {
-            list = teacherXML.getTeacher();
-        }
-        
-        return list;   
-    }
 
-    public List<Student> readListStudents() {
-        List<Student> list = new ArrayList<Student>();
-        StudentXML studentXML = (StudentXML) FileUtils.readXMLFile(
-                STUDENT_FILE_NAME, StudentXML.class);
-        if (studentXML != null) {
-            list = studentXML.getStudent();
-        }
-        return list;
-    }
-
-    public void add(Lop lop)
+    public void addA(Lop lop)
     {
         int id = 1;
         if(listLops.size() > 0)
@@ -81,6 +60,7 @@ public class LopDAO {
         writeListLops(listLops);
     }
 
+
     public void editA(Lop lop)
     {
         for(Lop l : listLops)
@@ -89,6 +69,18 @@ public class LopDAO {
             {
                 l.setName(lop.getName());
                 l.setNote(lop.getNote());
+            }
+        }
+        writeListLops(listLops);
+    }
+
+    public void editC(Lop lop)
+    {
+        for(Lop l : listLops)
+        {
+            if(l.getId() == lop.getId())
+            {
+                l.setIdMonhoc(lop.getIdMonhoc());
             }
         }
         writeListLops(listLops);
@@ -111,6 +103,17 @@ public class LopDAO {
             return false;
     }
 
-    
+
+
+
+
+    public List<Lop> getListLops() {
+        return listLops;
+    }
+
+    public void setListLops(List<Lop> listLops) {
+        this.listLops = listLops;
+    }
+
 
 }
