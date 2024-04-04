@@ -7,6 +7,7 @@ package vn.tad_sebs.View;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import vn.tad_sebs.Model.Lop;
@@ -348,7 +349,7 @@ public class ClassView extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
+                        .addGap(29, 29, 29)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(95, 95, 95)
@@ -356,7 +357,7 @@ public class ClassView extends javax.swing.JFrame {
                             .addComponent(cbFind, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtFind, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnFind))
-                        .addGap(75, 75, 75)
+                        .addGap(30, 30, 30)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(txtID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -373,7 +374,7 @@ public class ClassView extends javax.swing.JFrame {
                     .addComponent(btnSortbyIDCL)
                     .addComponent(btnSortbyNameCL)
                     .addComponent(btnSortbyPtsCL))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Quản lý học viên từng lớp", jPanel2);
@@ -634,6 +635,205 @@ public class ClassView extends javax.swing.JFrame {
         tbSubjectsList.getSelectionModel().addListSelectionListener(listener);
     }
 
+    public void addTabChangeListener(ChangeListener listener) {
+        jTabbedPane1.addChangeListener(listener);
+    }
+
+    private String[] columnNamesClassList = new String[]{
+        "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
+    };
+    public void showClassList(List<Lop> listLops)
+    {
+        int size = listLops.size();
+        Object[][] data = new Object[size][4];
+
+        for (int i = 0; i < size; i++)
+        {
+            data[i][0] = listLops.get(i).getId();
+            data[i][1] = listLops.get(i).getName();
+            data[i][2] = listLops.get(i).getIdStudent().size();
+            data[i][3] = listLops.get(i).getNote();
+        }
+
+        tbClassList.setModel(new DefaultTableModel(data, columnNamesClassList));
+    }
+
+    private String[] columnNamesStudentList = new String[]{
+        "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
+    };
+
+    public Lop getLopInfo(Lop l)
+    {
+        try
+        {
+            Lop lop = new Lop();
+            if(txtIDClass.getText() != null && !"".equals(txtIDClass.getText()))
+            {
+                lop.setId(Integer.parseInt(txtIDClass.getText()));
+            }
+
+            lop.setName(txtNameClass.getText());
+            lop.setNote(txtNoteClass.getText());
+            lop.setIdStudent(l.getIdStudent());
+            return lop;
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+    public Student getStudentInfo(Student st)
+    {
+        try
+        {
+            Student student = new Student();
+            if(txtID1.getText() != null && !"".equals(txtID1.getText()))
+            {
+                student.setId(Integer.parseInt(txtID1.getText()));
+            }
+
+            student.setDiem(Float.parseFloat(txtPoint.getText()));
+            student.setLop(st.getLop());
+            student.setAddress(st.getAddress());
+            student.setGioitinh(st.getGioitinh());
+            student.setName(st.getName());
+            student.setGVCN(st.getGVCN());
+            student.setDate(st.getDate());
+            return student;
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
+    public void clearClassInfo()
+    {
+        txtIDClass.setText("");
+        txtNameClass.setText("");
+        txtSLClass.setText("");
+        txtNoteClass.setText("");
+        // disable Edit and Delete buttons
+        btnEditClass.setEnabled(false);
+        btnDeleteClass.setEnabled(false);       
+        // enable Add button
+        btnAddClass.setEnabled(true);
+    }
+
+    public void clearStudentInfo()
+    {
+        txtID1.setText("");
+        txtPoint.setText("");
+        // disable Edit and Delete buttons
+        btnUpdateCL.setEnabled(false);
+    }
+
+    public void fillLopFromSelectedRow()
+    {
+        int row = tbClassList.getSelectedRow();
+        if(row > 0)
+        {
+            txtIDClass.setText(tbClassList.getValueAt(row, 0).toString());
+            txtNameClass.setText(tbClassList.getValueAt(row, 1).toString());
+            txtSLClass.setText(tbClassList.getValueAt(row, 2).toString());
+            txtNoteClass.setText(tbClassList.getValueAt(row, 3).toString());
+            // enable Edit and Delete buttons
+            btnEditClass.setEnabled(true);
+            btnDeleteClass.setEnabled(true);
+            // disable Add button
+            btnAddClass.setEnabled(false);
+        }
+    }
+
+    public void fillStudentFromSelectedRow()
+    {
+        int row = tbListStudents.getSelectedRow();
+        if(row > 0)
+        {
+            txtID1.setText(tbListStudents.getValueAt(row, 0).toString());
+            txtPoint.setText(tbListStudents.getValueAt(row, 4).toString());
+
+            btnUpdateCL.setEnabled(true);
+        }
+
+    }
+
+
+    public void resetforTab2()
+    {
+        cbChonlop.removeAllItems();
+        txtID1.setText("");
+        txtPoint.setText("");
+        btnUpdateCL.setEnabled(false);
+
+        txtIDClass.setText("");
+        txtNameClass.setText("");
+        txtSLClass.setText("");
+        txtNoteClass.setText("");
+        tbClassList.clearSelection();
+        // disable Edit and Delete buttons
+        btnEditClass.setEnabled(false);
+        btnDeleteClass.setEnabled(false);
+        // enable Add button
+        btnAddClass.setEnabled(true);
+    }
+    public void showClassListinCbChonlop(List<Lop> listLops)
+    {
+        
+        for (Lop lop : listLops)
+        {
+            cbChonlop.addItem(lop.getId() + " - " + lop.getName());
+        }
+    }
+
+    public int getClassChoice()
+    {
+        String val = cbChonlop.getSelectedItem().toString();
+        int index = val.indexOf(" - ");
+        return Integer.parseInt(val.substring(0, index));
+    }
+
+    public void showStudentList(List<Student> listStudents)
+    {
+        int size = listStudents.size();
+        Object[][] data = new Object[size][5];
+
+        for (int i = 0; i < size; i++)
+        {
+            data[i][0] = listStudents.get(i).getId();
+            data[i][1] = listStudents.get(i).getName();
+            data[i][2] = listStudents.get(i).getGioitinh();
+            data[i][3] = listStudents.get(i).getAddress();
+            data[i][4] = listStudents.get(i).getDiem();
+        }
+
+        tbListStudents.setModel(new DefaultTableModel(data, columnNamesStudentList));
+    }
+
+    public String getSearchBoxStudent()
+    {
+        return txtFind.getText().toString().trim();
+    }
+
+    public int getCriteria()
+    {
+        return cbFind.getSelectedIndex();
+    }
+
+    public int getStudentID()
+    {
+        return Integer.parseInt(txtID1.getText());
+    }
+
+    public int getLopID()
+    {
+        return Integer.parseInt(txtIDClass.getText());
+    }
     /**
      * @param args the command line arguments
      */

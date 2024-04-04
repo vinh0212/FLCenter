@@ -46,6 +46,24 @@ public class LopDAO {
         return list;
     }
 
+    public Student getStudentById(int id) {
+        for (Student s : listStudents) {
+            if (s.getId() == id) {
+                return s;
+            }
+        }
+        return null;
+    }
+
+    public Lop getLopByID(int id) {
+        for (Lop c : listLops) {
+            if (c.getId() == id) {
+                return c;
+            }
+        }
+        return null;
+    }
+
     public void addA(Lop lop) {
         int id = 1;
         if (listLops.size() > 0) {
@@ -103,6 +121,57 @@ public class LopDAO {
         return false;
     }
 
+
+    public void sortClassListbyID()
+    {
+        Collections.sort(listLops, new Comparator<Lop>() {
+            @Override
+            public int compare(Lop l1, Lop l2) {
+                return l1.getId() - l2.getId();
+            }
+        });
+    }
+
+    public void sortClassListbySL()
+    {
+        Collections.sort(listLops, new Comparator<Lop>() {
+            @Override
+            public int compare(Lop l1, Lop l2) {
+                return l1.getIdStudent().size() - l2.getIdStudent().size();
+            }
+        });
+    }
+
+    public void sortStudentListbyID()
+    {
+        Collections.sort(listStudents, new Comparator<Student>() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                return s1.getId() - s2.getId();
+            }
+        });
+    }
+
+    public void sortStudentListbyName()
+    {
+        Collections.sort(listStudents, new Comparator<Student>() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                return s1.getName().compareTo(s2.getName());
+            }
+        });
+    }
+
+    public void sortStudentListbyDiem()
+    {
+        Collections.sort(listStudents, new Comparator<Student>() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                return Float.compare(s1.getDiem(), s2.getDiem());
+            }
+        });
+    
+    }
     public List<Lop> getListLops() {
         return listLops;
     }

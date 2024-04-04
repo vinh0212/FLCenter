@@ -14,14 +14,18 @@ public class Lop implements Serializable {
     private static final long serialVersionUID = 1L;
     private int Id;
     private String Name;
+    private String Note;
     
     @XmlElementWrapper(name = "idStudentList")
     @XmlElement(name = "idStudent")
     private List<Integer> idStudent;
-    private String Note;
+    
     @XmlElementWrapper(name = "idMonhocList")
     @XmlElement(name = "idMonhoc")
     private List<Integer> idMonhoc;
+    
+    
+    
 
     public Lop() {
     }
