@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <classes>
-    <class>
+    <lop>
         <Id>1</Id>
         <Name>Lớp 1</Name>
-        <idStudentList>
-		<idStudent>1</idStudent>
-	</idStudentList>
         <Note>cc</Note>
+        <idStudentList>
+            <idStudent>1</idStudent>
+        </idStudentList>
         <idMonhocList>
-		<idMonhoc>1</idMonhoc>
-		<idMonhoc>2</idMonhoc>
-		<idMonhoc>4</idMonhoc>
-	</idMonhocList>
-    </class>
-<class>
+            <idMonhoc>1</idMonhoc>
+            <idMonhoc>2</idMonhoc>
+            <idMonhoc>4</idMonhoc>
+        </idMonhocList>
+    </lop>
+    <lop>
         <Id>2</Id>
         <Name>Lớp 2</Name>
+        <Note></Note>
         <idStudentList>
-		<idStudent>2</idStudent>
-	</idStudentList>
-        <Note>cc</Note>
+            <idStudent>2</idStudent>
+        </idStudentList>
         <idMonhocList>
-		<idMonhoc>5</idMonhoc>
-		<idMonhoc>6</idMonhoc>
-		<idMonhoc>7</idMonhoc>
-	</idMonhocList>
-    </class>
+            <idMonhoc>5</idMonhoc>
+            <idMonhoc>6</idMonhoc>
+            <idMonhoc>7</idMonhoc>
+        </idMonhocList>
+    </lop>
 </classes>

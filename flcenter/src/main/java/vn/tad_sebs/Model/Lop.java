@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 
-@XmlRootElement(name = "class")
+@XmlRootElement(name = "lop")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Lop implements Serializable {
     private static final long serialVersionUID = 1L;

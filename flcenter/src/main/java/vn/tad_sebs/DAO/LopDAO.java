@@ -43,25 +43,31 @@ public class LopDAO {
         if (lopXML != null) {
             list = lopXML.getLop();
         }
+        
+        
         return list;
     }
 
     public Student getStudentById(int id) {
+        Student student = new Student();
         for (Student s : listStudents) {
             if (s.getId() == id) {
-                return s;
+                student = s;
+                break;
             }
         }
-        return null;
+        return student;
     }
 
     public Lop getLopByID(int id) {
-        for (Lop c : listLops) {
-            if (c.getId() == id) {
-                return c;
+        Lop lop = new Lop();
+        for (Lop l : listLops) {
+            if (l.getId() == id) {
+                lop = l;
+                break;
             }
         }
-        return null;
+        return lop;
     }
 
     public void addA(Lop lop) {

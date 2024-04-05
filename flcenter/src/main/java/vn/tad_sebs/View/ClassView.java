@@ -100,14 +100,24 @@ public class ClassView extends javax.swing.JFrame {
                 "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        tbClassList.setShowGrid(false);
+        tbClassList.setShowHorizontalLines(true);
+        tbClassList.setShowVerticalLines(false);
         jScrollPane1.setViewportView(tbClassList);
 
         jLabel1.setText("ID");
@@ -236,18 +246,22 @@ public class ClassView extends javax.swing.JFrame {
                 "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
         jScrollPane3.setViewportView(tbListStudents);
-        if (tbListStudents.getColumnModel().getColumnCount() > 0) {
-            tbListStudents.getColumnModel().getColumn(4).setHeaderValue("Điểm số");
-        }
 
         jLabel5.setText("Chọn lớp:");
 
@@ -674,7 +688,17 @@ public class ClassView extends javax.swing.JFrame {
 
             lop.setName(txtNameClass.getText());
             lop.setNote(txtNoteClass.getText());
-            lop.setIdStudent(l.getIdStudent());
+            if(l.getIdStudent() == null)
+            {
+                lop.setIdStudent(null);
+                lop.setIdMonhoc(null);
+            }
+            else
+            {
+                lop.setIdStudent(l.getIdStudent());
+                lop.setIdMonhoc(l.getIdMonhoc());
+            }
+                
             return lop;
         }
         catch (Exception ex)
@@ -747,6 +771,8 @@ public class ClassView extends javax.swing.JFrame {
             btnDeleteClass.setEnabled(true);
             // disable Add button
             btnAddClass.setEnabled(false);
+            
+            
         }
     }
 

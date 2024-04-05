@@ -26,7 +26,7 @@ public class ClassController {
     private StudentDAO studentDAO;
     private SubjectDAO subjectDAO;
     public List<Student> listStudentInClass = new ArrayList<Student>();
-    public Lop editingLop;
+    public Lop editingLop = new Lop();
     public Student editingStudent;
 
     public ClassController(ClassView classView) {
@@ -66,10 +66,14 @@ public class ClassController {
     }
 
     public void showClassView() {
-        List<Monhoc> listMonhoc = subjectDAO.readListSubjects();
-        List<Student> listStudent = studentDAO.readListStudents();
-        List<Lop> listLop = lopDAO.readListLops();
-
+        List<Monhoc> listMonhoc = subjectDAO.getListSubjects();
+        List<Student> listStudent = studentDAO.getListStudents();
+        List<Lop> listLop = lopDAO.getListLops();
+        
+        for (Lop l : listLop)
+        {
+            System.out.println(l.getId());
+        }
         classView.showClassList(listLop);
 
         classView.setVisible(true);
@@ -119,13 +123,14 @@ public class ClassController {
     class ClearButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             classView.clearClassInfo();
+            editingLop = new Lop();
         }
     }
 
     class ListTBClassSelectionListener implements ListSelectionListener {
         public void valueChanged(ListSelectionEvent e) {
             classView.fillLopFromSelectedRow();
-            editingLop = lopDAO.getLopByID(classView.getLopID());
+            
         }
     }
 
@@ -161,7 +166,7 @@ public class ClassController {
             List<Student> listStudentInClass = new ArrayList<Student>();
             for (Student s : listStudent)
             {
-                if(s.getClass().equals(value))
+                if(s.getLop().equals(value))
                 {
                     listStudentInClass.add(s);
                 }
@@ -246,7 +251,7 @@ public class ClassController {
         List<Student> listStudentInClass = new ArrayList<Student>();
         for (Student s : listStudent)
         {
-            if(s.getClass().equals(value))
+            if(s.getLop().equals(value))
             {
                 listStudentInClass.add(s);
             }
