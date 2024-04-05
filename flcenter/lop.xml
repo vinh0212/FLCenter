@@ -3,22 +3,24 @@
     <lop>
         <Id>1</Id>
         <Name>Lớp 1</Name>
-        <Note>cc</Note>
-        <idStudentList>
-            <idStudent>1</idStudent>
-        </idStudentList>
-        <idMonhocList>
-            <idMonhoc>1</idMonhoc>
-            <idMonhoc>2</idMonhoc>
-            <idMonhoc>4</idMonhoc>
-        </idMonhocList>
+        <Note>Sửa lại tí</Note>
+        <idStudentList/>
+        <idMonhocList/>
+    </lop>
+    <lop>
+        <Id>3</Id>
+        <Name>Lớp 3</Name>
+        <Note>iu Ân hihi</Note>
+        <idStudentList/>
+        <idMonhocList/>
     </lop>
     <lop>
         <Id>2</Id>
         <Name>Lớp 2</Name>
-        <Note></Note>
+        <Note>edit</Note>
         <idStudentList>
             <idStudent>2</idStudent>
+            <idStudent>3</idStudent>
         </idStudentList>
         <idMonhocList>
             <idMonhoc>5</idMonhoc>

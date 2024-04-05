@@ -57,15 +57,30 @@ public class StudentDAO {
                 s.setLop(student.getLop());
                 s.setGVCN(student.getGVCN());
                 s.setDiem(student.getDiem());
-                writeListStudents(listStudents);
+                
                 break;
             }
+            writeListStudents(listStudents);
         }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        
+    }
+
+    public void editB(Student student)
+    {
+        try {
+            for (Student s : listStudents) {
+            if (s.getId() == student.getId()) {
+                s.setDiem(student.getDiem());
+                
+                break;
+            }
+            writeListStudents(listStudents);
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean delete(Student student) {
