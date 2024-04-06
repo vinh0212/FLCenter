@@ -6,7 +6,7 @@
         <Date>1</Date>
         <Address>1</Address>
         <GVCN>1</GVCN>
-        <Diem>1.0</Diem>
+        <Diem>3.0</Diem>
         <Gioitinh>1</Gioitinh>
         <Lop>1</Lop>
     </student>
@@ -16,7 +16,7 @@
         <Date>2</Date>
         <Address>2</Address>
         <GVCN>2</GVCN>
-        <Diem>2.0</Diem>
+        <Diem>9.0</Diem>
         <Gioitinh>2</Gioitinh>
         <Lop>2</Lop>
     </student>

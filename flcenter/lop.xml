@@ -3,29 +3,19 @@
     <lop>
         <Id>1</Id>
         <Name>Lớp 1</Name>
-        <Note>Sửa lại tí</Note>
-        <idStudentList/>
-        <idMonhocList/>
-    </lop>
-    <lop>
-        <Id>3</Id>
-        <Name>Lớp 3</Name>
-        <Note>iu Ân hihi</Note>
-        <idStudentList/>
+        <Note>Phần này đã ổn</Note>
+        <idStudentList>
+            <idStudent>1</idStudent>
+        </idStudentList>
         <idMonhocList/>
     </lop>
     <lop>
         <Id>2</Id>
         <Name>Lớp 2</Name>
-        <Note>edit</Note>
+        <Note>iu Ân hihi</Note>
         <idStudentList>
             <idStudent>2</idStudent>
-            <idStudent>3</idStudent>
         </idStudentList>
-        <idMonhocList>
-            <idMonhoc>5</idMonhoc>
-            <idMonhoc>6</idMonhoc>
-            <idMonhoc>7</idMonhoc>
-        </idMonhocList>
+        <idMonhocList/>
     </lop>
 </classes>

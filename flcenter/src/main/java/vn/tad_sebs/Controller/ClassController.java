@@ -6,6 +6,7 @@ import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
@@ -53,37 +54,39 @@ public class ClassController {
         classView.addSortCLbyNameListener(new SortCLByNameButtonListener());
         classView.addSortCLbyPtsListener(new SortCLByPtsButtonListener());
         classView.addListTBStudentSelectionListener(new ListTBStudentSelectionListener());
-        
-        /*classView.addCbChonlop1Listener(new CbChonlop1Listener());
-        classView.addThemsubListener(new ThemsubListener());
-        classView.addXoasubListener(new XoasubListener());
-        classView.addSortCTbyIDListener(new SortCTbyIDListener());
-        classView.addSortCTbyNameListener(new SortCTbyNameListener());
-        classView.addSortCTbyPtsListener(new SortCTbyPtsListener());
-        
-        
-        classView.addListTBSubjectSelectionListener(new ListTBSubjectSelectionListener());*/
+
+        /*
+         * classView.addCbChonlop1Listener(new CbChonlop1Listener());
+         * classView.addThemsubListener(new ThemsubListener());
+         * classView.addXoasubListener(new XoasubListener());
+         * classView.addSortCTbyIDListener(new SortCTbyIDListener());
+         * classView.addSortCTbyNameListener(new SortCTbyNameListener());
+         * classView.addSortCTbyPtsListener(new SortCTbyPtsListener());
+         * 
+         * 
+         * classView.addListTBSubjectSelectionListener(new
+         * ListTBSubjectSelectionListener());
+         */
     }
 
     public void showClassView() {
         List<Monhoc> listMonhoc = subjectDAO.getListSubjects();
         List<Student> listStudent = studentDAO.getListStudents();
         List<Lop> listLop = lopDAO.getListLops();
-        
+
         classView.showClassList(listLop);
-        classView.showListCl(listLop);
+        classView.showClassListinCbChonlop(listLop);
 
         classView.setVisible(true);
 
     }
-
 
     class AddButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             Lop lop = classView.getLopInfo();
             if (lop != null) {
                 lopDAO.addA(lop);
-                classView.showClassList(lopDAO.readListLops());
+                classView.showClassList(lopDAO.getListLops());
                 classView.showMessage("Thêm lớp thành công!");
             }
 
@@ -97,7 +100,7 @@ public class ClassController {
 
                 lopDAO.editA(lop);
                 classView.clearClassInfo();
-                classView.showClassList(lopDAO.readListLops());
+                classView.showClassList(lopDAO.getListLops());
                 classView.showMessage("Sửa lớp thành công!");
             }
 
@@ -110,7 +113,7 @@ public class ClassController {
             if (lop != null) {
                 lopDAO.deleteA(lop);
                 classView.clearClassInfo();
-                classView.showClassList(lopDAO.readListLops());
+                classView.showClassList(lopDAO.getListLops());
                 classView.showMessage("Xóa lớp thành công!");
             }
 
@@ -144,29 +147,49 @@ public class ClassController {
         }
     }
 
-    //----------------------------------------
+    // ----------------------------------------
 
-    class TabChangeListener implements ChangeListener
-    {
+
+
+    //ATTENTION: Interesting code
+    class TabChangeListener implements ChangeListener {
         public void stateChanged(ChangeEvent e) {
-            classView.resetforTab2();
-            //classView.getCbChonlop().removeAllItems();
-            classView.showListCl(lopDAO.getListLops());
-            
+            JTabbedPane sourceTabbedPane = (JTabbedPane) e.getSource();
+            int index = sourceTabbedPane.getSelectedIndex();
+
+            if (index == 0) { // tab1
+                classView.resetforTab1();
+            } else if (index == 1) { // tab2
+                classView.resetforTab2();
+
+                // Xoá tất cả các mục trong cbChonlop
+                ActionListener[] listeners = classView.getCbChonlop().getActionListeners();
+                for (ActionListener listener : listeners) {
+                    classView.getCbChonlop().removeActionListener(listener);
+                }
+
+                classView.getCbChonlop().removeAllItems();
+
+                // Load lại dữ liệu từ cơ sở dữ liệu
+                classView.showListCl(lopDAO.getListLops());
+
+                for (ActionListener listener : listeners) {
+                    classView.getCbChonlop().addActionListener(listener);
+                }
+
+                
+            }
         }
     }
 
-    class CbChonlopListener implements ActionListener
-    {
+    class CbChonlopListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             int value = classView.getClassChoice();
             listStudentInClass.clear();
-            List<Student> listStudent = studentDAO.readListStudents();
+            List<Student> listStudent = studentDAO.getListStudents();
             List<Student> listStudentInClass = new ArrayList<Student>();
-            for (Student s : listStudent)
-            {
-                if(s.getLop().equals(value))
-                {
+            for (Student s : listStudent) {
+                if (s.getLop().equals(String.valueOf(value))) {
                     listStudentInClass.add(s);
                 }
             }
@@ -174,8 +197,7 @@ public class ClassController {
         }
     }
 
-    class FindStudentButtonListener implements ActionListener
-    {
+    class FindStudentButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String value = classView.getSearchBoxStudent();
             int criteria = classView.getCriteria();
@@ -184,8 +206,7 @@ public class ClassController {
             if ("".equals(value)) {
                 classView.showStudentList(listStudentInClass);
             } else {
-                switch (criteria)
-                {
+                switch (criteria) {
                     case 0:
                         for (Student s : listStudentInClass) {
                             if (s.getId() == Integer.parseInt(value)) {
@@ -214,73 +235,64 @@ public class ClassController {
         }
     }
 
-    class ListTBStudentSelectionListener implements ListSelectionListener
-    {
+    class ListTBStudentSelectionListener implements ListSelectionListener {
         public void valueChanged(ListSelectionEvent e) {
             classView.fillStudentFromSelectedRow();
-    
+
         }
     }
 
-    class UpdateCLButtonListener implements ActionListener
-    {
+    class UpdateCLButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             Student student = classView.getStudentInfo();
-            if(student != null)
-            {
+            
+            if (student != null) {
                 studentDAO.editB(student);
-                classView.showStudentList(studentDAO.readListStudents());
+                dothesamething();
+                classView.clearStudentInfo();
                 classView.showMessage("Sửa thông tin học sinh thành công!");
             }
         }
     }
-    class clearCLButtonListener implements ActionListener
-    {
+
+    class clearCLButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             classView.clearStudentInfo();
         }
     }
 
-    public void dothesamething()
-    {
+    public void dothesamething() {
         int value = classView.getClassChoice();
-        listStudentInClass.clear();
-        List<Student> listStudent = studentDAO.readListStudents();
+        
+        List<Student> listStudent = studentDAO.getListStudents();
         List<Student> listStudentInClass = new ArrayList<Student>();
-        for (Student s : listStudent)
-        {
-            if(s.getLop().equals(value))
-            {
+        for (Student s : listStudent) {
+            if (s.getLop().equals(String.valueOf(value))) {
                 listStudentInClass.add(s);
             }
         }
         classView.showStudentList(listStudentInClass);
     }
-    class SortCLByIDButtonListener implements ActionListener
-    {
+
+    class SortCLByIDButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             lopDAO.sortStudentListbyID();
             dothesamething();
         }
     }
 
-    class SortCLByNameButtonListener implements ActionListener
-    {
+    class SortCLByNameButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             lopDAO.sortStudentListbyName();
             dothesamething();
         }
     }
 
-    class SortCLByPtsButtonListener implements ActionListener
-    {
+    class SortCLByPtsButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             lopDAO.sortStudentListbyDiem();
             dothesamething();
         }
     }
-
-
-
 
 }

@@ -71,13 +71,12 @@ public class StudentDAO {
     {
         try {
             for (Student s : listStudents) {
-            if (s.getId() == student.getId()) {
-                s.setDiem(student.getDiem());
-                
-                break;
+                if (s.getId() == student.getId()) {
+                    s.setDiem(student.getDiem());
+                    break;
+                }
             }
             writeListStudents(listStudents);
-        }
         } catch (Exception e) {
             e.printStackTrace();
         }
