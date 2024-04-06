@@ -1,5 +1,6 @@
 package vn.tad_sebs.Model;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,7 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 
-@XmlRootElement(name = "class")
+@XmlRootElement(name = "lop")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Lop implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -28,6 +29,8 @@ public class Lop implements Serializable {
     
 
     public Lop() {
+        this.idMonhoc = new ArrayList<>();
+        this.idStudent = new ArrayList<>();
     }
 
     public Lop(int Id, String Name, List<Integer> idStudent, String Note, List<Integer> idMonhoc) {

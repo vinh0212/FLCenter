@@ -26,7 +26,7 @@ public class ClassController {
     private StudentDAO studentDAO;
     private SubjectDAO subjectDAO;
     public List<Student> listStudentInClass = new ArrayList<Student>();
-    public Lop editingLop;
+    public Lop editingLop = new Lop();
     public Student editingStudent;
 
     public ClassController(ClassView classView) {
@@ -66,11 +66,12 @@ public class ClassController {
     }
 
     public void showClassView() {
-        List<Monhoc> listMonhoc = subjectDAO.readListSubjects();
-        List<Student> listStudent = studentDAO.readListStudents();
-        List<Lop> listLop = lopDAO.readListLops();
-
+        List<Monhoc> listMonhoc = subjectDAO.getListSubjects();
+        List<Student> listStudent = studentDAO.getListStudents();
+        List<Lop> listLop = lopDAO.getListLops();
+        
         classView.showClassList(listLop);
+        classView.showListCl(listLop);
 
         classView.setVisible(true);
 
@@ -79,7 +80,7 @@ public class ClassController {
 
     class AddButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            Lop lop = classView.getLopInfo(editingLop);
+            Lop lop = classView.getLopInfo();
             if (lop != null) {
                 lopDAO.addA(lop);
                 classView.showClassList(lopDAO.readListLops());
@@ -91,7 +92,7 @@ public class ClassController {
 
     class EditButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            Lop lop = classView.getLopInfo(editingLop);
+            Lop lop = classView.getLopInfo();
             if (lop != null) {
 
                 lopDAO.editA(lop);
@@ -105,7 +106,7 @@ public class ClassController {
 
     class DeleteButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            Lop lop = classView.getLopInfo(editingLop);
+            Lop lop = classView.getLopInfo();
             if (lop != null) {
                 lopDAO.deleteA(lop);
                 classView.clearClassInfo();
@@ -119,27 +120,27 @@ public class ClassController {
     class ClearButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             classView.clearClassInfo();
+            editingLop = new Lop();
         }
     }
 
     class ListTBClassSelectionListener implements ListSelectionListener {
         public void valueChanged(ListSelectionEvent e) {
             classView.fillLopFromSelectedRow();
-            editingLop = lopDAO.getLopByID(classView.getLopID());
         }
     }
 
     class SortClassByIDButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             lopDAO.sortClassListbyID();
-            classView.showClassList(lopDAO.readListLops());
+            classView.showClassList(lopDAO.getListLops());
         }
     }
 
     class SortClassBySLButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             lopDAO.sortClassListbySL();
-            classView.showClassList(lopDAO.readListLops());
+            classView.showClassList(lopDAO.getListLops());
         }
     }
 
@@ -149,6 +150,9 @@ public class ClassController {
     {
         public void stateChanged(ChangeEvent e) {
             classView.resetforTab2();
+            //classView.getCbChonlop().removeAllItems();
+            classView.showListCl(lopDAO.getListLops());
+            
         }
     }
 
@@ -161,7 +165,7 @@ public class ClassController {
             List<Student> listStudentInClass = new ArrayList<Student>();
             for (Student s : listStudent)
             {
-                if(s.getClass().equals(value))
+                if(s.getLop().equals(value))
                 {
                     listStudentInClass.add(s);
                 }
@@ -214,18 +218,17 @@ public class ClassController {
     {
         public void valueChanged(ListSelectionEvent e) {
             classView.fillStudentFromSelectedRow();
-
-            editingStudent = lopDAO.getStudentById(classView.getStudentID());        
+    
         }
     }
 
     class UpdateCLButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e) {
-            Student student = classView.getStudentInfo(editingStudent);
+            Student student = classView.getStudentInfo();
             if(student != null)
             {
-                studentDAO.edit(student);
+                studentDAO.editB(student);
                 classView.showStudentList(studentDAO.readListStudents());
                 classView.showMessage("Sửa thông tin học sinh thành công!");
             }
@@ -246,7 +249,7 @@ public class ClassController {
         List<Student> listStudentInClass = new ArrayList<Student>();
         for (Student s : listStudent)
         {
-            if(s.getClass().equals(value))
+            if(s.getLop().equals(value))
             {
                 listStudentInClass.add(s);
             }
