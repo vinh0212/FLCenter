@@ -38,7 +38,7 @@ public class ExamController {
         examView.addPullListener(new PullListener());
         examView.addPushListener(new PushListener());
         examView.addOKListener(new OKListener());
-
+        examView.addSearchExamListener(new SearchExamListener());
 
     }
 
@@ -47,6 +47,43 @@ public class ExamController {
         listTeachers = teacherDAO.getListTeachers();
         examView.showListExam(listExams);
         examView.setVisible(true);
+
+        examView.disableButtons();
+
+    }
+
+    class SearchExamListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String value = examView.getSearchBoxValue();
+            int criteria = examView.getCriteria();
+            List<Exam> list = new ArrayList<Exam>();
+            List<Exam> oldlist = examDAO.getListExams();
+
+            if ("".equals(value)) {
+                examView.showListExam(oldlist);
+            } else {
+                switch (criteria) {
+                    case 0:
+                        for (Exam o : oldlist) {
+                            if (o.getId() == Integer.parseInt(value)) {
+                                list.add(o);
+                            }
+                        }
+                        break;
+                    case 1:
+                        for (Exam o : oldlist) {
+                            if (o.getName().contains(value)) {
+                                list.add(o);
+                            }
+                        }
+                        break;
+                    
+                    default:
+                        break;
+                }
+                examView.showListExam(list);
+            }
+        }
     }
 
     class AddExamListener implements ActionListener {
@@ -54,7 +91,7 @@ public class ExamController {
             Exam exam = examView.getExamInfo();
             if (exam != null) {
                 examDAO.add(exam);
-
+                examView.clearExamInfo();
                 examView.showListExam(examDAO.getListExams());
                 examView.showMessage("Thêm kì thi thành công!");
             }
@@ -77,6 +114,7 @@ public class ExamController {
             Exam exam = examView.getExamInfo();
             if (exam != null) {
                 examDAO.delete(exam);
+                examView.clearExamInfo();
                 examView.showListExam(examDAO.getListExams());
                 examView.showMessage("Xóa kì thi thành công!");
             }
@@ -110,41 +148,42 @@ public class ExamController {
         }
     }
 
-    class EditTeacherListener implements  ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            List<Teacher> list = examDAO.getListGiamthi(examView.getExamID());
-            List<Teacher> mList = teacherDAO.getListTeacherswithName(list);
-            examView.showListPullGiamthi(mList);
-            List<Teacher> uList = teacherDAO.getUnavailableList(list);
-            examView.showListPushGiamthi(uList);
+    class EditTeacherListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            examView.setPanelTeacherVisible();
+            if (examView.getExamID() != -1) {
+
+                String s = examView.getFSearchTeacher();
+                List<Teacher> mList = teacherDAO.getListTeacherswithName(s);
+
+                examView.showListPullGiamthi(mList);
+                List<Teacher> uList = teacherDAO.getUnavailableList(mList);
+                examView.showListPushGiamthi(uList);
+            }
+
+            else
+                examView.showListPushGiamthi(teacherDAO.getListTeachers());
+
         }
     }
 
-    class PullListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            
+    class PullListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+
             examView.moveSelectedItems(examView.getListPull(), examView.getListPush());
         }
     }
 
-    class PushListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
+    class PushListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
             examView.moveSelectedItems(examView.getListPush(), examView.getListPull());
         }
     }
 
-    class OKListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
+    class OKListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
             examView.setListPullIDGiamthi();
-            
+
         }
     }
 

@@ -215,6 +215,9 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JTextField" name="FIDSearchExam">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="FNameSearchExam">
     </Component>
@@ -268,10 +271,9 @@
     <Component class="javax.swing.JComboBox" name="CbbSearchExam">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
+          <StringArray count="2">
             <StringItem index="0" value="ID"/>
             <StringItem index="1" value="T&#xea;n"/>
-            <StringItem index="2" value="Th&#x1edd;i gian"/>
           </StringArray>
         </Property>
       </Properties>

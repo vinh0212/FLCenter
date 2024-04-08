@@ -3,6 +3,7 @@ package vn.tad_sebs.DAO;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 
 import vn.tad_sebs.Model.Department;
@@ -147,15 +148,33 @@ public class CanboDAO {
 
         public List<Teacher> getUnavailableList(List<Teacher> list) {
             List<Teacher> unavailableList = new ArrayList<Teacher>();
+            // compart 2 IDs to select
             for (Teacher t : listTeachers) {
-                if (!list.contains(t)) {
+                boolean isFound = false;
+                for (Teacher t1 : list) {
+                    if (t.getId() == t1.getId()) {
+                        isFound = true;
+                        break;
+                    }
+                }
+                if (!isFound) {
                     unavailableList.add(t);
                 }
             }
             return unavailableList;
         }
 
-        public List<Teacher> getListTeacherswithName(List<Teacher> list) {
+        public List<Teacher> getListTeacherswithName(String s) {
+            HashSet<Teacher> list = new HashSet<Teacher>();
+
+            String[] parts = s.split(",");
+            
+            for (String part : parts) {
+                Teacher teacher = new Teacher();
+                teacher.setId(Integer.parseInt(part));
+                list.add(teacher);
+            }
+
             List<Teacher> listTeachersWithName = new ArrayList<Teacher>();
             for (Teacher t : list) {
                 for (Teacher t1 : listTeachers) {

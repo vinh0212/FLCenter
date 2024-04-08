@@ -6,11 +6,44 @@
         <Time>20/01/2024</Time>
         <giamthiList>
             <giamthi>
-                <Id>3</Id>
+                <Id>2</Id>
+                <dp>0</dp>
+            </giamthi>
+        </giamthiList>
+    </exam>
+    <exam>
+        <id>2</id>
+        <Name>Kì thi 2</Name>
+        <Time>19/04/2024</Time>
+        <giamthiList>
+            <giamthi>
+                <Id>4</Id>
+                <dp>0</dp>
+            </giamthi>
+        </giamthiList>
+    </exam>
+    <exam>
+        <id>3</id>
+        <Name>Kì thi xác trị 2024</Name>
+        <Time>09/04/2024</Time>
+        <giamthiList>
+            <giamthi>
+                <Id>2</Id>
                 <dp>0</dp>
             </giamthi>
             <giamthi>
-                <Id>2</Id>
+                <Id>4</Id>
+                <dp>0</dp>
+            </giamthi>
+        </giamthiList>
+    </exam>
+    <exam>
+        <id>4</id>
+        <Name>Kì thi 3</Name>
+        <Time>24/04/2024</Time>
+        <giamthiList>
+            <giamthi>
+                <Id>3</Id>
                 <dp>0</dp>
             </giamthi>
         </giamthiList>
