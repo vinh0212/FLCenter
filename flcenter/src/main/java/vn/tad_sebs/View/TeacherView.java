@@ -4,7 +4,11 @@
  */
 package vn.tad_sebs.View;
 
+import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
@@ -56,6 +60,8 @@ public class TeacherView extends javax.swing.JFrame {
         FTeacherSearchStudent = new javax.swing.JTextField();
         FScoreSearchStudent = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -66,10 +72,8 @@ public class TeacherView extends javax.swing.JFrame {
         btnSortbyidLD = new javax.swing.JButton();
         btnSortbyNameLD = new javax.swing.JButton();
         btnSortbyLevelLD = new javax.swing.JButton();
-        FSexSearchLD = new javax.swing.JTextField();
         btnEditLD = new javax.swing.JButton();
         FNameSearchLD = new javax.swing.JTextField();
-        FDateSearchLD = new javax.swing.JTextField();
         FAddressSearchLD = new javax.swing.JTextField();
         btnAddLD = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -85,6 +89,9 @@ public class TeacherView extends javax.swing.JFrame {
         FIDSearchLD = new javax.swing.JTextField();
         btnDeleteLD = new javax.swing.JButton();
         btnSortbyRole = new javax.swing.JButton();
+        FDateSearchLD = new com.toedter.calendar.JDateChooser();
+        CbMLD = new javax.swing.JCheckBox();
+        CbFLD = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         GVtable = new javax.swing.JTable();
@@ -99,13 +106,11 @@ public class TeacherView extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         btnAddGV = new javax.swing.JButton();
         btnEditGV = new javax.swing.JButton();
-        FSexSearchGV = new javax.swing.JTextField();
         CbbSeacrchGV = new javax.swing.JComboBox<>();
         FNameSearchGV = new javax.swing.JTextField();
         btnSearchGV = new javax.swing.JButton();
         btnSortbyNameGV = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
-        FDateSearchGV = new javax.swing.JTextField();
         btnSortbyLevelGV = new javax.swing.JButton();
         FSearchGV = new javax.swing.JTextField();
         FIDSearchGV = new javax.swing.JTextField();
@@ -119,6 +124,9 @@ public class TeacherView extends javax.swing.JFrame {
         cbDpChoose = new javax.swing.JComboBox<>();
         jLabel25 = new javax.swing.JLabel();
         cbDpEdit = new javax.swing.JComboBox<>();
+        FDateSearchGV = new com.toedter.calendar.JDateChooser();
+        CbMGV = new javax.swing.JCheckBox();
+        CbFGV = new javax.swing.JCheckBox();
 
         BtnDeleteStudent.setText("Xóa");
         BtnDeleteStudent.addActionListener(new java.awt.event.ActionListener() {
@@ -219,12 +227,6 @@ public class TeacherView extends javax.swing.JFrame {
 
         btnSortbyLevelLD.setText("Sắp xếp theo Cấp bậc hàm");
 
-        FSexSearchLD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FSexSearchLDActionPerformed(evt);
-            }
-        });
-
         btnEditLD.setText("Chỉnh sửa");
         btnEditLD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -283,6 +285,12 @@ public class TeacherView extends javax.swing.JFrame {
 
         btnSortbyRole.setText("Sắp xếp theo Chức vụ");
 
+        buttonGroup2.add(CbMLD);
+        CbMLD.setText("Nam");
+
+        buttonGroup2.add(CbFLD);
+        CbFLD.setText("Nữ");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -309,13 +317,16 @@ public class TeacherView extends javax.swing.JFrame {
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(FRoleSearchLD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                                    .addComponent(FRoleSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(FLevelSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(FAddressSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FSexSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(FIDSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(FNameSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FDateSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                    .addComponent(FDateSearchLD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(CbMLD, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(CbFLD, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnDeleteLD, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -323,7 +334,7 @@ public class TeacherView extends javax.swing.JFrame {
                                 .addComponent(btnAddLD, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnEditLD)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                                 .addComponent(btnClearLD, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(15, 15, 15))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -373,10 +384,11 @@ public class TeacherView extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(FDateSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(7, 7, 7)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(FSexSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CbMLD)
+                            .addComponent(CbFLD))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(FAddressSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -467,12 +479,6 @@ public class TeacherView extends javax.swing.JFrame {
             }
         });
 
-        FSexSearchGV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FSexSearchGVActionPerformed(evt);
-            }
-        });
-
         CbbSeacrchGV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Quê quán", "Giới tính", "Cấp bậc hàm", "Môn giảng dạy", "Lớp phụ trách" }));
         CbbSeacrchGV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -550,6 +556,12 @@ public class TeacherView extends javax.swing.JFrame {
 
         jLabel25.setText("Phòng ban");
 
+        buttonGroup1.add(CbMGV);
+        CbMGV.setText("Nam");
+
+        buttonGroup1.add(CbFGV);
+        CbFGV.setText("Nữa");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -597,11 +609,14 @@ public class TeacherView extends javax.swing.JFrame {
                             .addComponent(FRoleSearchGV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                             .addComponent(FLevelSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(FAddressSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FSexSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(FIDSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(FNameSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FDateSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cbDpEdit, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(cbDpEdit, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FDateSearchGV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(CbMGV, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CbFGV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -652,7 +667,8 @@ public class TeacherView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel21)
-                            .addComponent(FSexSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CbMGV)
+                            .addComponent(CbFGV))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(FAddressSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -699,7 +715,7 @@ public class TeacherView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -755,10 +771,6 @@ public class TeacherView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteLDActionPerformed
 
-    private void FSexSearchLDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FSexSearchLDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FSexSearchLDActionPerformed
-
     private void FAddressSearchGVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FAddressSearchGVActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FAddressSearchGVActionPerformed
@@ -770,10 +782,6 @@ public class TeacherView extends javax.swing.JFrame {
     private void btnEditGVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditGVActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditGVActionPerformed
-
-    private void FSexSearchGVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FSexSearchGVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FSexSearchGVActionPerformed
 
     private void btnSearchGVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchGVActionPerformed
         // TODO add your handling code here:
@@ -822,8 +830,26 @@ public class TeacherView extends javax.swing.JFrame {
         if (row >= 0) {
             FIDSearchGV.setText(GVtable.getModel().getValueAt(row, 0).toString());
             FNameSearchGV.setText(GVtable.getModel().getValueAt(row, 1).toString());
-            FDateSearchGV.setText(GVtable.getModel().getValueAt(row, 2).toString());
-            FSexSearchGV.setText(GVtable.getModel().getValueAt(row, 3).toString());
+            String dateString = GVtable.getModel().getValueAt(row, 2).toString(); 
+            // Chuỗi ngày tháng cần chuyển đổi
+            JDateChooser dateChooser = new JDateChooser();
+
+            // Định dạng của chuỗi ngày tháng
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            try {
+                // Chuyển đổi chuỗi thành đối tượng Date
+                Date date = dateFormat.parse(dateString);
+
+                // Thiết lập ngày cho JDateChooser
+                FDateSearchGV.setDate(date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            if ("Nam".equals(GVtable.getModel().getValueAt(row, 3).toString())) {
+                CbMGV.setSelected(true);
+            } else
+                CbFGV.setSelected(true);
             FAddressSearchGV.setText(GVtable.getModel().getValueAt(row, 4).toString());
             FLevelSearchGV.setText(GVtable.getModel().getValueAt(row, 5).toString());
             FRoleSearchGV.setText(GVtable.getModel().getValueAt(row, 6).toString());
@@ -840,8 +866,23 @@ public class TeacherView extends javax.swing.JFrame {
     {
         FIDSearchGV.setText(String.valueOf(teacher.getId()));
         FNameSearchGV.setText(teacher.getName());
-        FDateSearchGV.setText(teacher.getDate());
-        FSexSearchGV.setText(teacher.getSex());
+         String dateString = teacher.getDate();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+            // Chuyển đổi chuỗi thành đối tượng Date
+            Date date = dateFormat.parse(dateString);
+
+            // Thiết lập ngày cho JDateChooser
+            FDateSearchGV.setDate(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        if (teacher.getSex() == "Nam") {
+            CbMGV.setSelected(true);
+        } else
+            CbFGV.setSelected(true);
         FAddressSearchGV.setText(teacher.getAddress());
         FLevelSearchGV.setText(teacher.getCapbacham());
         FRoleSearchGV.setText(teacher.getMon());
@@ -856,8 +897,22 @@ public class TeacherView extends javax.swing.JFrame {
     public void clearGVInfo() {
         FIDSearchGV.setText("");
         FNameSearchGV.setText("");
-        FDateSearchGV.setText("");
-        FSexSearchGV.setText("");
+        String dateString = "01/01/2024"; // Chuỗi ngày tháng cần chuyển đổi
+        JDateChooser dateChooser = new JDateChooser();
+
+        // Định dạng của chuỗi ngày tháng
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+            // Chuyển đổi chuỗi thành đối tượng Date
+            Date date = dateFormat.parse(dateString);
+
+            // Thiết lập ngày cho JDateChooser
+            FDateSearchGV.setDate(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        CbMGV.setSelected(true);
         FAddressSearchGV.setText("");
         FClassSearchGV.setText("");
         FLevelSearchGV.setText("");
@@ -896,8 +951,13 @@ public class TeacherView extends javax.swing.JFrame {
             }
 
             teacher.setName(FNameSearchGV.getText());
-            teacher.setDate(FDateSearchGV.getText());
-            teacher.setSex(FSexSearchGV.getText());
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            teacher.setDate(dateFormat.format(FDateSearchGV.getDate()));
+
+            if(CbMGV.isSelected() == true)
+                teacher.setSex("Nam");
+            else
+                teacher.setSex("Nữ");
             teacher.setAddress(FAddressSearchGV.getText());
             teacher.setCapbacham(FLevelSearchGV.getText());
             teacher.setMon(FRoleSearchGV.getText());
@@ -985,8 +1045,26 @@ public class TeacherView extends javax.swing.JFrame {
         if (row >= 0) {
             FIDSearchLD.setText(LDtable.getModel().getValueAt(row, 0).toString());
             FNameSearchLD.setText(LDtable.getModel().getValueAt(row, 1).toString());
-            FDateSearchLD.setText(LDtable.getModel().getValueAt(row, 2).toString());
-            FSexSearchLD.setText(LDtable.getModel().getValueAt(row, 3).toString());
+             String dateString = LDtable.getModel().getValueAt(row, 2).toString(); 
+            // Chuỗi ngày tháng cần chuyển đổi
+            JDateChooser dateChooser = new JDateChooser();
+
+            // Định dạng của chuỗi ngày tháng
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            try {
+                // Chuyển đổi chuỗi thành đối tượng Date
+                Date date = dateFormat.parse(dateString);
+
+                // Thiết lập ngày cho JDateChooser
+                FDateSearchLD.setDate(date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            if ("Nam".equals(LDtable.getModel().getValueAt(row, 3).toString())) {
+                CbMLD.setSelected(true);
+            } else
+                CbFLD.setSelected(true);
             FAddressSearchLD.setText(LDtable.getModel().getValueAt(row, 4).toString());
             FLevelSearchLD.setText(LDtable.getModel().getValueAt(row, 5).toString());
             FRoleSearchLD.setText(LDtable.getModel().getValueAt(row, 6).toString());
@@ -1001,8 +1079,23 @@ public class TeacherView extends javax.swing.JFrame {
     {
         FIDSearchLD.setText(String.valueOf(lanhdao.getId()));
         FNameSearchLD.setText(lanhdao.getName());
-        FDateSearchLD.setText(lanhdao.getDate());
-        FSexSearchLD.setText(lanhdao.getSex());
+        String dateString = lanhdao.getDate();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+            // Chuyển đổi chuỗi thành đối tượng Date
+            Date date = dateFormat.parse(dateString);
+
+            // Thiết lập ngày cho JDateChooser
+            FDateSearchLD.setDate(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        if (lanhdao.getSex() == "Nam") {
+            CbMLD.setSelected(true);
+        } else
+            CbFLD.setSelected(true);
         FAddressSearchLD.setText(lanhdao.getAddress());
         FLevelSearchLD.setText(lanhdao.getCapbacham());
         FRoleSearchLD.setText(lanhdao.getChucvu());
@@ -1015,8 +1108,22 @@ public class TeacherView extends javax.swing.JFrame {
     public void clearLDInfo() {
         FIDSearchLD.setText("");
         FNameSearchLD.setText("");
-        FDateSearchLD.setText("");
-        FSexSearchLD.setText("");
+        String dateString = "01/01/2024"; // Chuỗi ngày tháng cần chuyển đổi
+        JDateChooser dateChooser = new JDateChooser();
+
+        // Định dạng của chuỗi ngày tháng
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+            // Chuyển đổi chuỗi thành đối tượng Date
+            Date date = dateFormat.parse(dateString);
+
+            // Thiết lập ngày cho JDateChooser
+            FDateSearchLD.setDate(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        CbMLD.setSelected(true);
         FAddressSearchLD.setText("");
         FLevelSearchLD.setText("");
         FRoleSearchLD.setText("");
@@ -1049,8 +1156,13 @@ public class TeacherView extends javax.swing.JFrame {
             }
 
             lanhdao.setName(FNameSearchLD.getText());
-            lanhdao.setDate(FDateSearchLD.getText());
-            lanhdao.setSex(FSexSearchLD.getText());
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            lanhdao.setDate(dateFormat.format(FDateSearchLD.getDate()));
+
+            if(CbMLD.isSelected() == true)
+                lanhdao.setSex("Nam");
+            else
+                lanhdao.setSex("Nữ");
             lanhdao.setAddress(FAddressSearchLD.getText());
             lanhdao.setCapbacham(FLevelSearchLD.getText());
             lanhdao.setChucvu(FRoleSearchLD.getText());
@@ -1105,6 +1217,10 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.JButton BtnClearStudent;
     private javax.swing.JButton BtnDeleteStudent;
     private javax.swing.JButton BtnEditStudent;
+    private javax.swing.JCheckBox CbFGV;
+    private javax.swing.JCheckBox CbFLD;
+    private javax.swing.JCheckBox CbMGV;
+    private javax.swing.JCheckBox CbMLD;
     private javax.swing.JComboBox<String> CbbSeacrchGV;
     private javax.swing.JComboBox<String> CbbSeacrchLD;
     private javax.swing.JTextField FAddressSearchGV;
@@ -1112,8 +1228,8 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.JTextField FAddressSearchStudent;
     private javax.swing.JTextField FClassSearchGV;
     private javax.swing.JTextField FClassSearchStudent;
-    private javax.swing.JTextField FDateSearchGV;
-    private javax.swing.JTextField FDateSearchLD;
+    private com.toedter.calendar.JDateChooser FDateSearchGV;
+    private com.toedter.calendar.JDateChooser FDateSearchLD;
     private javax.swing.JTextField FDateSearchStudent;
     private javax.swing.JTextField FIDSearchGV;
     private javax.swing.JTextField FIDSearchLD;
@@ -1128,8 +1244,6 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.JTextField FScoreSearchStudent;
     private javax.swing.JTextField FSearchGV;
     private javax.swing.JTextField FSearchLD;
-    private javax.swing.JTextField FSexSearchGV;
-    private javax.swing.JTextField FSexSearchLD;
     private javax.swing.JTextField FSexStudent;
     private javax.swing.JTextField FTeacherSearchStudent;
     private javax.swing.JTable GVtable;
@@ -1151,6 +1265,8 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.JButton btnSortbyRole;
     private javax.swing.JButton btnSortbyidGV;
     private javax.swing.JButton btnSortbyidLD;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cbDpChoose;
     private javax.swing.JComboBox<String> cbDpEdit;
     private javax.swing.JLabel jLabel1;

@@ -96,6 +96,10 @@
         <Property name="text" type="java.lang.String" value="GVCN"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -127,7 +131,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="jTabbedPane4" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="101" max="32767" attributes="0"/>
+              <EmptySpace pref="102" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -186,13 +190,17 @@
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="FRoleSearchLD" alignment="1" pref="172" max="32767" attributes="0"/>
+                                          <Component id="FRoleSearchLD" alignment="1" max="32767" attributes="0"/>
                                           <Component id="FLevelSearchLD" alignment="1" max="32767" attributes="0"/>
                                           <Component id="FAddressSearchLD" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FSexSearchLD" alignment="1" max="32767" attributes="0"/>
                                           <Component id="FIDSearchLD" alignment="1" max="32767" attributes="0"/>
                                           <Component id="FNameSearchLD" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="FDateSearchLD" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="FDateSearchLD" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="CbMLD" min="-2" pref="85" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="CbFLD" min="-2" pref="85" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -202,7 +210,7 @@
                                       <Component id="btnAddLD" min="-2" pref="72" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="btnEditLD" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="12" max="32767" attributes="0"/>
                                       <Component id="btnClearLD" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -265,12 +273,13 @@
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FDateSearchLD" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FDateSearchLD" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FSexSearchLD" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CbMLD" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CbFLD" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -420,11 +429,6 @@
                 <Property name="text" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo C&#x1ea5;p b&#x1ead;c h&#xe0;m"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="FSexSearchLD">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FSexSearchLDActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="btnEditLD">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ch&#x1ec9;nh s&#x1eed;a"/>
@@ -434,8 +438,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="FNameSearchLD">
-            </Component>
-            <Component class="javax.swing.JTextField" name="FDateSearchLD">
             </Component>
             <Component class="javax.swing.JTextField" name="FAddressSearchLD">
               <Events>
@@ -518,6 +520,24 @@
                 <Property name="text" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo Ch&#x1ee9;c v&#x1ee5;"/>
               </Properties>
             </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="FDateSearchLD">
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="CbMLD">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup2"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Nam"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="CbFLD">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup2"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="N&#x1eef;"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -584,11 +604,15 @@
                                   <Component id="FRoleSearchGV" alignment="1" pref="172" max="32767" attributes="0"/>
                                   <Component id="FLevelSearchGV" alignment="1" max="32767" attributes="0"/>
                                   <Component id="FAddressSearchGV" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="FSexSearchGV" alignment="1" max="32767" attributes="0"/>
                                   <Component id="FIDSearchGV" alignment="1" max="32767" attributes="0"/>
                                   <Component id="FNameSearchGV" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="FDateSearchGV" alignment="1" max="32767" attributes="0"/>
                                   <Component id="cbDpEdit" max="32767" attributes="0"/>
+                                  <Component id="FDateSearchGV" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="CbMGV" min="-2" pref="85" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="CbFGV" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -648,13 +672,14 @@
                               </Group>
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FDateSearchGV" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FDateSearchGV" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FSexSearchGV" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CbMGV" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CbFGV" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -834,11 +859,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditGVActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="FSexSearchGV">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FSexSearchGVActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JComboBox" name="CbbSeacrchGV">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -879,8 +899,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Qu&#xea; qu&#xe1;n"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="FDateSearchGV">
             </Component>
             <Component class="javax.swing.JButton" name="btnSortbyLevelGV">
               <Properties>
@@ -997,6 +1015,24 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="FDateSearchGV">
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="CbMGV">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Nam"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="CbFGV">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="N&#x1eef;a"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
