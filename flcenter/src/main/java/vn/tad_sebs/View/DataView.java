@@ -58,10 +58,7 @@ public class DataView extends javax.swing.JFrame {
 
         Datatable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "ID", "Tên tài liệu", "Thể loại", "Tác giả"
@@ -71,7 +68,7 @@ public class DataView extends javax.swing.JFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                true, true, true, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -102,6 +99,8 @@ public class DataView extends javax.swing.JFrame {
         btnSortbyIDData.setText("Sắp xếp theo ID");
 
         btnSortbyNameData.setText("Sắp xếp theo Tên");
+
+        FIDSearchData.setEnabled(false);
 
         FAuthorSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +212,8 @@ public class DataView extends javax.swing.JFrame {
                     .addComponent(btnSortbyNameData))
                 .addGap(61, 61, 61))
         );
+
+        setBounds(0, 0, 1376, 775);
     }// </editor-fold>//GEN-END:initComponents
 
     private void FSearchDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FSearchDataActionPerformed
@@ -346,6 +347,17 @@ public class DataView extends javax.swing.JFrame {
         return null;
         
     }
+
+    public int getCriteria()
+    {
+        return CbbSearchData.getSelectedIndex();
+    }
+
+    public String getSearchValue()
+    {
+        return FSearchData.getText();
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CbbSearchData;
     private javax.swing.JTable Datatable;

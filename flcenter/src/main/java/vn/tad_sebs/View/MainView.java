@@ -36,6 +36,7 @@ public class MainView extends javax.swing.JFrame {
         QLCTH = new javax.swing.JButton();
         QLKT = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        QLTL = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -43,10 +44,8 @@ public class MainView extends javax.swing.JFrame {
 
         QLHV.setText("Quản lý học viên");
         
-
         QLLH.setText("quản lý lớp học ");
         
-
         QLCBGV.setText("quản lý cán bộ giáo viên");
         
 
@@ -54,8 +53,9 @@ public class MainView extends javax.swing.JFrame {
 
         QLKT.setText("quản lý kì thi");
         
-
         jLabel1.setText("Các Ffame khác");
+
+        QLTL.setText("Quản lý tài liệu");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,8 +77,10 @@ public class MainView extends javax.swing.JFrame {
                         .addGap(148, 148, 148)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(QLKT)))
+                        .addGap(72, 72, 72)
+                        .addComponent(QLKT)
+                        .addGap(30, 30, 30)
+                        .addComponent(QLTL)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -90,9 +92,11 @@ public class MainView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(QLHV)
                     .addComponent(QLCTH))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                .addComponent(QLKT)
-                .addGap(63, 63, 63)
+                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(QLKT)
+                    .addComponent(QLTL))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(QLCBGV)
                     .addComponent(QLLH))
@@ -119,6 +123,10 @@ public class MainView extends javax.swing.JFrame {
     public void addQLCBGVListener(ActionListener listener) {
         QLCBGV.addActionListener(listener);
     }
+    public void addQLTLListener(ActionListener listener)
+    {
+        QLTL.addActionListener(listener);
+    }
     /**
      * @param args the command line arguments
      */
@@ -130,6 +138,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton QLHV;
     private javax.swing.JButton QLKT;
     private javax.swing.JButton QLLH;
+    private javax.swing.JButton QLTL;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

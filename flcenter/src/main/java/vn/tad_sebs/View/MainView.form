@@ -50,8 +50,10 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                       <Component id="QLKT" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="QLTL" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -68,9 +70,12 @@
                   <Component id="QLHV" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="QLCTH" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="75" max="32767" attributes="0"/>
-              <Component id="QLKT" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="QLKT" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="QLTL" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="76" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="QLCBGV" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="QLLH" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -121,6 +126,11 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="C&#xe1;c Ffame kh&#xe1;c"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="QLTL">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; t&#xe0;i li&#x1ec7;u"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<datas>
+    <data>
+        <Id>1</Id>
+        <Name>Destination B2</Name>
+        <Category>Giáo trình</Category>
+        <Author>Paul A Davies</Author>
+    </data>
+    <data>
+        <Id>2</Id>
+        <Name>Solutions 3rd Intermediate</Name>
+        <Category>Giáo trình</Category>
+        <Author>Paul A Davies</Author>
+    </data>
+    <data>
+        <Id>3</Id>
+        <Name>Destination B1</Name>
+        <Category>Giáo trình</Category>
+        <Author>Berkeley</Author>
+    </data>
+</datas>
