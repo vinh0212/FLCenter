@@ -3,21 +3,19 @@
     <student>
         <id>1</id>
         <name>Vinh</name>
-        <Date>1</Date>
-        <Address>1</Address>
-        <GVCN>1</GVCN>
-        <Diem>8.0</Diem>
-        <Gioitinh>1</Gioitinh>
-        <Lop>1</Lop>
+        <Date>02/12/2004</Date>
+        <Address>Địa chỉ</Address>
+        <Diem>7.0</Diem>
+        <Gioitinh>Nam</Gioitinh>
+        <Lop>2</Lop>
     </student>
     <student>
         <id>2</id>
         <name>Phúc</name>
-        <Date>2</Date>
-        <Address>2</Address>
-        <GVCN>2</GVCN>
+        <Date>05/05/2004</Date>
+        <Address>test</Address>
         <Diem>9.0</Diem>
-        <Gioitinh>2</Gioitinh>
+        <Gioitinh>Nam</Gioitinh>
         <Lop>2</Lop>
     </student>
 </students>

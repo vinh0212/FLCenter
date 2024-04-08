@@ -19,7 +19,7 @@ public class StudentDAO {
             listStudents = new ArrayList<Student>();
         }
     }
-    
+
     public List<Student> readListStudents() {
         List<Student> list = new ArrayList<Student>();
         StudentXML studentXML = (StudentXML) FileUtils.readXMLFile(
@@ -49,26 +49,24 @@ public class StudentDAO {
     public void edit(Student student) {
         try {
             for (Student s : listStudents) {
-            if (s.getId() == student.getId()) {
-                s.setName(student.getName());
-                s.setDate(student.getDate());
-                s.setGioitinh(student.getGioitinh());
-                s.setAddress(student.getAddress());
-                s.setLop(student.getLop());
-                s.setGVCN(student.getGVCN());
-                s.setDiem(student.getDiem());
+                if (s.getId() == student.getId()) {
+                    s.setName(student.getName());
+                    s.setDate(student.getDate());
+                    s.setGioitinh(student.getGioitinh());
+                    s.setAddress(student.getAddress());
+                    s.setLop(student.getLop());
+                    s.setDiem(student.getDiem());
+                    break;
+                }
                 
-                break;
             }
             writeListStudents(listStudents);
-        }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void editB(Student student)
-    {
+    public void editB(Student student) {
         try {
             for (Student s : listStudents) {
                 if (s.getId() == student.getId()) {
@@ -110,7 +108,7 @@ public class StudentDAO {
 
     public void sortListStudentsByName() {
         Collections.sort(listStudents, new Comparator<Student>() {
-            
+
             public int compare(Student s1, Student s2) {
                 return s1.getName().compareTo(s2.getName());
             }
@@ -127,7 +125,6 @@ public class StudentDAO {
             }
         });
     }
-
 
     public List<Student> getListStudents() {
         return listStudents;

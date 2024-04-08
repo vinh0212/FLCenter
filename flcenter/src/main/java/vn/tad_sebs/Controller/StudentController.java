@@ -11,15 +11,19 @@ import javax.swing.event.ListSelectionListener;
 import vn.tad_sebs.DAO.StudentDAO;
 import vn.tad_sebs.Model.Student;
 import vn.tad_sebs.View.StudentView;
+import vn.tad_sebs.DAO.LopDAO;
+import vn.tad_sebs.Model.Lop;
 
 public class StudentController {
 
     private StudentView studentView;
     private StudentDAO studentDao;
+    private LopDAO lopDao;
 
     public StudentController(StudentView studentView) {
         this.studentView = studentView;
         studentDao = new StudentDAO();
+        lopDao = new LopDAO();
         studentView.addAddStudentListener(new AddStudentListener());
         studentView.addEditStudentListener(new EditStudentListener());
         studentView.addDeleteStudentListener(new DeleteStudentListener());
@@ -33,6 +37,13 @@ public class StudentController {
 
     public void showStudentView() {
         List<Student> studentList = studentDao.getListStudents();
+        List<Lop> lopList = lopDao.getListLops();
+        ArrayList<String> lopNameList = new ArrayList<>();
+        for (Lop l : lopList)
+        {
+            lopNameList.add(l.getId() + " - " + l.getName());
+        }
+        studentView.showListLop(lopNameList);
         studentView.showListStudents(studentList);
         studentView.setVisible(true);
     }

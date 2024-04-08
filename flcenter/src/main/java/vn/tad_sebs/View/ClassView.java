@@ -583,7 +583,7 @@ public class ClassView extends javax.swing.JFrame {
             student.setName("");
             student.setGioitinh("");
             student.setAddress("");
-            student.setGVCN("");
+            
             student.setLop(String.valueOf(getClassChoice()));
             student.setDate("");
             return student;
