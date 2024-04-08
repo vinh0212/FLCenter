@@ -521,6 +521,9 @@
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="FDateSearchLD">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="CbMLD">
               <Properties>
@@ -1017,6 +1020,9 @@
               </AuxValues>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="FDateSearchGV">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="CbMGV">
               <Properties>
@@ -1031,7 +1037,7 @@
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroup1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="N&#x1eef;a"/>
+                <Property name="text" type="java.lang.String" value="N&#x1eef;"/>
               </Properties>
             </Component>
           </SubComponents>

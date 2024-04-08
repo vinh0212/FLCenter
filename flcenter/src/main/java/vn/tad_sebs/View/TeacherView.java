@@ -285,6 +285,8 @@ public class TeacherView extends javax.swing.JFrame {
 
         btnSortbyRole.setText("Sắp xếp theo Chức vụ");
 
+        FDateSearchLD.setDateFormatString("dd/MM/yyyy");
+
         buttonGroup2.add(CbMLD);
         CbMLD.setText("Nam");
 
@@ -556,11 +558,13 @@ public class TeacherView extends javax.swing.JFrame {
 
         jLabel25.setText("Phòng ban");
 
+        FDateSearchGV.setDateFormatString("dd/MM/yyyy");
+
         buttonGroup1.add(CbMGV);
         CbMGV.setText("Nam");
 
         buttonGroup1.add(CbFGV);
-        CbFGV.setText("Nữa");
+        CbFGV.setText("Nữ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

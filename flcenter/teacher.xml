@@ -3,8 +3,8 @@
     <teacher>
         <Id>2</Id>
         <Name>Vinh</Name>
-        <Date>1</Date>
-        <Sex>1</Sex>
+        <Date>08/04/2024</Date>
+        <Sex>Nữ</Sex>
         <Address>1</Address>
         <Capbacham>1</Capbacham>
         <Lop>1</Lop>
@@ -14,8 +14,8 @@
     <teacher>
         <Id>3</Id>
         <Name>Đạt</Name>
-        <Date>3</Date>
-        <Sex>3</Sex>
+        <Date>01/01/2024</Date>
+        <Sex>Nữ</Sex>
         <Address>3</Address>
         <Capbacham>3</Capbacham>
         <Lop>3</Lop>
@@ -25,8 +25,8 @@
     <teacher>
         <Id>4</Id>
         <Name>An</Name>
-        <Date>4</Date>
-        <Sex>4</Sex>
+        <Date>01/01/2024</Date>
+        <Sex>Nữ</Sex>
         <Address>4</Address>
         <Capbacham>4</Capbacham>
         <Lop>4</Lop>

@@ -16,6 +16,42 @@
         <Address>test</Address>
         <Diem>9.0</Diem>
         <Gioitinh>Nam</Gioitinh>
-        <Lop>2</Lop>
+        <Lop>1</Lop>
+    </student>
+    <student>
+        <id>3</id>
+        <name>Đạt</name>
+        <Date>16/06/2004</Date>
+        <Address>Bình Phước</Address>
+        <Diem>7.0</Diem>
+        <Gioitinh>Nam</Gioitinh>
+        <Lop>1</Lop>
+    </student>
+    <student>
+        <id>4</id>
+        <name>Đạt</name>
+        <Date>16/06/2004</Date>
+        <Address>Bình Phước</Address>
+        <Diem>7.0</Diem>
+        <Gioitinh>Nam</Gioitinh>
+        <Lop>1</Lop>
+    </student>
+<student>
+        <id>5</id>
+        <name>Đạt</name>
+        <Date>16/06/2004</Date>
+        <Address>Bình Phước</Address>
+        <Diem>7.0</Diem>
+        <Gioitinh>Nam</Gioitinh>
+        <Lop>1</Lop>
+    </student>
+<student>
+        <id>6</id>
+        <name>Đạt</name>
+        <Date>16/06/2004</Date>
+        <Address>Bình Phước</Address>
+        <Diem>7.0</Diem>
+        <Gioitinh>Nam</Gioitinh>
+        <Lop>1</Lop>
     </student>
 </students>
