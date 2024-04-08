@@ -30,17 +30,18 @@ public class CanboDAO {
         }
 
         public List<Teacher> readListTeachers() {
-            
+
             List<Teacher> list = new ArrayList<Teacher>();
             TeacherXML teacherXML = (TeacherXML) FileUtils.readXMLFile(
                     TEACHER_FILE_NAME, TeacherXML.class);
             if (teacherXML != null) {
                 list = teacherXML.getTeacher();
             }
-            
+
             return list;
-            
+
         }
+
         public List<Department> readListDepartments() {
             List<Department> list = new ArrayList<Department>();
             DepartmentXML departmentXML = (DepartmentXML) FileUtils.readXMLFile(
@@ -103,6 +104,7 @@ public class CanboDAO {
             }
             return false;
         }
+
         public void sortListTeachersByID() {
             Collections.sort(listTeachers, new Comparator<Teacher>() {
                 @Override
@@ -142,12 +144,32 @@ public class CanboDAO {
         public void setListTeachers(List<Teacher> listTeachers) {
             this.listTeachers = listTeachers;
         }
-        
-        
+
+        public List<Teacher> getUnavailableList(List<Teacher> list) {
+            List<Teacher> unavailableList = new ArrayList<Teacher>();
+            for (Teacher t : listTeachers) {
+                if (!list.contains(t)) {
+                    unavailableList.add(t);
+                }
+            }
+            return unavailableList;
+        }
+
+        public List<Teacher> getListTeacherswithName(List<Teacher> list) {
+            List<Teacher> listTeachersWithName = new ArrayList<Teacher>();
+            for (Teacher t : list) {
+                for (Teacher t1 : listTeachers) {
+                    if (t.getId() == t1.getId()) {
+                        listTeachersWithName.add(t1);
+                    }
+                }
+            }
+            return listTeachersWithName;
+        }
+
     }
-    
-    public static class LanhdaoDAO
-    {
+
+    public static class LanhdaoDAO {
         private List<Lanhdao> listLanhdaos;
         private static final String LANHDAO_FILE_NAME = "lanhdao.xml";
 
@@ -187,22 +209,21 @@ public class CanboDAO {
         public void edit(Lanhdao lanhdao) {
             try {
                 for (Lanhdao l : listLanhdaos) {
-                if (l.getId() == lanhdao.getId()) {
-                    l.setName(lanhdao.getName());
-                    l.setDate(lanhdao.getDate());
-                    l.setSex(lanhdao.getSex());
-                    l.setAddress(lanhdao.getAddress());
-                    l.setCapbacham(lanhdao.getCapbacham());
-                    l.setChucvu(lanhdao.getChucvu());
-                    writeListLanhdaos(listLanhdaos);
+                    if (l.getId() == lanhdao.getId()) {
+                        l.setName(lanhdao.getName());
+                        l.setDate(lanhdao.getDate());
+                        l.setSex(lanhdao.getSex());
+                        l.setAddress(lanhdao.getAddress());
+                        l.setCapbacham(lanhdao.getCapbacham());
+                        l.setChucvu(lanhdao.getChucvu());
+                        writeListLanhdaos(listLanhdaos);
+                    }
                 }
-            }
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
         }
+
         public boolean delete(Lanhdao lanhdao) {
             boolean isFound = false;
             for (Lanhdao l : listLanhdaos) {

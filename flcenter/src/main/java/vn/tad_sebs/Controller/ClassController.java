@@ -187,7 +187,7 @@ public class ClassController {
             int value = classView.getClassChoice();
             listStudentInClass.clear();
             List<Student> listStudent = studentDAO.getListStudents();
-            List<Student> listStudentInClass = new ArrayList<Student>();
+            
             for (Student s : listStudent) {
                 if (s.getLop().equals(String.valueOf(value))) {
                     listStudentInClass.add(s);
@@ -227,6 +227,7 @@ public class ClassController {
                                 list.add(s);
                             }
                         }
+                        break;
                     default:
                         break;
                 }
@@ -276,21 +277,21 @@ public class ClassController {
 
     class SortCLByIDButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            lopDAO.sortStudentListbyID();
+            studentDAO.sortListStudentsByID();
             dothesamething();
         }
     }
 
     class SortCLByNameButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            lopDAO.sortStudentListbyName();
+            studentDAO.sortListStudentsByName();
             dothesamething();
         }
     }
 
     class SortCLByPtsButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            lopDAO.sortStudentListbyDiem();
+            studentDAO.sortListStudentsByDiem();
             dothesamething();
         }
     }

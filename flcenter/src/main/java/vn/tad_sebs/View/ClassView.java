@@ -709,7 +709,7 @@ public class ClassView extends javax.swing.JFrame {
     }
 
     public String getSearchBoxStudent() {
-        return txtFind.getText().toString().trim();
+        return txtFind.getText().trim();
     }
 
     public int getCriteria() {

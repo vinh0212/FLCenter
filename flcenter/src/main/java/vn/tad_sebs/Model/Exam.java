@@ -1,10 +1,13 @@
 package vn.tad_sebs.Model;
 import java.io.Serializable;
+import java.util.List;
 
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 @XmlRootElement(name = "exam")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Exam implements Serializable
@@ -13,9 +16,12 @@ public class Exam implements Serializable
     private int id;
     private String Name;
     private String Time;
-    private int Giamthi;
+
+    @XmlElementWrapper(name = "giamthiList")
+    @XmlElement(name = "giamthi")
+    private List<Teacher> Giamthi;
     public Exam (){}
-    public Exam(int Id, String Name, String Time, int Giamthi) {
+    public Exam(int Id, String Name, String Time, List<Teacher> Giamthi) {
         this.id = Id;
         this.Name = Name;
         this.Time = Time;
@@ -47,11 +53,11 @@ public class Exam implements Serializable
         this.Time = time;
     }
 
-    public int getGiamthi() {
+    public List<Teacher> getGiamthi() {
         return this.Giamthi;
     }
 
-    public void setGiamthi(int giamthi) {
+    public void setGiamthi(List<Teacher> giamthi) {
         this.Giamthi = giamthi;
     }
 }

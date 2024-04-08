@@ -13,17 +13,6 @@
     </teacher>
     <teacher>
         <Id>3</Id>
-        <Name>Vũ</Name>
-        <Date>3</Date>
-        <Sex>1</Sex>
-        <Address>3</Address>
-        <Capbacham>3</Capbacham>
-        <Lop>3</Lop>
-        <Mon>3</Mon>
-        <dp>3</dp>
-    </teacher>
-    <teacher>
-        <Id>3</Id>
         <Name>Đạt</Name>
         <Date>3</Date>
         <Sex>3</Sex>
