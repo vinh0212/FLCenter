@@ -29,6 +29,9 @@ public class TeacherView extends javax.swing.JFrame {
      */
     public TeacherView() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        btnEditLD.setEnabled(false);
+        btnDeleteLD.setEnabled(false);
     }
 
     /**
@@ -927,6 +930,8 @@ public class TeacherView extends javax.swing.JFrame {
         btnDeleteGV.setEnabled(false);
         // enable Add button
         btnAddGV.setEnabled(true);
+
+        GVtable.clearSelection();
     }
      public String getSelectedTextGV() {
         return CbbSeacrchGV.getSelectedItem().toString();
@@ -1136,6 +1141,8 @@ public class TeacherView extends javax.swing.JFrame {
         btnDeleteLD.setEnabled(false);
         // enable Add button
         btnAddLD.setEnabled(true);
+
+        LDtable.clearSelection();
     }
      public String getSelectedTextLD() {
         return CbbSeacrchLD.getSelectedItem().toString();
@@ -1179,6 +1186,8 @@ public class TeacherView extends javax.swing.JFrame {
         return null;
         
     }
+
+
     public void addEditLDListener(ActionListener listener) {
         btnEditLD.addActionListener(listener);
     }

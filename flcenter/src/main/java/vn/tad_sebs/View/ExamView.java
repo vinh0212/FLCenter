@@ -37,6 +37,7 @@ public class ExamView extends javax.swing.JFrame {
      */
     public ExamView() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -317,6 +318,7 @@ public class ExamView extends javax.swing.JFrame {
         setBounds(0, 0, 1340, 775);
     }// </editor-fold>//GEN-END:initComponents
 
+
     private String[] columnNamesExam = new String[] {
             "ID", "Tên kỳ thi", "Thời gian", "Giám thị" };
 
@@ -570,6 +572,8 @@ public class ExamView extends javax.swing.JFrame {
         panelTeacher.setEnabled(false);
         ListPush.setListData(new String[0]);
         LishPull.setListData(new String[0]);
+
+        Examtable.clearSelection();
 
     }
 

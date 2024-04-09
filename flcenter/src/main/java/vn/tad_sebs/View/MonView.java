@@ -20,6 +20,9 @@ public class MonView extends javax.swing.JFrame {
      */
     public MonView() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        btnEditMon.setEnabled(false);
+        btnDeleteMon.setEnabled(false);
     }
 
     /**
@@ -232,6 +235,7 @@ public class MonView extends javax.swing.JFrame {
         setBounds(0, 0, 1410, 775);
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void FIDSearchMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FIDSearchMonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FIDSearchMonActionPerformed
@@ -307,6 +311,8 @@ public class MonView extends javax.swing.JFrame {
         btnDeleteMon.setEnabled(false);
         // enable Add button
         btnAddMon.setEnabled(true);
+
+        Montable.clearSelection();
     }
 
     public void addAddMonListener(ActionListener listener) {

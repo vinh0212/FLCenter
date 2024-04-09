@@ -29,6 +29,7 @@ public class ClassStat extends javax.swing.JFrame {
     public ClassStat() {
         initComponents();
         this.setVisible(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     public void getTable(TableModel model) {

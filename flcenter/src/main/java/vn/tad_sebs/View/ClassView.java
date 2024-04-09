@@ -30,6 +30,7 @@ public class ClassView extends javax.swing.JFrame {
      */
     public ClassView() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -666,6 +667,7 @@ public class ClassView extends javax.swing.JFrame {
             "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
     };
 
+
     public void showClassList(List<Lop> listLops) {
         int size = listLops.size();
         Object[][] data = new Object[size][4];
@@ -739,6 +741,8 @@ public class ClassView extends javax.swing.JFrame {
         btnDeleteClass.setEnabled(false);
         // enable Add button
         btnAddClass.setEnabled(true);
+
+        tbClassList.clearSelection();
     }
 
     public void clearStudentInfo() {
@@ -746,6 +750,8 @@ public class ClassView extends javax.swing.JFrame {
         txtPoint.setText("");
         // disable Edit and Delete buttons
         btnUpdateCL.setEnabled(false);
+
+        tbListStudents.clearSelection();
     }
 
     public void fillLopFromSelectedRow() {

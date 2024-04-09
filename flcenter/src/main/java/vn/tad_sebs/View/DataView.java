@@ -22,6 +22,9 @@ public class DataView extends javax.swing.JFrame {
      */
     public DataView() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        btnEditData.setEnabled(false);
+        btnDeleteData.setEnabled(false);
     }
 
     /**
@@ -216,6 +219,7 @@ public class DataView extends javax.swing.JFrame {
         setBounds(0, 0, 1376, 775);
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void FSearchDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FSearchDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FSearchDataActionPerformed
@@ -279,6 +283,8 @@ public class DataView extends javax.swing.JFrame {
         btnDeleteData.setEnabled(false);
         // enable Add button
         btnAddData.setEnabled(true);
+
+        Datatable.clearSelection();
     }
     public void addAddDataListener(ActionListener listener) {
         btnAddData.addActionListener(listener);
