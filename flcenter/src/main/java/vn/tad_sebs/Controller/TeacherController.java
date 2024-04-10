@@ -192,12 +192,7 @@ public class TeacherController {
 
                         }
                         break;
-                    case "Lớp phụ trách":
-                        for (Teacher t : oldlist)
-                        {
-                            if(t.getLop().equals(value))
-                                list.add(t);
-                        }
+                    
                     default:
                         break;
 

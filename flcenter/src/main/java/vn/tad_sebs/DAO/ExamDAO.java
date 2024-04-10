@@ -56,12 +56,14 @@ public class ExamDAO {
     
 
     public void add(Exam exam) {
+        sortbyID();
         int id = 1;
         if (listExams.size() > 0) {
             id = listExams.get(listExams.size() - 1).getId() + 1;
         }
         exam.setId(id);
         listExams.add(exam);
+        
         writeListExams(listExams);
     }
 
@@ -75,6 +77,8 @@ public class ExamDAO {
                 break;
             }
         }
+
+        sortbyID();
         writeListExams(listExams);
     }
 
@@ -91,6 +95,7 @@ public class ExamDAO {
 
         if(isFound)
         {
+            sortbyID();
             writeListExams(listExams);
             return true;
         }

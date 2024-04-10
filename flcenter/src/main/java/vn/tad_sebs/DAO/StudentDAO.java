@@ -37,12 +37,14 @@ public class StudentDAO {
     }
 
     public void add(Student student) {
+        sortListStudentsByID();
         int id = 1;
-        if (listStudents != null && listStudents.size() > 0) {
-            id = listStudents.size() + 1;
+        if (listStudents.size() > 0) {
+            id =  listStudents.get(listStudents.size() - 1).getId() + 1;
         }
         student.setId(id);
         listStudents.add(student);
+        
         writeListStudents(listStudents);
     }
 
@@ -60,6 +62,7 @@ public class StudentDAO {
                 }
                 
             }
+            sortListStudentsByID();
             writeListStudents(listStudents);
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,6 +77,7 @@ public class StudentDAO {
                     break;
                 }
             }
+            sortListStudentsByID();
             writeListStudents(listStudents);
         } catch (Exception e) {
             e.printStackTrace();
@@ -91,6 +95,7 @@ public class StudentDAO {
         }
         if (isFound) {
             listStudents.remove(student);
+            sortListStudentsByID();
             writeListStudents(listStudents);
             return true;
         }

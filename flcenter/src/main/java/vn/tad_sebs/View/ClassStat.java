@@ -8,6 +8,8 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 import java.awt.BorderLayout;
 
+import javax.swing.JComboBox;
+import javax.swing.JPanel;
 import javax.swing.table.TableModel;
 
 import org.jfree.chart.ChartFactory;
@@ -25,10 +27,13 @@ public class ClassStat extends javax.swing.JFrame {
      * Creates new form ClassStat
      */
     public TableModel model;
+    private JComboBox<String> chartTypeComboBox;
+    private ChartPanel currentChartPanel;
 
     public ClassStat() {
         initComponents();
         this.setVisible(true);
+        pack();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
@@ -46,20 +51,27 @@ public class ClassStat extends javax.swing.JFrame {
         }
 
         // Create a chart using the dataset
-        JFreeChart chart = ChartFactory.createBarChart("Thống kê điểm số", "Khoảng điểm", "Số lượng", dataset);
+        JFreeChart chart;
+        if (chartTypeComboBox.getSelectedItem().equals("Bar Chart")) {
+            chart = ChartFactory.createBarChart("Thống kê điểm số", "Khoảng điểm", "Số lượng", dataset);
+        } else {
+            chart = ChartFactory.createLineChart("Thống kê điểm số", "Khoảng điểm", "Số lượng", dataset);
+        }
 
         // Set the y-axis to display integers only
-    NumberAxis yAxis = (NumberAxis) chart.getCategoryPlot().getRangeAxis();
-    yAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+        NumberAxis yAxis = (NumberAxis) chart.getCategoryPlot().getRangeAxis();
+        yAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
 
         // Create a chart panel and add the chart to it
         ChartPanel chartPanel = new ChartPanel(chart);
-        this.getContentPane().addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentResized(java.awt.event.ComponentEvent evt) {
-                chartPanel.setSize(getContentPane().getSize());
-            }
-        });
+
+        // Remove the old chart panel if it exists
+        if (currentChartPanel != null) {
+            this.remove(currentChartPanel);
+        }
+        
         this.add(chartPanel, BorderLayout.CENTER);
+        currentChartPanel = chartPanel;
 
         // Refresh the panel
         this.validate();
@@ -88,6 +100,19 @@ public class ClassStat extends javax.swing.JFrame {
                         .addGap(0, 300, Short.MAX_VALUE));
 
         setBounds(0, 0, 414, 307);
+
+        JPanel panel = new JPanel(new BorderLayout());
+        chartTypeComboBox = new JComboBox<>(new String[] { "Bar Chart", "Line Chart" });
+        chartTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                action();
+            }
+        });
+        panel.add(chartTypeComboBox, BorderLayout.NORTH);
+
+        getContentPane().setLayout(new BorderLayout());
+
+        getContentPane().add(panel, BorderLayout.NORTH);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

@@ -78,7 +78,7 @@ public class CanboDAO {
                         t.setSex(teacher.getSex());
                         t.setAddress(teacher.getAddress());
                         t.setCapbacham(teacher.getCapbacham());
-                        t.setLop(teacher.getLop());
+                        
                         t.setMon(teacher.getMon());
                         t.setDp(teacher.getDp());
                         writeListTeachers(listTeachers);

@@ -120,8 +120,6 @@ public class TeacherView extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         btnClearGV = new javax.swing.JButton();
         btnDeleteGV = new javax.swing.JButton();
-        FClassSearchGV = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         cbDpChoose = new javax.swing.JComboBox<>();
@@ -291,6 +289,7 @@ public class TeacherView extends javax.swing.JFrame {
         FDateSearchLD.setDateFormatString("dd/MM/yyyy");
 
         buttonGroup2.add(CbMLD);
+        CbMLD.setSelected(true);
         CbMLD.setText("Nam");
 
         buttonGroup2.add(CbFLD);
@@ -522,8 +521,6 @@ public class TeacherView extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Lớp phụ trách");
-
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel24.setText("Chọn phòng ban:");
@@ -564,6 +561,7 @@ public class TeacherView extends javax.swing.JFrame {
         FDateSearchGV.setDateFormatString("dd/MM/yyyy");
 
         buttonGroup1.add(CbMGV);
+        CbMGV.setSelected(true);
         CbMGV.setText("Nam");
 
         buttonGroup1.add(CbFGV);
@@ -598,9 +596,6 @@ public class TeacherView extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(14, 14, 14)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -612,7 +607,6 @@ public class TeacherView extends javax.swing.JFrame {
                                     .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(FClassSearchGV)
                             .addComponent(FRoleSearchGV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                             .addComponent(FLevelSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(FAddressSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -691,11 +685,7 @@ public class TeacherView extends javax.swing.JFrame {
                                 .addComponent(FLevelSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FRoleSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FClassSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(40, 40, 40)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel25)
                             .addComponent(cbDpEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -814,10 +804,10 @@ public class TeacherView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbDpChooseActionPerformed
     private String[] columnNamesGV = new String[] {
-            "ID", "Họ và tên ", "Ngày sinh", "Giới tính", "Quê quán", "Cấp bậc hàm", "Môn giảng dạy", "Lớp phụ trách", "Phòng ban" };
+            "ID", "Họ và tên ", "Ngày sinh", "Giới tính", "Quê quán", "Cấp bậc hàm", "Môn giảng dạy", "Phòng ban" };
     public void showListGV(List<Teacher> list) {
         int size = list.size();
-        Object[][] teachers = new Object[size][9];
+        Object[][] teachers = new Object[size][8];
         for (int i = 0; i < size; i++) {
             teachers[i][0] = list.get(i).getId();
             teachers[i][1] = list.get(i).getName();
@@ -826,8 +816,8 @@ public class TeacherView extends javax.swing.JFrame {
             teachers[i][4] = list.get(i).getAddress();
             teachers[i][5] = list.get(i).getCapbacham();
             teachers[i][6] = list.get(i).getMon();
-            teachers[i][7] = list.get(i).getLop();
-            teachers[i][8] = list.get(i).getDp();
+            
+            teachers[i][7] = list.get(i).getDp();
         }
         GVtable.setModel(new DefaultTableModel(teachers, columnNamesGV));
     }
@@ -860,8 +850,7 @@ public class TeacherView extends javax.swing.JFrame {
             FAddressSearchGV.setText(GVtable.getModel().getValueAt(row, 4).toString());
             FLevelSearchGV.setText(GVtable.getModel().getValueAt(row, 5).toString());
             FRoleSearchGV.setText(GVtable.getModel().getValueAt(row, 6).toString());
-            FClassSearchGV.setText(GVtable.getModel().getValueAt(row, 7).toString());
-            cbDpEdit.setSelectedIndex(Integer.parseInt(GVtable.getModel().getValueAt(row, 8).toString())-1);
+            cbDpEdit.setSelectedIndex(Integer.parseInt(GVtable.getModel().getValueAt(row, 7).toString())-1);
             // enable Edit and Delete buttons
             btnEditGV.setEnabled(true);
             btnDeleteGV.setEnabled(true);
@@ -893,7 +882,7 @@ public class TeacherView extends javax.swing.JFrame {
         FAddressSearchGV.setText(teacher.getAddress());
         FLevelSearchGV.setText(teacher.getCapbacham());
         FRoleSearchGV.setText(teacher.getMon());
-        FClassSearchGV.setText(String.valueOf(teacher.getLop()));
+        
         cbDpEdit.setSelectedIndex(teacher.getDp()-1);
         //enable Delete and edit button
         btnEditGV.setEnabled(true);
@@ -921,7 +910,7 @@ public class TeacherView extends javax.swing.JFrame {
         }
         CbMGV.setSelected(true);
         FAddressSearchGV.setText("");
-        FClassSearchGV.setText("");
+        
         FLevelSearchGV.setText("");
         FRoleSearchGV.setText("");
         cbDpEdit.setSelectedIndex(0);
@@ -970,7 +959,7 @@ public class TeacherView extends javax.swing.JFrame {
             teacher.setAddress(FAddressSearchGV.getText());
             teacher.setCapbacham(FLevelSearchGV.getText());
             teacher.setMon(FRoleSearchGV.getText());
-            teacher.setLop(FClassSearchGV.getText());
+            
             teacher.setDp(cbDpEdit.getSelectedIndex() + 1);
             return teacher;
         }
@@ -1239,7 +1228,6 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.JTextField FAddressSearchGV;
     private javax.swing.JTextField FAddressSearchLD;
     private javax.swing.JTextField FAddressSearchStudent;
-    private javax.swing.JTextField FClassSearchGV;
     private javax.swing.JTextField FClassSearchStudent;
     private com.toedter.calendar.JDateChooser FDateSearchGV;
     private com.toedter.calendar.JDateChooser FDateSearchLD;
@@ -1282,7 +1270,6 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cbDpChoose;
     private javax.swing.JComboBox<String> cbDpEdit;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

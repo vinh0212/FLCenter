@@ -7,8 +7,7 @@
         <Sex>Nữ</Sex>
         <Address>1</Address>
         <Capbacham>1</Capbacham>
-        <Lop>1</Lop>
-        <Mon>1</Mon>
+        <Mon>Không có</Mon>
         <dp>1</dp>
     </teacher>
     <teacher>
@@ -18,19 +17,17 @@
         <Sex>Nữ</Sex>
         <Address>3</Address>
         <Capbacham>3</Capbacham>
-        <Lop>3</Lop>
         <Mon>3</Mon>
         <dp>1</dp>
     </teacher>
     <teacher>
         <Id>4</Id>
-        <Name>An</Name>
-        <Date>01/01/2024</Date>
-        <Sex>Nữ</Sex>
-        <Address>4</Address>
-        <Capbacham>4</Capbacham>
-        <Lop>4</Lop>
-        <Mon>4</Mon>
-        <dp>1</dp>
+        <Name>Lê Văn Cáp</Name>
+        <Date>04/01/1995</Date>
+        <Sex>Nam</Sex>
+        <Address>Dubai</Address>
+        <Capbacham>Thượng uý</Capbacham>
+        <Mon></Mon>
+        <dp>3</dp>
     </teacher>
 </teachers>

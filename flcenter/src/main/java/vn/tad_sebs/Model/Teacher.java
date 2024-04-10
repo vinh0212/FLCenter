@@ -25,11 +25,11 @@ public class Teacher implements Serializable
     private String Sex;
     private String Address;
     private String Capbacham;
-    private String Lop;
+    
     private String Mon;
     private int dp;
     public Teacher(){}
-    public Teacher(int Id,String Name,String Date,String Sex,String Address, String Capbacham,String Lop,String Mon, int dp)
+    public Teacher(int Id,String Name,String Date,String Sex,String Address, String Capbacham,String Mon, int dp)
     {
         super();
         this.Id=Id;
@@ -39,7 +39,7 @@ public class Teacher implements Serializable
         this.Address=Address;
         this.Capbacham=Capbacham;
         
-        this.Lop=Lop;
+        
         this.Mon=Mon;
         this.dp = dp;
     }
@@ -91,18 +91,12 @@ public class Teacher implements Serializable
     {
         this.Capbacham=Capbacham;
     }
-    public String getLop()
-    {
-        return this.Lop;
-    }
+    
     public String getMon()
     {
         return this.Mon;
     }
-    public void setLop(String Lop)
-    {
-        this.Lop=Lop;
-    }
+    
     public void setMon(String Mon)
     {
         this.Mon=Mon;

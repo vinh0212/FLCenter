@@ -3,7 +3,9 @@ package vn.tad_sebs.DAO;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import vn.tad_sebs.Model.Lop;
 import vn.tad_sebs.Model.LopXML;
@@ -16,7 +18,7 @@ import vn.tad_sebs.Model.Teacher;
 
 public class LopDAO {
     private List<Lop> listLops;
-    private List<Student> listStudents;
+    public List<Student> listStudents;
     private List<Teacher> listTeachers;
     private static final String LOP_FILE_NAME = "lop.xml";
     private static final String STUDENT_FILE_NAME = "student.xml";
@@ -24,10 +26,38 @@ public class LopDAO {
 
     public LopDAO() {
         this.listLops = readListLops();
+        
+        getListStudents(); // Đảm bảo rằng listStudents đã được khởi tạo
+
+        // Tạo một HashMap để lưu trữ danh sách học sinh theo lớp
+        Map<String, List<Integer>> studentsByClass = new HashMap<>();
+
+        for (Student s : listStudents) {
+            // Lấy danh sách học sinh của lớp hiện tại
+            List<Integer> studentsInClass = studentsByClass.get(s.getLop());
+
+            // Nếu danh sách này chưa tồn tại, tạo một danh sách mới
+            if (studentsInClass == null) {
+                studentsInClass = new ArrayList<>();
+                studentsByClass.put(s.getLop(), studentsInClass);
+            }
+
+            // Thêm học sinh vào danh sách
+            studentsInClass.add(s.getId());
+        }
+
+        // Gán danh sách học sinh cho từng lớp
+        for (Lop lop : listLops) {
+            lop.setIdStudent(studentsByClass.get(String.valueOf(lop.getId())));
+        }
 
         if (listLops == null) {
             listLops = new ArrayList<Lop>();
         }
+    }
+
+    public void getListStudents() {
+        listStudents = new StudentDAO().readListStudents();
     }
 
     public void writeListLops(List<Lop> lops) {
@@ -43,8 +73,7 @@ public class LopDAO {
         if (lopXML != null) {
             list = lopXML.getLop();
         }
-        
-        
+
         return list;
     }
 
@@ -71,12 +100,14 @@ public class LopDAO {
     }
 
     public void addA(Lop lop) {
+        sortClassListbyID();
         int id = 1;
         if (listLops.size() > 0) {
             id = listLops.get(listLops.size() - 1).getId() + 1;
         }
         lop.setId(id);
         listLops.add(lop);
+
         writeListLops(listLops);
     }
 
@@ -87,6 +118,7 @@ public class LopDAO {
                 l.setNote(lop.getNote());
             }
         }
+        sortClassListbyID();
         writeListLops(listLops);
     }
 
@@ -96,6 +128,7 @@ public class LopDAO {
                 l.setIdMonhoc(lop.getIdMonhoc());
             }
         }
+        sortClassListbyID();
         writeListLops(listLops);
     }
 
@@ -108,6 +141,7 @@ public class LopDAO {
                 break;
             }
         }
+        sortClassListbyID();
         writeListLops(listLops);
     }
 
@@ -121,15 +155,14 @@ public class LopDAO {
             }
         }
         if (isFound) {
+            sortClassListbyID();
             writeListLops(listLops);
             return true;
         }
         return false;
     }
 
-
-    public void sortClassListbyID()
-    {
+    public void sortClassListbyID() {
         Collections.sort(listLops, new Comparator<Lop>() {
             @Override
             public int compare(Lop l1, Lop l2) {
@@ -138,8 +171,7 @@ public class LopDAO {
         });
     }
 
-    public void sortClassListbySL()
-    {
+    public void sortClassListbySL() {
         Collections.sort(listLops, new Comparator<Lop>() {
             @Override
             public int compare(Lop l1, Lop l2) {
@@ -148,8 +180,7 @@ public class LopDAO {
         });
     }
 
-    public void sortStudentListbyID()
-    {
+    public void sortStudentListbyID() {
         Collections.sort(listStudents, new Comparator<Student>() {
             @Override
             public int compare(Student s1, Student s2) {
@@ -158,8 +189,7 @@ public class LopDAO {
         });
     }
 
-    public void sortStudentListbyName()
-    {
+    public void sortStudentListbyName() {
         Collections.sort(listStudents, new Comparator<Student>() {
             @Override
             public int compare(Student s1, Student s2) {
@@ -168,16 +198,16 @@ public class LopDAO {
         });
     }
 
-    public void sortStudentListbyDiem()
-    {
+    public void sortStudentListbyDiem() {
         Collections.sort(listStudents, new Comparator<Student>() {
             @Override
             public int compare(Student s1, Student s2) {
                 return Float.compare(s1.getDiem(), s2.getDiem());
             }
         });
-    
+
     }
+
     public List<Lop> getListLops() {
         return listLops;
     }
