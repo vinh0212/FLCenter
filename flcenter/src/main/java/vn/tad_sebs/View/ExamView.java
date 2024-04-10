@@ -578,6 +578,8 @@ public class ExamView extends javax.swing.JFrame {
     }
 
     public Exam getExamInfo() {
+        if(!validateName() || !validateGiamthi())
+            return null;
         try {
 
             Exam exam = new Exam();
@@ -607,6 +609,26 @@ public class ExamView extends javax.swing.JFrame {
         }
         return null;
 
+    }
+
+    private boolean validateName()
+    {
+        if (FNameSearchExam.getText().trim().equals("")) {
+            FNameSearchExam.requestFocus();
+            showMessage("Tên kỳ thi không được để trống");
+            return false;
+        }
+        return true;
+    }
+
+    public boolean validateGiamthi()
+    {
+        if (FTeacherSearchExam.getText().trim().equals("")) {
+            FTeacherSearchExam.requestFocus();
+            showMessage("Cần phải có giám thị cho kỳ thi");
+            return false;
+        }
+        return true;
     }
 
     public void addAddExamListener(ActionListener listener) {

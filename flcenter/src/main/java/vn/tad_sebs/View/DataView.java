@@ -332,6 +332,10 @@ public class DataView extends javax.swing.JFrame {
     }
     public Data getDataInfo()
     {
+        if(!validateName() || !validateCategory() || !validateAuthor())
+        {
+            return null;
+        }
         try
         {
             
@@ -353,6 +357,41 @@ public class DataView extends javax.swing.JFrame {
         return null;
         
     }
+
+    private boolean validateName()
+    {
+        if(FNameSearchData.getText().trim().equals(""))
+        {
+            FNameSearchData.requestFocus();
+            showMessage("Tên tài liệu không được để trống");
+            return false;
+        }
+        return true;
+    }
+    
+    private boolean validateCategory()
+    {
+        if(FCategorySearch.getText().trim().equals(""))
+        {
+            FCategorySearch.requestFocus();
+            showMessage("Thể loại không được để trống");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateAuthor()
+    {
+        if(FAuthorSearch.getText().trim().equals(""))
+        {
+            FAuthorSearch.requestFocus();
+            showMessage("Tác giả không được để trống");
+            return false;
+        }
+        return true;
+    }
+
+
 
     public int getCriteria()
     {

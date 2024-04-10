@@ -31,6 +31,7 @@ public class Lop implements Serializable {
     public Lop() {
         this.idMonhoc = new ArrayList<>();
         this.idStudent = new ArrayList<>();
+        this.Note = "";
     }
 
     public Lop(int Id, String Name, List<Integer> idStudent, String Note, List<Integer> idMonhoc) {

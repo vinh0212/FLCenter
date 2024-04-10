@@ -687,6 +687,10 @@ public class ClassView extends javax.swing.JFrame {
     };
 
     public Lop getLopInfo() {
+        if(!validateName())
+        {
+            return null;
+        }
         try {
             Lop lop = new Lop();
             if (txtIDClass.getText() != null && !"".equals(txtIDClass.getText())) {
@@ -705,6 +709,18 @@ public class ClassView extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         return null;
+    }
+
+    private boolean validateName()
+    {
+        String name = txtNameClass.getText();
+        if (name == null || name.isEmpty())
+        {
+            txtNameClass.requestFocus();
+            showMessage("Tên lớp không được để trống");
+            return false;
+        }
+        return true;
     }
 
     public Student getStudentInfo() {

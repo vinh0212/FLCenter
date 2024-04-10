@@ -939,6 +939,10 @@ public class TeacherView extends javax.swing.JFrame {
     }
     public Teacher getGVInfo()
     {
+        if(!validateGVName() || !validateGVAddress() || !validateGVCapbacham() || !validateGVRole())
+        {
+            return null;
+        }
         try
         {
             
@@ -969,6 +973,54 @@ public class TeacherView extends javax.swing.JFrame {
         }
         return null;
         
+    }
+
+    private boolean validateGVName()
+    {
+        String name = FNameSearchGV.getText();
+        if(name == null || "".equals(name))
+        {
+            FNameSearchGV.requestFocus();
+            showMessage("Tên không được để trống");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateGVAddress()
+    {
+        String address = FAddressSearchGV.getText();
+        if(address == null || "".equals(address))
+        {
+            FAddressSearchGV.requestFocus();
+            showMessage("Quê quán không được để trống");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateGVCapbacham()
+    {
+        String capbacham = FLevelSearchGV.getText();
+        if(capbacham == null || "".equals(capbacham))
+        {
+            FLevelSearchGV.requestFocus();
+            showMessage("Cấp bậc hàm không được để trống");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateGVRole()
+    {
+        String role = FRoleSearchGV.getText();
+        if(role == null || "".equals(role))
+        {
+            FRoleSearchGV.requestFocus();
+            showMessage("Môn giảng dạy không được để trống");
+            return false;
+        }
+        return true;
     }
     public void addEditGVListener(ActionListener listener) {
         btnEditGV.addActionListener(listener);
@@ -1146,6 +1198,10 @@ public class TeacherView extends javax.swing.JFrame {
     }
     public Lanhdao getLDInfo()
     {
+        if(!validateLDName() || !validateLDAddress() || !validateLDCapbacham() || !validateLDRole())
+        {
+            return null;
+        }
         try
         {
             
@@ -1174,6 +1230,54 @@ public class TeacherView extends javax.swing.JFrame {
         }
         return null;
         
+    }
+
+    private boolean validateLDName()
+    {
+        String name = FNameSearchLD.getText();
+        if(name == null || "".equals(name))
+        {
+            FNameSearchLD.requestFocus();
+            showMessage("Tên không được để trống");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateLDAddress()
+    {
+        String address = FAddressSearchLD.getText();
+        if(address == null || "".equals(address))
+        {
+            FAddressSearchLD.requestFocus();
+            showMessage("Quê quán không được để trống");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateLDCapbacham()
+    {
+        String capbacham = FLevelSearchLD.getText();
+        if(capbacham == null || "".equals(capbacham))
+        {
+            FLevelSearchLD.requestFocus();
+            showMessage("Cấp bậc hàm không được để trống");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateLDRole()
+    {
+        String role = FRoleSearchLD.getText();
+        if(role == null || "".equals(role))
+        {
+            FRoleSearchLD.requestFocus();
+            showMessage("Chức vụ không được để trống");
+            return false;
+        }
+        return true;
     }
 
 

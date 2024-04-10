@@ -368,6 +368,10 @@ public class MonView extends javax.swing.JFrame {
     }
     public Monhoc getMonInfo()
     {
+        if(!validateName() || !validateSoTiet())
+        {
+            return null;
+        }
         try
         {
             
@@ -390,6 +394,48 @@ public class MonView extends javax.swing.JFrame {
         return null;
         
     }
+
+    private boolean validateName()
+    {
+        String name = FNameSearchMon.getText();
+        if(name == null || "".equals(name))
+        {
+            FNameSearchMon.requestFocus();
+            showMessage("Tên môn không được để trống");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateSoTiet()
+    {
+        String soTiet = FSoTietSearch.getText();
+        if(soTiet == null || "".equals(soTiet))
+        {
+            FSoTietSearch.requestFocus();
+            showMessage("Số tiết không được để trống");
+            return false;
+        }
+        try
+        {
+            int soTietInt = Integer.parseInt(soTiet);
+            if(soTietInt <= 0)
+            {
+                FSoTietSearch.requestFocus();
+                showMessage("Số tiết phải lớn hơn 0");
+                return false;
+            }
+        }
+        catch (Exception ex)
+        {
+            FSoTietSearch.requestFocus();
+            showMessage("Số tiết phải là số nguyên");
+            return false;
+        }
+        return true;
+    }
+
+
     public void showListDP(List<Department> list)
     {
         int size = list.size();

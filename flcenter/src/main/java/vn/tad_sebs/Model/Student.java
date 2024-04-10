@@ -20,7 +20,7 @@ public class Student implements Serializable
     private float Diem;
     private String Gioitinh;
     private String Lop;
-    public Student(){}
+    public Student(){ this.Diem = 0;  }
     public Student(int id, String name, String Date , String Gioitinh,String Address, String Lop, float Diem) {
         super();
         this.id = id;
