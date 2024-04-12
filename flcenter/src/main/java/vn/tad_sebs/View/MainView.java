@@ -127,9 +127,7 @@ public class MainView extends javax.swing.JFrame {
     {
         QLTL.addActionListener(listener);
     }
-    /**
-     * @param args the command line arguments
-     */
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

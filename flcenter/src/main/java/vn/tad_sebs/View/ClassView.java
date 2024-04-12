@@ -904,9 +904,7 @@ public class ClassView extends javax.swing.JFrame {
         return Integer.parseInt(txtIDClass.getText());
     }
 
-    /**
-     * @param args the command line arguments
-     */
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddClass;
