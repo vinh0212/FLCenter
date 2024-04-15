@@ -36,6 +36,7 @@ public class MonView extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         Montable = new javax.swing.JTable();
+        jSeparator1 = new javax.swing.JSeparator();
         FIDSearchMon = new javax.swing.JTextField();
         btnDeleteMon = new javax.swing.JButton();
         btnEditMon = new javax.swing.JButton();
@@ -54,10 +55,14 @@ public class MonView extends javax.swing.JFrame {
         btnSortbyNameMon = new javax.swing.JButton();
         btnSortbyTinchi = new javax.swing.JButton();
         cbDpEdit = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Montable.setBackground(new java.awt.Color(174, 228, 255));
+        Montable.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         Montable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -84,8 +89,12 @@ public class MonView extends javax.swing.JFrame {
         Montable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Montable.setShowGrid(false);
         Montable.setShowHorizontalLines(true);
+        Montable.getTableHeader().setReorderingAllowed(false);
         Montable.setUpdateSelectionOnSort(false);
         jScrollPane1.setViewportView(Montable);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 62, 1010, 570));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 340, 390, 10));
 
         FIDSearchMon.setEnabled(false);
         FIDSearchMon.addActionListener(new java.awt.event.ActionListener() {
@@ -93,146 +102,101 @@ public class MonView extends javax.swing.JFrame {
                 FIDSearchMonActionPerformed(evt);
             }
         });
+        getContentPane().add(FIDSearchMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 90, 170, -1));
 
+        btnDeleteMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnDeleteMon.setText("Xóa");
         btnDeleteMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteMonActionPerformed(evt);
             }
         });
+        getContentPane().add(btnDeleteMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 310, 59, -1));
 
+        btnEditMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnEditMon.setText("Chỉnh sửa");
         btnEditMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditMonActionPerformed(evt);
             }
         });
+        getContentPane().add(btnEditMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 310, -1, -1));
+        getContentPane().add(FNameSearchMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 140, 170, -1));
+        getContentPane().add(FSoTietSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 190, 170, -1));
 
+        btnAddMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnAddMon.setText("Thêm");
+        getContentPane().add(btnAddMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 310, -1, -1));
 
+        CbbSearchMon.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         CbbSearchMon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên môn", "Số tiết", "Khoa" }));
+        getContentPane().add(CbbSearchMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 14, -1, -1));
+        getContentPane().add(FSearchMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 14, 115, -1));
 
+        btnSearchMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSearchMon.setText("Tìm");
         btnSearchMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchMonActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSearchMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 14, -1, -1));
 
+        jLabel2.setBackground(new java.awt.Color(102, 255, 102));
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 255, 73));
         jLabel2.setText("ID");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 90, 51, -1));
 
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 255, 73));
         jLabel4.setText("Số tiết");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 190, 56, -1));
 
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 255, 73));
         jLabel5.setText("Khoa");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 240, 56, -1));
 
+        jLabel12.setBackground(new java.awt.Color(105, 202, 105));
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(51, 255, 73));
         jLabel12.setText("Tên môn");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 140, 80, -1));
 
+        btnClearMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnClearMon.setText("Clear");
+        getContentPane().add(btnClearMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 310, 60, -1));
 
+        btnSortbyidMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyidMon.setText("Sắp xếp theo ID");
+        btnSortbyidMon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSortbyidMonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSortbyidMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 450, 160, 60));
 
+        btnSortbyNameMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyNameMon.setText("Sắp xếp theo Tên");
+        getContentPane().add(btnSortbyNameMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 360, 160, 60));
 
+        btnSortbyTinchi.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyTinchi.setText("Sắp xếp theo Số tiết");
+        getContentPane().add(btnSortbyTinchi, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 550, 160, 60));
 
         cbDpEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbDpEditActionPerformed(evt);
             }
         });
+        getContentPane().add(cbDpEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 240, 170, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(CbbSearchMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(FSearchMon, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSearchMon)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 944, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnDeleteMon, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAddMon, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditMon)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnClearMon))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(81, 81, 81)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FSoTietSearch)
-                            .addComponent(FNameSearchMon)
-                            .addComponent(FIDSearchMon, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cbDpEdit, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(125, 125, 125))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(btnSortbyidMon)
-                .addGap(53, 53, 53)
-                .addComponent(btnSortbyNameMon)
-                .addGap(66, 66, 66)
-                .addComponent(btnSortbyTinchi)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CbbSearchMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FSearchMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchMon))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FIDSearchMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FNameSearchMon, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FSoTietSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(cbDpEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(149, 149, 149)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAddMon)
-                            .addComponent(btnEditMon)
-                            .addComponent(btnDeleteMon)
-                            .addComponent(btnClearMon))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSortbyidMon)
-                    .addComponent(btnSortbyNameMon)
-                    .addComponent(btnSortbyTinchi))
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLMH2.png")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 670));
 
-        setBounds(0, 0, 1410, 775);
+        setSize(new java.awt.Dimension(1404, 676));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -255,6 +219,10 @@ public class MonView extends javax.swing.JFrame {
     private void cbDpEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDpEditActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbDpEditActionPerformed
+
+    private void btnSortbyidMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortbyidMonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSortbyidMonActionPerformed
     private String[] columnNamesMon = new String[] {
             "ID", "Tên môn", "Số tiết", "Khoa"};
 
@@ -461,10 +429,12 @@ public class MonView extends javax.swing.JFrame {
     private javax.swing.JButton btnSortbyTinchi;
     private javax.swing.JButton btnSortbyidMon;
     private javax.swing.JComboBox<String> cbDpEdit;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

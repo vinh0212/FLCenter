@@ -55,10 +55,14 @@ public class DataView extends javax.swing.JFrame {
         btnDeleteData = new javax.swing.JButton();
         btnEditData = new javax.swing.JButton();
         btnClearData = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Datatable.setBackground(new java.awt.Color(174, 228, 255));
         Datatable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -84,139 +88,90 @@ public class DataView extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Datatable);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 986, 503));
+
+        CbbSearchData.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         CbbSearchData.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên tài liệu", "Thể loại", "Tác giả" }));
+        getContentPane().add(CbbSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
         FSearchData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FSearchDataActionPerformed(evt);
             }
         });
+        getContentPane().add(FSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 118, -1));
 
+        btnSearchData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSearchData.setText("Tìm");
         btnSearchData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchDataActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
 
+        btnSortbyIDData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyIDData.setText("Sắp xếp theo ID");
+        getContentPane().add(btnSortbyIDData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 430, 180, 80));
 
+        btnSortbyNameData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyNameData.setText("Sắp xếp theo Tên");
+        getContentPane().add(btnSortbyNameData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 320, 180, 80));
 
         FIDSearchData.setEnabled(false);
+        getContentPane().add(FIDSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 100, 161, -1));
+        getContentPane().add(FNameSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 140, 161, -1));
+        getContentPane().add(FCategorySearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 180, 161, -1));
 
         FAuthorSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FAuthorSearchActionPerformed(evt);
             }
         });
+        getContentPane().add(FAuthorSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 220, 161, -1));
 
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 255, 73));
         jLabel1.setText("ID");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 100, 30, -1));
 
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 255, 73));
         jLabel2.setText("Tên tài liệu");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 140, 100, -1));
 
+        jLabel3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 255, 73));
         jLabel3.setText("Thể loại");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 180, 70, -1));
 
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 255, 73));
         jLabel4.setText("Tác giả");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 220, 60, -1));
 
+        btnAddData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnAddData.setText("Thêm");
+        getContentPane().add(btnAddData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 260, -1, -1));
 
+        btnDeleteData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnDeleteData.setText("Xóa");
+        getContentPane().add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 260, -1, -1));
 
+        btnEditData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnEditData.setText("Chỉnh sửa");
+        getContentPane().add(btnEditData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 260, -1, -1));
 
+        btnClearData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnClearData.setText("Clear");
+        getContentPane().add(btnClearData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 260, -1, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 290, 370, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(CbbSearchData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(FSearchData, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSearchData))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(btnSortbyIDData)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSortbyNameData))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 986, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnAddData)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnDeleteData)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnEditData)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnClearData))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FNameSearchData, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FIDSearchData, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FCategorySearch, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FAuthorSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CbbSearchData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FSearchData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchData))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(237, 237, 237)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(FIDSearchData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(FNameSearchData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FCategorySearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FAuthorSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAddData)
-                            .addComponent(btnDeleteData)
-                            .addComponent(btnEditData)
-                            .addComponent(btnClearData))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSortbyIDData)
-                    .addComponent(btnSortbyNameData))
-                .addGap(61, 61, 61))
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLTL2.png")); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 670));
 
-        setBounds(0, 0, 1376, 775);
+        setSize(new java.awt.Dimension(1376, 622));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -422,6 +377,8 @@ public class DataView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

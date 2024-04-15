@@ -28,15 +28,6 @@
         <Lop>1</Lop>
     </student>
     <student>
-        <id>6</id>
-        <name>Tuấn Anh</name>
-        <Date>03/06/2024</Date>
-        <Address>Hà Tĩnh</Address>
-        <Diem>8.0</Diem>
-        <Gioitinh>Nam</Gioitinh>
-        <Lop>2</Lop>
-    </student>
-    <student>
         <id>7</id>
         <name>Vũ</name>
         <Date>30/06/2004</Date>

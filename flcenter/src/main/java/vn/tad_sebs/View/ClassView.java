@@ -4,6 +4,7 @@
  */
 package vn.tad_sebs.View;
 
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,8 @@ public class ClassView extends javax.swing.JFrame {
      * Creates new form ClassView
      */
     public ClassView() {
+        FlatMacLightLaf.registerCustomDefaultsSource("FlatMacLightLaf.properties");
+        FlatMacLightLaf.setup();
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
@@ -42,7 +45,7 @@ public class ClassView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -64,11 +67,13 @@ public class ClassView extends javax.swing.JFrame {
         btnClearClass = new javax.swing.JButton();
         btnSortbyIDClass = new javax.swing.JButton();
         btnSortbySLClass = new javax.swing.JButton();
-        txtSubinClass = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbListStudents = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         cbChonlop = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
@@ -84,479 +89,251 @@ public class ClassView extends javax.swing.JFrame {
         txtFind = new javax.swing.JTextField();
         btnFind = new javax.swing.JButton();
         btnStat = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tbClassList.setBackground(new java.awt.Color(102, 204, 255));
         tbClassList.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null }
-                },
-                new String[] {
-                        "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
-                }) {
-            Class[] types = new Class[] {
-                    java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
-            boolean[] canEdit = new boolean[] {
-                    false, false, false, false
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
+                return types [columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
+                return canEdit [columnIndex];
             }
         });
         tbClassList.setShowGrid(false);
         tbClassList.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(tbClassList);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 18, 820, 590));
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ID");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Số lượng học viên");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 150, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Ghi chú");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 190, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Tên lớp");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 110, -1, -1));
 
         txtIDClass.setEnabled(false);
+        jPanel1.add(txtIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 60, 170, -1));
 
         txtNameClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameClassActionPerformed(evt);
             }
         });
+        jPanel1.add(txtNameClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 110, 170, -1));
 
         txtSLClass.setEnabled(false);
+        jPanel1.add(txtSLClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 150, 170, -1));
 
         txtNoteClass.setColumns(20);
         txtNoteClass.setRows(5);
         jScrollPane2.setViewportView(txtNoteClass);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 190, 290, 120));
+
+        btnAddClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnAddClass.setText("Thêm");
+        jPanel1.add(btnAddClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 320, -1, -1));
 
-        btnEditClass.setText("Sửa");
+        btnEditClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnEditClass.setText("Chỉnh Sửa");
+        jPanel1.add(btnEditClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 320, -1, -1));
 
+        btnDeleteClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnDeleteClass.setText("Xoá");
+        jPanel1.add(btnDeleteClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 320, -1, -1));
 
+        btnClearClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnClearClass.setText("Clear");
+        jPanel1.add(btnClearClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 320, -1, -1));
 
+        btnSortbyIDClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyIDClass.setText("Sắp xếp theo ID");
+        jPanel1.add(btnSortbyIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 230, 80));
 
+        btnSortbySLClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbySLClass.setText("Sắp xếp theo Số lượng học viên");
+        jPanel1.add(btnSortbySLClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 490, 230, 80));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(853, 350, 510, 14));
 
-        txtSubinClass.setEditable(false);
-        txtSubinClass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSubinClassActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(btnSortbyIDClass)
-                                                .addGap(110, 110, 110)
-                                                .addComponent(btnSortbySLClass))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 627,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(jPanel1Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addGap(46, 46, 46)
-                                                                .addGroup(jPanel1Layout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                                .addComponent(jLabel2)
-                                                                                .addPreferredGap(
-                                                                                        javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                .addComponent(txtSLClass,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                        93,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                                .addGroup(jPanel1Layout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addComponent(jLabel1)
-                                                                                        .addComponent(jLabel3)
-                                                                                        .addComponent(jLabel4))
-                                                                                .addGroup(jPanel1Layout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addGroup(jPanel1Layout
-                                                                                                .createSequentialGroup()
-                                                                                                .addGap(70, 70, 70)
-                                                                                                .addGroup(jPanel1Layout
-                                                                                                        .createParallelGroup(
-                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                        .addComponent(
-                                                                                                                txtIDClass,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                93,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addComponent(
-                                                                                                                txtNameClass,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                401,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                        .addGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                                jPanel1Layout
-                                                                                                        .createSequentialGroup()
-                                                                                                        .addGap(69, 69,
-                                                                                                                69)
-                                                                                                        .addGroup(
-                                                                                                                jPanel1Layout
-                                                                                                                        .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                        .addGroup(
-                                                                                                                                jPanel1Layout
-                                                                                                                                        .createSequentialGroup()
-                                                                                                                                        .addComponent(
-                                                                                                                                                btnEditClass)
-                                                                                                                                        .addGap(52,
-                                                                                                                                                52,
-                                                                                                                                                52)
-                                                                                                                                        .addComponent(
-                                                                                                                                                btnDeleteClass)
-                                                                                                                                        .addGap(51,
-                                                                                                                                                51,
-                                                                                                                                                51)
-                                                                                                                                        .addComponent(
-                                                                                                                                                btnClearClass))
-                                                                                                                        .addComponent(
-                                                                                                                                jScrollPane2,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                402,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                                                        .addComponent(btnAddClass)))
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addGap(56, 56, 56)
-                                                                .addComponent(txtSubinClass,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 71,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addContainerGap(130, Short.MAX_VALUE)));
-        jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(150, 150, 150)
-                                                .addGroup(jPanel1Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jLabel1)
-                                                        .addComponent(txtIDClass,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(jPanel1Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jLabel4)
-                                                        .addComponent(txtNameClass,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(jPanel1Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jLabel2)
-                                                        .addComponent(txtSLClass,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(jPanel1Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel3)
-                                                        .addComponent(jScrollPane2,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 210,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73,
-                                                        Short.MAX_VALUE)
-                                                .addGroup(jPanel1Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(btnAddClass)
-                                                        .addComponent(btnEditClass)
-                                                        .addComponent(btnDeleteClass)
-                                                        .addComponent(btnClearClass))
-                                                .addGap(81, 81, 81)
-                                                .addComponent(txtSubinClass, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(30, 30, 30)
-                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 615,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnSortbySLClass)
-                                        .addComponent(btnSortbyIDClass))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+        jLabel10.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLLH2.png")); // NOI18N
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1370, 660));
 
         jTabbedPane1.addTab("Danh sách lớp học", jPanel1);
 
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tbListStudents.setBackground(new java.awt.Color(102, 204, 255));
         tbListStudents.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null, null },
-                        { null, null, null, null, null },
-                        { null, null, null, null, null },
-                        { null, null, null, null, null }
-                },
-                new String[] {
-                        "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
-                }) {
-            Class[] types = new Class[] {
-                    java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
-                    java.lang.Float.class
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
             };
-            boolean[] canEdit = new boolean[] {
-                    false, false, false, false, false
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
+                return types [columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
+                return canEdit [columnIndex];
             }
         });
         jScrollPane3.setViewportView(tbListStudents);
 
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 97, 890, 520));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 58, 1364, 10));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(914, 263, 450, 10));
+
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Chọn lớp:");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 30));
 
         cbChonlop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbChonlopActionPerformed(evt);
             }
         });
+        jPanel2.add(cbChonlop, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 18, 386, 34));
 
+        jLabel6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("ID");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 150, -1, -1));
 
         txtID1.setEnabled(false);
+        jPanel2.add(txtID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 150, 96, -1));
 
+        jLabel7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nhập điểm");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 190, -1, -1));
 
         txtPoint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPointActionPerformed(evt);
             }
         });
+        jPanel2.add(txtPoint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 190, 280, -1));
 
+        btnUpdateCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnUpdateCL.setText("Xác nhận");
+        jPanel2.add(btnUpdateCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 230, -1, -1));
 
+        btnClearCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnClearCL.setText("Clear");
+        jPanel2.add(btnClearCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 230, -1, -1));
 
+        btnSortbyIDCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyIDCL.setText("Sắp xếp theo ID");
+        jPanel2.add(btnSortbyIDCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 300, 220, 70));
 
+        btnSortbyNameCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyNameCL.setText("Sắp xếp theo Tên");
         btnSortbyNameCL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSortbyNameCLActionPerformed(evt);
             }
         });
+        jPanel2.add(btnSortbyNameCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 410, 220, 80));
 
+        btnSortbyPtsCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyPtsCL.setText("Sắp xếp theo Điểm số");
         btnSortbyPtsCL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSortbyPtsCLActionPerformed(evt);
             }
         });
+        jPanel2.add(btnSortbyPtsCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 530, 220, 80));
 
+        cbFind.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cbFind.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Quê quán" }));
+        jPanel2.add(cbFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 100, -1, -1));
+        jPanel2.add(txtFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 100, 170, -1));
 
         btnFind.setText("Tìm kiếm");
+        jPanel2.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 100, -1, -1));
 
+        btnStat.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnStat.setText("Thống kê điểm số theo lớp");
         btnStat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStatActionPerformed(evt);
             }
         });
+        jPanel2.add(btnStat, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 230, 200, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jSeparator1)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                .addGap(44, 44, 44)
-                                                                .addComponent(jLabel5)
-                                                                .addPreferredGap(
-                                                                        javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(cbChonlop,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 386,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                .addGap(34, 34, 34)
-                                                                .addComponent(jScrollPane3,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 817,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGroup(jPanel2Layout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                                .addGap(40, 40, 40)
-                                                                                .addGroup(jPanel2Layout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addGroup(jPanel2Layout
-                                                                                                .createSequentialGroup()
-                                                                                                .addGroup(jPanel2Layout
-                                                                                                        .createParallelGroup(
-                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                        .addComponent(
-                                                                                                                jLabel7)
-                                                                                                        .addComponent(
-                                                                                                                jLabel6))
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addGroup(jPanel2Layout
-                                                                                                        .createParallelGroup(
-                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                        .addComponent(
-                                                                                                                txtID1,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                96,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addComponent(
-                                                                                                                txtPoint,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                293,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                        .addGroup(jPanel2Layout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(cbFind,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(txtFind,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        178,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(
-                                                                                                        btnFind))))
-                                                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                                .addGap(63, 63, 63)
-                                                                                .addGroup(jPanel2Layout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                false)
-                                                                                        .addComponent(btnStat,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE)
-                                                                                        .addGroup(jPanel2Layout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(
-                                                                                                        btnUpdateCL)
-                                                                                                .addGap(125, 125, 125)
-                                                                                                .addComponent(
-                                                                                                        btnClearCL)))))))
-                                                .addGap(0, 79, Short.MAX_VALUE)))
-                                .addContainerGap())
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addComponent(btnSortbyIDCL)
-                                .addGap(50, 50, 50)
-                                .addComponent(btnSortbyNameCL)
-                                .addGap(55, 55, 55)
-                                .addComponent(btnSortbyPtsCL)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-        jPanel2Layout.setVerticalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(cbChonlop, javax.swing.GroupLayout.PREFERRED_SIZE, 34,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel5))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(29, 29, 29)
-                                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(42, 42, 42)
-                                                .addGroup(jPanel2Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(btnSortbyIDCL)
-                                                        .addComponent(btnSortbyNameCL)
-                                                        .addComponent(btnSortbyPtsCL)))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGap(95, 95, 95)
-                                                .addGroup(jPanel2Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(cbFind, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(txtFind, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btnFind))
-                                                .addGap(30, 30, 30)
-                                                .addGroup(jPanel2Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jLabel6)
-                                                        .addComponent(txtID1, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel2Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel7)
-                                                        .addComponent(txtPoint, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(40, 40, 40)
-                                                .addGroup(jPanel2Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(btnUpdateCL)
-                                                        .addComponent(btnClearCL))
-                                                .addGap(102, 102, 102)
-                                                .addComponent(btnStat, javax.swing.GroupLayout.PREFERRED_SIZE, 135,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(138, Short.MAX_VALUE)));
+        jLabel11.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLLH2.png")); // NOI18N
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1370, 660));
 
         jTabbedPane1.addTab("Quản lý học viên từng lớp", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jTabbedPane1)
-                                .addContainerGap()));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jTabbedPane1)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1))
+        );
 
-        setSize(new java.awt.Dimension(1380, 775));
+        setSize(new java.awt.Dimension(1380, 701));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -923,6 +700,8 @@ public class ClassView extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbChonlop;
     private javax.swing.JComboBox<String> cbFind;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -935,6 +714,8 @@ public class ClassView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tbClassList;
     private javax.swing.JTable tbListStudents;
@@ -945,6 +726,5 @@ public class ClassView extends javax.swing.JFrame {
     private javax.swing.JTextArea txtNoteClass;
     private javax.swing.JTextField txtPoint;
     private javax.swing.JTextField txtSLClass;
-    private javax.swing.JTextField txtSubinClass;
     // End of variables declaration//GEN-END:variables
 }

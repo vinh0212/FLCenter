@@ -13,9 +13,9 @@ import vn.tad_sebs.View.LoginView;
 public class App {
 
     public static void main(String[] args) {
-        
         FlatMacLightLaf.registerCustomDefaultsSource("FlatMacLightLaf.properties");
         FlatMacLightLaf.setup();
+        
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 LoginView view = new LoginView();

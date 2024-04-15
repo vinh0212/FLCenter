@@ -95,6 +95,9 @@ public class TeacherView extends javax.swing.JFrame {
         FDateSearchLD = new com.toedter.calendar.JDateChooser();
         CbMLD = new javax.swing.JCheckBox();
         CbFLD = new javax.swing.JCheckBox();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         GVtable = new javax.swing.JTable();
@@ -128,6 +131,8 @@ public class TeacherView extends javax.swing.JFrame {
         FDateSearchGV = new com.toedter.calendar.JDateChooser();
         CbMGV = new javax.swing.JCheckBox();
         CbFGV = new javax.swing.JCheckBox();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel28 = new javax.swing.JLabel();
 
         BtnDeleteStudent.setText("Xóa");
         BtnDeleteStudent.addActionListener(new java.awt.event.ActionListener() {
@@ -185,6 +190,9 @@ public class TeacherView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        LDtable.setBackground(new java.awt.Color(174, 228, 255));
         LDtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -213,7 +221,12 @@ public class TeacherView extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(LDtable);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 66, 1046, 580));
+
+        CbbSeacrchLD.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         CbbSeacrchLD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Quê quán", "Giới tính", "Cấp bậc hàm" }));
+        jPanel1.add(CbbSeacrchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 14, -1, -1));
+        jPanel1.add(FSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 14, 115, -1));
 
         btnSearchLD.setText("Tìm");
         btnSearchLD.addActionListener(new java.awt.event.ActionListener() {
@@ -221,54 +234,92 @@ public class TeacherView extends javax.swing.JFrame {
                 btnSearchLDActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(313, 14, -1, -1));
 
+        btnSortbyidLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyidLD.setText("Sắp xếp theo ID");
+        jPanel1.add(btnSortbyidLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 590, 220, 50));
 
+        btnSortbyNameLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyNameLD.setText("Sắp xếp theo tên");
+        jPanel1.add(btnSortbyNameLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 510, 220, 50));
 
+        btnSortbyLevelLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyLevelLD.setText("Sắp xếp theo Cấp bậc hàm");
+        jPanel1.add(btnSortbyLevelLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 440, 220, 50));
 
+        btnEditLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnEditLD.setText("Chỉnh sửa");
         btnEditLD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditLDActionPerformed(evt);
             }
         });
+        jPanel1.add(btnEditLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 300, -1, -1));
+        jPanel1.add(FNameSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 110, 176, 22));
 
         FAddressSearchLD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FAddressSearchLDActionPerformed(evt);
             }
         });
+        jPanel1.add(FAddressSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 200, 176, -1));
 
+        btnAddLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnAddLD.setText("Thêm");
         btnAddLD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddLDActionPerformed(evt);
             }
         });
+        jPanel1.add(btnAddLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 300, 72, -1));
 
+        jLabel3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 255, 73));
         jLabel3.setText("ID");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 80, 51, -1));
 
+        jLabel8.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 255, 73));
         jLabel8.setText("Ngày sinh");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 140, 90, -1));
 
+        jLabel10.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 255, 73));
         jLabel10.setText("Giới tính");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 170, 70, -1));
 
+        jLabel11.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 255, 73));
         jLabel11.setText("Quê quán");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 200, 80, -1));
+        jPanel1.add(FLevelSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 230, 176, -1));
 
         FRoleSearchLD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FRoleSearchLDActionPerformed(evt);
             }
         });
+        jPanel1.add(FRoleSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 260, 176, -1));
 
+        jLabel13.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(51, 255, 73));
         jLabel13.setText("Cấp bậc hàm");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 230, -1, -1));
 
+        jLabel15.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(51, 255, 73));
         jLabel15.setText("Họ và tên");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 110, 80, -1));
 
+        jLabel18.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(51, 255, 73));
         jLabel18.setText("Chức vụ");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 260, 70, -1));
 
+        btnClearLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnClearLD.setText("Clear");
+        jPanel1.add(btnClearLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 300, 70, -1));
 
         FIDSearchLD.setEnabled(false);
         FIDSearchLD.addActionListener(new java.awt.event.ActionListener() {
@@ -276,155 +327,45 @@ public class TeacherView extends javax.swing.JFrame {
                 FIDSearchLDActionPerformed(evt);
             }
         });
+        jPanel1.add(FIDSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 80, 176, -1));
 
+        btnDeleteLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnDeleteLD.setText("Xóa");
         btnDeleteLD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteLDActionPerformed(evt);
             }
         });
+        jPanel1.add(btnDeleteLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 300, 59, -1));
 
+        btnSortbyRole.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyRole.setText("Sắp xếp theo Chức vụ");
+        jPanel1.add(btnSortbyRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 360, 220, 50));
 
         FDateSearchLD.setDateFormatString("dd/MM/yyyy");
+        jPanel1.add(FDateSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 140, 176, -1));
 
         buttonGroup2.add(CbMLD);
         CbMLD.setSelected(true);
         CbMLD.setText("Nam");
+        jPanel1.add(CbMLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 170, 85, -1));
 
         buttonGroup2.add(CbFLD);
         CbFLD.setText("Nữ");
+        jPanel1.add(CbFLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 170, 85, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 340, 350, 20));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1046, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(FRoleSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FLevelSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FAddressSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FIDSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FNameSearchLD, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(FDateSearchLD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(CbMLD, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(CbFLD, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnDeleteLD, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAddLD, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnEditLD)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                                .addComponent(btnClearLD, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(15, 15, 15))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(CbbSeacrchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(FSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSearchLD))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(btnSortbyidLD)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSortbyNameLD)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSortbyLevelLD)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSortbyRole)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(27, 27, 27))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CbbSeacrchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchLD))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
-                        .addGap(18, 18, 18))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(FIDSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(FNameSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(FDateSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(7, 7, 7)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(CbMLD)
-                            .addComponent(CbFLD))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FAddressSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel18))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FLevelSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FRoleSearchLD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnDeleteLD)
-                            .addComponent(btnAddLD)
-                            .addComponent(btnEditLD)
-                            .addComponent(btnClearLD))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSortbyNameLD)
-                    .addComponent(btnSortbyidLD)
-                    .addComponent(btnSortbyLevelLD)
-                    .addComponent(btnSortbyRole))
-                .addGap(44, 44, 44))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLCB2.png")); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-12, 0, 1410, 680));
+
+        jLabel26.setText("jLabel26");
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 20, -1, -1));
 
         jTabbedPane4.addTab("Lãnh đạo", jPanel1);
 
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        GVtable.setBackground(new java.awt.Color(174, 228, 255));
         GVtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -450,45 +391,74 @@ public class TeacherView extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(GVtable);
 
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 62, 1046, 580));
+        jPanel2.add(FLevelSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 350, 172, -1));
+
         FAddressSearchGV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FAddressSearchGVActionPerformed(evt);
             }
         });
+        jPanel2.add(FAddressSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 310, 172, -1));
 
+        jLabel14.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(51, 255, 73));
         jLabel14.setText("ID");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 140, 51, -1));
 
+        jLabel16.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(51, 255, 73));
         jLabel16.setText("Ngày sinh");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 220, 100, -1));
 
+        btnSortbyidGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyidGV.setText("Sắp xếp theo ID");
+        jPanel2.add(btnSortbyidGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 540, 190, -1));
 
         FRoleSearchGV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FRoleSearchGVActionPerformed(evt);
             }
         });
+        jPanel2.add(FRoleSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 400, 172, -1));
 
+        jLabel19.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(51, 255, 73));
         jLabel19.setText("Họ và tên");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 180, 80, -1));
 
+        jLabel20.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(51, 255, 73));
         jLabel20.setText("Cấp bậc hàm");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 350, 110, -1));
 
+        jLabel21.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(51, 255, 73));
         jLabel21.setText("Giới tính");
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 260, 80, -1));
 
+        btnAddGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnAddGV.setText("Thêm");
+        jPanel2.add(btnAddGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 500, -1, -1));
 
+        btnEditGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnEditGV.setText("Chỉnh sửa");
         btnEditGV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditGVActionPerformed(evt);
             }
         });
+        jPanel2.add(btnEditGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 500, -1, -1));
 
+        CbbSeacrchGV.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         CbbSeacrchGV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Quê quán", "Giới tính", "Cấp bậc hàm", "Môn giảng dạy", "Lớp phụ trách" }));
         CbbSeacrchGV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CbbSeacrchGVActionPerformed(evt);
             }
         });
+        jPanel2.add(CbbSeacrchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 14, -1, -1));
+        jPanel2.add(FNameSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 180, 172, -1));
 
         btnSearchGV.setText("Tìm");
         btnSearchGV.addActionListener(new java.awt.event.ActionListener() {
@@ -496,12 +466,21 @@ public class TeacherView extends javax.swing.JFrame {
                 btnSearchGVActionPerformed(evt);
             }
         });
+        jPanel2.add(btnSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 14, -1, -1));
 
+        btnSortbyNameGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyNameGV.setText("Sắp xếp theo tên");
+        jPanel2.add(btnSortbyNameGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 580, 190, -1));
 
+        jLabel22.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(51, 255, 73));
         jLabel22.setText("Quê quán");
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 310, 80, -1));
 
+        btnSortbyLevelGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyLevelGV.setText("Sắp xếp theo Cấp bậc hàm");
+        jPanel2.add(btnSortbyLevelGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 620, -1, -1));
+        jPanel2.add(FSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 14, 115, -1));
 
         FIDSearchGV.setEnabled(false);
         FIDSearchGV.addActionListener(new java.awt.event.ActionListener() {
@@ -509,20 +488,30 @@ public class TeacherView extends javax.swing.JFrame {
                 FIDSearchGVActionPerformed(evt);
             }
         });
+        jPanel2.add(FIDSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 140, 172, -1));
 
+        jLabel23.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(51, 255, 73));
         jLabel23.setText("Môn giảng dạy");
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 400, -1, -1));
 
+        btnClearGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnClearGV.setText("Clear");
+        jPanel2.add(btnClearGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 500, 57, -1));
 
+        btnDeleteGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnDeleteGV.setText("Xóa");
         btnDeleteGV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteGVActionPerformed(evt);
             }
         });
+        jPanel2.add(btnDeleteGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 500, 59, -1));
 
+        jPanel3.setBackground(new java.awt.Color(174, 228, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel24.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel24.setText("Chọn phòng ban:");
 
         cbDpChoose.setToolTipText("");
@@ -553,155 +542,33 @@ public class TeacherView extends javax.swing.JFrame {
                 .addComponent(jLabel24)
                 .addGap(18, 18, 18)
                 .addComponent(cbDpChoose, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, -1, 120));
+
+        jLabel25.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(51, 255, 73));
         jLabel25.setText("Phòng ban");
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 450, -1, -1));
+
+        jPanel2.add(cbDpEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 450, 172, -1));
 
         FDateSearchGV.setDateFormatString("dd/MM/yyyy");
+        jPanel2.add(FDateSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 220, 172, -1));
 
         buttonGroup1.add(CbMGV);
         CbMGV.setSelected(true);
         CbMGV.setText("Nam");
+        jPanel2.add(CbMGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 260, 85, -1));
 
         buttonGroup1.add(CbFGV);
         CbFGV.setText("Nữ");
+        jPanel2.add(CbFGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 260, 75, -1));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 530, 340, 30));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1046, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(btnSortbyidGV)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSortbyNameGV)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSortbyLevelGV))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(CbbSeacrchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(FSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSearchGV)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(FRoleSearchGV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                            .addComponent(FLevelSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FAddressSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FIDSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FNameSearchGV, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cbDpEdit, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(FDateSearchGV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(CbMGV, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(CbFGV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(btnDeleteGV, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAddGV, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnEditGV)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnClearGV, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(2, 2, 2))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel25)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(40, 40, 40))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CbbSeacrchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSearchGV))
-                        .addGap(25, 25, 25)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
-                        .addGap(18, 18, 18))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(FIDSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel19)
-                            .addComponent(FNameSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(FDateSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel21)
-                            .addComponent(CbMGV)
-                            .addComponent(CbFGV))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FAddressSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel20)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel23))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FLevelSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FRoleSearchGV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(40, 40, 40)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel25)
-                            .addComponent(cbDpEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(73, 73, 73)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnDeleteGV)
-                            .addComponent(btnAddGV)
-                            .addComponent(btnEditGV)
-                            .addComponent(btnClearGV))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSortbyNameGV)
-                    .addComponent(btnSortbyidGV)
-                    .addComponent(btnSortbyLevelGV))
-                .addGap(44, 44, 44))
-        );
+        jLabel28.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLCB2.png")); // NOI18N
+        jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -40, 1390, 720));
 
         jTabbedPane4.addTab("Giảng viên", jPanel2);
 
@@ -709,10 +576,10 @@ public class TeacherView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -721,7 +588,8 @@ public class TeacherView extends javax.swing.JFrame {
 
         jTabbedPane4.getAccessibleContext().setAccessibleName("Lãnh đạo");
 
-        setBounds(0, 0, 1515, 775);
+        setSize(new java.awt.Dimension(1404, 717));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void FTeacherSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FTeacherSearchStudentActionPerformed
@@ -1374,6 +1242,7 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cbDpChoose;
     private javax.swing.JComboBox<String> cbDpEdit;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1391,6 +1260,8 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1403,6 +1274,8 @@ public class TeacherView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane4;
     // End of variables declaration//GEN-END:variables
 }
