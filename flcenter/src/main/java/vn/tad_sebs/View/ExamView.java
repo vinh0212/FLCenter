@@ -135,20 +135,28 @@ public class ExamView extends javax.swing.JFrame {
         getContentPane().add(FSearchTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 210, 141, -1));
 
         btnAddExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnAddExam.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Add.png")); // NOI18N
         btnAddExam.setText("Thêm");
         getContentPane().add(btnAddExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 250, -1, -1));
 
         btnDeleteExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnDeleteExam.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Delete.png")); // NOI18N
         btnDeleteExam.setText("Xóa");
-        getContentPane().add(btnDeleteExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 250, -1, -1));
+        getContentPane().add(btnDeleteExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 250, -1, -1));
 
         btnEditExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnEditExam.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Edit.png")); // NOI18N
         btnEditExam.setText("Chỉnh sửa");
-        getContentPane().add(btnEditExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 250, -1, -1));
+        getContentPane().add(btnEditExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 250, -1, -1));
 
-        btnClearExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnClearExam.setText("Clear");
-        getContentPane().add(btnClearExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 250, -1, -1));
+        btnClearExam.setFont(new java.awt.Font("VnTimes", 1, 14)); // NOI18N
+        btnClearExam.setText("C");
+        btnClearExam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearExamActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnClearExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 250, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 255, 73));
@@ -172,14 +180,16 @@ public class ExamView extends javax.swing.JFrame {
 
         CbbSearchExam.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         CbbSearchExam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên" }));
-        getContentPane().add(CbbSearchExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 14, -1, -1));
+        getContentPane().add(CbbSearchExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 14, -1, 30));
 
         btnEditTeacher.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnEditTeacher.setText("Chỉnh sửa");
-        getContentPane().add(btnEditTeacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 130, 100, -1));
-        getContentPane().add(FSearchExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 14, 115, -1));
+        btnEditTeacher.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\info.png")); // NOI18N
+        btnEditTeacher.setText("Chi tiết");
+        getContentPane().add(btnEditTeacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 170, 100, 30));
+        getContentPane().add(FSearchExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 14, 115, 30));
 
         btnSearchExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSearchExam.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Find.png")); // NOI18N
         btnSearchExam.setText("Tìm");
         getContentPane().add(btnSearchExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 14, -1, -1));
 
@@ -249,18 +259,20 @@ public class ExamView extends javax.swing.JFrame {
                         .addComponent(btnOK))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
                     .addComponent(jScrollPane3))
-                .addGap(0, 1, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(panelTeacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 290, -1, 290));
+        getContentPane().add(panelTeacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 300, -1, 290));
 
         btnSortbyIDExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyIDExam.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyIDExam.setText("Sắp xếp theo ID");
-        getContentPane().add(btnSortbyIDExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 420, 180, 70));
+        getContentPane().add(btnSortbyIDExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 420, 200, 70));
 
         btnSortbyTime.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyTime.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyTime.setText("Sắp xếp theo thời gian");
-        getContentPane().add(btnSortbyTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 310, 180, 70));
+        getContentPane().add(btnSortbyTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 310, 200, 70));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 290, 450, 30));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -270,6 +282,10 @@ public class ExamView extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1350, 632));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnClearExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearExamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClearExamActionPerformed
 
 
     private String[] columnNamesExam = new String[] {

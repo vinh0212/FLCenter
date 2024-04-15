@@ -140,7 +140,7 @@ public class StudentView extends javax.swing.JFrame {
         Studenttable.setUpdateSelectionOnSort(false);
         jScrollPane1.setViewportView(Studenttable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 66, 1069, 610));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 66, 1000, 610));
 
         FIDSearchStudent.setEnabled(false);
         FIDSearchStudent.addActionListener(new java.awt.event.ActionListener() {
@@ -148,135 +148,153 @@ public class StudentView extends javax.swing.JFrame {
                 FIDSearchStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(FIDSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 80, 163, -1));
+        getContentPane().add(FIDSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 80, 163, -1));
 
         BtnDeleteStudent.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnDeleteStudent.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Delete.png")); // NOI18N
         BtnDeleteStudent.setText("Xóa");
         BtnDeleteStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnDeleteStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnDeleteStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 380, 59, -1));
+        getContentPane().add(BtnDeleteStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 380, 90, -1));
 
         BtnEditStudent.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnEditStudent.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Edit.png")); // NOI18N
         BtnEditStudent.setText("Chỉnh sửa");
         BtnEditStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnEditStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnEditStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 380, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 413, 330, 10));
-        getContentPane().add(FNameSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 120, 163, 22));
+        getContentPane().add(BtnEditStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 380, -1, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 413, 400, 10));
+        getContentPane().add(FNameSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 120, 163, 22));
 
         FAddressSearchStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FAddressSearchStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(FAddressSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 240, 163, -1));
+        getContentPane().add(FAddressSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 240, 163, -1));
 
         BtnAddStudent.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnAddStudent.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Add.png")); // NOI18N
         BtnAddStudent.setText("Thêm");
-        getContentPane().add(BtnAddStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 380, 70, -1));
+        BtnAddStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAddStudentActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnAddStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 380, 100, -1));
 
         CbbSeacrchStudent.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         CbbSeacrchStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Lớp", "Quê quán", "Ngày sinh" }));
-        getContentPane().add(CbbSeacrchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 18, -1, -1));
-        getContentPane().add(FSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 18, 115, -1));
+        getContentPane().add(CbbSeacrchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 18, -1, 30));
+        getContentPane().add(FSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 18, 115, 30));
 
         BtnSearchStudent.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnSearchStudent.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Find.png")); // NOI18N
         BtnSearchStudent.setText("Tìm");
         BtnSearchStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSearchStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 17, -1, -1));
+        getContentPane().add(BtnSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 17, 80, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 225, 73));
         jLabel2.setText("ID");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 80, 30, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 80, 30, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 255, 73));
         jLabel4.setText("Ngày sinh");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 160, 90, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 160, 90, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 255, 73));
         jLabel5.setText("Giới tính");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 200, 70, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 200, 70, -1));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 255, 73));
         jLabel6.setText("Quê quán");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 240, 80, -1));
-        getContentPane().add(FScoreSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 330, 163, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 240, 80, -1));
+        getContentPane().add(FScoreSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 330, 163, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 255, 73));
         jLabel7.setText("Lớp");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 280, 40, 30));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 280, 40, 30));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 255, 73));
         jLabel9.setText("Điểm");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 330, 50, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 330, 50, -1));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 255, 73));
         jLabel12.setText("Họ và tên");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 120, 80, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 120, 80, -1));
 
-        BtnClearStudent.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        BtnClearStudent.setText("Clear");
-        getContentPane().add(BtnClearStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 380, 70, -1));
+        BtnClearStudent.setFont(new java.awt.Font("VnTimes", 1, 14)); // NOI18N
+        BtnClearStudent.setText("C");
+        BtnClearStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnClearStudentActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnClearStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 380, 40, -1));
 
         btnSortbyid.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyid.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyid.setText("Sắp xếp theo ID");
-        getContentPane().add(btnSortbyid, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 430, 150, 60));
+        getContentPane().add(btnSortbyid, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 430, 170, 60));
 
         btnSortbyName.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyName.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyName.setText("Sắp xếp theo Tên");
-        getContentPane().add(btnSortbyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 510, 150, 60));
+        getContentPane().add(btnSortbyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 510, 170, 60));
 
         btnSortbyDiem.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyDiem.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyDiem.setLabel("Sắp xếp theo Điểm");
-        getContentPane().add(btnSortbyDiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 600, 150, 60));
+        getContentPane().add(btnSortbyDiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 600, 170, 60));
 
-        getContentPane().add(cbLop, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 280, 163, 32));
+        getContentPane().add(cbLop, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 280, 163, 32));
 
         FDateSearchStudent.setDateFormatString("dd/MM/yyyy");
-        getContentPane().add(FDateSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 160, 163, -1));
+        getContentPane().add(FDateSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 160, 163, -1));
 
         btnPrint.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        btnPrint.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Print.png")); // NOI18N
         btnPrint.setText("In thông tin học viên");
         btnPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrintActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 600, 150, 60));
+        getContentPane().add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 600, 170, 60));
 
         btnGroup.add(chkM);
         chkM.setForeground(new java.awt.Color(255, 255, 255));
         chkM.setText("Nam");
-        getContentPane().add(chkM, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 200, 80, -1));
+        getContentPane().add(chkM, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 200, 80, -1));
 
         btnGroup.add(chkF);
         chkF.setForeground(new java.awt.Color(255, 255, 255));
         chkF.setText("Nữ");
-        getContentPane().add(chkF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 200, 70, -1));
+        getContentPane().add(chkF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 200, 70, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLHV2.png")); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 740));
@@ -315,6 +333,14 @@ public class StudentView extends javax.swing.JFrame {
         ex.printStackTrace();
     }
     }//GEN-LAST:event_btnPrintActionPerformed
+
+    private void BtnAddStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnAddStudentActionPerformed
+
+    private void BtnClearStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnClearStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnClearStudentActionPerformed
 
     
     

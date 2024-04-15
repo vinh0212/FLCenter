@@ -92,16 +92,17 @@ public class DataView extends javax.swing.JFrame {
 
         CbbSearchData.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         CbbSearchData.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên tài liệu", "Thể loại", "Tác giả" }));
-        getContentPane().add(CbbSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+        getContentPane().add(CbbSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 30));
 
         FSearchData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FSearchDataActionPerformed(evt);
             }
         });
-        getContentPane().add(FSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 118, -1));
+        getContentPane().add(FSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 118, 30));
 
         btnSearchData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSearchData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Find.png")); // NOI18N
         btnSearchData.setText("Tìm");
         btnSearchData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,10 +112,12 @@ public class DataView extends javax.swing.JFrame {
         getContentPane().add(btnSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
 
         btnSortbyIDData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyIDData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyIDData.setText("Sắp xếp theo ID");
         getContentPane().add(btnSortbyIDData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 430, 180, 80));
 
         btnSortbyNameData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyNameData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyNameData.setText("Sắp xếp theo Tên");
         getContentPane().add(btnSortbyNameData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 320, 180, 80));
 
@@ -151,21 +154,24 @@ public class DataView extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 220, 60, -1));
 
         btnAddData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnAddData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Add.png")); // NOI18N
         btnAddData.setText("Thêm");
-        getContentPane().add(btnAddData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 260, -1, -1));
+        getContentPane().add(btnAddData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 260, -1, -1));
 
         btnDeleteData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnDeleteData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Delete.png")); // NOI18N
         btnDeleteData.setText("Xóa");
         getContentPane().add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 260, -1, -1));
 
         btnEditData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnEditData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Edit.png")); // NOI18N
         btnEditData.setText("Chỉnh sửa");
-        getContentPane().add(btnEditData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 260, -1, -1));
+        getContentPane().add(btnEditData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 260, -1, -1));
 
-        btnClearData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnClearData.setText("Clear");
-        getContentPane().add(btnClearData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 260, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 290, 370, 20));
+        btnClearData.setFont(new java.awt.Font("VnTimes", 1, 14)); // NOI18N
+        btnClearData.setText("C");
+        getContentPane().add(btnClearData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 260, -1, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 300, 370, 20));
 
         jLabel6.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLTL2.png")); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 670));
