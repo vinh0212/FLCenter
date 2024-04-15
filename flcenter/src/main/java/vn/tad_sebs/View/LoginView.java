@@ -55,8 +55,13 @@ public class LoginView extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\eye.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/eye.png"))); // NOI18N
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, -1, 20));
 
         Password.setBackground(new java.awt.Color(123, 244, 169));
@@ -148,6 +153,20 @@ public class LoginView extends javax.swing.JFrame {
 
             
     }//GEN-LAST:event_EnterActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        if (Password.getEchoChar() != (char) 0) {
+            // Đổi từ dạng password sang dạng thấy được
+            Password.setEchoChar((char) 0);
+            // Đổi icon
+            jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/eyeoff.png")));
+        } else {
+            // Đổi từ dạng thấy được sang dạng password
+            Password.setEchoChar('•');
+            // Đổi icon
+            jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/eye.png")));
+        }
+    }//GEN-LAST:event_jLabel8MouseClicked
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
