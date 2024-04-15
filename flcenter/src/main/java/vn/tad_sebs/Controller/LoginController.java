@@ -26,7 +26,6 @@ public class LoginController {
         public void actionPerformed(ActionEvent e) {
             User user = view.getUser();
             if (userDao.checkUser(user)) {
-                view.showMessage("Đăng nhập thành công");
                 // hiển thị màn hình chính
                 MainView mainView = new MainView();
                 view.setVisible(false);
