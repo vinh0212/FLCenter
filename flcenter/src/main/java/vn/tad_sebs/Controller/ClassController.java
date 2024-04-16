@@ -205,9 +205,11 @@ public class ClassController {
 
             if ("".equals(value)) {
                 classView.showStudentList(listStudentInClass);
+                return;
             } else {
                 switch (criteria) {
                     case 0:
+                        if (!classView.validateID()) return;
                         for (Student s : listStudentInClass) {
                             if (s.getId() == Integer.parseInt(value)) {
                                 list.add(s);
@@ -232,6 +234,12 @@ public class ClassController {
                         break;
                 }
                 classView.showStudentList(list);
+                
+            }
+            if(list.isEmpty()) 
+            {
+                classView.showMessage("Không tìm thấy!");
+                classView.showStudentList(listStudentInClass);
             }
         }
     }

@@ -6,6 +6,10 @@
         <Note>Phần này đã ổn</Note>
         <idStudentList>
             <idStudent>1</idStudent>
+            <idStudent>2</idStudent>
+            <idStudent>5</idStudent>
+            <idStudent>8</idStudent>
+            <idStudent>9</idStudent>
         </idStudentList>
         <idMonhocList/>
     </lop>
@@ -14,7 +18,7 @@
         <Name>Lớp 2</Name>
         <Note>Ổn cả rồi</Note>
         <idStudentList>
-            <idStudent>2</idStudent>
+            <idStudent>7</idStudent>
         </idStudentList>
         <idMonhocList/>
     </lop>

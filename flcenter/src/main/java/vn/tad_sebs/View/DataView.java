@@ -5,6 +5,7 @@
 package vn.tad_sebs.View;
 
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
@@ -99,10 +100,14 @@ public class DataView extends javax.swing.JFrame {
                 FSearchDataActionPerformed(evt);
             }
         });
+        FSearchData.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FSearchDataKeyPressed(evt);
+            }
+        });
         getContentPane().add(FSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 118, 30));
 
         btnSearchData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSearchData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Find.png")); // NOI18N
         btnSearchData.setText("Tìm");
         btnSearchData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,12 +117,10 @@ public class DataView extends javax.swing.JFrame {
         getContentPane().add(btnSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
 
         btnSortbyIDData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyIDData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyIDData.setText("Sắp xếp theo ID");
         getContentPane().add(btnSortbyIDData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 430, 180, 80));
 
         btnSortbyNameData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyNameData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyNameData.setText("Sắp xếp theo Tên");
         getContentPane().add(btnSortbyNameData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 320, 180, 80));
 
@@ -154,17 +157,14 @@ public class DataView extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 220, 60, -1));
 
         btnAddData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnAddData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Add.png")); // NOI18N
         btnAddData.setText("Thêm");
         getContentPane().add(btnAddData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 260, -1, -1));
 
         btnDeleteData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnDeleteData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Delete.png")); // NOI18N
         btnDeleteData.setText("Xóa");
         getContentPane().add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 260, -1, -1));
 
         btnEditData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnEditData.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Edit.png")); // NOI18N
         btnEditData.setText("Chỉnh sửa");
         getContentPane().add(btnEditData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 260, -1, -1));
 
@@ -192,6 +192,13 @@ public class DataView extends javax.swing.JFrame {
     private void FAuthorSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FAuthorSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FAuthorSearchActionPerformed
+
+    private void FSearchDataKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FSearchDataKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        {
+            btnSearchData.doClick();
+        }
+    }//GEN-LAST:event_FSearchDataKeyPressed
 
     private String[] columnNamesData = new String[] {
             "ID", "Tên tài liệu", "Thể loại", "Tác giả"};
@@ -352,6 +359,24 @@ public class DataView extends javax.swing.JFrame {
         return true;
     }
 
+    public boolean validateID()
+    {
+        String searchBox = FSearchData.getText();
+        try{
+            int id = Integer.parseInt(searchBox);
+            if(id < 0)
+            {
+                showMessage("ID không hợp lệ");
+                return false;
+            }
+        }
+        catch(NumberFormatException ex)
+        {
+            showMessage("ID không hợp lệ");
+            return false;
+        }
+        return  true;
+    }
 
 
     public int getCriteria()

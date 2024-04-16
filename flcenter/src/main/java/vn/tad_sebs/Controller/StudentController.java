@@ -54,6 +54,7 @@ public class StudentController {
             Student student = studentView.getStudentInfo();
             if (student != null) {
                 studentDao.add(student);
+                lopDao.addStudent(student);
                 studentView.showStudent(student);
                 studentView.showListStudents(studentDao.getListStudents());
                 studentView.showMessage("Thêm thành công!");
@@ -68,6 +69,7 @@ public class StudentController {
             Student student = studentView.getStudentInfo();
             if (student != null) {
                 studentDao.edit(student);
+                lopDao.addStudent(student);
                 studentView.clearStudentInfo();
                 studentView.showListStudents(studentDao.getListStudents());
                 studentView.showMessage("Sửa thành công!");
@@ -81,6 +83,7 @@ public class StudentController {
             Student student = studentView.getStudentInfo();
             if (student != null) {
                 studentDao.delete(student);
+                lopDao.deleteStudent(student);
                 studentView.clearStudentInfo();
                 studentView.showListStudents(studentDao.getListStudents());
                 studentView.showMessage("Xóa thành công!");
@@ -109,14 +112,17 @@ public class StudentController {
             String value = studentView.getSearchBox();
             List<Student> list = new ArrayList<>();
             List<Student> oldlist = studentDao.getListStudents();
+            
             if("".equals(value))
             {
                 studentView.showListStudents(oldlist);
+                return;
             }
             else
             {
                 switch (criteria) {
                 case "ID":
+                    if(!studentView.validateIDSearch()) return;
                     for (Student s : oldlist) {
                         if (s.getId() == Integer.parseInt(value)) {
                             list.add(s);
@@ -125,21 +131,21 @@ public class StudentController {
                     break;
                 case "Tên":
                     for (Student s : oldlist) {
-                        if (s.getName().equals(value)) {
+                        if (s.getName().contains(value)) {
                             list.add(s);
                         }
                     }
                     break;
                 case "Lớp":
                     for (Student s : oldlist) {
-                        if (s.getLop().equals(value)) {
+                        if (s.getLop().contains(value)) {
                             list.add(s);
                         }
                     }
                     break;
                 case "Quê quán":
                     for (Student s : oldlist) {
-                        if (s.getAddress().equals(value)) {
+                        if (s.getAddress().contains(value)) {
                             list.add(s);
                         }
                     }
@@ -156,6 +162,12 @@ public class StudentController {
             }
             studentView.showListStudents(list);
             }
+            if(list.isEmpty()) 
+            {
+                studentView.showMessage("Không tìm thấy!");
+                studentView.showListStudents(oldlist);
+            }
+                
             
 
         }

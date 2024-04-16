@@ -8,6 +8,7 @@ import com.toedter.calendar.JDateChooser;
 
 import java.awt.Component;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class ExamView extends javax.swing.JFrame {
     public ExamView() {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        
     }
 
     /**
@@ -135,17 +137,17 @@ public class ExamView extends javax.swing.JFrame {
         getContentPane().add(FSearchTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 210, 141, -1));
 
         btnAddExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnAddExam.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Add.png")); // NOI18N
+        btnAddExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
         btnAddExam.setText("Thêm");
         getContentPane().add(btnAddExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 250, -1, -1));
 
         btnDeleteExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnDeleteExam.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Delete.png")); // NOI18N
+        btnDeleteExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Delete.png"))); // NOI18N
         btnDeleteExam.setText("Xóa");
         getContentPane().add(btnDeleteExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 250, -1, -1));
 
         btnEditExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnEditExam.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Edit.png")); // NOI18N
+        btnEditExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
         btnEditExam.setText("Chỉnh sửa");
         getContentPane().add(btnEditExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 250, -1, -1));
 
@@ -183,13 +185,19 @@ public class ExamView extends javax.swing.JFrame {
         getContentPane().add(CbbSearchExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 14, -1, 30));
 
         btnEditTeacher.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnEditTeacher.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\info.png")); // NOI18N
+        btnEditTeacher.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/info.png"))); // NOI18N
         btnEditTeacher.setText("Chi tiết");
         getContentPane().add(btnEditTeacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 170, 100, 30));
+
+        FSearchExam.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FSearchExamKeyPressed(evt);
+            }
+        });
         getContentPane().add(FSearchExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 14, 115, 30));
 
         btnSearchExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSearchExam.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Find.png")); // NOI18N
+        btnSearchExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Find.png"))); // NOI18N
         btnSearchExam.setText("Tìm");
         getContentPane().add(btnSearchExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 14, -1, -1));
 
@@ -265,18 +273,16 @@ public class ExamView extends javax.swing.JFrame {
         getContentPane().add(panelTeacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 300, -1, 290));
 
         btnSortbyIDExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyIDExam.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyIDExam.setText("Sắp xếp theo ID");
         getContentPane().add(btnSortbyIDExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 420, 200, 70));
 
         btnSortbyTime.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyTime.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
         btnSortbyTime.setText("Sắp xếp theo thời gian");
         getContentPane().add(btnSortbyTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 310, 200, 70));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 290, 450, 30));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLKT2.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLKT2.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 1340, 630));
 
         setSize(new java.awt.Dimension(1350, 632));
@@ -286,6 +292,13 @@ public class ExamView extends javax.swing.JFrame {
     private void btnClearExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearExamActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnClearExamActionPerformed
+
+    private void FSearchExamKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FSearchExamKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        {
+            btnSearchExam.doClick();
+        }
+    }//GEN-LAST:event_FSearchExamKeyPressed
 
 
     private String[] columnNamesExam = new String[] {
@@ -359,6 +372,25 @@ public class ExamView extends javax.swing.JFrame {
 
     }
 
+    public boolean validateID()
+    {
+        String searchBox = FSearchExam.getText();
+        try{
+            int id = Integer.parseInt(searchBox);
+            if(id < 0)
+            {
+                showMessage("ID không hợp lệ");
+                return false;
+            }
+        }
+        catch(NumberFormatException ex)
+        {
+            showMessage("ID không hợp lệ");
+            return false;
+        }
+        return  true;
+    }
+
     public String getFSearchTeacher() {
         return FTeacherSearchExam.getText();
     }
@@ -408,7 +440,8 @@ public class ExamView extends javax.swing.JFrame {
         for (Component component : panelTeacher.getComponents()) {
             component.setEnabled(false);
         }
-
+        panelTeacher.setVisible(false);
+        btnEditExam.requestFocus();
     }
 
     public JList<String> getListPush() {
@@ -484,6 +517,7 @@ public class ExamView extends javax.swing.JFrame {
         for (Component component : panelTeacher.getComponents()) {
             component.setEnabled(true);
         }
+        panelTeacher.setVisible(true);
         Examtable.setEnabled(false);
 
         FNameSearchExam.setEnabled(false);
@@ -508,6 +542,8 @@ public class ExamView extends javax.swing.JFrame {
         for (Component component : panelTeacher.getComponents()) {
             component.setEnabled(false);
         }
+        
+        panelTeacher.setVisible(false);
 
     }
 

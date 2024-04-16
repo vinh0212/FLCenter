@@ -2,6 +2,7 @@ package vn.tad_sebs.View;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -69,6 +70,11 @@ public class LoginView extends javax.swing.JFrame {
         Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordActionPerformed(evt);
+            }
+        });
+        Password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PasswordKeyPressed(evt);
             }
         });
         getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 170, 20));
@@ -167,6 +173,13 @@ public class LoginView extends javax.swing.JFrame {
             jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/eye.png")));
         }
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void PasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            // Mô phỏng việc nhấn nút Enter
+            Enter.doClick();
+        }
+    }//GEN-LAST:event_PasswordKeyPressed
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
     }

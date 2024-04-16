@@ -139,7 +139,7 @@
           <Font name="Verdana" size="12" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\Add.png"/>
+          <Image iconType="3" name="/vn/tad_sebs/icon/Add.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
       </Properties>
@@ -155,7 +155,7 @@
           <Font name="Verdana" size="12" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\Delete.png"/>
+          <Image iconType="3" name="/vn/tad_sebs/icon/Delete.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
       </Properties>
@@ -171,7 +171,7 @@
           <Font name="Verdana" size="12" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\Edit.png"/>
+          <Image iconType="3" name="/vn/tad_sebs/icon/Edit.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ch&#x1ec9;nh s&#x1eed;a"/>
       </Properties>
@@ -288,7 +288,7 @@
           <Font name="Verdana" size="12" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\info.png"/>
+          <Image iconType="3" name="/vn/tad_sebs/icon/info.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Chi ti&#x1ebf;t"/>
       </Properties>
@@ -299,6 +299,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="FSearchExam">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FSearchExamKeyPressed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="232" y="14" width="115" height="30"/>
@@ -311,7 +314,7 @@
           <Font name="Verdana" size="12" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\Find.png"/>
+          <Image iconType="3" name="/vn/tad_sebs/icon/Find.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="T&#xec;m"/>
       </Properties>
@@ -477,9 +480,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="12" style="0"/>
         </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\Sort.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo ID"/>
       </Properties>
       <Constraints>
@@ -492,9 +492,6 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="12" style="0"/>
-        </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\Sort.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p theo th&#x1edd;i gian"/>
       </Properties>
@@ -517,7 +514,7 @@
           <Font name="Verdana" size="14" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\QLKT2.png"/>
+          <Image iconType="3" name="/vn/tad_sebs/icon/QLKT2.png"/>
         </Property>
       </Properties>
       <Constraints>

@@ -150,9 +150,11 @@ public class TeacherController {
 
             if ("".equals(value)) {
                 teacherView.showListGV(oldlist);
+                return;
             } else {
                 switch (criteria) {
                     case "ID":
+                        if(!teacherView.validateGVID()) return;
                         for (Teacher t : oldlist) {
                             if (t.getId() == Integer.parseInt(value)) {
                                 list.add(t);
@@ -198,6 +200,11 @@ public class TeacherController {
 
                 }
                 teacherView.showListGV(list);
+            }
+            if(list.isEmpty()) 
+            {
+                teacherView.showMessage("Không tìm thấy!");
+                teacherView.showListGV(oldlist);
             }
 
 
@@ -293,9 +300,11 @@ public class TeacherController {
 
             if ("".equals(value)) {
                 teacherView.showListLD(oldlist);
+                return;
             } else {
                 switch (criteria) {
                     case "ID":
+                        if(!teacherView.validateLDID()) return;
                         for (Lanhdao t : oldlist) {
                             if (t.getId() == Integer.parseInt(value)) {
                                 list.add(t);
@@ -333,6 +342,11 @@ public class TeacherController {
 
                 }
                 teacherView.showListLD(list);
+            }
+            if(list.isEmpty()) 
+            {
+                teacherView.showMessage("Không tìm thấy!");
+                teacherView.showListLD(oldlist);
             }
         }
     }

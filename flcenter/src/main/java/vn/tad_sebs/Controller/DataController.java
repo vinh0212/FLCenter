@@ -13,6 +13,7 @@ import vn.tad_sebs.Model.Data;
 import vn.tad_sebs.View.DataView;
 
 public class DataController {
+
     private DataView dataView;
     private DataDAO dataDao;
 
@@ -26,7 +27,7 @@ public class DataController {
         dataView.addSearchDataListener(new SearchDataListener());
         dataView.addListDataSelectionListener(new ListDataSelectionListener());
         dataView.addSortDataByIDListener(new SortDataByID());
-        dataView.addSortDataByNameListener(new  SortDataByName());
+        dataView.addSortDataByNameListener(new SortDataByName());
     }
 
     public void showDataView() {
@@ -96,16 +97,16 @@ public class DataController {
         public void actionPerformed(ActionEvent e) {
             String value = dataView.getSearchValue();
             int criteria = dataView.getCriteria();
-            if("".equals(value))
-            {
+            if ("".equals(value)) {
                 dataView.showListData(dataDao.getListDatas());
-            }
-            else
-            {
+                
+            } else {
                 List<Data> listData = new ArrayList<Data>();
-                switch(criteria)
-                {
+                switch (criteria) {
                     case 0:
+                        if (!dataView.validateID()) {
+                            return;
+                        }
                         for (Data data : dataDao.getListDatas()) {
                             if (data.getId() == Integer.parseInt(value)) {
                                 listData.add(data);
@@ -138,7 +139,12 @@ public class DataController {
                         break;
                 }
                 dataView.showListData(listData);
+                if (listData.isEmpty()) {
+                    dataView.showMessage("Không tìm thấy!");
+                    dataView.showListData(dataDao.getListDatas());
+                }
             }
+
         }
     }
 

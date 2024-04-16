@@ -117,6 +117,7 @@ public class SubjectController {
                 switch (criteria)
                 {
                     case "ID":
+                        if(!monView.validateID()) return;
                         for(Monhoc monhoc : oldlist)
                         {
                             if(monhoc.getId() == Integer.parseInt(value))
@@ -157,6 +158,11 @@ public class SubjectController {
                 }
             }
             monView.showListMon(list);
+            if(list.isEmpty()) 
+            {
+                monView.showMessage("Không tìm thấy!");
+                monView.showListMon(oldlist);
+            }
 
         }
     }

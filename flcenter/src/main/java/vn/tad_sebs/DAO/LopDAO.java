@@ -122,6 +122,46 @@ public class LopDAO {
         writeListLops(listLops);
     }
 
+    public void addStudent(Student student) {
+        // Tìm lớp hiện tại của học sinh
+        Lop currentLop = null;
+        for (Lop l : listLops) {
+            if (l.getIdStudent().contains(student.getId())) {
+                currentLop = l;
+                break;
+            }
+        }
+
+        // Nếu học sinh đang thuộc một lớp và lớp đó không phải là lớp mới, loại bỏ học
+        // sinh khỏi lớp hiện tại
+        if (currentLop != null && currentLop.getId() != Integer.parseInt(student.getLop())) {
+            currentLop.getIdStudent().remove(Integer.valueOf(student.getId()));
+        }
+
+        // Thêm học sinh vào lớp mới
+        for (Lop l : listLops) {
+            if (l.getId() == Integer.parseInt(student.getLop())) {
+                if (!l.getIdStudent().contains(student.getId())) {
+                    l.getIdStudent().add(student.getId());
+                }
+                break;
+            }
+        }
+        writeListLops(listLops);
+    }
+
+    public void deleteStudent(Student student)
+    {
+        for (Lop l : listLops) {
+            if (l.getIdStudent().contains(student.getId())) {
+                l.getIdStudent().remove(Integer.valueOf(student.getId()));
+            }
+        }
+        writeListLops(listLops);
+    }
+
+
+
     public void editC(Lop lop) {
         for (Lop l : listLops) {
             if (l.getId() == lop.getId()) {

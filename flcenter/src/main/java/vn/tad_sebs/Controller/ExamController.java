@@ -61,9 +61,11 @@ public class ExamController {
 
             if ("".equals(value)) {
                 examView.showListExam(oldlist);
+                return;
             } else {
                 switch (criteria) {
                     case 0:
+                        if(!examView.validateID()) return;
                         for (Exam o : oldlist) {
                             if (o.getId() == Integer.parseInt(value)) {
                                 list.add(o);
@@ -82,6 +84,11 @@ public class ExamController {
                         break;
                 }
                 examView.showListExam(list);
+            }
+            if(list.isEmpty()) 
+            {
+                examView.showMessage("Không tìm thấy!");
+                examView.showListExam(oldlist);
             }
         }
     }

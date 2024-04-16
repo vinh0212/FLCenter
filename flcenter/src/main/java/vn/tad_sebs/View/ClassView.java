@@ -6,6 +6,7 @@ package vn.tad_sebs.View;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -169,17 +170,17 @@ public class ClassView extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 190, 290, 120));
 
         btnAddClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnAddClass.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Add.png")); // NOI18N
+        btnAddClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
         btnAddClass.setText("Thêm");
         jPanel1.add(btnAddClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 320, -1, -1));
 
         btnEditClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnEditClass.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Edit.png")); // NOI18N
+        btnEditClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
         btnEditClass.setText("Chỉnh Sửa");
         jPanel1.add(btnEditClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 320, -1, -1));
 
         btnDeleteClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnDeleteClass.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Delete.png")); // NOI18N
+        btnDeleteClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Delete.png"))); // NOI18N
         btnDeleteClass.setText("Xoá");
         jPanel1.add(btnDeleteClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 320, -1, -1));
 
@@ -188,12 +189,12 @@ public class ClassView extends javax.swing.JFrame {
         jPanel1.add(btnClearClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 320, -1, -1));
 
         btnSortbyIDClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyIDClass.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
+        btnSortbyIDClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyIDClass.setText("Sắp xếp theo ID");
         jPanel1.add(btnSortbyIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 250, 80));
 
         btnSortbySLClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbySLClass.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
+        btnSortbySLClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbySLClass.setText("Sắp xếp theo Số lượng học viên");
         jPanel1.add(btnSortbySLClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 490, 250, 80));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 360, 510, 14));
@@ -271,7 +272,7 @@ public class ClassView extends javax.swing.JFrame {
         jPanel2.add(txtPoint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 190, 280, -1));
 
         btnUpdateCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnUpdateCL.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\check.png")); // NOI18N
+        btnUpdateCL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
         btnUpdateCL.setText("Xác nhận");
         jPanel2.add(btnUpdateCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 230, -1, 30));
 
@@ -280,12 +281,12 @@ public class ClassView extends javax.swing.JFrame {
         jPanel2.add(btnClearCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 230, -1, -1));
 
         btnSortbyIDCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyIDCL.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
+        btnSortbyIDCL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyIDCL.setText("Sắp xếp theo ID");
         jPanel2.add(btnSortbyIDCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 300, 220, 70));
 
         btnSortbyNameCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyNameCL.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
+        btnSortbyNameCL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyNameCL.setText("Sắp xếp theo Tên");
         btnSortbyNameCL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -295,7 +296,7 @@ public class ClassView extends javax.swing.JFrame {
         jPanel2.add(btnSortbyNameCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 410, 220, 80));
 
         btnSortbyPtsCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyPtsCL.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
+        btnSortbyPtsCL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyPtsCL.setText("Sắp xếp theo Điểm số");
         btnSortbyPtsCL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -307,14 +308,20 @@ public class ClassView extends javax.swing.JFrame {
         cbFind.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cbFind.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Quê quán" }));
         jPanel2.add(cbFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 100, -1, -1));
+
+        txtFind.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtFindKeyPressed(evt);
+            }
+        });
         jPanel2.add(txtFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 100, 150, 30));
 
-        btnFind.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Find.png")); // NOI18N
+        btnFind.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Find.png"))); // NOI18N
         btnFind.setText("Tìm kiếm");
         jPanel2.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(1243, 100, -1, -1));
 
         btnStat.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnStat.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\chart.png")); // NOI18N
+        btnStat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/chart.png"))); // NOI18N
         btnStat.setText("Thống kê điểm số");
         btnStat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -347,6 +354,13 @@ public class ClassView extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1380, 701));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtFindKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFindKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        {
+            btnFind.doClick();
+        }
+    }//GEN-LAST:event_txtFindKeyPressed
 
     private void btnSortbyPtsCLActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSortbyPtsCLActionPerformed
         // TODO add your handling code here:
@@ -497,6 +511,25 @@ public class ClassView extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         return null;
+    }
+
+    public boolean validateID()
+    {
+        String searchBox = txtFind.getText();
+        try{
+            int id = Integer.parseInt(searchBox);
+            if(id < 0)
+            {
+                showMessage("ID không hợp lệ");
+                return false;
+            }
+        }
+        catch(NumberFormatException ex)
+        {
+            showMessage("ID không hợp lệ");
+            return false;
+        }
+        return  true;
     }
 
     private boolean validateName()

@@ -45,4 +45,13 @@
         <Gioitinh>Nam</Gioitinh>
         <Lop>1</Lop>
     </student>
+    <student>
+        <id>9</id>
+        <name>Xuân An</name>
+        <Date>08/12/2004</Date>
+        <Address>Hà Nội</Address>
+        <Diem>0.0</Diem>
+        <Gioitinh>Nam</Gioitinh>
+        <Lop>1</Lop>
+    </student>
 </students>

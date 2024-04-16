@@ -5,6 +5,7 @@
 package vn.tad_sebs.View;
 
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
@@ -105,7 +106,7 @@ public class MonView extends javax.swing.JFrame {
         getContentPane().add(FIDSearchMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 90, 170, -1));
 
         btnDeleteMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnDeleteMon.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Delete.png")); // NOI18N
+        btnDeleteMon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Delete.png"))); // NOI18N
         btnDeleteMon.setText("Xóa");
         btnDeleteMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,7 +116,7 @@ public class MonView extends javax.swing.JFrame {
         getContentPane().add(btnDeleteMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 310, 90, -1));
 
         btnEditMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnEditMon.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Edit.png")); // NOI18N
+        btnEditMon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
         btnEditMon.setText("Chỉnh sửa");
         btnEditMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +128,7 @@ public class MonView extends javax.swing.JFrame {
         getContentPane().add(FSoTietSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 190, 170, -1));
 
         btnAddMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnAddMon.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Add.png")); // NOI18N
+        btnAddMon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
         btnAddMon.setText("Thêm");
         getContentPane().add(btnAddMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 310, -1, -1));
 
@@ -139,10 +140,16 @@ public class MonView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CbbSearchMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, 30));
+
+        FSearchMon.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FSearchMonKeyPressed(evt);
+            }
+        });
         getContentPane().add(FSearchMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 20, 140, 30));
 
         btnSearchMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSearchMon.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Find.png")); // NOI18N
+        btnSearchMon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Find.png"))); // NOI18N
         btnSearchMon.setText("Tìm");
         btnSearchMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +185,7 @@ public class MonView extends javax.swing.JFrame {
         getContentPane().add(btnClearMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 310, 30, -1));
 
         btnSortbyidMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyidMon.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
+        btnSortbyidMon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyidMon.setText("Sắp xếp theo ID");
         btnSortbyidMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,12 +195,12 @@ public class MonView extends javax.swing.JFrame {
         getContentPane().add(btnSortbyidMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 450, 180, 60));
 
         btnSortbyNameMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyNameMon.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
+        btnSortbyNameMon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyNameMon.setText("Sắp xếp theo Tên");
         getContentPane().add(btnSortbyNameMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 360, 180, 60));
 
         btnSortbyTinchi.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnSortbyTinchi.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\Sort.png")); // NOI18N
+        btnSortbyTinchi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyTinchi.setText("Sắp xếp theo Số tiết");
         getContentPane().add(btnSortbyTinchi, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 550, 180, 60));
 
@@ -204,7 +211,7 @@ public class MonView extends javax.swing.JFrame {
         });
         getContentPane().add(cbDpEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 240, 170, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLMH2.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLMH2.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 670));
 
         setSize(new java.awt.Dimension(1404, 676));
@@ -239,6 +246,13 @@ public class MonView extends javax.swing.JFrame {
     private void CbbSearchMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbbSearchMonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CbbSearchMonActionPerformed
+
+    private void FSearchMonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FSearchMonKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        {
+            btnSearchMon.doClick();
+        }
+    }//GEN-LAST:event_FSearchMonKeyPressed
     private String[] columnNamesMon = new String[] {
             "ID", "Tên môn", "Số tiết", "Khoa"};
 
@@ -427,6 +441,25 @@ public class MonView extends javax.swing.JFrame {
         for (int i = 0; i < size; i++) {
             cbDpEdit.addItem(list.get(i).getId() + " - " + list.get(i).getName());
         }
+    }
+    public boolean validateID()
+    {
+        String searchBox = FSearchMon.getText();
+        try
+        {
+            int id = Integer.parseInt(searchBox);
+            if(id <= 0)
+            {
+                showMessage("ID không hợp lệ");
+                return false;
+            }
+        }
+        catch (Exception ex)
+        {
+            showMessage("ID không hợp lệ");
+            return false;
+        }
+        return true;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
