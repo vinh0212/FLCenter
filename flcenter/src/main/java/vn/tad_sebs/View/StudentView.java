@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vn.tad_sebs.View;
-
+import javax.swing.*;
+import java.awt.*;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -105,8 +106,9 @@ public class StudentView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Quản lý học viên");
+        setTitle("QUẢN LÝ HỌC VIÊN");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setIconImage(icon.getImage());
         setMinimumSize(new java.awt.Dimension(1366, 768));
         setResizable(false);
         setSize(new java.awt.Dimension(0, 0));
@@ -310,7 +312,7 @@ public class StudentView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
         Student student = getStudentInfo();
 

@@ -5,7 +5,8 @@
 package vn.tad_sebs.View;
 
 import com.toedter.calendar.JDateChooser;
-
+import javax.swing.*;
+import java.awt.*;
 import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -93,6 +94,8 @@ public class ExamView extends javax.swing.JFrame {
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("QUẢN LÝ KỲ THI");
+        setIconImage(icon.getImage());
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -139,6 +142,11 @@ public class ExamView extends javax.swing.JFrame {
         btnAddExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnAddExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
         btnAddExam.setText("Thêm");
+        btnAddExam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddExamActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnAddExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 250, -1, -1));
 
         btnDeleteExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -201,7 +209,7 @@ public class ExamView extends javax.swing.JFrame {
         btnSearchExam.setText("Tìm");
         getContentPane().add(btnSearchExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 14, -1, -1));
 
-        panelTeacher.setBackground(new java.awt.Color(204, 204, 204));
+        panelTeacher.setBackground(new java.awt.Color(174, 228, 255));
         panelTeacher.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panelTeacher.setForeground(new java.awt.Color(204, 204, 204));
 
@@ -273,10 +281,12 @@ public class ExamView extends javax.swing.JFrame {
         getContentPane().add(panelTeacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 300, -1, 290));
 
         btnSortbyIDExam.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyIDExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyIDExam.setText("Sắp xếp theo ID");
         getContentPane().add(btnSortbyIDExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 420, 200, 70));
 
         btnSortbyTime.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyTime.setText("Sắp xếp theo thời gian");
         getContentPane().add(btnSortbyTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 310, 200, 70));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 290, 450, 30));
@@ -300,6 +310,13 @@ public class ExamView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_FSearchExamKeyPressed
 
+    private void btnAddExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddExamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddExamActionPerformed
+
+
+        // Tạo một ImageIcon từ đường dẫn
+        ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
 
     private String[] columnNamesExam = new String[] {
             "ID", "Tên kỳ thi", "Thời gian", "Giám thị" };

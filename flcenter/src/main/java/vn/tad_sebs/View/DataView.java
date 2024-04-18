@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vn.tad_sebs.View;
-
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -60,6 +61,8 @@ public class DataView extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("QUẢN LÝ TÀI LIỆU");
+        setIconImage(icon.getImage());
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -108,6 +111,7 @@ public class DataView extends javax.swing.JFrame {
         getContentPane().add(FSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 118, 30));
 
         btnSearchData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSearchData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Find.png"))); // NOI18N
         btnSearchData.setText("Tìm");
         btnSearchData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,10 +121,12 @@ public class DataView extends javax.swing.JFrame {
         getContentPane().add(btnSearchData, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
 
         btnSortbyIDData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyIDData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyIDData.setText("Sắp xếp theo ID");
         getContentPane().add(btnSortbyIDData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 430, 180, 80));
 
         btnSortbyNameData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnSortbyNameData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyNameData.setText("Sắp xếp theo Tên");
         getContentPane().add(btnSortbyNameData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 320, 180, 80));
 
@@ -157,14 +163,17 @@ public class DataView extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 220, 60, -1));
 
         btnAddData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnAddData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
         btnAddData.setText("Thêm");
         getContentPane().add(btnAddData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 260, -1, -1));
 
         btnDeleteData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnDeleteData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Delete.png"))); // NOI18N
         btnDeleteData.setText("Xóa");
         getContentPane().add(btnDeleteData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 260, -1, -1));
 
         btnEditData.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnEditData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
         btnEditData.setText("Chỉnh sửa");
         getContentPane().add(btnEditData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 260, -1, -1));
 
@@ -180,7 +189,7 @@ public class DataView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-
+ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
     private void FSearchDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FSearchDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FSearchDataActionPerformed

@@ -7,7 +7,8 @@ package vn.tad_sebs.View;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import javax.swing.*;
+import java.awt.*;
 /**
  *
  * @author ASUS
@@ -63,6 +64,8 @@ public class MainView extends javax.swing.JFrame {
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MENU");
+        setIconImage(icon.getImage());
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -78,7 +81,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, -1, -1));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLCB.png")); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLCB.png"))); // NOI18N
         jLabel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 210, 90));
 
@@ -94,7 +97,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, -1, -1));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLLH.png")); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLLH.png"))); // NOI18N
         jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 210, 90));
 
@@ -110,7 +113,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, -1, -1));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLTL.png")); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLTL.png"))); // NOI18N
         jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 210, 90));
 
@@ -126,7 +129,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLKT.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLKT.png"))); // NOI18N
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 210, 90));
 
@@ -148,7 +151,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 110, 60));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLHV.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV.png"))); // NOI18N
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 210, 90));
 
@@ -158,7 +161,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 80, 40));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLMH.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLMH.png"))); // NOI18N
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 210, 90));
 
@@ -203,7 +206,7 @@ public class MainView extends javax.swing.JFrame {
     private void QLKTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QLKTActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_QLKTActionPerformed
-
+ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
 
     public void addQLHVListener(ActionListener listener) {      
         QLHV.addActionListener(listener);

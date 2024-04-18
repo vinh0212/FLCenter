@@ -16,7 +16,8 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-
+import javax.swing.*;
+import java.awt.*;
 import vn.tad_sebs.Model.Lop;
 import vn.tad_sebs.Model.Student;
 import vn.tad_sebs.View.ClassStat;
@@ -93,6 +94,9 @@ public class ClassView extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("QUẢN LÝ LỚP HỌC");
+        setForeground(new java.awt.Color(0, 0, 0));
+        setIconImage(icon.getImage());
         setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -581,7 +585,7 @@ public class ClassView extends javax.swing.JFrame {
 
         tbClassList.clearSelection();
     }
-
+    ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
     public void clearStudentInfo() {
         txtID1.setText("");
         txtPoint.setText("");

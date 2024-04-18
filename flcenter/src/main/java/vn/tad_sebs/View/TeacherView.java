@@ -14,7 +14,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
-
+import javax.swing.*;
+import java.awt.*;
 import vn.tad_sebs.Model.Department;
 import vn.tad_sebs.Model.Lanhdao;
 import vn.tad_sebs.Model.Teacher;
@@ -189,6 +190,8 @@ public class TeacherView extends javax.swing.JFrame {
         jLabel17.setText("GVCN");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("QUẢN LÝ CÁN BỘ");
+        setIconImage(icon.getImage());
         setResizable(false);
 
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
@@ -407,7 +410,7 @@ public class TeacherView extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(GVtable);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 62, 1020, 580));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 62, 1010, 580));
         jPanel2.add(FLevelSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 350, 172, -1));
 
         FAddressSearchGV.addActionListener(new java.awt.event.ActionListener() {
@@ -457,7 +460,7 @@ public class TeacherView extends javax.swing.JFrame {
         btnAddGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnAddGV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
         btnAddGV.setText("Thêm");
-        jPanel2.add(btnAddGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1038, 500, 90, -1));
+        jPanel2.add(btnAddGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 490, 100, -1));
 
         btnEditGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnEditGV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
@@ -467,7 +470,7 @@ public class TeacherView extends javax.swing.JFrame {
                 btnEditGVActionPerformed(evt);
             }
         });
-        jPanel2.add(btnEditGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 500, -1, -1));
+        jPanel2.add(btnEditGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 490, -1, -1));
 
         CbbSeacrchGV.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         CbbSeacrchGV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Quê quán", "Giới tính", "Cấp bậc hàm", "Môn giảng dạy", "Lớp phụ trách" }));
@@ -501,7 +504,7 @@ public class TeacherView extends javax.swing.JFrame {
         btnSortbyLevelGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyLevelGV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyLevelGV.setText("Sắp xếp theo Cấp bậc hàm");
-        jPanel2.add(btnSortbyLevelGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 620, 220, -1));
+        jPanel2.add(btnSortbyLevelGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 620, 220, 30));
 
         FSearchGV.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -525,7 +528,7 @@ public class TeacherView extends javax.swing.JFrame {
 
         btnClearGV.setFont(new java.awt.Font("VnTimes", 1, 14)); // NOI18N
         btnClearGV.setText("C");
-        jPanel2.add(btnClearGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 500, 30, -1));
+        jPanel2.add(btnClearGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 490, 30, -1));
 
         btnDeleteGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnDeleteGV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Delete.png"))); // NOI18N
@@ -535,7 +538,7 @@ public class TeacherView extends javax.swing.JFrame {
                 btnDeleteGVActionPerformed(evt);
             }
         });
-        jPanel2.add(btnDeleteGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 500, 80, -1));
+        jPanel2.add(btnDeleteGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 490, 90, -1));
 
         jPanel3.setBackground(new java.awt.Color(174, 228, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -594,7 +597,7 @@ public class TeacherView extends javax.swing.JFrame {
         buttonGroup1.add(CbFGV);
         CbFGV.setText("Nữ");
         jPanel2.add(CbFGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 260, 75, -1));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 530, 370, 30));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 530, 390, 50));
 
         jLabel28.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLCB2.png")); // NOI18N
         jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -40, 1390, 720));
@@ -620,7 +623,7 @@ public class TeacherView extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1404, 717));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
     private void FTeacherSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FTeacherSearchStudentActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FTeacherSearchStudentActionPerformed

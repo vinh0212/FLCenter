@@ -3,7 +3,8 @@ package vn.tad_sebs.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-
+import javax.swing.*;
+import java.awt.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -53,10 +54,11 @@ public class LoginView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CHƯƠNG TRÌNH QUẢN LÝ TRUNG TÂM NGOẠI NGỮ");
+        setIconImage(icon.getImage());
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/eye.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\eye.png")); // NOI18N
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -190,7 +192,7 @@ public class LoginView extends javax.swing.JFrame {
     public void addLoginListener(ActionListener listener) {
         Enter.addActionListener(listener);
     }
-    
+    ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Enter;
