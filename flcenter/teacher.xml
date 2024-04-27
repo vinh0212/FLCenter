@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <teachers>
     <teacher>
-        <Id>2</Id>
-        <Name>Vinh</Name>
-        <Date>08/04/2024</Date>
-        <Sex>Nữ</Sex>
-        <Address>1</Address>
-        <Capbacham>1</Capbacham>
-        <Mon>Không có</Mon>
-        <dp>1</dp>
-    </teacher>
-    <teacher>
         <Id>3</Id>
         <Name>Đạt</Name>
         <Date>01/01/2024</Date>
         <Sex>Nữ</Sex>
         <Address>3</Address>
-        <Capbacham>3</Capbacham>
-        <Mon>3</Mon>
+        <Capbacham>Không có</Capbacham>
+        <Mon>Không có</Mon>
         <dp>1</dp>
     </teacher>
     <teacher>
@@ -27,7 +17,7 @@
         <Sex>Nam</Sex>
         <Address>Dubai</Address>
         <Capbacham>Thượng uý</Capbacham>
-        <Mon></Mon>
+        <Mon>Listening</Mon>
         <dp>3</dp>
     </teacher>
 </teachers>

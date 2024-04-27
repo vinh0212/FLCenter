@@ -308,7 +308,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1020" y="590" width="220" height="50"/>
+                  <AbsoluteConstraints x="1020" y="360" width="220" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -324,7 +324,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1020" y="510" width="220" height="50"/>
+                  <AbsoluteConstraints x="1020" y="430" width="220" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -340,7 +340,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1020" y="440" width="220" height="50"/>
+                  <AbsoluteConstraints x="1020" y="580" width="220" height="60"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -463,13 +463,6 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="FLevelSearchLD">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1140" y="230" width="176" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
             <Component class="javax.swing.JTextField" name="FRoleSearchLD">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FRoleSearchLDActionPerformed"/>
@@ -585,7 +578,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1020" y="360" width="220" height="50"/>
+                  <AbsoluteConstraints x="1020" y="510" width="220" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -623,6 +616,36 @@
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="1230" y="170" width="85" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="FLevelSearchLD">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="14">
+                    <StringItem index="0" value="Kh&#xf4;ng c&#xf3;"/>
+                    <StringItem index="1" value="H&#x1ea1; s&#x129; quan/CSNV"/>
+                    <StringItem index="2" value="Thi&#x1ebf;u u&#xfd;"/>
+                    <StringItem index="3" value="Trung u&#xfd;"/>
+                    <StringItem index="4" value="Th&#x1b0;&#x1ee3;ng u&#xfd;"/>
+                    <StringItem index="5" value="&#x110;&#x1ea1;i u&#xfd;"/>
+                    <StringItem index="6" value="Thi&#x1ebf;u t&#xe1;"/>
+                    <StringItem index="7" value="Trung t&#xe1;"/>
+                    <StringItem index="8" value="Th&#x1b0;&#x1ee3;ng t&#xe1;"/>
+                    <StringItem index="9" value="&#x110;&#x1ea1;i t&#xe1;"/>
+                    <StringItem index="10" value="Thi&#x1ebf;u t&#x1b0;&#x1edb;ng"/>
+                    <StringItem index="11" value="Trung t&#x1b0;&#x1edb;ng"/>
+                    <StringItem index="12" value="Th&#x1b0;&#x1ee3;ng t&#x1b0;&#x1edb;ng"/>
+                    <StringItem index="13" value="&#x110;&#x1ea1;i t&#x1b0;&#x1edb;ng"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="1140" y="230" width="180" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -751,13 +774,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JTextField" name="FLevelSearchGV">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1200" y="350" width="172" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
             <Component class="javax.swing.JTextField" name="FAddressSearchGV">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FAddressSearchGVActionPerformed"/>
@@ -812,17 +828,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1040" y="540" width="220" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JTextField" name="FRoleSearchGV">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FRoleSearchGVActionPerformed"/>
-              </Events>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1200" y="400" width="172" height="-1"/>
+                  <AbsoluteConstraints x="1040" y="540" width="330" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -973,7 +979,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1040" y="580" width="220" height="-1"/>
+                  <AbsoluteConstraints x="1040" y="580" width="330" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1005,7 +1011,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1040" y="620" width="220" height="30"/>
+                  <AbsoluteConstraints x="1040" y="620" width="330" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1044,7 +1050,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1070" y="400" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="1070" y="450" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1164,7 +1170,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1070" y="450" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="1070" y="400" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1179,7 +1185,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="1200" y="450" width="172" height="-1"/>
+                  <AbsoluteConstraints x="1200" y="400" width="172" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1220,10 +1226,57 @@
                 </Constraint>
               </Constraints>
             </Component>
+            <Component class="javax.swing.JComboBox" name="FLevelSearchGV">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="14">
+                    <StringItem index="0" value="Kh&#xf4;ng c&#xf3;"/>
+                    <StringItem index="1" value="H&#x1ea1; s&#x129; quan/CSNV"/>
+                    <StringItem index="2" value="Thi&#x1ebf;u u&#xfd;"/>
+                    <StringItem index="3" value="Trung u&#xfd;"/>
+                    <StringItem index="4" value="Th&#x1b0;&#x1ee3;ng u&#xfd;"/>
+                    <StringItem index="5" value="&#x110;&#x1ea1;i u&#xfd;"/>
+                    <StringItem index="6" value="Thi&#x1ebf;u t&#xe1;"/>
+                    <StringItem index="7" value="Trung t&#xe1;"/>
+                    <StringItem index="8" value="Th&#x1b0;&#x1ee3;ng t&#xe1;"/>
+                    <StringItem index="9" value="&#x110;&#x1ea1;i t&#xe1;"/>
+                    <StringItem index="10" value="Thi&#x1ebf;u t&#x1b0;&#x1edb;ng"/>
+                    <StringItem index="11" value="Trung t&#x1b0;&#x1edb;ng"/>
+                    <StringItem index="12" value="Th&#x1b0;&#x1ee3;ng t&#x1b0;&#x1edb;ng"/>
+                    <StringItem index="13" value="&#x110;&#x1ea1;i t&#x1b0;&#x1edb;ng"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="1200" y="350" width="170" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator2">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="1010" y="530" width="390" height="50"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="FRoleSearchGV">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="1">
+                    <StringItem index="0" value="Kh&#xf4;ng c&#xf3;"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="1200" y="450" width="170" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

@@ -2,16 +2,12 @@ package vn.tad_sebs.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileReader;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JCheckBox;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 
 import vn.tad_sebs.View.StudentView;
 import vn.tad_sebs.View.ClassView;
@@ -23,6 +19,7 @@ import vn.tad_sebs.View.TeacherView;
 import vn.tad_sebs.View.MonView;
 
 public class MainController {
+
     private MainView mainView;
 
     public MainController(MainView mainView) {
@@ -35,11 +32,13 @@ public class MainController {
         mainView.addQLTLListener(new QLTLListener());
         mainView.addDXListener(new DXListener());
     }
+
     public void showMainView() {
         mainView.setVisible(true);
     }
 
     class QLHVListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             // hiển thị màn hình quản lý học viên
             try {
@@ -54,6 +53,7 @@ public class MainController {
     }
 
     class QLCBGVListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             // hiển thị màn hình quản lý cán bộ giáo viên
             try {
@@ -65,11 +65,10 @@ public class MainController {
             }
         }
     }
-    
-    class QLCTHListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
+
+    class QLCTHListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
             // hiển thị màn hình quản lý chương trình học
             try {
                 MonView monView = new MonView();
@@ -80,7 +79,9 @@ public class MainController {
             }
         }
     }
+
     class QLKTListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             // hiển thị màn hình quản lý học viên
             try {
@@ -95,6 +96,7 @@ public class MainController {
     }
 
     class QLLHListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             // hiển thị màn hình quản lý lớp học
             try {
@@ -107,45 +109,31 @@ public class MainController {
         }
     }
     private static Properties properties = new Properties();
-    class DXListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            String filePath = "D:/config.ini";                           
-                    try (FileInputStream fis = new FileInputStream("D:/config.ini")) {
-                        properties.load(fis);
-                     } catch (IOException ex) { 
-                Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        // Lấy giá trị của các thuộc tính từ file .ini
-        String key = properties.getProperty("Sumani");                         
-                        if (key.equals("1")){
-                                mainView.setVisible(false);
-                                LoginView view = new LoginView();
-                                LoginController controller = new LoginController(view);
-                                controller.showLoginView();
-                                JTextField textField = view.getUsername();
-                                if (textField != null) {
-                                textField.setText("admin");
-                                }
-                                JPasswordField textField2 = view.getPassword();
-                                if (textField2 != null) {
-                                textField2.setText("admin");
-                                }
-                                
-                        } else {
-                               mainView.setVisible(false);
-                               LoginView view = new LoginView();
-                               LoginController controller = new LoginController(view);
-                               controller.showLoginView();
-                            }
+
+    class DXListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            String appDataPath = System.getenv("APPDATA");
+            String filePath = appDataPath + "/FLCenter/config.ini";
+            properties.setProperty("AutofillLogin", "0");
+            try (OutputStream out = new FileOutputStream(filePath)) {
+                    properties.store(out, null);
+                } catch (IOException ex) {
+                    Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            mainView.setVisible(false);
+            LoginView view = new LoginView();
+            view.setRMBDeselected();
+            LoginController controller = new LoginController(view);
+            controller.showLoginView();
+
         }
     }
-    
-    class QLTLListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
+
+    class QLTLListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
             // hiển thị màn hình quản lý data
             try {
                 DataView dataView = new DataView();

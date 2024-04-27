@@ -3,11 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vn.tad_sebs.View;
+
 import javax.swing.*;
-import java.awt.*;
 import com.toedter.calendar.JDateChooser;
-import java.awt.Dimension;
-import java.awt.Toolkit;
+
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.text.ParseException;
@@ -22,23 +21,15 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import vn.tad_sebs.Model.Student;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.BaseFont;
-
+import com.itextpdf.kernel.font.PdfFont;
+import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -51,13 +42,13 @@ public class StudentView extends javax.swing.JFrame {
      */
     public StudentView() {
         initComponents();
-        
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         BtnEditStudent.setEnabled(false);
         BtnDeleteStudent.setEnabled(false);
         btnPrint.setEnabled(false);
-
+        chkM.setSelected(true);
     }
 
     /**
@@ -69,7 +60,8 @@ public class StudentView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         btnGroup = new javax.swing.ButtonGroup();
@@ -103,6 +95,7 @@ public class StudentView extends javax.swing.JFrame {
         btnPrint = new javax.swing.JButton();
         chkM = new javax.swing.JCheckBox();
         chkF = new javax.swing.JCheckBox();
+        btnCustomFind = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -116,26 +109,26 @@ public class StudentView extends javax.swing.JFrame {
 
         Studenttable.setBackground(new java.awt.Color(174, 228, 255));
         Studenttable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+                new Object[][] {
 
-            },
-            new String [] {
-                "ID", "Họ và tên", "Ngày sinh", "Giới tính", "Quê quán", "Lớp", "Giáo viên chủ nhiệm", "Điểm"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+                },
+                new String[] {
+                        "ID", "Họ và tên", "Ngày sinh", "Giới tính", "Quê quán", "Lớp", "Giáo viên chủ nhiệm", "Điểm"
+                }) {
+            Class[] types = new Class[] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+            boolean[] canEdit = new boolean[] {
+                    false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+                return types[columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         Studenttable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -181,7 +174,8 @@ public class StudentView extends javax.swing.JFrame {
                 FAddressSearchStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(FAddressSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 240, 163, -1));
+        getContentPane().add(FAddressSearchStudent,
+                new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 240, 163, -1));
 
         BtnAddStudent.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         BtnAddStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
@@ -194,7 +188,8 @@ public class StudentView extends javax.swing.JFrame {
         getContentPane().add(BtnAddStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 380, 100, -1));
 
         CbbSeacrchStudent.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        CbbSeacrchStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Lớp", "Quê quán", "Ngày sinh" }));
+        CbbSeacrchStudent.setModel(
+                new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Lớp", "Quê quán", "Ngày sinh" }));
         getContentPane().add(CbbSeacrchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 18, -1, 30));
 
         FSearchStudent.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -237,7 +232,10 @@ public class StudentView extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(51, 255, 73));
         jLabel6.setText("Quê quán");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 240, 80, -1));
-        getContentPane().add(FScoreSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 330, 163, -1));
+
+        FScoreSearchStudent.setEnabled(false);
+        getContentPane().add(FScoreSearchStudent,
+                new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 330, 163, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -299,11 +297,6 @@ public class StudentView extends javax.swing.JFrame {
         btnGroup.add(chkM);
         chkM.setForeground(new java.awt.Color(255, 255, 255));
         chkM.setText("Nam");
-        chkM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkMActionPerformed(evt);
-            }
-        });
         getContentPane().add(chkM, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 200, 80, -1));
 
         btnGroup.add(chkF);
@@ -311,65 +304,66 @@ public class StudentView extends javax.swing.JFrame {
         chkF.setText("Nữ");
         getContentPane().add(chkF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 200, 70, -1));
 
+        btnCustomFind.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnCustomFind.setText("Tìm theo nhiều tiêu chí");
+        getContentPane().add(btnCustomFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 190, 40));
+
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 740));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
-    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
+
+    ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
+
+    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPrintActionPerformed
         Student student = getStudentInfo();
 
-    try {
-        // Open the template PDF
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader("template.pdf"), new PdfWriter("StudentInfo" + student.getId() + "-" + student.getName() + ".pdf"));
+        try {
+            // Open the template PDF
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader("template.pdf"),
+                    new PdfWriter("StudentInfo" + student.getId() + "-" + student.getName() + ".pdf"));
 
-        // Get the form from the document
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+            // Get the form from the document
+            PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
-        // Fill the form fields
-        Map<String, PdfFormField> fields = form.getAllFormFields();
-        fields.get("name").setValue(student.getName());
-        fields.get("dob").setValue(student.getDate());
-        fields.get("sex").setValue(student.getGioitinh());
-        fields.get("score").setValue(String.valueOf(student.getDiem()));
-        fields.get("address").setValue(student.getAddress());
-        fields.get("lop").setValue(student.getLop());
-        fields.get("id").setValue(String.valueOf(student.getId()));
+            // Create a new font
+        PdfFont font = PdfFontFactory.createFont("vuArial.ttf", "Identity-H");
 
-        // Close the document
-        pdfDoc.close();
+            // Fill the form fields
+            Map<String, PdfFormField> fields = form.getAllFormFields();
+            fields.get("name").setValue(student.getName()).setFont(font);
+            fields.get("dob").setValue(student.getDate()).setFont(font);
+            fields.get("sex").setValue(student.getGioitinh()).setFont(font);
+            fields.get("score").setValue(String.valueOf(student.getDiem())).setFont(font);
+            fields.get("address").setValue(student.getAddress()).setFont(font);
+            fields.get("lop").setValue(student.getLop()).setFont(font);
+            fields.get("id").setValue(String.valueOf(student.getId())).setFont(font);
 
-        showMessage("Đã xuất xong thông tin học viên. Kiểm tra trong thư mục của chương trình");
-    }
-    catch (IOException ex)
-    {
-        ex.printStackTrace();
-    }
-    }//GEN-LAST:event_btnPrintActionPerformed
+            // Close the document
+            pdfDoc.close();
 
-    private void BtnAddStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddStudentActionPerformed
+            showMessage("Đã xuất xong thông tin học viên. Kiểm tra trong thư mục của chương trình");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }// GEN-LAST:event_btnPrintActionPerformed
+
+    private void BtnAddStudentActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_BtnAddStudentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnAddStudentActionPerformed
+    }// GEN-LAST:event_BtnAddStudentActionPerformed
 
-    private void BtnClearStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnClearStudentActionPerformed
+    private void BtnClearStudentActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_BtnClearStudentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnClearStudentActionPerformed
+    }// GEN-LAST:event_BtnClearStudentActionPerformed
 
-    private void FSearchStudentKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FSearchStudentKeyPressed
-         if(evt.getKeyCode() == KeyEvent.VK_ENTER)
-         {
-                BtnSearchStudent.doClick();
-         }
-    }//GEN-LAST:event_FSearchStudentKeyPressed
+    private void FSearchStudentKeyPressed(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_FSearchStudentKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            BtnSearchStudent.doClick();
+        }
+    }// GEN-LAST:event_FSearchStudentKeyPressed
 
-    private void chkMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkMActionPerformed
-
-    
-    
     private void BtnEditStudentActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_BtnEditStudentActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_BtnEditStudentActionPerformed
@@ -581,6 +575,10 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         btnSortbyDiem.addActionListener(listener);
     }
 
+    public void addSearchListener(ActionListener listener) {
+        btnCustomFind.addActionListener(listener);
+    }
+
     public void showListLop(ArrayList<String> list) {
         for (String item : list) {
             cbLop.addItem(item);
@@ -622,7 +620,10 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
             student.setAddress(FAddressSearchStudent.getText());
             student.setLop(cbLop.getSelectedItem().toString().split(" - ")[0]);
 
-            student.setDiem(Float.parseFloat(FScoreSearchStudent.getText()));
+            if ("".equals(FScoreSearchStudent.getText())) {
+                student.setDiem(0);
+            } else
+                student.setDiem(Float.parseFloat(FScoreSearchStudent.getText()));
             return student;
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -651,20 +652,18 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         return true;
     }
 
-    public boolean validateIDSearch()
-    {
+    public boolean validateIDSearch() {
         String searchBox = FSearchStudent.getText();
-        //check if ID is a number
+        // check if ID is a number
         try {
             int id = Integer.parseInt(searchBox);
-            
+
         } catch (NumberFormatException e) {
             showMessage("ID phải là số");
             return false;
         }
         return true;
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAddStudent;
@@ -680,6 +679,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
     private javax.swing.JTextField FScoreSearchStudent;
     private javax.swing.JTextField FSearchStudent;
     private javax.swing.JTable Studenttable;
+    private javax.swing.JButton btnCustomFind;
     private javax.swing.ButtonGroup btnGroup;
     private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnSortbyDiem;

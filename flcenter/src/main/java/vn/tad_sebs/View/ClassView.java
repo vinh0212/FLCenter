@@ -8,7 +8,9 @@ import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -47,6 +49,7 @@ public class ClassView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -70,6 +73,7 @@ public class ClassView extends javax.swing.JFrame {
         btnSortbyIDClass = new javax.swing.JButton();
         btnSortbySLClass = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
+        btnStatNum = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -195,15 +199,25 @@ public class ClassView extends javax.swing.JFrame {
         btnSortbyIDClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyIDClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyIDClass.setText("Sắp xếp theo ID");
-        jPanel1.add(btnSortbyIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 250, 80));
+        jPanel1.add(btnSortbyIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 380, 170, 70));
 
         btnSortbySLClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbySLClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbySLClass.setText("Sắp xếp theo Số lượng học viên");
-        jPanel1.add(btnSortbySLClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 490, 250, 80));
+        jPanel1.add(btnSortbySLClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 380, 250, 70));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 360, 510, 14));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLLH2.png")); // NOI18N
+        btnStatNum.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnStatNum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/chart.png"))); // NOI18N
+        btnStatNum.setText("Thống kê số lượng học viên");
+        btnStatNum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStatNumActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnStatNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 510, 440, 60));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLLH2.png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1370, 660));
 
         jTabbedPane1.addTab("Danh sách lớp học", jPanel1);
@@ -334,7 +348,7 @@ public class ClassView extends javax.swing.JFrame {
         });
         jPanel2.add(btnStat, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 230, 200, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLLH2.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLLH2.png"))); // NOI18N
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1370, 660));
 
         jTabbedPane1.addTab("Quản lý học viên từng lớp", jPanel2);
@@ -359,12 +373,18 @@ public class ClassView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtFindKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFindKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
-        {
+    private void btnStatNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatNumActionPerformed
+        ClassStat classStat = new ClassStat();
+        classStat.getTable(getTBListLops());
+
+        classStat.action2();
+    }//GEN-LAST:event_btnStatNumActionPerformed
+
+    private void txtFindKeyPressed(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtFindKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnFind.doClick();
         }
-    }//GEN-LAST:event_txtFindKeyPressed
+    }// GEN-LAST:event_txtFindKeyPressed
 
     private void btnSortbyPtsCLActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSortbyPtsCLActionPerformed
         // TODO add your handling code here:
@@ -473,7 +493,6 @@ public class ClassView extends javax.swing.JFrame {
             "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
     };
 
-
     public void showClassList(List<Lop> listLops) {
         int size = listLops.size();
         Object[][] data = new Object[size][4];
@@ -493,8 +512,7 @@ public class ClassView extends javax.swing.JFrame {
     };
 
     public Lop getLopInfo() {
-        if(!validateName())
-        {
+        if (!validateName()) {
             return null;
         }
         try {
@@ -517,30 +535,24 @@ public class ClassView extends javax.swing.JFrame {
         return null;
     }
 
-    public boolean validateID()
-    {
+    public boolean validateID() {
         String searchBox = txtFind.getText();
-        try{
+        try {
             int id = Integer.parseInt(searchBox);
-            if(id < 0)
-            {
+            if (id < 0) {
                 showMessage("ID không hợp lệ");
                 return false;
             }
-        }
-        catch(NumberFormatException ex)
-        {
+        } catch (NumberFormatException ex) {
             showMessage("ID không hợp lệ");
             return false;
         }
-        return  true;
+        return true;
     }
 
-    private boolean validateName()
-    {
+    private boolean validateName() {
         String name = txtNameClass.getText();
-        if (name == null || name.isEmpty())
-        {
+        if (name == null || name.isEmpty()) {
             txtNameClass.requestFocus();
             showMessage("Tên lớp không được để trống");
             return false;
@@ -585,7 +597,9 @@ public class ClassView extends javax.swing.JFrame {
 
         tbClassList.clearSelection();
     }
+
     ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
+
     public void clearStudentInfo() {
         txtID1.setText("");
         txtPoint.setText("");
@@ -713,6 +727,34 @@ public class ClassView extends javax.swing.JFrame {
         return distributionModel;
     }
 
+    public TableModel getTBListLops() {
+        // Get the original table model
+        TableModel originalModel = tbClassList.getModel();
+
+        // Create a new table model for the class distribution
+        DefaultTableModel classModel = new DefaultTableModel(new Object[] { "Class", "Count" }, 0);
+
+        // Create a map to count the class distribution
+        Map<String, Integer> classDistribution = new HashMap<>();
+
+        // Count the class distribution
+        for (int i = 0; i < originalModel.getRowCount(); i++) {
+            String className = originalModel.getValueAt(i, 1).toString(); // replace 1 with the column index for the
+                                                                          // class
+            int studentCount = Integer.parseInt(originalModel.getValueAt(i, 2).toString()); // replace 2 with the column
+                                                                                            // index for the student
+                                                                                            // count
+            classDistribution.put(className, classDistribution.getOrDefault(className, 0) + studentCount);
+        }
+
+        // Add the distribution to the new table model
+        for (Map.Entry<String, Integer> entry : classDistribution.entrySet()) {
+            classModel.addRow(new Object[] { entry.getKey(), entry.getValue() });
+        }
+
+        return classModel;
+    }
+
     public String getSearchBoxStudent() {
         return txtFind.getText().trim();
     }
@@ -729,8 +771,6 @@ public class ClassView extends javax.swing.JFrame {
         return Integer.parseInt(txtIDClass.getText());
     }
 
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddClass;
     private javax.swing.JButton btnClearCL;
@@ -744,6 +784,7 @@ public class ClassView extends javax.swing.JFrame {
     private javax.swing.JButton btnSortbyPtsCL;
     private javax.swing.JButton btnSortbySLClass;
     private javax.swing.JButton btnStat;
+    private javax.swing.JButton btnStatNum;
     private javax.swing.JButton btnUpdateCL;
     private javax.swing.JComboBox<String> cbChonlop;
     private javax.swing.JComboBox<String> cbFind;

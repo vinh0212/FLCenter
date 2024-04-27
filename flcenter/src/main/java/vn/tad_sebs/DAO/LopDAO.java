@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 import vn.tad_sebs.Model.Lop;
 import vn.tad_sebs.Model.LopXML;
@@ -188,10 +189,18 @@ public class LopDAO {
     public boolean deleteA(Lop lop) {
         boolean isFound = false;
         for (Lop c : listLops) {
-            if (c.getId() == lop.getId()) {
-                listLops.remove(c);
-                isFound = true;
-                break;
+            if (c.getId() == lop.getId() ) {
+                if(c.getIdStudent().isEmpty())
+                {
+                    listLops.remove(c);
+                    isFound = true;
+                    break;
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Không thể xoá do còn học viên trong lớp!", "Message", 1);
+                    break;
+                }
+                
             }
         }
         if (isFound) {

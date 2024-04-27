@@ -34,6 +34,10 @@ public class TeacherView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         btnEditLD.setEnabled(false);
         btnDeleteLD.setEnabled(false);
+        btnEditGV.setEnabled(false);
+        btnDeleteGV.setEnabled(false);
+        
+        
     }
 
     /**
@@ -85,7 +89,6 @@ public class TeacherView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        FLevelSearchLD = new javax.swing.JTextField();
         FRoleSearchLD = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -97,18 +100,17 @@ public class TeacherView extends javax.swing.JFrame {
         FDateSearchLD = new com.toedter.calendar.JDateChooser();
         CbMLD = new javax.swing.JCheckBox();
         CbFLD = new javax.swing.JCheckBox();
+        FLevelSearchLD = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         GVtable = new javax.swing.JTable();
-        FLevelSearchGV = new javax.swing.JTextField();
         FAddressSearchGV = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         btnSortbyidGV = new javax.swing.JButton();
-        FRoleSearchGV = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -133,7 +135,9 @@ public class TeacherView extends javax.swing.JFrame {
         FDateSearchGV = new com.toedter.calendar.JDateChooser();
         CbMGV = new javax.swing.JCheckBox();
         CbFGV = new javax.swing.JCheckBox();
+        FLevelSearchGV = new javax.swing.JComboBox<>();
         jSeparator2 = new javax.swing.JSeparator();
+        FRoleSearchGV = new javax.swing.JComboBox<>();
         jLabel28 = new javax.swing.JLabel();
 
         BtnDeleteStudent.setText("Xóa");
@@ -251,17 +255,17 @@ public class TeacherView extends javax.swing.JFrame {
         btnSortbyidLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyidLD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyidLD.setText("Sắp xếp theo ID");
-        jPanel1.add(btnSortbyidLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 590, 220, 50));
+        jPanel1.add(btnSortbyidLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 360, 220, 50));
 
         btnSortbyNameLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyNameLD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyNameLD.setText("Sắp xếp theo tên");
-        jPanel1.add(btnSortbyNameLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 510, 220, 50));
+        jPanel1.add(btnSortbyNameLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 430, 220, 50));
 
         btnSortbyLevelLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyLevelLD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyLevelLD.setText("Sắp xếp theo Cấp bậc hàm");
-        jPanel1.add(btnSortbyLevelLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 440, 220, 50));
+        jPanel1.add(btnSortbyLevelLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 580, 220, 60));
 
         btnEditLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnEditLD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
@@ -310,7 +314,6 @@ public class TeacherView extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(51, 255, 73));
         jLabel11.setText("Quê quán");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 200, 80, -1));
-        jPanel1.add(FLevelSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 230, 176, -1));
 
         FRoleSearchLD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -359,7 +362,7 @@ public class TeacherView extends javax.swing.JFrame {
         btnSortbyRole.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyRole.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyRole.setText("Sắp xếp theo Chức vụ");
-        jPanel1.add(btnSortbyRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 360, 220, 50));
+        jPanel1.add(btnSortbyRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 510, 220, 50));
 
         FDateSearchLD.setDateFormatString("dd/MM/yyyy");
         jPanel1.add(FDateSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 140, 176, -1));
@@ -372,6 +375,9 @@ public class TeacherView extends javax.swing.JFrame {
         buttonGroup2.add(CbFLD);
         CbFLD.setText("Nữ");
         jPanel1.add(CbFLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 170, 85, -1));
+
+        FLevelSearchLD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Không có", "Hạ sĩ quan/CSNV", "Thiếu uý", "Trung uý", "Thượng uý", "Đại uý", "Thiếu tá", "Trung tá", "Thượng tá", "Đại tá", "Thiếu tướng", "Trung tướng", "Thượng tướng", "Đại tướng" }));
+        jPanel1.add(FLevelSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 230, 180, -1));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 340, 400, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLCB2.png")); // NOI18N
@@ -411,7 +417,6 @@ public class TeacherView extends javax.swing.JFrame {
         jScrollPane2.setViewportView(GVtable);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 62, 1010, 580));
-        jPanel2.add(FLevelSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 350, 172, -1));
 
         FAddressSearchGV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -433,14 +438,7 @@ public class TeacherView extends javax.swing.JFrame {
         btnSortbyidGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyidGV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyidGV.setText("Sắp xếp theo ID");
-        jPanel2.add(btnSortbyidGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 540, 220, -1));
-
-        FRoleSearchGV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FRoleSearchGVActionPerformed(evt);
-            }
-        });
-        jPanel2.add(FRoleSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 400, 172, -1));
+        jPanel2.add(btnSortbyidGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 540, 330, -1));
 
         jLabel19.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(51, 255, 73));
@@ -494,7 +492,7 @@ public class TeacherView extends javax.swing.JFrame {
         btnSortbyNameGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyNameGV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyNameGV.setText("Sắp xếp theo tên");
-        jPanel2.add(btnSortbyNameGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 580, 220, -1));
+        jPanel2.add(btnSortbyNameGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 580, 330, -1));
 
         jLabel22.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(51, 255, 73));
@@ -504,7 +502,7 @@ public class TeacherView extends javax.swing.JFrame {
         btnSortbyLevelGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyLevelGV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyLevelGV.setText("Sắp xếp theo Cấp bậc hàm");
-        jPanel2.add(btnSortbyLevelGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 620, 220, 30));
+        jPanel2.add(btnSortbyLevelGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 620, 330, 30));
 
         FSearchGV.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -524,7 +522,7 @@ public class TeacherView extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(51, 255, 73));
         jLabel23.setText("Môn giảng dạy");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 400, -1, -1));
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 450, -1, -1));
 
         btnClearGV.setFont(new java.awt.Font("VnTimes", 1, 14)); // NOI18N
         btnClearGV.setText("C");
@@ -582,9 +580,9 @@ public class TeacherView extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(51, 255, 73));
         jLabel25.setText("Phòng ban");
-        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 450, -1, -1));
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 400, -1, -1));
 
-        jPanel2.add(cbDpEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 450, 172, -1));
+        jPanel2.add(cbDpEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 400, 172, -1));
 
         FDateSearchGV.setDateFormatString("dd/MM/yyyy");
         jPanel2.add(FDateSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 220, 172, -1));
@@ -597,7 +595,13 @@ public class TeacherView extends javax.swing.JFrame {
         buttonGroup1.add(CbFGV);
         CbFGV.setText("Nữ");
         jPanel2.add(CbFGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 260, 75, -1));
+
+        FLevelSearchGV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Không có", "Hạ sĩ quan/CSNV", "Thiếu uý", "Trung uý", "Thượng uý", "Đại uý", "Thiếu tá", "Trung tá", "Thượng tá", "Đại tá", "Thiếu tướng", "Trung tướng", "Thượng tướng", "Đại tướng" }));
+        jPanel2.add(FLevelSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 350, 170, -1));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 530, 390, 50));
+
+        FRoleSearchGV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Không có" }));
+        jPanel2.add(FRoleSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 450, 170, -1));
 
         jLabel28.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLCB2.png")); // NOI18N
         jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -40, 1390, 720));
@@ -672,10 +676,6 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         // TODO add your handling code here:
     }//GEN-LAST:event_FAddressSearchGVActionPerformed
 
-    private void FRoleSearchGVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FRoleSearchGVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FRoleSearchGVActionPerformed
-
     private void btnEditGVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditGVActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditGVActionPerformed
@@ -718,7 +718,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         }
     }//GEN-LAST:event_FSearchLDKeyPressed
     private String[] columnNamesGV = new String[] {
-            "ID", "Họ và tên ", "Ngày sinh", "Giới tính", "Quê quán", "Cấp bậc hàm", "Môn giảng dạy", "Phòng ban" };
+            "ID", "Họ và tên ", "Ngày sinh", "Giới tính", "Quê quán", "Cấp bậc hàm", "Môn giảng dạy", "Mã phòng ban" };
     public void showListGV(List<Teacher> list) {
         int size = list.size();
         Object[][] teachers = new Object[size][8];
@@ -762,9 +762,10 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
             } else
                 CbFGV.setSelected(true);
             FAddressSearchGV.setText(GVtable.getModel().getValueAt(row, 4).toString());
-            FLevelSearchGV.setText(GVtable.getModel().getValueAt(row, 5).toString());
-            FRoleSearchGV.setText(GVtable.getModel().getValueAt(row, 6).toString());
+            FLevelSearchGV.setSelectedItem(GVtable.getModel().getValueAt(row, 5).toString());
             cbDpEdit.setSelectedIndex(Integer.parseInt(GVtable.getModel().getValueAt(row, 7).toString())-1);
+            FRoleSearchGV.setSelectedItem(GVtable.getModel().getValueAt(row, 6).toString());
+            
             // enable Edit and Delete buttons
             btnEditGV.setEnabled(true);
             btnDeleteGV.setEnabled(true);
@@ -794,8 +795,8 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         } else
             CbFGV.setSelected(true);
         FAddressSearchGV.setText(teacher.getAddress());
-        FLevelSearchGV.setText(teacher.getCapbacham());
-        FRoleSearchGV.setText(teacher.getMon());
+        FLevelSearchGV.setSelectedItem(teacher.getCapbacham());
+        FRoleSearchGV.setSelectedItem(teacher.getMon());
         
         cbDpEdit.setSelectedIndex(teacher.getDp()-1);
         //enable Delete and edit button
@@ -825,8 +826,8 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         CbMGV.setSelected(true);
         FAddressSearchGV.setText("");
         
-        FLevelSearchGV.setText("");
-        FRoleSearchGV.setText("");
+        FLevelSearchGV.setSelectedIndex(0);
+        FRoleSearchGV.setSelectedIndex(0);
         cbDpEdit.setSelectedIndex(0);
         // disable Edit and Delete buttons
         btnEditGV.setEnabled(false);
@@ -853,7 +854,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
     }
     public Teacher getGVInfo()
     {
-        if(!validateGVName() || !validateGVAddress() || !validateGVCapbacham() || !validateGVRole())
+        if(!validateGVName() || !validateGVAddress())
         {
             return null;
         }
@@ -875,8 +876,8 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
             else
                 teacher.setSex("Nữ");
             teacher.setAddress(FAddressSearchGV.getText());
-            teacher.setCapbacham(FLevelSearchGV.getText());
-            teacher.setMon(FRoleSearchGV.getText());
+            teacher.setCapbacham(FLevelSearchGV.getSelectedItem().toString());
+            teacher.setMon(FRoleSearchGV.getSelectedItem().toString());
             
             teacher.setDp(cbDpEdit.getSelectedIndex() + 1);
             return teacher;
@@ -913,29 +914,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         return true;
     }
 
-    private boolean validateGVCapbacham()
-    {
-        String capbacham = FLevelSearchGV.getText();
-        if(capbacham == null || "".equals(capbacham))
-        {
-            FLevelSearchGV.requestFocus();
-            showMessage("Cấp bậc hàm không được để trống");
-            return false;
-        }
-        return true;
-    }
-
-    private boolean validateGVRole()
-    {
-        String role = FRoleSearchGV.getText();
-        if(role == null || "".equals(role))
-        {
-            FRoleSearchGV.requestFocus();
-            showMessage("Môn giảng dạy không được để trống");
-            return false;
-        }
-        return true;
-    }
+    
     public void addEditGVListener(ActionListener listener) {
         btnEditGV.addActionListener(listener);
     }
@@ -972,6 +951,11 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         cbDpChoose.addActionListener(listener);
     }
 
+    public void addListSubjectSelectionListener(ActionListener listener)
+    {
+        cbDpEdit.addActionListener(listener);
+    }
+
     public void showListDP(List<Department> list)
     {
         int size = list.size();
@@ -985,6 +969,21 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
     {
         return cbDpChoose.getSelectedIndex() + 1;
     }
+
+    public int getRoleChoice()
+    {
+        return cbDpEdit.getSelectedIndex() + 1;
+    }
+
+    public void showListSubjects(List<String> subjects)
+    {
+        FRoleSearchGV.removeAllItems();
+        FRoleSearchGV.addItem("Không có");
+        for (int i = 0; i < subjects.size(); i++) {
+            FRoleSearchGV.addItem(subjects.get(i));
+        }
+    }
+    
     // ----- Lanh Dao
 
     private String[] columnNamesLD = new String[] { 
@@ -1030,7 +1029,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
             } else
                 CbFLD.setSelected(true);
             FAddressSearchLD.setText(LDtable.getModel().getValueAt(row, 4).toString());
-            FLevelSearchLD.setText(LDtable.getModel().getValueAt(row, 5).toString());
+            FLevelSearchLD.setSelectedItem(LDtable.getModel().getValueAt(row, 5).toString());
             FRoleSearchLD.setText(LDtable.getModel().getValueAt(row, 6).toString());
             // enable Edit and Delete buttons
             btnEditLD.setEnabled(true);
@@ -1061,7 +1060,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         } else
             CbFLD.setSelected(true);
         FAddressSearchLD.setText(lanhdao.getAddress());
-        FLevelSearchLD.setText(lanhdao.getCapbacham());
+        FLevelSearchLD.setSelectedItem(lanhdao.getCapbacham());
         FRoleSearchLD.setText(lanhdao.getChucvu());
         //enable Delete and edit button
         btnEditLD.setEnabled(true);
@@ -1089,7 +1088,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         }
         CbMLD.setSelected(true);
         FAddressSearchLD.setText("");
-        FLevelSearchLD.setText("");
+        FLevelSearchLD.setSelectedIndex(0);
         FRoleSearchLD.setText("");
         // disable Edit and Delete buttons
         btnEditLD.setEnabled(false);
@@ -1112,7 +1111,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
     }
     public Lanhdao getLDInfo()
     {
-        if(!validateLDName() || !validateLDAddress() || !validateLDCapbacham() || !validateLDRole())
+        if(!validateLDName() || !validateLDAddress() || !validateLDRole())
         {
             return null;
         }
@@ -1134,7 +1133,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
             else
                 lanhdao.setSex("Nữ");
             lanhdao.setAddress(FAddressSearchLD.getText());
-            lanhdao.setCapbacham(FLevelSearchLD.getText());
+            lanhdao.setCapbacham(FLevelSearchLD.getSelectedItem().toString());
             lanhdao.setChucvu(FRoleSearchLD.getText());
             return lanhdao;
         }
@@ -1170,17 +1169,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
         return true;
     }
 
-    private boolean validateLDCapbacham()
-    {
-        String capbacham = FLevelSearchLD.getText();
-        if(capbacham == null || "".equals(capbacham))
-        {
-            FLevelSearchLD.requestFocus();
-            showMessage("Cấp bậc hàm không được để trống");
-            return false;
-        }
-        return true;
-    }
+    
 
     private boolean validateLDRole()
     {
@@ -1196,7 +1185,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
 
     public boolean validateGVID()
     {
-        String searchBox = FIDSearchGV.getText();
+        String searchBox = FSearchGV.getText();
         //check if ID is a number
         
         try{
@@ -1295,12 +1284,12 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
     private javax.swing.JTextField FIDSearchGV;
     private javax.swing.JTextField FIDSearchLD;
     private javax.swing.JTextField FIDSearchStudent;
-    private javax.swing.JTextField FLevelSearchGV;
-    private javax.swing.JTextField FLevelSearchLD;
+    private javax.swing.JComboBox<String> FLevelSearchGV;
+    private javax.swing.JComboBox<String> FLevelSearchLD;
     private javax.swing.JTextField FNameSearchGV;
     private javax.swing.JTextField FNameSearchLD;
     private javax.swing.JTextField FNameSearchStudent;
-    private javax.swing.JTextField FRoleSearchGV;
+    private javax.swing.JComboBox<String> FRoleSearchGV;
     private javax.swing.JTextField FRoleSearchLD;
     private javax.swing.JTextField FScoreSearchStudent;
     private javax.swing.JTextField FSearchGV;

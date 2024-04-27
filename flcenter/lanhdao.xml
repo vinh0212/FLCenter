@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <lanhdaos>
     <lanhdao>
-        <Id>1</Id>
+        <Id>2</Id>
         <Name>Đạt</Name>
-        <Date>01/01/2024</Date>
-        <Sex>Nữ</Sex>
-        <Address>3</Address>
-        <Capbacham>3</Capbacham>
+        <Date>03/12/2004</Date>
+        <Sex>Nam</Sex>
+        <Address>An Giang</Address>
+        <Capbacham>Trung tá</Capbacham>
         <Chucvu>Giám đốc</Chucvu>
     </lanhdao>
     <lanhdao>
-        <Id>2</Id>
+        <Id>3</Id>
         <Name>Vinh</Name>
-        <Date>08/04/2024</Date>
+        <Date>02/12/2004</Date>
         <Sex>Nam</Sex>
-        <Address>4</Address>
-        <Capbacham>Thiếu uý</Capbacham>
+        <Address>Bình Phước</Address>
+        <Capbacham>Trung tá</Capbacham>
+        <Chucvu>Phó Giám đốc</Chucvu>
+    </lanhdao>
+    <lanhdao>
+        <Id>4</Id>
+        <Name>Xuân An</Name>
+        <Date>08/12/2004</Date>
+        <Sex>Nam</Sex>
+        <Address>Hà Nội</Address>
+        <Capbacham>Đại uý</Capbacham>
         <Chucvu>Phó Giám đốc</Chucvu>
     </lanhdao>
 </lanhdaos>

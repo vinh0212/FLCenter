@@ -9,22 +9,32 @@ import java.util.List;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import com.itextpdf.commons.utils.Action;
+
 import vn.tad_sebs.DAO.CanboDAO;
+import vn.tad_sebs.DAO.SubjectDAO;
 import vn.tad_sebs.Model.Department;
 import vn.tad_sebs.Model.Lanhdao;
+import vn.tad_sebs.Model.Monhoc;
 import vn.tad_sebs.Model.Teacher;
 import vn.tad_sebs.View.TeacherView;
 
 public class TeacherController {
     private CanboDAO.TeacherDAO teacherDao;
     private CanboDAO.LanhdaoDAO lanhdaoDao;
+    private SubjectDAO subjectDao;
     private TeacherView teacherView;
+    private List<Teacher> currList;
 
     public TeacherController(TeacherView teacherView) {
         this.teacherView = teacherView;
         teacherDao = new CanboDAO.TeacherDAO();
         
         lanhdaoDao = new CanboDAO.LanhdaoDAO();
+        
+        subjectDao = new SubjectDAO();
+
+        
         
         teacherView.addAddGVListener(new AddGVListener());
         teacherView.addEditGVListener(new EditGVListener());
@@ -36,6 +46,7 @@ public class TeacherController {
         teacherView.addSortGVByNameListener(new SortGVByNameListener());
         teacherView.addSortGVByLevelListener(new SortGVByLevelListener());
         teacherView.addListDPSelectionListener(new DPChoiceListener());
+        teacherView.addListSubjectSelectionListener(new FRoleListener());
 
         // Lanhdao
         
@@ -49,6 +60,26 @@ public class TeacherController {
         teacherView.addSortLDByNameListener(new SortLDByNameListener());
         teacherView.addSortLDByLevelListener(new SortLDByLevelListener());
         teacherView.addSortLDByRoleListener(new SortLDByRoleListener());
+    }
+
+    class FRoleListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            int value = teacherView.getRoleChoice();
+            List<Monhoc> subjectList = subjectDao.getListSubjects();
+            ArrayList<String> subjects = new ArrayList<>();
+
+            for (Monhoc m : subjectList)
+            {
+                if(m.getKhoa() == value)
+                {
+                    subjects.add(m.getName());
+                }
+            }
+
+            teacherView.showListSubjects(subjects);
+        }
     }
 
     class DPChoiceListener implements ActionListener
@@ -66,9 +97,12 @@ public class TeacherController {
                 }
             }
             teacherView.showListGV(list);
-            
+            currList = list;
+
         }
     }
+
+    
     
     public void dothesamething()
     {
@@ -87,6 +121,8 @@ public class TeacherController {
         List<Teacher> teacherList = teacherDao.getListTeachers();
         List<Lanhdao> lanhdaoList = lanhdaoDao.getListLanhdaos();
         List<Department> departmentList = teacherDao.getListDepartments();
+        
+        
         //teacherView.showListGV(teacherList);
         teacherView.showListLD(lanhdaoList);
         teacherView.showListDP(departmentList);
@@ -146,7 +182,7 @@ public class TeacherController {
             String criteria = teacherView.getSelectedTextGV();
             String value = teacherView.getSearchBoxGV();
             List<Teacher> list = new ArrayList<>();
-            List<Teacher> oldlist = teacherDao.getListTeachers();
+            List<Teacher> oldlist = currList;
 
             if ("".equals(value)) {
                 teacherView.showListGV(oldlist);
@@ -163,33 +199,33 @@ public class TeacherController {
                         break;
                     case "Tên":
                         for (Teacher t : oldlist) {
-                            if (t.getName().equals(value)) {
+                            if (t.getName().contains(value)) {
                                 list.add(t);
                             }
                         }
                         break;
                     case "Quê quán":
                         for (Teacher t : oldlist) {
-                            if (t.getAddress().equals(value))
+                            if (t.getAddress().contains(value))
                                 list.add(t);
 
                         }
                         break;
                     case "Cấp bậc hàm":
                         for (Teacher t : oldlist) {
-                            if (t.getCapbacham().equals(value))
+                            if (t.getCapbacham().contains(value))
                                 list.add(t);
                         }
                         break;
                     case "Giới tính":
                         for (Teacher t : oldlist) {
-                            if (t.getSex().equals(value))
+                            if (t.getSex().contains(value))
                                 list.add(t);
                         }
                         break;
                     case "Môn giảng dạy":
                         for (Teacher t : oldlist) {
-                            if (t.getMon().equals(value))
+                            if (t.getMon().contains(value))
                                 list.add(t);
 
                         }

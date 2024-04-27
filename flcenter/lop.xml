@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <classes>
-    <lop>
+<lop>
         <Id>1</Id>
         <Name>Lớp 1</Name>
-        <Note>Phần này đã ổn</Note>
-        <idStudentList>
-            <idStudent>1</idStudent>
-            <idStudent>2</idStudent>
-            <idStudent>5</idStudent>
-            <idStudent>8</idStudent>
-            <idStudent>9</idStudent>
-        </idStudentList>
+        <Note>Ổn cả rồi</Note>
+        <idStudentList/>
+           
         <idMonhocList/>
     </lop>
     <lop>
@@ -19,6 +14,7 @@
         <Note>Ổn cả rồi</Note>
         <idStudentList>
             <idStudent>7</idStudent>
+            <idStudent>9</idStudent>
         </idStudentList>
         <idMonhocList/>
     </lop>

@@ -162,10 +162,15 @@ public class ExamController {
 
                 String s = examView.getFSearchTeacher();
                 List<Teacher> mList = teacherDAO.getListTeacherswithName(s);
-
-                examView.showListPullGiamthi(mList);
-                List<Teacher> uList = teacherDAO.getUnavailableList(mList);
-                examView.showListPushGiamthi(uList);
+                if(mList != null) 
+                {
+                    examView.showListPullGiamthi(mList);
+                    List<Teacher> uList = teacherDAO.getUnavailableList(mList);
+                    examView.showListPushGiamthi(uList);
+                }
+                else examView.showListPushGiamthi(teacherDAO.getListTeachers());
+                
+                
             }
 
             else

@@ -39,6 +39,7 @@
                 <include>NOTICE*</include>
 		<include>*.xml</include>
 		<include>template.pdf</include>
+		<include>vuArial.ttf</include>
             </includes>
         </fileSet>       
     </fileSets>

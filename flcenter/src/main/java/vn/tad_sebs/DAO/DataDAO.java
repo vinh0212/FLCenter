@@ -42,10 +42,11 @@ public class DataDAO {
 
     public void add(Data data)
     {
+        sortByID();
         int id = 1;
-        if (listDatas != null && listDatas.size() > 0)
+        if (listDatas.size() > 0)
         {
-            id = listDatas.size() + 1;
+            id = listDatas.get(listDatas.size()-1).getId() + 1;
         }
         data.setId(id);
         listDatas.add(data);
@@ -66,6 +67,7 @@ public class DataDAO {
                     break;
                 }
             }
+            sortByID();
             writeListDatas(listDatas);
         }
         catch (Exception e)
@@ -89,6 +91,7 @@ public class DataDAO {
         if (isFound)
         {
             listDatas.remove(data);
+            sortByID();
             writeListDatas(listDatas);
             return true;
         }

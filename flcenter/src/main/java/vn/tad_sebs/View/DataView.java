@@ -388,14 +388,14 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
     }
 
 
-    public int getCriteria()
+    public String getCriteria()
     {
-        return CbbSearchData.getSelectedIndex();
+        return CbbSearchData.getSelectedItem().toString();
     }
 
     public String getSearchValue()
     {
-        return FSearchData.getText();
+        return FSearchData.getText().trim();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

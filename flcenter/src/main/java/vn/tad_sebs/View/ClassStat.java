@@ -5,6 +5,7 @@
 package vn.tad_sebs.View;
 
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 import java.awt.BorderLayout;
 
@@ -29,6 +30,7 @@ public class ClassStat extends javax.swing.JFrame {
     public TableModel model;
     private JComboBox<String> chartTypeComboBox;
     private ChartPanel currentChartPanel;
+    public JPanel panel = new JPanel(new BorderLayout());
 
     public ClassStat() {
         initComponents();
@@ -69,7 +71,39 @@ public class ClassStat extends javax.swing.JFrame {
         if (currentChartPanel != null) {
             this.remove(currentChartPanel);
         }
+
+        this.add(chartPanel, BorderLayout.CENTER);
+        currentChartPanel = chartPanel;
+
+        // Refresh the panel
+        this.validate();
+        this.pack();
+    }
+
+    public void action2() {
+        panel.remove(chartTypeComboBox);
+        // Create a new dataset
         
+        DefaultPieDataset dataset = new DefaultPieDataset();
+
+        // Add the distribution to the dataset
+        for (int i = 0; i < model.getRowCount(); i++) {
+            String className = model.getValueAt(i, 0).toString();
+            Number studentCount = (Number) model.getValueAt(i, 1);
+            dataset.setValue(className, studentCount);
+        }
+
+        // Create a chart using the dataset
+        JFreeChart chart = ChartFactory.createPieChart("Thống kê số lượng học viên theo lớp", dataset, true, true, false);
+
+        // Create a chart panel and add the chart to it
+        ChartPanel chartPanel = new ChartPanel(chart);
+
+        // Remove the old chart panel if it exists
+        if (currentChartPanel != null) {
+            this.remove(currentChartPanel);
+        }
+
         this.add(chartPanel, BorderLayout.CENTER);
         currentChartPanel = chartPanel;
 
@@ -101,7 +135,7 @@ public class ClassStat extends javax.swing.JFrame {
 
         setBounds(0, 0, 414, 307);
 
-        JPanel panel = new JPanel(new BorderLayout());
+        
         chartTypeComboBox = new JComboBox<>(new String[] { "Bar Chart", "Line Chart" });
         chartTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

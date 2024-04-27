@@ -3,8 +3,10 @@ package vn.tad_sebs.DAO;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 import vn.tad_sebs.Model.Department;
 import vn.tad_sebs.Model.DepartmentXML;
@@ -15,7 +17,9 @@ import vn.tad_sebs.Model.LanhdaoXML;
 import vn.tad_sebs.Utils.FileUtils;
 
 public class CanboDAO {
+
     public static class TeacherDAO {
+
         private List<Teacher> listTeachers;
         private List<Department> listDepartments;
         private static final String TEACHER_FILE_NAME = "teacher.xml";
@@ -60,9 +64,10 @@ public class CanboDAO {
         }
 
         public void add(Teacher teacher) {
+            sortListTeachersByID();
             int id = 1;
-            if (listTeachers != null && listTeachers.size() > 0) {
-                id = listTeachers.size() + 1;
+            if (listTeachers.size() > 0) {
+                id = listTeachers.get(listTeachers.size() - 1).getId() + 1;
             }
             teacher.setId(id);
             listTeachers.add(teacher);
@@ -78,7 +83,7 @@ public class CanboDAO {
                         t.setSex(teacher.getSex());
                         t.setAddress(teacher.getAddress());
                         t.setCapbacham(teacher.getCapbacham());
-                        
+
                         t.setMon(teacher.getMon());
                         t.setDp(teacher.getDp());
                         writeListTeachers(listTeachers);
@@ -100,6 +105,7 @@ public class CanboDAO {
             }
             if (isFound) {
                 listTeachers.remove(teacher);
+                sortListTeachersByID();
                 writeListTeachers(listTeachers);
                 return true;
             }
@@ -126,10 +132,28 @@ public class CanboDAO {
 
         public void sortListTeachersByCapbacham() // need more attention
         {
+            // Tạo một HashMap với các giá trị bạn muốn sắp xếp và thứ tự tương ứng của chúng
+            Map<String, Integer> order = new HashMap<>();
+            order.put("Đại tướng", 1);
+            order.put("Thượng tướng", 2);
+            order.put("Trung tướng", 3);
+            order.put("Thiếu tướng", 4);
+            order.put("Đại tá", 5);
+            order.put("Thượng tá", 6);
+            order.put("Trung tá", 7);
+            order.put("Thiếu tá", 8);
+            order.put("Đại uý", 9);
+            order.put("Thượng uý", 10);
+            order.put("Trung uý", 11);
+            order.put("Thiếu uý", 12);
+            order.put("Hạ sĩ quan/CSNV", 13);
+            order.put("Không có", 14);
+
             Collections.sort(listTeachers, new Comparator<Teacher>() {
                 @Override
-                public int compare(Teacher t1, Teacher t2) {
-                    return t1.getCapbacham().compareTo(t2.getCapbacham());
+                public int compare(Teacher l1, Teacher l2) {
+                    // Sử dụng HashMap trong hàm so sánh
+                    return order.get(l1.getCapbacham()).compareTo(order.get(l2.getCapbacham()));
                 }
             });
         }
@@ -165,10 +189,13 @@ public class CanboDAO {
         }
 
         public List<Teacher> getListTeacherswithName(String s) {
+            if ("".equals(s)) {
+                return null;
+            }
             HashSet<Teacher> list = new HashSet<Teacher>();
 
             String[] parts = s.split(",");
-            
+
             for (String part : parts) {
                 Teacher teacher = new Teacher();
                 teacher.setId(Integer.parseInt(part));
@@ -189,6 +216,7 @@ public class CanboDAO {
     }
 
     public static class LanhdaoDAO {
+
         private List<Lanhdao> listLanhdaos;
         private static final String LANHDAO_FILE_NAME = "lanhdao.xml";
 
@@ -216,9 +244,10 @@ public class CanboDAO {
         }
 
         public void add(Lanhdao lanhdao) {
+            sortListLanhdaosByID();
             int id = 1;
-            if (listLanhdaos != null && listLanhdaos.size() > 0) {
-                id = listLanhdaos.size() + 1;
+            if (listLanhdaos.size() > 0) {
+                id = listLanhdaos.get(listLanhdaos.size() - 1).getId() + 1;
             }
             lanhdao.setId(id);
             listLanhdaos.add(lanhdao);
@@ -254,6 +283,7 @@ public class CanboDAO {
             }
             if (isFound) {
                 listLanhdaos.remove(lanhdao);
+                sortListLanhdaosByID();
                 writeListLanhdaos(listLanhdaos);
                 return true;
             }
@@ -286,12 +316,29 @@ public class CanboDAO {
             });
         }
 
-        public void sortListLanhdaosByCapbacham() // need more attention
-        {
+        public void sortListLanhdaosByCapbacham() {
+            // Tạo một HashMap với các giá trị bạn muốn sắp xếp và thứ tự tương ứng của chúng
+            Map<String, Integer> order = new HashMap<>();
+            order.put("Đại tướng", 1);
+            order.put("Thượng tướng", 2);
+            order.put("Trung tướng", 3);
+            order.put("Thiếu tướng", 4);
+            order.put("Đại tá", 5);
+            order.put("Thượng tá", 6);
+            order.put("Trung tá", 7);
+            order.put("Thiếu tá", 8);
+            order.put("Đại uý", 9);
+            order.put("Thượng uý", 10);
+            order.put("Trung uý", 11);
+            order.put("Thiếu uý", 12);
+            order.put("Hạ sĩ quan/CSNV", 13);
+            order.put("Không có", 14);
+
             Collections.sort(listLanhdaos, new Comparator<Lanhdao>() {
                 @Override
                 public int compare(Lanhdao l1, Lanhdao l2) {
-                    return l1.getCapbacham().compareTo(l2.getCapbacham());
+                    // Sử dụng HashMap trong hàm so sánh
+                    return order.get(l1.getCapbacham()).compareTo(order.get(l2.getCapbacham()));
                 }
             });
         }

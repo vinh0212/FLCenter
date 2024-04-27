@@ -96,41 +96,44 @@ public class DataController {
 
         public void actionPerformed(ActionEvent e) {
             String value = dataView.getSearchValue();
-            int criteria = dataView.getCriteria();
+            String criteria = dataView.getCriteria();
+            List<Data> listData = new ArrayList<Data>();
+            List<Data> oldlist = dataDao.getListDatas();
             if ("".equals(value)) {
                 dataView.showListData(dataDao.getListDatas());
-                
+                return;
+
             } else {
-                List<Data> listData = new ArrayList<Data>();
+
                 switch (criteria) {
-                    case 0:
+                    case "ID":
                         if (!dataView.validateID()) {
                             return;
                         }
-                        for (Data data : dataDao.getListDatas()) {
+                        for (Data data : oldlist) {
                             if (data.getId() == Integer.parseInt(value)) {
                                 listData.add(data);
-                                break;
                             }
                         }
                         break;
-                    case 1:
-                        for (Data data : dataDao.getListDatas()) {
+                    case "Tên tài liệu":
+                        for (Data data : oldlist) {
                             if (data.getName().contains(value)) {
                                 listData.add(data);
                             }
                         }
                         break;
-                    case 2:
-                        for (Data data : dataDao.getListDatas()) {
-                            if (data.getAuthor().contains(value)) {
+                    case "Thể loại":
+                        for (Data data : oldlist) {
+                            
+                            if (data.getCategory().contains(value)) {
                                 listData.add(data);
                             }
                         }
                         break;
-                    case 3:
-                        for (Data data : dataDao.getListDatas()) {
-                            if (data.getCategory().contains(value)) {
+                    case "Tác giả":
+                        for (Data data : oldlist) {
+                            if (data.getAuthor().contains(value)) {
                                 listData.add(data);
                             }
                         }
@@ -141,8 +144,9 @@ public class DataController {
                 dataView.showListData(listData);
                 if (listData.isEmpty()) {
                     dataView.showMessage("Không tìm thấy!");
-                    dataView.showListData(dataDao.getListDatas());
+                    dataView.showListData(oldlist);
                 }
+
             }
 
         }

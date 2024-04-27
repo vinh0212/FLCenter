@@ -82,6 +82,7 @@ public class ClassController {
     }
 
     class AddButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             Lop lop = classView.getLopInfo();
             if (lop != null) {
@@ -94,6 +95,7 @@ public class ClassController {
     }
 
     class EditButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             Lop lop = classView.getLopInfo();
             if (lop != null) {
@@ -108,19 +110,24 @@ public class ClassController {
     }
 
     class DeleteButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             Lop lop = classView.getLopInfo();
+            
             if (lop != null) {
-                lopDAO.deleteA(lop);
-                classView.clearClassInfo();
-                classView.showClassList(lopDAO.getListLops());
-                classView.showMessage("Xóa lớp thành công!");
+                if(lopDAO.deleteA(lop))
+                {
+                    classView.clearClassInfo();
+                    classView.showClassList(lopDAO.getListLops());
+                    classView.showMessage("Xóa lớp thành công!");
+                }
             }
 
         }
     }
 
     class ClearButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             classView.clearClassInfo();
             editingLop = new Lop();
@@ -128,12 +135,14 @@ public class ClassController {
     }
 
     class ListTBClassSelectionListener implements ListSelectionListener {
+
         public void valueChanged(ListSelectionEvent e) {
             classView.fillLopFromSelectedRow();
         }
     }
 
     class SortClassByIDButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             lopDAO.sortClassListbyID();
             classView.showClassList(lopDAO.getListLops());
@@ -141,6 +150,7 @@ public class ClassController {
     }
 
     class SortClassBySLButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             lopDAO.sortClassListbySL();
             classView.showClassList(lopDAO.getListLops());
@@ -148,11 +158,9 @@ public class ClassController {
     }
 
     // ----------------------------------------
-
-
-
     //ATTENTION: Interesting code
     class TabChangeListener implements ChangeListener {
+
         public void stateChanged(ChangeEvent e) {
             JTabbedPane sourceTabbedPane = (JTabbedPane) e.getSource();
             int index = sourceTabbedPane.getSelectedIndex();
@@ -176,18 +184,20 @@ public class ClassController {
                 for (ActionListener listener : listeners) {
                     classView.getCbChonlop().addActionListener(listener);
                 }
+                // Gọi hàm hiển thị bảng lại
+                new CbChonlopListener().actionPerformed(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, null));
 
-                
             }
         }
     }
 
     class CbChonlopListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             int value = classView.getClassChoice();
             listStudentInClass.clear();
             List<Student> listStudent = studentDAO.getListStudents();
-            
+
             for (Student s : listStudent) {
                 if (s.getLop().equals(String.valueOf(value))) {
                     listStudentInClass.add(s);
@@ -198,6 +208,7 @@ public class ClassController {
     }
 
     class FindStudentButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             String value = classView.getSearchBoxStudent();
             int criteria = classView.getCriteria();
@@ -209,7 +220,9 @@ public class ClassController {
             } else {
                 switch (criteria) {
                     case 0:
-                        if (!classView.validateID()) return;
+                        if (!classView.validateID()) {
+                            return;
+                        }
                         for (Student s : listStudentInClass) {
                             if (s.getId() == Integer.parseInt(value)) {
                                 list.add(s);
@@ -234,10 +247,9 @@ public class ClassController {
                         break;
                 }
                 classView.showStudentList(list);
-                
+
             }
-            if(list.isEmpty()) 
-            {
+            if (list.isEmpty()) {
                 classView.showMessage("Không tìm thấy!");
                 classView.showStudentList(listStudentInClass);
             }
@@ -245,6 +257,7 @@ public class ClassController {
     }
 
     class ListTBStudentSelectionListener implements ListSelectionListener {
+
         public void valueChanged(ListSelectionEvent e) {
             classView.fillStudentFromSelectedRow();
 
@@ -252,9 +265,10 @@ public class ClassController {
     }
 
     class UpdateCLButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             Student student = classView.getStudentInfo();
-            
+
             if (student != null) {
                 studentDAO.editB(student);
                 dothesamething();
@@ -265,6 +279,7 @@ public class ClassController {
     }
 
     class clearCLButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             classView.clearStudentInfo();
         }
@@ -272,7 +287,7 @@ public class ClassController {
 
     public void dothesamething() {
         int value = classView.getClassChoice();
-        
+
         List<Student> listStudent = studentDAO.getListStudents();
         List<Student> listStudentInClass = new ArrayList<Student>();
         for (Student s : listStudent) {
@@ -284,6 +299,7 @@ public class ClassController {
     }
 
     class SortCLByIDButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             studentDAO.sortListStudentsByID();
             dothesamething();
@@ -291,6 +307,7 @@ public class ClassController {
     }
 
     class SortCLByNameButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             studentDAO.sortListStudentsByName();
             dothesamething();
@@ -298,6 +315,7 @@ public class ClassController {
     }
 
     class SortCLByPtsButtonListener implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
             studentDAO.sortListStudentsByDiem();
             dothesamething();
