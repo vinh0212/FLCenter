@@ -299,6 +299,11 @@ public class StudentView extends javax.swing.JFrame {
         btnGroup.add(chkM);
         chkM.setForeground(new java.awt.Color(255, 255, 255));
         chkM.setText("Nam");
+        chkM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkMActionPerformed(evt);
+            }
+        });
         getContentPane().add(chkM, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 200, 80, -1));
 
         btnGroup.add(chkF);
@@ -358,6 +363,10 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
                 BtnSearchStudent.doClick();
          }
     }//GEN-LAST:event_FSearchStudentKeyPressed
+
+    private void chkMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkMActionPerformed
 
     
     

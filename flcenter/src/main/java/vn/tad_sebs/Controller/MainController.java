@@ -2,11 +2,22 @@ package vn.tad_sebs.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JCheckBox;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 import vn.tad_sebs.View.StudentView;
 import vn.tad_sebs.View.ClassView;
 import vn.tad_sebs.View.DataView;
 import vn.tad_sebs.View.ExamView;
+import vn.tad_sebs.View.LoginView;
 import vn.tad_sebs.View.MainView;
 import vn.tad_sebs.View.TeacherView;
 import vn.tad_sebs.View.MonView;
@@ -22,8 +33,8 @@ public class MainController {
         mainView.addQLCTHListener(new QLCTHListener());
         mainView.addQLKTListener(new QLKTListener());
         mainView.addQLTLListener(new QLTLListener());
+        mainView.addDXListener(new DXListener());
     }
-
     public void showMainView() {
         mainView.setVisible(true);
     }
@@ -69,6 +80,19 @@ public class MainController {
             }
         }
     }
+    class QLKTListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            // hiển thị màn hình quản lý học viên
+            try {
+                ExamView examView = new ExamView();
+                ExamController examController = new ExamController(examView);
+                examController.showExamView();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+        }
+    }
 
     class QLLHListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -82,19 +106,37 @@ public class MainController {
             }
         }
     }
-    
-    class QLKTListener implements ActionListener
+    private static Properties properties = new Properties();
+    class DXListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            // hiển thị màn hình quản lý kì thi
-            try {
-                ExamView examView = new ExamView();
-                ExamController examController = new ExamController(examView);
-                examController.showExamView();
-            } catch (Exception ex) {
-                ex.printStackTrace();
+            String filePath = "D:/config.ini";                           
+                    try (FileInputStream fis = new FileInputStream("D:/config.ini")) {
+                        properties.load(fis);
+                     } catch (IOException ex) { 
+                Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
             }
+        // Lấy giá trị của các thuộc tính từ file .ini
+        String key = properties.getProperty("Sumani");                         
+                        if (key.equals("1")){
+                                LoginView view = new LoginView();
+                                LoginController controller = new LoginController(view);
+                                controller.showLoginView();
+                                JTextField textField = view.getUsername();
+                                if (textField != null) {
+                                textField.setText("admin");
+                                }
+                                JPasswordField textField2 = view.getPassword();
+                                if (textField2 != null) {
+                                textField2.setText("admin");
+                                }
+                                
+                        } else {
+                               LoginView view = new LoginView();
+                               LoginController controller = new LoginController(view);
+                               controller.showLoginView();
+                            }
         }
     }
     

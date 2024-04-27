@@ -39,7 +39,7 @@ public class LoginView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         Password = new javax.swing.JPasswordField();
         Username = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        RMB = new javax.swing.JCheckBox();
         Enter = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -88,13 +88,17 @@ public class LoginView extends javax.swing.JFrame {
                 UsernameActionPerformed(evt);
             }
         });
+        Username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                UsernameKeyPressed(evt);
+            }
+        });
         getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 190, 20));
 
-        jCheckBox1.setFont(new java.awt.Font("Verdana", 1, 10)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(42, 177, 147));
-        jCheckBox1.setSelected(true);
-        jCheckBox1.setText("Remember password");
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
+        RMB.setFont(new java.awt.Font("Verdana", 1, 10)); // NOI18N
+        RMB.setForeground(new java.awt.Color(42, 177, 147));
+        RMB.setText("Remember password");
+        getContentPane().add(RMB, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
 
         Enter.setText("Sign in");
         Enter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -182,6 +186,22 @@ public class LoginView extends javax.swing.JFrame {
             Enter.doClick();
         }
     }//GEN-LAST:event_PasswordKeyPressed
+
+    private void UsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UsernameKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            // Mô phỏng việc nhấn nút Enter
+            Enter.doClick();
+        }
+    }//GEN-LAST:event_UsernameKeyPressed
+    public JTextField getUsername() {
+        return Username;
+    }
+    public JPasswordField getPassword() {
+        return Password;
+    }
+    public boolean isRMBSelected() {
+    return RMB.isSelected();
+}
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
@@ -197,9 +217,9 @@ public class LoginView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Enter;
     private javax.swing.JPasswordField Password;
+    private javax.swing.JCheckBox RMB;
     private javax.swing.JTextField Username;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

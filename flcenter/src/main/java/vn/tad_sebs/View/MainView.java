@@ -33,6 +33,7 @@ public class MainView extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        DX = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -68,6 +69,11 @@ public class MainView extends javax.swing.JFrame {
         setIconImage(icon.getImage());
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        DX.setBackground(new java.awt.Color(0, 204, 102));
+        DX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/out.png"))); // NOI18N
+        DX.setText("Đăng xuất");
+        getContentPane().add(DX, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 530, -1, 40));
 
         jLabel21.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(0, 0, 103));
@@ -164,22 +170,10 @@ public class MainView extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLMH.png"))); // NOI18N
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 210, 90));
-
-        QLHV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QLHVActionPerformed(evt);
-            }
-        });
         getContentPane().add(QLHV, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 210, 90));
         getContentPane().add(QLLH, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 210, 90));
         getContentPane().add(QLCBGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 210, 90));
         getContentPane().add(QLCTH, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 210, 90));
-
-        QLKT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QLKTActionPerformed(evt);
-            }
-        });
         getContentPane().add(QLKT, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 210, 90));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
@@ -198,20 +192,14 @@ public class MainView extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(713, 601));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void QLHVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QLHVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_QLHVActionPerformed
-
-    private void QLKTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QLKTActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_QLKTActionPerformed
 ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
 
     public void addQLHVListener(ActionListener listener) {      
         QLHV.addActionListener(listener);
-        
     }
+    public void addDXListener(ActionListener listener) {      
+        DX.addActionListener(listener);
+}
     public void addQLCTHListener(ActionListener listener) {
         QLCTH.addActionListener(listener);
     }
@@ -232,6 +220,7 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DX;
     private javax.swing.JButton QLCBGV;
     private javax.swing.JButton QLCTH;
     private javax.swing.JButton QLHV;
