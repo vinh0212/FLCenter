@@ -120,6 +120,7 @@ public class MainController {
         // Lấy giá trị của các thuộc tính từ file .ini
         String key = properties.getProperty("Sumani");                         
                         if (key.equals("1")){
+                                mainView.setVisible(false);
                                 LoginView view = new LoginView();
                                 LoginController controller = new LoginController(view);
                                 controller.showLoginView();
@@ -133,6 +134,7 @@ public class MainController {
                                 }
                                 
                         } else {
+                               mainView.setVisible(false);
                                LoginView view = new LoginView();
                                LoginController controller = new LoginController(view);
                                controller.showLoginView();
