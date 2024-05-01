@@ -231,14 +231,14 @@ public class ClassController {
                         break;
                     case 1:
                         for (Student s : listStudentInClass) {
-                            if (s.getName().contains(value)) {
+                            if (s.getName().toLowerCase().contains(value.toLowerCase())) {
                                 list.add(s);
                             }
                         }
                         break;
                     case 2:
                         for (Student s : listStudentInClass) {
-                            if (s.getAddress().contains(value)) {
+                            if (s.getAddress().toLowerCase().contains(value.toLowerCase())) {
                                 list.add(s);
                             }
                         }

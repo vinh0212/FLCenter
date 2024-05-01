@@ -74,7 +74,7 @@ public class ExamController {
                         break;
                     case 1:
                         for (Exam o : oldlist) {
-                            if (o.getName().contains(value)) {
+                            if (o.getName().toLowerCase().contains(value.toLowerCase())) {
                                 list.add(o);
                             }
                         }

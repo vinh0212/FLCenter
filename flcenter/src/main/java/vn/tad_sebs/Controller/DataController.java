@@ -118,7 +118,7 @@ public class DataController {
                         break;
                     case "Tên tài liệu":
                         for (Data data : oldlist) {
-                            if (data.getName().contains(value)) {
+                            if (data.getName().toLowerCase().contains(value.toLowerCase())) {
                                 listData.add(data);
                             }
                         }
@@ -126,14 +126,14 @@ public class DataController {
                     case "Thể loại":
                         for (Data data : oldlist) {
                             
-                            if (data.getCategory().contains(value)) {
+                            if (data.getCategory().toLowerCase().contains(value.toLowerCase())) {
                                 listData.add(data);
                             }
                         }
                         break;
                     case "Tác giả":
                         for (Data data : oldlist) {
-                            if (data.getAuthor().contains(value)) {
+                            if (data.getAuthor().toLowerCase().contains(value.toLowerCase())) {
                                 listData.add(data);
                             }
                         }

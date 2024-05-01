@@ -134,7 +134,7 @@ public class MonView extends javax.swing.JFrame {
         getContentPane().add(btnAddMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 310, -1, -1));
 
         CbbSearchMon.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        CbbSearchMon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên môn", "Số tiết", "Khoa" }));
+        CbbSearchMon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên môn", "Số tiết", "Mã khoa" }));
         CbbSearchMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CbbSearchMonActionPerformed(evt);

@@ -129,7 +129,7 @@ public class SubjectController {
                     case "Tên môn":
                         for(Monhoc monhoc : oldlist)
                         {
-                            if(monhoc.getName().contains(value))
+                            if(monhoc.getName().toLowerCase().contains(value.toLowerCase()))
                             {
                                 list.add(monhoc);
                             }
@@ -144,7 +144,7 @@ public class SubjectController {
                             }
                         }
                         break;
-                    case "Khoa":
+                    case "Mã khoa":
                         for(Monhoc monhoc : oldlist)
                         {
                             if(monhoc.getKhoa() == Integer.parseInt(value))

@@ -20,6 +20,8 @@ import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import vn.tad_sebs.Model.Student;
+import vn.tad_sebs.View.MainView;
+import vn.tad_sebs.Controller.MainController;
 
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -49,6 +51,15 @@ public class StudentView extends javax.swing.JFrame {
         BtnDeleteStudent.setEnabled(false);
         btnPrint.setEnabled(false);
         chkM.setSelected(true);
+
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                MainView mainView = new MainView();
+                MainController mainController = new MainController(mainView);
+                mainController.showMainView();
+            }
+        });
     }
 
     /**
