@@ -23,23 +23,16 @@
         </giamthiList>
     </exam>
     <exam>
-        <id>3</id>
-        <Name>Kì thi xác trị 2024</Name>
-        <Time>09/04/2024</Time>
-        <giamthiList>
-            <giamthi>
-                <Id>4</Id>
-                <dp>0</dp>
-            </giamthi>
-        </giamthiList>
-    </exam>
-    <exam>
         <id>4</id>
         <Name>Kì thi 3</Name>
         <Time>24/04/2024</Time>
         <giamthiList>
             <giamthi>
                 <Id>3</Id>
+                <dp>0</dp>
+            </giamthi>
+            <giamthi>
+                <Id>4</Id>
                 <dp>0</dp>
             </giamthi>
         </giamthiList>
