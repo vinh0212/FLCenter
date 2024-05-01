@@ -175,21 +175,21 @@ public class StudentController {
                         break;
                     case "Tên":
                         for (Student s : oldlist) {
-                            if (s.getName().contains(value)) {
+                            if (s.getName().toLowerCase().contains(value.toLowerCase())) {
                                 list.add(s);
                             }
                         }
                         break;
                     case "Lớp":
                         for (Student s : oldlist) {
-                            if (s.getLop().contains(value)) {
+                            if (s.getLop().toLowerCase().contains(value.toLowerCase())) {
                                 list.add(s);
                             }
                         }
                         break;
                     case "Quê quán":
                         for (Student s : oldlist) {
-                            if (s.getAddress().contains(value)) {
+                            if (s.getAddress().toLowerCase().contains(value.toLowerCase())) {
                                 list.add(s);
                             }
                         }

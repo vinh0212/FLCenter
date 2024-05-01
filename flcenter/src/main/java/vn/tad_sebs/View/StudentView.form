@@ -232,12 +232,11 @@
           <Font name="Verdana" size="12" style="1"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
+          <StringArray count="4">
             <StringItem index="0" value="ID"/>
             <StringItem index="1" value="T&#xea;n"/>
             <StringItem index="2" value="L&#x1edb;p"/>
             <StringItem index="3" value="Qu&#xea; qu&#xe1;n"/>
-            <StringItem index="4" value="Ng&#xe0;y sinh"/>
           </StringArray>
         </Property>
       </Properties>

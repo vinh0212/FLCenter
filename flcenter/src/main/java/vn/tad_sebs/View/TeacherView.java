@@ -471,7 +471,7 @@ public class TeacherView extends javax.swing.JFrame {
         jPanel2.add(btnEditGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 490, -1, -1));
 
         CbbSeacrchGV.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        CbbSeacrchGV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Quê quán", "Giới tính", "Cấp bậc hàm", "Môn giảng dạy", "Lớp phụ trách" }));
+        CbbSeacrchGV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Quê quán", "Cấp bậc hàm", "Môn giảng dạy" }));
         CbbSeacrchGV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CbbSeacrchGVActionPerformed(evt);
