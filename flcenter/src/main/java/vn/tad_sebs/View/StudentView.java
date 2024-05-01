@@ -61,7 +61,7 @@ public class StudentView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         btnGroup = new javax.swing.ButtonGroup();
@@ -109,26 +109,26 @@ public class StudentView extends javax.swing.JFrame {
 
         Studenttable.setBackground(new java.awt.Color(174, 228, 255));
         Studenttable.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
+            new Object [][] {
 
-                },
-                new String[] {
-                        "ID", "Họ và tên", "Ngày sinh", "Giới tính", "Quê quán", "Lớp", "Giáo viên chủ nhiệm", "Điểm"
-                }) {
-            Class[] types = new Class[] {
-                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
-                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+            },
+            new String [] {
+                "ID", "Họ và tên", "Ngày sinh", "Giới tính", "Quê quán", "Lớp", "Giáo viên chủ nhiệm", "Điểm"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
             };
-            boolean[] canEdit = new boolean[] {
-                    false, false, false, false, false, false, false, false
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
+                return types [columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
+                return canEdit [columnIndex];
             }
         });
         Studenttable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -174,8 +174,7 @@ public class StudentView extends javax.swing.JFrame {
                 FAddressSearchStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(FAddressSearchStudent,
-                new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 240, 163, -1));
+        getContentPane().add(FAddressSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 240, 163, -1));
 
         BtnAddStudent.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         BtnAddStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
@@ -188,8 +187,7 @@ public class StudentView extends javax.swing.JFrame {
         getContentPane().add(BtnAddStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 380, 100, -1));
 
         CbbSeacrchStudent.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        CbbSeacrchStudent.setModel(
-                new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Lớp", "Quê quán", "Ngày sinh" }));
+        CbbSeacrchStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Lớp", "Quê quán" }));
         getContentPane().add(CbbSeacrchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 18, -1, 30));
 
         FSearchStudent.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -234,8 +232,7 @@ public class StudentView extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 240, 80, -1));
 
         FScoreSearchStudent.setEnabled(false);
-        getContentPane().add(FScoreSearchStudent,
-                new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 330, 163, -1));
+        getContentPane().add(FScoreSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 330, 163, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N

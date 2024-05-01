@@ -199,35 +199,29 @@ public class TeacherController {
                         break;
                     case "Tên":
                         for (Teacher t : oldlist) {
-                            if (t.getName().contains(value)) {
+                            if (t.getName().toLowerCase().contains(value.toLowerCase())){
                                 list.add(t);
                             }
                         }
                         break;
                     case "Quê quán":
                         for (Teacher t : oldlist) {
-                            if (t.getAddress().contains(value))
+                            if (t.getAddress().toLowerCase().contains(value.toLowerCase()))
                                 list.add(t);
 
                         }
                         break;
                     case "Cấp bậc hàm":
                         for (Teacher t : oldlist) {
-                            if (t.getCapbacham().contains(value))
+                            if (t.getCapbacham().toLowerCase().contains(value.toLowerCase()))
                                 list.add(t);
                         }
                         break;
-                    case "Giới tính":
-                        for (Teacher t : oldlist) {
-                            if (t.getSex().contains(value))
-                                list.add(t);
-                        }
-                        break;
+                    
                     case "Môn giảng dạy":
                         for (Teacher t : oldlist) {
-                            if (t.getMon().contains(value))
+                            if (t.getMon().toLowerCase().contains(value.toLowerCase()))                                list.add(t);
                                 list.add(t);
-
                         }
                         break;
                     
