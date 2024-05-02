@@ -1,16 +1,19 @@
 # Ứng dụng Quản lý Trung tâm ngoại ngữ
 
 ## Mô tả
-   Ứng dụng giúp bạn theo dõi và quản lý trung tâm ngoại ngữ một cách hiệu quả và chặt chẽ
+   Ứng dụng giúp bạn theo dõi và quản lý trung tâm ngoại ngữ một cách hiệu quả và chặt chẽ.
+### Ưu điểm:
+   - Có sự liên kết cơ sở dữ liệu trong phần mềm. Mặc dù còn nhiều khó khăn do sử dụng CSDL file .xml, nhóm phát triển đã cố gắng tạo ra các sự liên kết giữa các CSDL với nhau, tạo nên sự đồng bộ cao giữa các chức năng của phần mềm.
+   - Có hỗ trợ Tìm kiếm theo nhiều tiêu chí giúp dễ dàng tìm kiếm với nhiều thuộc tính khác nhau.
+   - Phần đăng nhập có hỗ trợ Lưu mật khẩu để dễ dàng bỏ qua bước nhập mật khẩu khi đăng nhập.
 
 ## Hướng dẫn sử dụng
 
 ### Đăng nhập
 ![Image alt text](images/loginmd.png)
   - Nhập đầy đủ thông tin đăng nhập từ nhà phát triển cung cấp
-  - Remember password để ghi nhớ cho lần đăng nhập kế tiếp
+  - Tick chọn Remember password để ghi nhớ cho lần đăng nhập kế tiếp
   - Sign in để đăng nhập 
-
 
 ### Chức năng
 
@@ -63,13 +66,17 @@
 - `java/`: Chứa mã nguồn của ứng dụng.
 - `resources/`: Chứa các tài nguyên tĩnh như HTML, CSS và hình ảnh.
 
+## Cấu trúc file đóng gói
+- File đóng gọi dạng file zip, có thể tìm tháy ở phần Releases
+- File đóng gói bao gồm 1 file chương trình .jar, 1 folder /conf chứa các file tĩnh, các file data .xml
+- Lưu ý: Giải nén file đóng gói trước khi sử dụng
+
 ## Yêu cầu Hệ thống
-- JDK 21 hoặc hơn
+- JDK 21 hoặc hơn, đối với bản đóng gói .jar
 
 ## Tác giả và Giấy Phép
 - Tác giả: Lê Thành Đạt - Đặng Quang Vinh
 - Email: ltdatdz@gmail.com  - dqv.0212@gmail.com
-- Giấy phép: TadSebs License
 
 ## Trạng Thái Dự Án
 - Dự án hiện đang được phát triển và không phải là phiên bản ổn định.
