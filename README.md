@@ -2,6 +2,8 @@
 
 ## Mô tả
    Ứng dụng giúp bạn theo dõi và quản lý trung tâm ngoại ngữ một cách hiệu quả và chặt chẽ.
+
+   Web dự án: (https://github.com/vinh0212/FLCenter)
 ### Ưu điểm:
    - Có sự liên kết cơ sở dữ liệu trong phần mềm. Mặc dù còn nhiều khó khăn do sử dụng CSDL file .xml, nhóm phát triển đã cố gắng tạo ra các sự liên kết giữa các CSDL với nhau, tạo nên sự đồng bộ cao giữa các chức năng của phần mềm.
    - Có hỗ trợ Tìm kiếm theo nhiều tiêu chí giúp dễ dàng tìm kiếm với nhiều thuộc tính khác nhau.
@@ -9,6 +11,9 @@
 ### Nhược điểm
    - Do không sử dụng hệ CSDL như MySQL nên phần mềm chưa cho phép tạo/thay đổi tài khoản đăng nhập hệ thống cũng như phân quyền truy cập.
    - Do chưa có điều kiện tiếp xúc trực tiếp với thực tế công việc ở các trung tâm ngoại ngữ nên các chức năng vẫn mang tính demo là chính.
+
+## Tải xuống bản đóng gói mới nhất
+   - Tìm phần Releases, sau đó chọn phiên bản mới nhất và tải xuống (Hiện tại là v1.o-BETA)
 
 ## Hướng dẫn sử dụng
 
