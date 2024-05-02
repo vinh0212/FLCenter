@@ -115,10 +115,7 @@ public class ClassView extends javax.swing.JFrame {
         tbClassList.setBackground(new java.awt.Color(102, 204, 255));
         tbClassList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
@@ -496,30 +493,34 @@ public class ClassView extends javax.swing.JFrame {
         jTabbedPane1.addChangeListener(listener);
     }
 
-    private String[] columnNamesClassList = new String[] {
-            "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
+    private String[] columnNamesClassList = new String[]{
+        "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
     };
 
     public void showClassList(List<Lop> listLops) {
-        int size = listLops.size();
-        Object[][] data = new Object[size][4];
+        if (listLops != null) {
+            int size = listLops.size();
 
-        for (int i = 0; i < size; i++) {
-            data[i][0] = listLops.get(i).getId();
-            data[i][1] = listLops.get(i).getName();
-            if(listLops.get(i).getIdStudent() == null)
-            {
-                data[i][2] = 0;
+            Object[][] data = new Object[size][4];
+
+            for (int i = 0; i < size; i++) {
+                data[i][0] = listLops.get(i).getId();
+                data[i][1] = listLops.get(i).getName();
+                if (listLops.get(i).getIdStudent() == null) {
+                    data[i][2] = 0;
+                } else {
+                    data[i][2] = listLops.get(i).getIdStudent().size();
+                }
+                data[i][3] = listLops.get(i).getNote();
             }
-            else data[i][2] = listLops.get(i).getIdStudent().size();
-            data[i][3] = listLops.get(i).getNote();
+
+            tbClassList.setModel(new DefaultTableModel(data, columnNamesClassList));
         }
 
-        tbClassList.setModel(new DefaultTableModel(data, columnNamesClassList));
     }
 
-    private String[] columnNamesStudentList = new String[] {
-            "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
+    private String[] columnNamesStudentList = new String[]{
+        "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
     };
 
     public Lop getLopInfo() {
@@ -674,7 +675,7 @@ public class ClassView extends javax.swing.JFrame {
     }
 
     public void showClassListinCbChonlop(List<Lop> listLops) {
-
+        if(listLops!=null)
         for (Lop lop : listLops) {
             cbChonlop.addItem(lop.getId() + " - " + lop.getName());
         }
@@ -717,7 +718,7 @@ public class ClassView extends javax.swing.JFrame {
         TableModel originalModel = tbListStudents.getModel();
 
         // Create a new table model for the score distribution
-        DefaultTableModel distributionModel = new DefaultTableModel(new Object[] { "Range", "Count" }, 0);
+        DefaultTableModel distributionModel = new DefaultTableModel(new Object[]{"Range", "Count"}, 0);
 
         // Create an array to count the score distribution
         int[] distribution = new int[10];
@@ -725,14 +726,14 @@ public class ClassView extends javax.swing.JFrame {
         // Count the score distribution
         for (int i = 0; i < originalModel.getRowCount(); i++) {
             float score = Float.parseFloat(originalModel.getValueAt(i, 4).toString()); // replace 4 with the column
-                                                                                       // index for the score
+            // index for the score
             int index = Math.min((int) score, 9);
             distribution[index]++;
         }
 
         // Add the distribution to the new table model
         for (int i = 0; i < 10; i++) {
-            distributionModel.addRow(new Object[] { i + "-" + (i + 1), distribution[i] });
+            distributionModel.addRow(new Object[]{i + "-" + (i + 1), distribution[i]});
         }
 
         return distributionModel;
@@ -743,7 +744,7 @@ public class ClassView extends javax.swing.JFrame {
         TableModel originalModel = tbClassList.getModel();
 
         // Create a new table model for the class distribution
-        DefaultTableModel classModel = new DefaultTableModel(new Object[] { "Class", "Count" }, 0);
+        DefaultTableModel classModel = new DefaultTableModel(new Object[]{"Class", "Count"}, 0);
 
         // Create a map to count the class distribution
         Map<String, Integer> classDistribution = new HashMap<>();
@@ -751,16 +752,16 @@ public class ClassView extends javax.swing.JFrame {
         // Count the class distribution
         for (int i = 0; i < originalModel.getRowCount(); i++) {
             String className = originalModel.getValueAt(i, 1).toString(); // replace 1 with the column index for the
-                                                                          // class
+            // class
             int studentCount = Integer.parseInt(originalModel.getValueAt(i, 2).toString()); // replace 2 with the column
-                                                                                            // index for the student
-                                                                                            // count
+            // index for the student
+            // count
             classDistribution.put(className, classDistribution.getOrDefault(className, 0) + studentCount);
         }
 
         // Add the distribution to the new table model
         for (Map.Entry<String, Integer> entry : classDistribution.entrySet()) {
-            classModel.addRow(new Object[] { entry.getKey(), entry.getValue() });
+            classModel.addRow(new Object[]{entry.getKey(), entry.getValue()});
         }
 
         return classModel;
