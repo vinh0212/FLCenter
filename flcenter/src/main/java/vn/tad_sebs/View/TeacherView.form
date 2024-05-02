@@ -659,7 +659,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\QLCB2.png"/>
+                  <Image iconType="3" name="/vn/tad_sebs/icon/QLCB2.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -1281,7 +1281,7 @@
             <Component class="javax.swing.JLabel" name="jLabel28">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\QLCB2.png"/>
+                  <Image iconType="3" name="/vn/tad_sebs/icon/QLCB2.png"/>
                 </Property>
               </Properties>
               <Constraints>

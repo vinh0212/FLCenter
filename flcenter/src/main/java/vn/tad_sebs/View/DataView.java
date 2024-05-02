@@ -193,7 +193,7 @@ public class DataView extends javax.swing.JFrame {
         getContentPane().add(btnClearData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 260, -1, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 300, 370, 20));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLTL2.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLTL2.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 670));
 
         setSize(new java.awt.Dimension(1376, 622));

@@ -433,7 +433,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\090.png"/>
+          <Image iconType="3" name="/vn/tad_sebs/icon/090.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -448,7 +448,7 @@
           <Color blue="99" green="ff" red="99" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\FLCenter\flcenter\src\main\resources\vn\tad_sebs\icon\menubackground.png"/>
+          <Image iconType="3" name="/vn/tad_sebs/icon/menubackground.png"/>
         </Property>
       </Properties>
       <Constraints>

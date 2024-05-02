@@ -389,7 +389,7 @@ public class TeacherView extends javax.swing.JFrame {
         jPanel1.add(FLevelSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 230, 180, -1));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 340, 400, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLCB2.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLCB2.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-12, 0, 1400, 680));
 
         jLabel26.setText("jLabel26");
@@ -612,7 +612,7 @@ public class TeacherView extends javax.swing.JFrame {
         FRoleSearchGV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Không có" }));
         jPanel2.add(FRoleSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 450, 170, -1));
 
-        jLabel28.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\QLCB2.png")); // NOI18N
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLCB2.png"))); // NOI18N
         jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -40, 1390, 720));
 
         jTabbedPane4.addTab("Giảng viên", jPanel2);

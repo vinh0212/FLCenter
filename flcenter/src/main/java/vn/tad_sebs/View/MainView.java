@@ -182,11 +182,11 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 680, -1));
         getContentPane().add(QLTL, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 210, 90));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\090.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/090.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 210, 130));
 
         jLabel3.setBackground(new java.awt.Color(153, 255, 153));
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\FLCenter\\flcenter\\src\\main\\resources\\vn\\tad_sebs\\icon\\menubackground.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/menubackground.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 600));
 
         setSize(new java.awt.Dimension(713, 601));

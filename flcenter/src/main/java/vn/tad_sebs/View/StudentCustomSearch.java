@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.swing.JDialog;
 
@@ -55,12 +56,10 @@ public class StudentCustomSearch extends javax.swing.JPanel {
         dialog.setLocation(0, screenSize.height - dialog.getHeight() - 40);
 
         dialog.setVisible(true);
-        
 
     }
 
-    public void dispose()
-    {
+    public void dispose() {
         dialog.dispose();
     }
 
@@ -415,7 +414,6 @@ public class StudentCustomSearch extends javax.swing.JPanel {
     public List<Student> getSearchData() {
         String name = txtName.getText();
         String address = txtAddress.getText();
-        // Seperate lop id from lop name
         String lop = cbLop.getSelectedItem().toString().split(" - ")[0];
         Date dateFrom = txtDateFrom.getDate();
         Date dateTo = txtDateTo.getDate();
@@ -429,13 +427,15 @@ public class StudentCustomSearch extends javax.swing.JPanel {
 
         List<Student> list = listStudents;
         if (isName) {
-            list = listStudents.stream().filter(s -> s.getName().toLowerCase().contains(name.toLowerCase())).toList();
+            list = listStudents.stream().filter(s -> s.getName().toLowerCase().contains(name.toLowerCase()))
+                    .collect(Collectors.toList());
         }
         if (isAddress) {
-            list = list.stream().filter(s -> s.getAddress().toLowerCase().contains(address.toLowerCase())).toList();
+            list = list.stream().filter(s -> s.getAddress().toLowerCase().contains(address.toLowerCase()))
+                    .collect(Collectors.toList());
         }
         if (isLop) {
-            list = list.stream().filter(s -> s.getLop().contains(lop)).toList();
+            list = list.stream().filter(s -> s.getLop().contains(lop)).collect(Collectors.toList());
         }
         if (isDate) {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -445,19 +445,17 @@ public class StudentCustomSearch extends javax.swing.JPanel {
                     return dateFormat.parse(s.getDate()).after(dateFrom)
                             && dateFormat.parse(s.getDate()).before(dateTo);
                 } catch (ParseException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
                 return false;
-            }).toList();
+            }).collect(Collectors.toList());
         }
 
         if (isSex) {
-            list = list.stream().filter(s -> s.getGioitinh().equals(sex)).toList();
+            list = list.stream().filter(s -> s.getGioitinh().equals(sex)).collect(Collectors.toList());
         }
 
         return list;
-
     }
 
     public void getListStudents(List<Student> listStudents) {
