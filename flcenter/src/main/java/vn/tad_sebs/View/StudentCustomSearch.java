@@ -429,10 +429,10 @@ public class StudentCustomSearch extends javax.swing.JPanel {
 
         List<Student> list = listStudents;
         if (isName) {
-            list = listStudents.stream().filter(s -> s.getName().contains(name)).toList();
+            list = listStudents.stream().filter(s -> s.getName().toLowerCase().contains(name.toLowerCase())).toList();
         }
         if (isAddress) {
-            list = list.stream().filter(s -> s.getAddress().contains(address)).toList();
+            list = list.stream().filter(s -> s.getAddress().toLowerCase().contains(address.toLowerCase())).toList();
         }
         if (isLop) {
             list = list.stream().filter(s -> s.getLop().contains(lop)).toList();
