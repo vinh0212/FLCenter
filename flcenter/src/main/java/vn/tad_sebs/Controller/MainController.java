@@ -34,7 +34,7 @@ public class MainController {
     }
 
     public void showMainView() {
-        mainView.setVisible(true);
+            mainView.setVisible(true);
     }
 
     class QLHVListener implements ActionListener {

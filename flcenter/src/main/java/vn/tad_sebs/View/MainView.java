@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.*;
+import java.net.URI;
 /**
  *
  * @author ASUS
@@ -21,6 +22,7 @@ public class MainView extends javax.swing.JFrame {
     public MainView() {
         
         initComponents();
+        abOut.setVisible(false);
     }
 
     /**
@@ -34,6 +36,17 @@ public class MainView extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         DX = new javax.swing.JButton();
+        About = new javax.swing.JToggleButton();
+        abOut = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        Open = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel21 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -74,6 +87,81 @@ public class MainView extends javax.swing.JFrame {
         DX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/out.png"))); // NOI18N
         DX.setText("Đăng xuất");
         getContentPane().add(DX, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 530, -1, 40));
+
+        About.setBackground(new java.awt.Color(0, 204, 102));
+        About.setFont(new java.awt.Font("Verdana", 2, 12)); // NOI18N
+        About.setText("About");
+        About.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        About.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AboutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(About, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, -1, -1));
+
+        abOut.setBorder(javax.swing.BorderFactory.createTitledBorder("About"));
+        abOut.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel2.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/000.png"))); // NOI18N
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, -1, 88));
+
+        jLabel22.setText("Chương trình quản lý trung tâm ngoại ngữ");
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 18, 277, -1));
+
+        jLabel23.setText("Web site: ");
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 46, -1, -1));
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(51, 102, 255));
+        jLabel24.setText("https://github.com/vinh0212/FLCenter");
+        jLabel24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 46, 204, -1));
+
+        jLabel25.setText("Bản quyền : ");
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 74, 262, -1));
+
+        Open.setBackground(new java.awt.Color(242, 242, 242));
+        Open.setBorder(null);
+        Open.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpenActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Open, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 43, 200, 20));
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Đây là chương trình mã nguồn mở. Bạn có thể phân phối,\n sửa đổi  tuân theo The GNU General Public License.\n Chương trình hỗ trợ tất cả các hệ điều hành Windows.\n\n Các thành viên dự án :\n         Đặng Quang Vinh\n         Lê Thành Đạt\n\n Trang Web của dự án:\n         https://github.com/vinh0212/FLCenter\n\n Trợ giúp:\n         http://facebook.com/Tadhnahtel\n         https://facebook.com/dqvinh.sebs         \n\n Liên lạc:\n         Lê Thành Đạt : ltdatdz@gmail.com - 035781114\n         Đặng Quang Vinh: dqv.0212@gmail.com -  0785689924");
+        jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        jScrollPane1.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout abOutLayout = new javax.swing.GroupLayout(abOut);
+        abOut.setLayout(abOutLayout);
+        abOutLayout.setHorizontalGroup(
+            abOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abOutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(abOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        abOutLayout.setVerticalGroup(
+            abOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abOutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(abOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 400, 350));
 
         jLabel21.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(0, 0, 103));
@@ -173,6 +261,12 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(QLHV, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 210, 90));
         getContentPane().add(QLLH, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 210, 90));
         getContentPane().add(QLCBGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 210, 90));
+
+        QLCTH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QLCTHActionPerformed(evt);
+            }
+        });
         getContentPane().add(QLCTH, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 210, 90));
         getContentPane().add(QLKT, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 210, 90));
 
@@ -189,9 +283,46 @@ public class MainView extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/menubackground.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 600));
 
-        setSize(new java.awt.Dimension(713, 601));
+        setSize(new java.awt.Dimension(715, 601));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    private void AboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutActionPerformed
+         if (About.isSelected()) {
+                    abOut.setVisible(true);
+                    QLHV.setEnabled(false);
+                    QLTL.setEnabled(false);
+                    QLLH.setEnabled(false);
+                    QLKT.setEnabled(false);
+                    QLCBGV.setEnabled(false);
+                    QLCTH.setEnabled(false);
+                    DX.setEnabled(false);
+                } else {
+                    abOut.setVisible(false);
+                    QLHV.setEnabled(true);
+                    QLTL.setEnabled(true);
+                    QLLH.setEnabled(true);
+                    QLKT.setEnabled(true);
+                    QLCBGV.setEnabled(true);
+                    QLCTH.setEnabled(true);
+                    DX.setEnabled(true);
+                }
+    }//GEN-LAST:event_AboutActionPerformed
+
+    private void QLCTHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QLCTHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_QLCTHActionPerformed
+ private void openWebpage(String url) {
+        try {
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void OpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenActionPerformed
+        openWebpage("https://github.com/vinh0212/FLCenter");
+    }//GEN-LAST:event_OpenActionPerformed
 ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
 
     public void addQLHVListener(ActionListener listener) {      
@@ -220,13 +351,16 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton About;
     private javax.swing.JButton DX;
+    private javax.swing.JButton Open;
     private javax.swing.JButton QLCBGV;
     private javax.swing.JButton QLCTH;
     private javax.swing.JButton QLHV;
     private javax.swing.JButton QLKT;
     private javax.swing.JButton QLLH;
     private javax.swing.JButton QLTL;
+    private javax.swing.JPanel abOut;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -242,12 +376,20 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
