@@ -23,7 +23,7 @@
 ![Image alt text](images/QLHVmd.png)
   - Quản lý thông tin của toàn bộ học viên các lớp ( bao gồm việc sắp xếp, thêm, xóa, chỉnh sửa, tìm kiếm thông tin học viên)
   - In thông tin của một học viên bất kì (PDF)
-![Image alt text](images/menumd.png)
+![Image alt text](images/printmd.png)
 
 #### Quản lý môn học
 ![Image alt text](images/QLMHmd.png)
