@@ -507,7 +507,11 @@ public class ClassView extends javax.swing.JFrame {
         for (int i = 0; i < size; i++) {
             data[i][0] = listLops.get(i).getId();
             data[i][1] = listLops.get(i).getName();
-            data[i][2] = listLops.get(i).getIdStudent().size();
+            if(listLops.get(i).getIdStudent() == null)
+            {
+                data[i][2] = 0;
+            }
+            else data[i][2] = listLops.get(i).getIdStudent().size();
             data[i][3] = listLops.get(i).getNote();
         }
 

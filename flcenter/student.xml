@@ -54,4 +54,31 @@
         <Gioitinh>Nam</Gioitinh>
         <Lop>2</Lop>
     </student>
+    <student>
+        <id>10</id>
+        <name>aaaa</name>
+        <Date>02/05/2024</Date>
+        <Address>aaa</Address>
+        <Diem>0.0</Diem>
+        <Gioitinh>Nam</Gioitinh>
+        <Lop>3</Lop>
+    </student>
+    <student>
+        <id>11</id>
+        <name>a</name>
+        <Date>02/05/2024</Date>
+        <Address>a</Address>
+        <Diem>0.0</Diem>
+        <Gioitinh>Nam</Gioitinh>
+        <Lop>6</Lop>
+    </student>
+    <student>
+        <id>12</id>
+        <name>c</name>
+        <Date>01/01/2024</Date>
+        <Address>Aa</Address>
+        <Diem>0.0</Diem>
+        <Gioitinh>Nam</Gioitinh>
+        <Lop>3</Lop>
+    </student>
 </students>

@@ -27,7 +27,7 @@ public class LopDAO {
 
     public LopDAO() {
         this.listLops = readListLops();
-        
+
         getListStudents(); // Đảm bảo rằng listStudents đã được khởi tạo
 
         // Tạo một HashMap để lưu trữ danh sách học sinh theo lớp
@@ -127,7 +127,7 @@ public class LopDAO {
         // Tìm lớp hiện tại của học sinh
         Lop currentLop = null;
         for (Lop l : listLops) {
-            if (l.getIdStudent().contains(student.getId())) {
+            if (l.getIdStudent() != null && l.getIdStudent().contains(student.getId())) {
                 currentLop = l;
                 break;
             }
@@ -142,6 +142,9 @@ public class LopDAO {
         // Thêm học sinh vào lớp mới
         for (Lop l : listLops) {
             if (l.getId() == Integer.parseInt(student.getLop())) {
+                if (l.getIdStudent() == null) {
+                    l.setIdStudent(new ArrayList<>());
+                }
                 if (!l.getIdStudent().contains(student.getId())) {
                     l.getIdStudent().add(student.getId());
                 }
@@ -151,17 +154,14 @@ public class LopDAO {
         writeListLops(listLops);
     }
 
-    public void deleteStudent(Student student)
-    {
+    public void deleteStudent(Student student) {
         for (Lop l : listLops) {
-            if (l.getIdStudent().contains(student.getId())) {
+            if (l.getIdStudent() != null && l.getIdStudent().contains(student.getId())) {
                 l.getIdStudent().remove(Integer.valueOf(student.getId()));
             }
         }
         writeListLops(listLops);
     }
-
-
 
     public void editC(Lop lop) {
         for (Lop l : listLops) {
@@ -189,18 +189,16 @@ public class LopDAO {
     public boolean deleteA(Lop lop) {
         boolean isFound = false;
         for (Lop c : listLops) {
-            if (c.getId() == lop.getId() ) {
-                if(c.getIdStudent().isEmpty())
-                {
+            if (c.getId() == lop.getId()) {
+                if (c.getIdStudent() == null || c.getIdStudent().isEmpty()) {
                     listLops.remove(c);
                     isFound = true;
                     break;
-                }
-                else {
+                } else {
                     JOptionPane.showMessageDialog(null, "Không thể xoá do còn học viên trong lớp!", "Message", 1);
                     break;
                 }
-                
+
             }
         }
         if (isFound) {
