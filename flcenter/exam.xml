@@ -33,7 +33,7 @@
                 <dp>0</dp>
             </giamthi>
             <giamthi>
-                <Id>15</Id>
+                <Id>6</Id>
                 <dp>0</dp>
             </giamthi>
             <giamthi>
@@ -41,15 +41,15 @@
                 <dp>0</dp>
             </giamthi>
             <giamthi>
-                <Id>6</Id>
+                <Id>8</Id>
+                <dp>0</dp>
+            </giamthi>
+            <giamthi>
+                <Id>15</Id>
                 <dp>0</dp>
             </giamthi>
             <giamthi>
                 <Id>4</Id>
-                <dp>0</dp>
-            </giamthi>
-            <giamthi>
-                <Id>8</Id>
                 <dp>0</dp>
             </giamthi>
         </giamthiList>

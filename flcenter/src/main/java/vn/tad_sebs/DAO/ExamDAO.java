@@ -1,15 +1,17 @@
 package vn.tad_sebs.DAO;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import vn.tad_sebs.Model.Exam;
 import vn.tad_sebs.Model.ExamXML;
 import vn.tad_sebs.Model.Teacher;
 import vn.tad_sebs.Utils.FileUtils;
-
 
 public class ExamDAO {
     private List<Exam> listExams;
@@ -36,13 +38,11 @@ public class ExamDAO {
         if (examXML != null) {
             list = examXML.getExam();
         }
-        
-        
+
         return list;
     }
 
-    public List<Teacher> getListGiamthi(int id)
-    {
+    public List<Teacher> getListGiamthi(int id) {
         List<Teacher> list = new ArrayList<Teacher>();
         for (Exam e : listExams) {
             if (e.getId() == id) {
@@ -53,8 +53,6 @@ public class ExamDAO {
         return list;
     }
 
-    
-
     public void add(Exam exam) {
         sortbyID();
         int id = 1;
@@ -63,12 +61,11 @@ public class ExamDAO {
         }
         exam.setId(id);
         listExams.add(exam);
-        
+
         writeListExams(listExams);
     }
 
-    public void edit(Exam exam)
-    {
+    public void edit(Exam exam) {
         for (Exam e : listExams) {
             if (e.getId() == exam.getId()) {
                 e.setName(exam.getName());
@@ -82,8 +79,7 @@ public class ExamDAO {
         writeListExams(listExams);
     }
 
-    public boolean delete(Exam exam)
-    {
+    public boolean delete(Exam exam) {
         boolean isFound = false;
         for (Exam e : listExams) {
             if (e.getId() == exam.getId()) {
@@ -93,8 +89,7 @@ public class ExamDAO {
             }
         }
 
-        if(isFound)
-        {
+        if (isFound) {
             sortbyID();
             writeListExams(listExams);
             return true;
@@ -102,8 +97,7 @@ public class ExamDAO {
         return false;
     }
 
-    public void sortbyID()
-    {
+    public void sortbyID() {
         Collections.sort(listExams, new Comparator<Exam>() {
             @Override
             public int compare(Exam o1, Exam o2) {
@@ -112,12 +106,20 @@ public class ExamDAO {
         });
     }
 
-    public void sortbyTime()
-    {
+    public void sortbyTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Collections.sort(listExams, new Comparator<Exam>() {
             @Override
             public int compare(Exam o1, Exam o2) {
-                return o1.getTime().compareTo(o2.getTime());
+                Date date1 = null;
+                Date date2 = null;
+                try {
+                    date1 = dateFormat.parse(o1.getTime());
+                    date2 = dateFormat.parse(o2.getTime());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                return date2.compareTo(date1); // Đảo ngược thứ tự so sánh
             }
         });
     }

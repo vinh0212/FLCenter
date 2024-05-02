@@ -7,6 +7,7 @@ package vn.tad_sebs.View;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
@@ -70,6 +71,7 @@ public class MonView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("QUẢN LÝ MÔN HỌC");
+        setIconImage(icon.getImage());
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -203,17 +205,17 @@ public class MonView extends javax.swing.JFrame {
                 btnSortbyidMonActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSortbyidMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 450, 180, 60));
+        getContentPane().add(btnSortbyidMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 450, 200, 60));
 
         btnSortbyNameMon.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyNameMon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyNameMon.setText("Sắp xếp theo Tên");
-        getContentPane().add(btnSortbyNameMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 360, 180, 60));
+        getContentPane().add(btnSortbyNameMon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 360, 200, 60));
 
         btnSortbyTinchi.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyTinchi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyTinchi.setText("Sắp xếp theo Số tiết");
-        getContentPane().add(btnSortbyTinchi, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 550, 180, 60));
+        getContentPane().add(btnSortbyTinchi, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 550, 200, 60));
 
         cbDpEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,7 +231,7 @@ public class MonView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-
+    ImageIcon icon = new ImageIcon(getClass().getResource("/vn/tad_sebs/icon/icon.png"));
     private void FIDSearchMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FIDSearchMonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FIDSearchMonActionPerformed

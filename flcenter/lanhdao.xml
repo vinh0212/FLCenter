@@ -3,19 +3,19 @@
     <lanhdao>
         <Id>2</Id>
         <Name>Lê Thành Đạt</Name>
-        <Date>16/06/1965</Date>
+        <Date>16/06/1985</Date>
         <Sex>Nam</Sex>
         <Address>An Giang</Address>
-        <Capbacham>Trung tướng</Capbacham>
+        <Capbacham>Trung tá</Capbacham>
         <Chucvu>Giám đốc</Chucvu>
     </lanhdao>
     <lanhdao>
         <Id>3</Id>
         <Name>Đặng Quang Vinh</Name>
-        <Date>02/12/1968</Date>
+        <Date>02/12/1988</Date>
         <Sex>Nam</Sex>
         <Address>Bình Phước</Address>
-        <Capbacham>Thiếu tướng</Capbacham>
+        <Capbacham>Thiếu tá</Capbacham>
         <Chucvu>Phó Giám đốc</Chucvu>
     </lanhdao>
 </lanhdaos>

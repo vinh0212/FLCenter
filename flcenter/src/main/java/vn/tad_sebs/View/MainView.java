@@ -97,7 +97,7 @@ public class MainView extends javax.swing.JFrame {
                 AboutActionPerformed(evt);
             }
         });
-        getContentPane().add(About, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, -1, -1));
+        getContentPane().add(About, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 523, 90, 40));
 
         abOut.setBorder(javax.swing.BorderFactory.createTitledBorder("About"));
         abOut.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));

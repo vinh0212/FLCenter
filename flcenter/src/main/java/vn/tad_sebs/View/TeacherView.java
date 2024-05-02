@@ -15,7 +15,6 @@ import java.util.List;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.*;
-import java.awt.*;
 
 import vn.tad_sebs.Controller.MainController;
 import vn.tad_sebs.Model.Department;
@@ -259,7 +258,7 @@ public class TeacherView extends javax.swing.JFrame {
                 btnSearchLDActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 80, -1));
+        jPanel1.add(btnSearchLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 100, -1));
 
         btnSortbyidLD.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyidLD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
@@ -496,7 +495,7 @@ public class TeacherView extends javax.swing.JFrame {
                 btnSearchGVActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 80, -1));
+        jPanel2.add(btnSearchGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 100, -1));
 
         btnSortbyNameGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyNameGV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N

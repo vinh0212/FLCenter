@@ -8,6 +8,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 
 import java.awt.BorderLayout;
+import java.text.DecimalFormat;
 
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -17,6 +18,9 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.labels.PieSectionLabelGenerator;
+import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
+import org.jfree.chart.plot.PiePlot;
 
 /**
  *
@@ -83,7 +87,7 @@ public class ClassStat extends javax.swing.JFrame {
     public void action2() {
         panel.remove(chartTypeComboBox);
         // Create a new dataset
-        
+
         DefaultPieDataset dataset = new DefaultPieDataset();
 
         // Add the distribution to the dataset
@@ -94,7 +98,14 @@ public class ClassStat extends javax.swing.JFrame {
         }
 
         // Create a chart using the dataset
-        JFreeChart chart = ChartFactory.createPieChart("Thống kê số lượng học viên theo lớp", dataset, true, true, false);
+        JFreeChart chart = ChartFactory.createPieChart("Thống kê số lượng học viên theo lớp", dataset, true, true,
+                false);
+
+        // Create a custom label generator
+        PieSectionLabelGenerator labelGenerator = new StandardPieSectionLabelGenerator(
+                "{0} = {1} ({2})", new DecimalFormat("0"), new DecimalFormat("0%"));
+        PiePlot plot = (PiePlot) chart.getPlot();
+        plot.setLabelGenerator(labelGenerator);
 
         // Create a chart panel and add the chart to it
         ChartPanel chartPanel = new ChartPanel(chart);
@@ -135,7 +146,6 @@ public class ClassStat extends javax.swing.JFrame {
 
         setBounds(0, 0, 414, 307);
 
-        
         chartTypeComboBox = new JComboBox<>(new String[] { "Bar Chart", "Line Chart" });
         chartTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

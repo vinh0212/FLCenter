@@ -275,17 +275,17 @@ public class StudentView extends javax.swing.JFrame {
         btnSortbyid.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyid.setText("Sắp xếp theo ID");
-        getContentPane().add(btnSortbyid, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 430, 170, 60));
+        getContentPane().add(btnSortbyid, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 430, 170, 60));
 
         btnSortbyName.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyName.setText("Sắp xếp theo Tên");
-        getContentPane().add(btnSortbyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 510, 170, 60));
+        getContentPane().add(btnSortbyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 600, 170, 60));
 
         btnSortbyDiem.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyDiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyDiem.setLabel("Sắp xếp theo Điểm");
-        getContentPane().add(btnSortbyDiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 600, 170, 60));
+        getContentPane().add(btnSortbyDiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 430, 180, 60));
 
         getContentPane().add(cbLop, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 280, 163, 32));
 
@@ -300,7 +300,7 @@ public class StudentView extends javax.swing.JFrame {
                 btnPrintActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 600, 170, 60));
+        getContentPane().add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 600, 180, 60));
 
         btnGroup.add(chkM);
         chkM.setForeground(new java.awt.Color(255, 255, 255));

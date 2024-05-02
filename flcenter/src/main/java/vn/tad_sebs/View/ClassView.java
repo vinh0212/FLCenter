@@ -8,6 +8,7 @@ import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +37,8 @@ public class ClassView extends javax.swing.JFrame {
     public ClassView() {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        btnEditClass.setEnabled(false);
+        btnDeleteClass.setEnabled(false);
 
         this.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -57,7 +60,8 @@ public class ClassView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -114,26 +118,25 @@ public class ClassView extends javax.swing.JFrame {
 
         tbClassList.setBackground(new java.awt.Color(102, 204, 255));
         tbClassList.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+                new Object[][] {
 
-            },
-            new String [] {
-                "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                },
+                new String[] {
+                        "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
+                }) {
+            Class[] types = new Class[] {
+                    java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
+            boolean[] canEdit = new boolean[] {
+                    false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+                return types[columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         tbClassList.setShowGrid(false);
@@ -230,29 +233,29 @@ public class ClassView extends javax.swing.JFrame {
 
         tbListStudents.setBackground(new java.awt.Color(102, 204, 255));
         tbListStudents.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+                new Object[][] {
+                        { null, null, null, null, null },
+                        { null, null, null, null, null },
+                        { null, null, null, null, null },
+                        { null, null, null, null, null }
+                },
+                new String[] {
+                        "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
+                }) {
+            Class[] types = new Class[] {
+                    java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
+                    java.lang.Float.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+            boolean[] canEdit = new boolean[] {
+                    false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+                return types[columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         jScrollPane3.setViewportView(tbListStudents);
@@ -360,29 +363,27 @@ public class ClassView extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jTabbedPane1)
+                                .addContainerGap()));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jTabbedPane1)));
 
         setSize(new java.awt.Dimension(1380, 701));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnStatNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatNumActionPerformed
+    private void btnStatNumActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnStatNumActionPerformed
         ClassStat classStat = new ClassStat();
         classStat.getTable(getTBListLops());
 
         classStat.action2();
-    }//GEN-LAST:event_btnStatNumActionPerformed
+    }// GEN-LAST:event_btnStatNumActionPerformed
 
     private void txtFindKeyPressed(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtFindKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -493,8 +494,8 @@ public class ClassView extends javax.swing.JFrame {
         jTabbedPane1.addChangeListener(listener);
     }
 
-    private String[] columnNamesClassList = new String[]{
-        "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
+    private String[] columnNamesClassList = new String[] {
+            "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
     };
 
     public void showClassList(List<Lop> listLops) {
@@ -519,8 +520,8 @@ public class ClassView extends javax.swing.JFrame {
 
     }
 
-    private String[] columnNamesStudentList = new String[]{
-        "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
+    private String[] columnNamesStudentList = new String[] {
+            "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
     };
 
     public Lop getLopInfo() {
@@ -675,10 +676,10 @@ public class ClassView extends javax.swing.JFrame {
     }
 
     public void showClassListinCbChonlop(List<Lop> listLops) {
-        if(listLops!=null)
-        for (Lop lop : listLops) {
-            cbChonlop.addItem(lop.getId() + " - " + lop.getName());
-        }
+        if (listLops != null)
+            for (Lop lop : listLops) {
+                cbChonlop.addItem(lop.getId() + " - " + lop.getName());
+            }
     }
 
     public int getClassChoice() {
@@ -718,7 +719,7 @@ public class ClassView extends javax.swing.JFrame {
         TableModel originalModel = tbListStudents.getModel();
 
         // Create a new table model for the score distribution
-        DefaultTableModel distributionModel = new DefaultTableModel(new Object[]{"Range", "Count"}, 0);
+        DefaultTableModel distributionModel = new DefaultTableModel(new Object[] { "Range", "Count" }, 0);
 
         // Create an array to count the score distribution
         int[] distribution = new int[10];
@@ -733,7 +734,7 @@ public class ClassView extends javax.swing.JFrame {
 
         // Add the distribution to the new table model
         for (int i = 0; i < 10; i++) {
-            distributionModel.addRow(new Object[]{i + "-" + (i + 1), distribution[i]});
+            distributionModel.addRow(new Object[] { i + "-" + (i + 1), distribution[i] });
         }
 
         return distributionModel;
@@ -744,7 +745,7 @@ public class ClassView extends javax.swing.JFrame {
         TableModel originalModel = tbClassList.getModel();
 
         // Create a new table model for the class distribution
-        DefaultTableModel classModel = new DefaultTableModel(new Object[]{"Class", "Count"}, 0);
+        DefaultTableModel classModel = new DefaultTableModel(new Object[] { "Class", "Count" }, 0);
 
         // Create a map to count the class distribution
         Map<String, Integer> classDistribution = new HashMap<>();
@@ -752,16 +753,27 @@ public class ClassView extends javax.swing.JFrame {
         // Count the class distribution
         for (int i = 0; i < originalModel.getRowCount(); i++) {
             String className = originalModel.getValueAt(i, 1).toString(); // replace 1 with the column index for the
-            // class
+                                                                          // class
             int studentCount = Integer.parseInt(originalModel.getValueAt(i, 2).toString()); // replace 2 with the column
-            // index for the student
-            // count
+                                                                                            // index for the student
+                                                                                            // count
             classDistribution.put(className, classDistribution.getOrDefault(className, 0) + studentCount);
         }
 
-        // Add the distribution to the new table model
-        for (Map.Entry<String, Integer> entry : classDistribution.entrySet()) {
-            classModel.addRow(new Object[]{entry.getKey(), entry.getValue()});
+        // Convert the class distribution map to a list
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(classDistribution.entrySet());
+
+        // Sort the list in descending order
+        list.sort(new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                return o2.getValue().compareTo(o1.getValue());
+            }
+        });
+
+        // Add the sorted distribution to the new table model
+        for (Map.Entry<String, Integer> entry : list) {
+            classModel.addRow(new Object[] { entry.getKey(), entry.getValue() });
         }
 
         return classModel;
