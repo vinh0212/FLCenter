@@ -8,9 +8,11 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.List;
-import javax.swing.JOptionPane;
+
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+
+import vn.tad_sebs.Controller.MainController;
 import vn.tad_sebs.Model.Data;
 
 /**
@@ -27,6 +29,15 @@ public class DataView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         btnEditData.setEnabled(false);
         btnDeleteData.setEnabled(false);
+
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                MainView mainView = new MainView();
+                MainController mainController = new MainController(mainView);
+                mainController.showMainView();
+            }
+        });
     }
 
     /**

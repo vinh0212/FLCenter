@@ -11,11 +11,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import javax.swing.JOptionPane;
+
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.*;
 import java.awt.*;
+
+import vn.tad_sebs.Controller.MainController;
 import vn.tad_sebs.Model.Department;
 import vn.tad_sebs.Model.Lanhdao;
 import vn.tad_sebs.Model.Teacher;
@@ -37,7 +39,14 @@ public class TeacherView extends javax.swing.JFrame {
         btnEditGV.setEnabled(false);
         btnDeleteGV.setEnabled(false);
         
-        
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                MainView mainView = new MainView();
+                MainController mainController = new MainController(mainView);
+                mainController.showMainView();
+            }
+        });
     }
 
     /**

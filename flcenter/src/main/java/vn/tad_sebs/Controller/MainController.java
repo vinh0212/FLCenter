@@ -45,7 +45,7 @@ public class MainController {
                 StudentView studentView = new StudentView();
                 StudentController studentController = new StudentController(studentView);
                 studentController.showStudentView();
-                mainView.setVisible(false);
+                mainView.dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -61,7 +61,7 @@ public class MainController {
                 TeacherView teacherView = new TeacherView();
                 TeacherController teacherController = new TeacherController(teacherView);
                 teacherController.showTeacherView();
-                mainView.setVisible(false);
+                mainView.dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -76,7 +76,7 @@ public class MainController {
                 MonView monView = new MonView();
                 SubjectController subjectController = new SubjectController(monView);
                 subjectController.showMonView();
-                mainView.setVisible(false);
+                mainView.dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -91,7 +91,7 @@ public class MainController {
                 ExamView examView = new ExamView();
                 ExamController examController = new ExamController(examView);
                 examController.showExamView();
-                mainView.setVisible(false);
+                mainView.dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -107,7 +107,7 @@ public class MainController {
                 ClassView classView = new ClassView();
                 ClassController classController = new ClassController(classView);
                 classController.showClassView();
-                mainView.setVisible(false);
+                mainView.dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -127,7 +127,7 @@ public class MainController {
                     Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-            mainView.setVisible(false);
+            mainView.dispose();
             LoginView view = new LoginView();
             view.setRMBDeselected();
             LoginController controller = new LoginController(view);
@@ -144,7 +144,7 @@ public class MainController {
                 DataView dataView = new DataView();
                 DataController dataController = new DataController(dataView);
                 dataController.showDataView();
-                mainView.setVisible(false);
+                mainView.dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }

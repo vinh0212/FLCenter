@@ -12,14 +12,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.*;
 import java.awt.*;
+
+import vn.tad_sebs.Controller.MainController;
 import vn.tad_sebs.Model.Lop;
 import vn.tad_sebs.Model.Student;
 import vn.tad_sebs.View.ClassStat;
@@ -34,10 +34,17 @@ public class ClassView extends javax.swing.JFrame {
      * Creates new form ClassView
      */
     public ClassView() {
-        FlatMacLightLaf.registerCustomDefaultsSource("FlatMacLightLaf.properties");
-        FlatMacLightLaf.setup();
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                MainView mainView = new MainView();
+                MainController mainController = new MainController(mainView);
+                mainController.showMainView();
+            }
+        });
     }
 
     /**

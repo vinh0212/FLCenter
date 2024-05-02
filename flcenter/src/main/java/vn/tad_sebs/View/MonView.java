@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
+import vn.tad_sebs.Controller.MainController;
 import vn.tad_sebs.Model.Department;
 import vn.tad_sebs.Model.Monhoc;
 
@@ -24,6 +25,15 @@ public class MonView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         btnEditMon.setEnabled(false);
         btnDeleteMon.setEnabled(false);
+
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                MainView mainView = new MainView();
+                MainController mainController = new MainController(mainView);
+                mainController.showMainView();
+            }
+        });
     }
 
     /**
