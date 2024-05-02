@@ -3,18 +3,13 @@ package vn.tad_sebs.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
-import javax.swing.UIManager;
-import javax.swing.WindowConstants;
 
 import vn.tad_sebs.Model.User;
 
@@ -35,7 +30,8 @@ public class LoginView extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel8 = new javax.swing.JLabel();
@@ -126,7 +122,14 @@ public class LoginView extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 51));
-        jLabel2.setFont(new java.awt.Font("VNI-Wide Latin", 0, 18)); // NOI18N
+        try {
+            FileInputStream is = new FileInputStream(new File("VNLatinW.ttf"));
+            Font font = Font.createFont(Font.TRUETYPE_FONT, is);
+            font = font.deriveFont(Font.PLAIN, 18); // Set font size here
+            jLabel2.setFont(font);
+        } catch (FontFormatException | IOException e) {
+            e.printStackTrace();
+        }
         jLabel2.setForeground(new java.awt.Color(47, 147, 177));
         jLabel2.setText("LOGIN");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
@@ -206,14 +209,12 @@ public class LoginView extends javax.swing.JFrame {
     public boolean isRMBSelected() {
         return RMB.isSelected();
     }
-    
-    public void setRMBSelected()
-    {
+
+    public void setRMBSelected() {
         RMB.setSelected(true);
     }
-    
-    public void setRMBDeselected()
-    {
+
+    public void setRMBDeselected() {
         RMB.setSelected(false);
     }
 
