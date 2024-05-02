@@ -110,19 +110,19 @@ public class MainView extends javax.swing.JFrame {
         jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, -1, 88));
 
         jLabel22.setText("Chương trình quản lý trung tâm ngoại ngữ");
-        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 18, 277, -1));
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 277, -1));
 
         jLabel23.setText("Web site: ");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 46, -1, -1));
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(51, 102, 255));
         jLabel24.setText("https://github.com/vinh0212/FLCenter");
         jLabel24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 46, 204, -1));
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 204, -1));
 
         jLabel25.setText("Bản quyền : ");
-        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 74, 262, -1));
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 262, -1));
 
         Open.setBackground(new java.awt.Color(242, 242, 242));
         Open.setBorder(null);
@@ -135,8 +135,12 @@ public class MainView extends javax.swing.JFrame {
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Đây là chương trình mã nguồn mở. Bạn có thể phân phối,\n sửa đổi  tuân theo The GNU General Public License.\n Chương trình hỗ trợ tất cả các hệ điều hành Windows.\n\n Các thành viên dự án :\n         Đặng Quang Vinh\n         Lê Thành Đạt\n\n Trang Web của dự án:\n         https://github.com/vinh0212/FLCenter\n\n Trợ giúp:\n         http://facebook.com/Tadhnahtel\n         https://facebook.com/dqvinh.sebs         \n\n Liên lạc:\n         Lê Thành Đạt : ltdatdz@gmail.com - 035781114\n         Đặng Quang Vinh: dqv.0212@gmail.com -  0785689924");
+        jTextArea1.setText("Đây là chương trình mã nguồn mở. Bạn có thể phân phối, sửa đổi  tuân theo The GNU General Public License. Chương trình hỗ trợ tất cả các hệ điều hành Windows.\n\n Các thành viên dự án :\n         Đặng Quang Vinh\n         Lê Thành Đạt\n\n Trang Web của dự án:\n         https://github.com/vinh0212/FLCenter\n\n Trợ giúp:\n         http://facebook.com/Tadhnahtel\n         https://facebook.com/dqvinh.sebs         \n\n Liên lạc:\n         Lê Thành Đạt : ltdatdz@gmail.com - 035781114\n         Đặng Quang Vinh: dqv.0212@gmail.com -  0785689924");
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setAutoscrolls(false);
+        jTextArea1.setCaretPosition(0);
         jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         jScrollPane1.setViewportView(jTextArea1);
 

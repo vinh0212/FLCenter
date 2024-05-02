@@ -155,7 +155,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="100" y="18" width="277" height="-1"/>
+                  <AbsoluteConstraints x="100" y="10" width="277" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -165,7 +165,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="100" y="46" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="100" y="40" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -184,7 +184,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="158" y="46" width="204" height="-1"/>
+                  <AbsoluteConstraints x="160" y="40" width="204" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -194,7 +194,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="100" y="74" width="262" height="-1"/>
+                  <AbsoluteConstraints x="100" y="70" width="262" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -229,8 +229,12 @@
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="&#x110;&#xe2;y l&#xe0; ch&#x1b0;&#x1a1;ng tr&#xec;nh m&#xe3; ngu&#x1ed3;n m&#x1edf;. B&#x1ea1;n c&#xf3; th&#x1ec3; ph&#xe2;n ph&#x1ed1;i,&#xa; s&#x1eed;a &#x111;&#x1ed5;i  tu&#xe2;n theo The GNU General Public License.&#xa; Ch&#x1b0;&#x1a1;ng tr&#xec;nh h&#x1ed7; tr&#x1ee3; t&#x1ea5;t c&#x1ea3; c&#xe1;c h&#x1ec7; &#x111;i&#x1ec1;u h&#xe0;nh Windows.&#xa;&#xa; C&#xe1;c th&#xe0;nh vi&#xea;n d&#x1ef1; &#xe1;n :&#xa;         &#x110;&#x1eb7;ng Quang Vinh&#xa;         L&#xea; Th&#xe0;nh &#x110;&#x1ea1;t&#xa;&#xa; Trang Web c&#x1ee7;a d&#x1ef1; &#xe1;n:&#xa;         https://github.com/vinh0212/FLCenter&#xa;&#xa; Tr&#x1ee3; gi&#xfa;p:&#xa;         http://facebook.com/Tadhnahtel&#xa;         https://facebook.com/dqvinh.sebs         &#xa;&#xa; Li&#xea;n l&#x1ea1;c:&#xa;         L&#xea; Th&#xe0;nh &#x110;&#x1ea1;t : ltdatdz@gmail.com - 035781114&#xa;         &#x110;&#x1eb7;ng Quang Vinh: dqv.0212@gmail.com -  0785689924"/>
+                <Property name="text" type="java.lang.String" value="&#x110;&#xe2;y l&#xe0; ch&#x1b0;&#x1a1;ng tr&#xec;nh m&#xe3; ngu&#x1ed3;n m&#x1edf;. B&#x1ea1;n c&#xf3; th&#x1ec3; ph&#xe2;n ph&#x1ed1;i, s&#x1eed;a &#x111;&#x1ed5;i  tu&#xe2;n theo The GNU General Public License. Ch&#x1b0;&#x1a1;ng tr&#xec;nh h&#x1ed7; tr&#x1ee3; t&#x1ea5;t c&#x1ea3; c&#xe1;c h&#x1ec7; &#x111;i&#x1ec1;u h&#xe0;nh Windows.&#xa;&#xa; C&#xe1;c th&#xe0;nh vi&#xea;n d&#x1ef1; &#xe1;n :&#xa;         &#x110;&#x1eb7;ng Quang Vinh&#xa;         L&#xea; Th&#xe0;nh &#x110;&#x1ea1;t&#xa;&#xa; Trang Web c&#x1ee7;a d&#x1ef1; &#xe1;n:&#xa;         https://github.com/vinh0212/FLCenter&#xa;&#xa; Tr&#x1ee3; gi&#xfa;p:&#xa;         http://facebook.com/Tadhnahtel&#xa;         https://facebook.com/dqvinh.sebs         &#xa;&#xa; Li&#xea;n l&#x1ea1;c:&#xa;         L&#xea; Th&#xe0;nh &#x110;&#x1ea1;t : ltdatdz@gmail.com - 035781114&#xa;         &#x110;&#x1eb7;ng Quang Vinh: dqv.0212@gmail.com -  0785689924"/>
+                <Property name="wrapStyleWord" type="boolean" value="true"/>
+                <Property name="autoscrolls" type="boolean" value="false"/>
+                <Property name="caretPosition" type="int" value="0"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Crosshair Cursor"/>
                 </Property>

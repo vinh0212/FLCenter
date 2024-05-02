@@ -203,7 +203,7 @@ public class ExamView extends javax.swing.JFrame {
         btnEditTeacher.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnEditTeacher.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/info.png"))); // NOI18N
         btnEditTeacher.setText("Chi tiết");
-        getContentPane().add(btnEditTeacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 170, 100, 30));
+        getContentPane().add(btnEditTeacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 170, 110, 30));
 
         FSearchExam.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
