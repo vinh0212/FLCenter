@@ -2,29 +2,20 @@
 <lanhdaos>
     <lanhdao>
         <Id>2</Id>
-        <Name>Đạt</Name>
-        <Date>03/12/2004</Date>
+        <Name>Lê Thành Đạt</Name>
+        <Date>16/06/1965</Date>
         <Sex>Nam</Sex>
         <Address>An Giang</Address>
-        <Capbacham>Trung tá</Capbacham>
+        <Capbacham>Trung tướng</Capbacham>
         <Chucvu>Giám đốc</Chucvu>
     </lanhdao>
     <lanhdao>
         <Id>3</Id>
-        <Name>Vinh</Name>
-        <Date>02/12/2004</Date>
+        <Name>Đặng Quang Vinh</Name>
+        <Date>02/12/1968</Date>
         <Sex>Nam</Sex>
         <Address>Bình Phước</Address>
-        <Capbacham>Trung tá</Capbacham>
-        <Chucvu>Phó Giám đốc</Chucvu>
-    </lanhdao>
-    <lanhdao>
-        <Id>4</Id>
-        <Name>Xuân An</Name>
-        <Date>08/12/2004</Date>
-        <Sex>Nam</Sex>
-        <Address>Hà Nội</Address>
-        <Capbacham>Đại uý</Capbacham>
+        <Capbacham>Thiếu tướng</Capbacham>
         <Chucvu>Phó Giám đốc</Chucvu>
     </lanhdao>
 </lanhdaos>

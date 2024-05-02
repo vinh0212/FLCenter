@@ -2,22 +2,152 @@
 <teachers>
     <teacher>
         <Id>3</Id>
-        <Name>Đạt</Name>
-        <Date>01/01/2024</Date>
-        <Sex>Nữ</Sex>
-        <Address>3</Address>
-        <Capbacham>Không có</Capbacham>
-        <Mon>Không có</Mon>
-        <dp>1</dp>
+        <Name>Ma Văn Đạt</Name>
+        <Date>15/08/1980</Date>
+        <Sex>Nam</Sex>
+        <Address>An Giang</Address>
+        <Capbacham>Thiếu tá</Capbacham>
+        <Mon>Writing</Mon>
+        <dp>4</dp>
     </teacher>
     <teacher>
         <Id>4</Id>
         <Name>Lê Văn Cáp</Name>
         <Date>04/01/1995</Date>
         <Sex>Nam</Sex>
-        <Address>Dubai</Address>
+        <Address>Hà Nội</Address>
         <Capbacham>Thượng uý</Capbacham>
         <Mon>Listening</Mon>
         <dp>3</dp>
+    </teacher>
+    <teacher>
+        <Id>5</Id>
+        <Name>Trần Thị Ngọc</Name>
+        <Date>10/07/1984</Date>
+        <Sex>Nữ</Sex>
+        <Address>Bạc Liêu</Address>
+        <Capbacham>Thiếu tá</Capbacham>
+        <Mon>Không có</Mon>
+        <dp>1</dp>
+    </teacher>
+    <teacher>
+        <Id>6</Id>
+        <Name>Trần Mạnh Hùng</Name>
+        <Date>08/07/1985</Date>
+        <Sex>Nam</Sex>
+        <Address>Cần Thơ</Address>
+        <Capbacham>Thiếu tá</Capbacham>
+        <Mon>Không có</Mon>
+        <dp>1</dp>
+    </teacher>
+    <teacher>
+        <Id>7</Id>
+        <Name>Bùi Văn Huy</Name>
+        <Date>17/12/1984</Date>
+        <Sex>Nam</Sex>
+        <Address>Đồng Tháp</Address>
+        <Capbacham>Thiếu tá</Capbacham>
+        <Mon>Không có</Mon>
+        <dp>1</dp>
+    </teacher>
+    <teacher>
+        <Id>8</Id>
+        <Name>Nguyễn Thành Đạt</Name>
+        <Date>18/09/1975</Date>
+        <Sex>Nam</Sex>
+        <Address>An Giang</Address>
+        <Capbacham>Trung tá</Capbacham>
+        <Mon>Không có</Mon>
+        <dp>2</dp>
+    </teacher>
+    <teacher>
+        <Id>9</Id>
+        <Name>Cao Bá Hưng</Name>
+        <Date>12/12/1974</Date>
+        <Sex>Nam</Sex>
+        <Address>Kiên Giang</Address>
+        <Capbacham>Trung tá</Capbacham>
+        <Mon>Không có</Mon>
+        <dp>2</dp>
+    </teacher>
+    <teacher>
+        <Id>10</Id>
+        <Name>Bùi Xuân Thành</Name>
+        <Date>19/01/2023</Date>
+        <Sex>Nam</Sex>
+        <Address>Đồng Tháp</Address>
+        <Capbacham>Trung tá</Capbacham>
+        <Mon>Không có</Mon>
+        <dp>2</dp>
+    </teacher>
+    <teacher>
+        <Id>11</Id>
+        <Name>Bùi Thị Bích Ngọc</Name>
+        <Date>15/04/1993</Date>
+        <Sex>Nữ</Sex>
+        <Address>Cà Mau</Address>
+        <Capbacham>Thượng uý</Capbacham>
+        <Mon>Writing</Mon>
+        <dp>3</dp>
+    </teacher>
+    <teacher>
+        <Id>12</Id>
+        <Name>Phan Thanh Sơn</Name>
+        <Date>16/08/1992</Date>
+        <Sex>Nam</Sex>
+        <Address>Tiền Giang</Address>
+        <Capbacham>Thượng uý</Capbacham>
+        <Mon>Reading</Mon>
+        <dp>3</dp>
+    </teacher>
+    <teacher>
+        <Id>13</Id>
+        <Name>Vũ Thị Bé Tư</Name>
+        <Date>09/09/1991</Date>
+        <Sex>Nữ</Sex>
+        <Address>An Giang</Address>
+        <Capbacham>Thượng uý</Capbacham>
+        <Mon>Writing</Mon>
+        <dp>3</dp>
+    </teacher>
+    <teacher>
+        <Id>14</Id>
+        <Name>Phan Văn Tài</Name>
+        <Date>19/08/1990</Date>
+        <Sex>Nam</Sex>
+        <Address>Đà Nẵng</Address>
+        <Capbacham>Thiếu tá</Capbacham>
+        <Mon>Listening</Mon>
+        <dp>4</dp>
+    </teacher>
+    <teacher>
+        <Id>15</Id>
+        <Name>Hà Văn Hoàng</Name>
+        <Date>02/03/1991</Date>
+        <Sex>Nam</Sex>
+        <Address>Quảng Ninh</Address>
+        <Capbacham>Thiếu tá</Capbacham>
+        <Mon>Reading</Mon>
+        <dp>4</dp>
+    </teacher>
+    <teacher>
+        <Id>16</Id>
+        <Name>Bùi Văn Toàn</Name>
+        <Date>05/05/1980</Date>
+        <Sex>Nam</Sex>
+        <Address>Quảng Trị</Address>
+        <Capbacham>Không có</Capbacham>
+        <Mon>Không có</Mon>
+        <dp>5</dp>
+    </teacher>
+    <teacher>
+        <Id>17</Id>
+        <Name>Ma Văn Thành</Name>
+        <Date>08/12/1983</Date>
+        <Sex>Nam</Sex>
+        <Address>Tuyên Quang</Address>
+        <Capbacham>Không có</Capbacham>
+        <Mon>Không có</Mon>
+        <dp>5</dp>
     </teacher>
 </teachers>
