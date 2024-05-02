@@ -19,8 +19,8 @@
 #### Quản lý học viên
 ![Image alt text](images/QLHVmd.png)
   - Quản lý thông tin của toàn bộ học viên các lớp ( bao gồm việc sắp xếp, thêm, xóa, chỉnh sửa, tìm kiếm thông tin học viên)
-  - In thông tin của một học viên bất kì
-
+  - In thông tin của một học viên bất kì (PDF)
+![Image alt text](images/menumd.png)
 
 #### Quản lý môn học
 ![Image alt text](images/QLMHmd.png)
@@ -33,13 +33,14 @@
 ![Image alt text](images/DSLHmd.png)
   - Quản lý số lượng của các lớp học  ( bao gồm việc sắp xếp, thêm, xóa, chỉnh sửa số lượng học viên) và quản lý tất cả các lớp của trung tâm
   - Thống kê số lượng học viên theo lớp
+![Image alt text](images/chart2md.png)
 
 
 ##### Quản lý học viên từng lớp
 ![Image alt text](images/QLHVTLmd.png)
   - Quản lý thông tin của các học viên theo từng lớp ( bao gồm việc sắp xếp, thêm, xóa, chỉnh sửa, nhập điểm, tìm kiếm thông tin học viên)
   - Thống kê điểm số của từng lớp
-
+![Image alt text](images/chart1md.png)
 
 #### Quản lý tài liệu
 ![Image alt text](images/QLTLmd.png)
