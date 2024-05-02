@@ -10,10 +10,9 @@ import javax.swing.JOptionPane;
 
 import vn.tad_sebs.Model.Lop;
 import vn.tad_sebs.Model.LopXML;
-import vn.tad_sebs.Model.Monhoc;
+
 import vn.tad_sebs.Utils.FileUtils;
-import vn.tad_sebs.Model.StudentXML;
-import vn.tad_sebs.Model.TeacherXML;
+
 import vn.tad_sebs.Model.Student;
 import vn.tad_sebs.Model.Teacher;
 
@@ -27,33 +26,35 @@ public class LopDAO {
 
     public LopDAO() {
         this.listLops = readListLops();
+        if (this.listLops == null) {
+            this.listLops = new ArrayList<Lop>();
+        }
 
         getListStudents(); // Đảm bảo rằng listStudents đã được khởi tạo
 
         // Tạo một HashMap để lưu trữ danh sách học sinh theo lớp
         Map<String, List<Integer>> studentsByClass = new HashMap<>();
+        if (listStudents != null) {
+            for (Student s : listStudents) {
+                // Lấy danh sách học sinh của lớp hiện tại
+                List<Integer> studentsInClass = studentsByClass.get(s.getLop());
 
-        for (Student s : listStudents) {
-            // Lấy danh sách học sinh của lớp hiện tại
-            List<Integer> studentsInClass = studentsByClass.get(s.getLop());
+                // Nếu danh sách này chưa tồn tại, tạo một danh sách mới
+                if (studentsInClass == null) {
+                    studentsInClass = new ArrayList<>();
+                    studentsByClass.put(s.getLop(), studentsInClass);
+                }
 
-            // Nếu danh sách này chưa tồn tại, tạo một danh sách mới
-            if (studentsInClass == null) {
-                studentsInClass = new ArrayList<>();
-                studentsByClass.put(s.getLop(), studentsInClass);
+                // Thêm học sinh vào danh sách
+                studentsInClass.add(s.getId());
             }
 
-            // Thêm học sinh vào danh sách
-            studentsInClass.add(s.getId());
-        }
+            // Gán danh sách học sinh cho từng lớp
+            for (Lop lop : listLops) {
+                lop.setIdStudent(studentsByClass.get(String.valueOf(lop.getId())));
+            }
 
-        // Gán danh sách học sinh cho từng lớp
-        for (Lop lop : listLops) {
-            lop.setIdStudent(studentsByClass.get(String.valueOf(lop.getId())));
-        }
-
-        if (listLops == null) {
-            listLops = new ArrayList<Lop>();
+            
         }
     }
 
@@ -101,9 +102,10 @@ public class LopDAO {
     }
 
     public void addA(Lop lop) {
-        sortClassListbyID();
+
         int id = 1;
         if (listLops.size() > 0) {
+            sortClassListbyID();
             id = listLops.get(listLops.size() - 1).getId() + 1;
         }
         lop.setId(id);

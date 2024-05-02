@@ -32,6 +32,9 @@
 ![Image alt text](images/QLMHmd.png)
   - Quản lý thông tin của các môn học ( bao gồm việc sắp xếp, thêm, xóa, chỉnh sửa, tìm kiếm thông tin môn học)
 
+#### Quản lý kỳ thi
+![Image alt text](images/QLKTmd.png)
+  - Quản lý thông tin của các kỳ thi ( bao gồm việc sắp xếp , thêm , xóa, chỉnh sửa, tìm kiếm thông tin các kỳ thi)
 
 #### Quản lý lớp học
 
@@ -54,7 +57,6 @@
 
 
 #### Quản lý cán bộ
-![Image alt text](images/QLCB1md.png)
 ![Image alt text](images/QLCB2md.png)
   - Quản lý thông tin của toàn bộ cán bộ ( lãnh đạo và giảng viên ) của trung tâm ( bao gồm việc sắp xếp, thêm, xóa, chỉnh sửa, tìm kiếm thông tin cán bộ)
 
