@@ -6,6 +6,9 @@
    - Có sự liên kết cơ sở dữ liệu trong phần mềm. Mặc dù còn nhiều khó khăn do sử dụng CSDL file .xml, nhóm phát triển đã cố gắng tạo ra các sự liên kết giữa các CSDL với nhau, tạo nên sự đồng bộ cao giữa các chức năng của phần mềm.
    - Có hỗ trợ Tìm kiếm theo nhiều tiêu chí giúp dễ dàng tìm kiếm với nhiều thuộc tính khác nhau.
    - Phần đăng nhập có hỗ trợ Lưu mật khẩu để dễ dàng bỏ qua bước nhập mật khẩu khi đăng nhập.
+### Nhược điểm
+   - Do không sử dụng hệ CSDL như MySQL nên phần mềm chưa cho phép tạo/thay đổi tài khoản đăng nhập hệ thống cũng như phân quyền truy cập.
+   - Do chưa có điều kiện tiếp xúc trực tiếp với thực tế công việc ở các trung tâm ngoại ngữ nên các chức năng vẫn mang tính demo là chính.
 
 ## Hướng dẫn sử dụng
 
@@ -68,7 +71,7 @@
 
 ## Cấu trúc file đóng gói
 - File đóng gọi dạng file zip, có thể tìm tháy ở phần Releases
-- File đóng gói bao gồm 1 file chương trình .jar, 1 folder /conf chứa các file tĩnh, các file data .xml
+- File đóng gói bao gồm 1 file chương trình .jar, 1 folder `conf/` chứa các file tĩnh, các file data .xml
 - Lưu ý: Giải nén file đóng gói trước khi sử dụng
 
 ## Yêu cầu Hệ thống
