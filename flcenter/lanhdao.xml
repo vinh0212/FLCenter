@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <lanhdaos>
     <lanhdao>
-<<<<<<< Updated upstream
         <Id>2</Id>
         <Name>Lê Thành Đạt</Name>
         <Date>16/06/1965</Date>
@@ -18,14 +17,5 @@
         <Address>Bình Phước</Address>
         <Capbacham>Thiếu tướng</Capbacham>
         <Chucvu>Phó Giám đốc</Chucvu>
-=======
-        <Id>1</Id>
-        <Name>Huhu</Name>
-        <Date>02/05/2024</Date>
-        <Sex>Nam</Sex>
-        <Address>11</Address>
-        <Capbacham>Không có</Capbacham>
-        <Chucvu>11</Chucvu>
->>>>>>> Stashed changes
     </lanhdao>
 </lanhdaos>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<<<<<<< Updated upstream
+
 <classes>
     <lop>
         <Id>1</Id>
@@ -82,6 +82,4 @@
         <idMonhocList/>
     </lop>
 </classes>
-=======
-<classes/>
->>>>>>> Stashed changes
+
