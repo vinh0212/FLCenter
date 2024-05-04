@@ -188,8 +188,8 @@ public class ExamView extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 255, 73));
-        jLabel3.setText("Giám thị");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 170, 88, -1));
+        jLabel3.setText("Mã Giám thị");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 170, 110, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 255, 73));
@@ -327,7 +327,7 @@ public class ExamView extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
 
     private String[] columnNamesExam = new String[] {
-            "ID", "Tên kỳ thi", "Thời gian", "Giám thị" };
+            "ID", "Tên kỳ thi", "Thời gian", "Mã Giám thị" };
 
     public void showListExam(List<Exam> list) {
         int size = list.size();
