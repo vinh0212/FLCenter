@@ -33,29 +33,19 @@ public class LopDAO {
         getListStudents(); // Đảm bảo rằng listStudents đã được khởi tạo
 
         // Tạo một HashMap để lưu trữ danh sách học sinh theo lớp
-        Map<String, List<Integer>> studentsByClass = new HashMap<>();
-        if (listStudents != null) {
-            for (Student s : listStudents) {
-                // Lấy danh sách học sinh của lớp hiện tại
-                List<Integer> studentsInClass = studentsByClass.get(s.getLop());
-
-                // Nếu danh sách này chưa tồn tại, tạo một danh sách mới
-                if (studentsInClass == null) {
-                    studentsInClass = new ArrayList<>();
-                    studentsByClass.put(s.getLop(), studentsInClass);
+        Map<Integer, List<Student>> studentMap = new HashMap<>();
+        for (Student s : listStudents) {
+            if (s.getLop() != null) {
+                for (int idLop : s.getLop()) {
+                    if (!studentMap.containsKey(idLop)) {
+                        studentMap.put(idLop, new ArrayList<>());
+                    }
+                    studentMap.get(idLop).add(s);
                 }
-
-                // Thêm học sinh vào danh sách
-                studentsInClass.add(s.getId());
             }
-
-            // Gán danh sách học sinh cho từng lớp
-            for (Lop lop : listLops) {
-                lop.setIdStudent(studentsByClass.get(String.valueOf(lop.getId())));
-            }
-
-            
         }
+        
+        
     }
 
     public void getListStudents() {
@@ -119,6 +109,8 @@ public class LopDAO {
             if (l.getId() == lop.getId()) {
                 l.setName(lop.getName());
                 l.setNote(lop.getNote());
+                l.setIdMonhoc(lop.getIdMonhoc());
+                
             }
         }
         sortClassListbyID();
@@ -135,22 +127,29 @@ public class LopDAO {
             }
         }
 
-        // Nếu học sinh đang thuộc một lớp và lớp đó không phải là lớp mới, loại bỏ học
-        // sinh khỏi lớp hiện tại
-        if (currentLop != null && currentLop.getId() != Integer.parseInt(student.getLop())) {
-            currentLop.getIdStudent().remove(Integer.valueOf(student.getId()));
+        // Nếu học sinh đã có lớp
+        if (currentLop != null) {
+            // Nếu học sinh chưa có lớp nào khác
+            if (student.getLop() == null || student.getLop().isEmpty()) {
+                currentLop.getIdStudent().remove(Integer.valueOf(student.getId()));
+            } else {
+                // Nếu học sinh đã có lớp khác
+                currentLop.getIdStudent().remove(Integer.valueOf(student.getId()));
+                writeListLops(listLops);
+                return;
+            }
         }
 
         // Thêm học sinh vào lớp mới
         for (Lop l : listLops) {
-            if (l.getId() == Integer.parseInt(student.getLop())) {
-                if (l.getIdStudent() == null) {
-                    l.setIdStudent(new ArrayList<>());
-                }
-                if (!l.getIdStudent().contains(student.getId())) {
+            for (int id : student.getLop()) {
+                if (l.getId() == id) {
+                    if (l.getIdStudent() == null) {
+                        l.setIdStudent(new ArrayList<>());
+                    }
                     l.getIdStudent().add(student.getId());
+                    break;
                 }
-                break;
             }
         }
         writeListLops(listLops);
@@ -247,16 +246,7 @@ public class LopDAO {
         });
     }
 
-    public void sortStudentListbyDiem() {
-        Collections.sort(listStudents, new Comparator<Student>() {
-            @Override
-            public int compare(Student s1, Student s2) {
-                return Float.compare(s1.getDiem(), s2.getDiem());
-            }
-        });
-
-    }
-
+    
     public List<Lop> getListLops() {
         return listLops;
     }

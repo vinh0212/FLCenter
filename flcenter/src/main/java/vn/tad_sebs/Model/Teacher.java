@@ -26,10 +26,10 @@ public class Teacher implements Serializable
     private String Address;
     private String Capbacham;
     
-    private String Mon;
+    private int Mon;
     private int dp;
     public Teacher(){}
-    public Teacher(int Id,String Name,String Date,String Sex,String Address, String Capbacham,String Mon, int dp)
+    public Teacher(int Id,String Name,String Date,String Sex,String Address, String Capbacham,int Mon, int dp)
     {
         super();
         this.Id=Id;
@@ -92,12 +92,12 @@ public class Teacher implements Serializable
         this.Capbacham=Capbacham;
     }
     
-    public String getMon()
+    public int getMon()
     {
         return this.Mon;
     }
     
-    public void setMon(String Mon)
+    public void setMon(int Mon)
     {
         this.Mon=Mon;
     }

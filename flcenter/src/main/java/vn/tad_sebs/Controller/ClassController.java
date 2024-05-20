@@ -6,6 +6,7 @@ import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JDialog;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -19,6 +20,7 @@ import vn.tad_sebs.Model.Lop;
 import vn.tad_sebs.Model.Student;
 import vn.tad_sebs.DAO.StudentDAO;
 import vn.tad_sebs.View.ClassView;
+import vn.tad_sebs.View.EditSubsView;
 
 public class ClassController {
 
@@ -46,14 +48,14 @@ public class ClassController {
         classView.addListTBClassSelectionListener(new ListTBClassSelectionListener());
         classView.addTabChangeListener(new TabChangeListener());
 
-        classView.addCbChonlopListener(new CbChonlopListener());
+        /*classView.addCbChonlopListener(new CbChonlopListener());
         classView.addFindStudentListener(new FindStudentButtonListener());
-        classView.addUpdateCLListener(new UpdateCLButtonListener());
-        classView.addClearCLListener(new clearCLButtonListener());
+    
         classView.addSortCLbyIDListener(new SortCLByIDButtonListener());
         classView.addSortCLbyNameListener(new SortCLByNameButtonListener());
-        classView.addSortCLbyPtsListener(new SortCLByPtsButtonListener());
-        classView.addListTBStudentSelectionListener(new ListTBStudentSelectionListener());
+        classView.addSortCLbyPtsListener(new SortCLByPtsButtonListener());*/
+        classView.addEditSubsListListener(new EditSubsListListener());
+        
 
         /*
          * classView.addCbChonlop1Listener(new CbChonlop1Listener());
@@ -76,11 +78,35 @@ public class ClassController {
 
         classView.showClassList(listLop);
         classView.showClassListinCbChonlop(listLop);
+        classView.getListMonhoc(listMonhoc);
 
         classView.setVisible(true);
 
     }
 
+    class EditSubsListListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            EditSubsView editSubsView = new EditSubsView();
+            editSubsView.getEditedList(classView.getSubsList());
+            editSubsView.getOriginalList(subjectDAO.getListSubjects());
+            editSubsView.setVisible(true);
+            editSubsView.putdata();
+            
+            editSubsView.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+            editSubsView.addDoneListener(new EditSubsView.DoneListener() {
+                @Override
+                public void onDone(List<Monhoc> list) {
+                    classView.getEditedList(list);
+                }
+            });
+
+            
+            
+
+        }
+    }
     class AddButtonListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
@@ -137,7 +163,11 @@ public class ClassController {
     class ListTBClassSelectionListener implements ListSelectionListener {
 
         public void valueChanged(ListSelectionEvent e) {
-            classView.fillLopFromSelectedRow();
+            int row = classView.getSelectedClass();
+            if (row != -1) {
+                Lop lop = lopDAO.getListLops().get(row);
+                classView.showClass(lop);
+            }
         }
     }
 
@@ -256,34 +286,16 @@ public class ClassController {
         }
     }
 
-    class ListTBStudentSelectionListener implements ListSelectionListener {
-
-        public void valueChanged(ListSelectionEvent e) {
-            classView.fillStudentFromSelectedRow();
-
-        }
-    }
+    
 
     class UpdateCLButtonListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            Student student = classView.getStudentInfo();
-
-            if (student != null) {
-                studentDAO.editB(student);
-                dothesamething();
-                classView.clearStudentInfo();
-                classView.showMessage("Sửa thông tin học sinh thành công!");
-            }
+            
         }
     }
 
-    class clearCLButtonListener implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-            classView.clearStudentInfo();
-        }
-    }
+    
 
     public void dothesamething() {
         int value = classView.getClassChoice();
@@ -317,8 +329,8 @@ public class ClassController {
     class SortCLByPtsButtonListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            studentDAO.sortListStudentsByDiem();
-            dothesamething();
+            
+            
         }
     }
 

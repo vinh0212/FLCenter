@@ -7,7 +7,7 @@
         <Sex>Nam</Sex>
         <Address>An Giang</Address>
         <Capbacham>Thiếu tá</Capbacham>
-        <Mon>Writing</Mon>
+        <Mon>5</Mon>
         <dp>4</dp>
     </teacher>
     <teacher>
@@ -17,7 +17,7 @@
         <Sex>Nam</Sex>
         <Address>Hà Nội</Address>
         <Capbacham>Thượng uý</Capbacham>
-        <Mon>Listening</Mon>
+        <Mon>3</Mon>
         <dp>3</dp>
     </teacher>
     <teacher>
@@ -27,7 +27,7 @@
         <Sex>Nữ</Sex>
         <Address>Bạc Liêu</Address>
         <Capbacham>Thiếu tá</Capbacham>
-        <Mon>Không có</Mon>
+        <Mon>0</Mon>
         <dp>1</dp>
     </teacher>
     <teacher>
@@ -37,7 +37,7 @@
         <Sex>Nam</Sex>
         <Address>Cần Thơ</Address>
         <Capbacham>Thiếu tá</Capbacham>
-        <Mon>Không có</Mon>
+        <Mon>0</Mon>
         <dp>1</dp>
     </teacher>
     <teacher>
@@ -47,7 +47,7 @@
         <Sex>Nam</Sex>
         <Address>Đồng Tháp</Address>
         <Capbacham>Thiếu tá</Capbacham>
-        <Mon>Không có</Mon>
+        <Mon>0</Mon>
         <dp>1</dp>
     </teacher>
     <teacher>
@@ -57,7 +57,7 @@
         <Sex>Nam</Sex>
         <Address>An Giang</Address>
         <Capbacham>Trung tá</Capbacham>
-        <Mon>Không có</Mon>
+        <Mon>0</Mon>
         <dp>2</dp>
     </teacher>
     <teacher>
@@ -67,7 +67,7 @@
         <Sex>Nam</Sex>
         <Address>Kiên Giang</Address>
         <Capbacham>Trung tá</Capbacham>
-        <Mon>Không có</Mon>
+        <Mon>0</Mon>
         <dp>2</dp>
     </teacher>
     <teacher>
@@ -77,7 +77,7 @@
         <Sex>Nam</Sex>
         <Address>Đồng Tháp</Address>
         <Capbacham>Trung tá</Capbacham>
-        <Mon>Không có</Mon>
+        <Mon>0</Mon>
         <dp>2</dp>
     </teacher>
     <teacher>
@@ -87,7 +87,7 @@
         <Sex>Nữ</Sex>
         <Address>Cà Mau</Address>
         <Capbacham>Thượng uý</Capbacham>
-        <Mon>Writing</Mon>
+        <Mon>2</Mon>
         <dp>3</dp>
     </teacher>
     <teacher>
@@ -97,7 +97,7 @@
         <Sex>Nam</Sex>
         <Address>Tiền Giang</Address>
         <Capbacham>Thượng uý</Capbacham>
-        <Mon>Reading</Mon>
+        <Mon>1</Mon>
         <dp>3</dp>
     </teacher>
     <teacher>
@@ -107,7 +107,7 @@
         <Sex>Nữ</Sex>
         <Address>An Giang</Address>
         <Capbacham>Thượng uý</Capbacham>
-        <Mon>Writing</Mon>
+        <Mon>2</Mon>
         <dp>3</dp>
     </teacher>
     <teacher>
@@ -117,7 +117,7 @@
         <Sex>Nam</Sex>
         <Address>Đà Nẵng</Address>
         <Capbacham>Thiếu tá</Capbacham>
-        <Mon>Listening</Mon>
+        <Mon>6</Mon>
         <dp>4</dp>
     </teacher>
     <teacher>
@@ -127,7 +127,7 @@
         <Sex>Nam</Sex>
         <Address>Quảng Ninh</Address>
         <Capbacham>Thiếu tá</Capbacham>
-        <Mon>Reading</Mon>
+        <Mon>4</Mon>
         <dp>4</dp>
     </teacher>
     <teacher>
@@ -137,7 +137,7 @@
         <Sex>Nam</Sex>
         <Address>Quảng Trị</Address>
         <Capbacham>Không có</Capbacham>
-        <Mon>Không có</Mon>
+        <Mon>0</Mon>
         <dp>5</dp>
     </teacher>
     <teacher>
@@ -147,8 +147,7 @@
         <Sex>Nam</Sex>
         <Address>Tuyên Quang</Address>
         <Capbacham>Không có</Capbacham>
-        <Mon>Không có</Mon>
+        <Mon>0</Mon>
         <dp>5</dp>
     </teacher>
 </teachers>
-

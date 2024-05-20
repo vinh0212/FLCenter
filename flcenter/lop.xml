@@ -1,85 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
 <classes>
     <lop>
         <Id>1</Id>
         <Name>AT2</Name>
         <Note></Note>
-        <idStudentList>
-            <idStudent>2</idStudent>
-            <idStudent>3</idStudent>
-            <idStudent>12</idStudent>
-            <idStudent>13</idStudent>
-            <idStudent>22</idStudent>
-            <idStudent>32</idStudent>
-            <idStudent>33</idStudent>
-        </idStudentList>
+        <idStudentList/>
         <idMonhocList/>
     </lop>
     <lop>
         <Id>2</Id>
         <Name>AT1</Name>
         <Note></Note>
-        <idStudentList>
-            <idStudent>1</idStudent>
-            <idStudent>5</idStudent>
-            <idStudent>11</idStudent>
-            <idStudent>15</idStudent>
-            <idStudent>21</idStudent>
-            <idStudent>25</idStudent>
-            <idStudent>31</idStudent>
-            <idStudent>35</idStudent>
-        </idStudentList>
+        <idStudentList/>
         <idMonhocList/>
     </lop>
     <lop>
         <Id>3</Id>
         <Name>UT1</Name>
         <Note></Note>
-        <idStudentList>
-            <idStudent>7</idStudent>
-            <idStudent>10</idStudent>
-            <idStudent>17</idStudent>
-            <idStudent>20</idStudent>
-            <idStudent>27</idStudent>
-            <idStudent>37</idStudent>
-            <idStudent>40</idStudent>
-        </idStudentList>
+        <idStudentList/>
         <idMonhocList/>
     </lop>
     <lop>
         <Id>4</Id>
         <Name>CT1</Name>
         <Note></Note>
-        <idStudentList>
-            <idStudent>4</idStudent>
-            <idStudent>6</idStudent>
-            <idStudent>14</idStudent>
-            <idStudent>16</idStudent>
-            <idStudent>23</idStudent>
-            <idStudent>24</idStudent>
-            <idStudent>26</idStudent>
-            <idStudent>34</idStudent>
-            <idStudent>36</idStudent>
-        </idStudentList>
+        <idStudentList/>
         <idMonhocList/>
     </lop>
     <lop>
         <Id>5</Id>
         <Name>HT</Name>
         <Note></Note>
+        <idStudentList/>
+        <idMonhocList>
+            <idMonhoc>1</idMonhoc>
+            <idMonhoc>3</idMonhoc>
+        </idMonhocList>
+    </lop>
+    <lop>
+        <Id>6</Id>
+        <Name>Again</Name>
+        <Note></Note>
         <idStudentList>
-            <idStudent>8</idStudent>
-            <idStudent>9</idStudent>
-            <idStudent>18</idStudent>
-            <idStudent>19</idStudent>
-            <idStudent>28</idStudent>
-            <idStudent>29</idStudent>
-            <idStudent>30</idStudent>
-            <idStudent>38</idStudent>
-            <idStudent>39</idStudent>
+            <idStudent>1</idStudent>
         </idStudentList>
-        <idMonhocList/>
+        <idMonhocList>
+            <idMonhoc>1</idMonhoc>
+            <idMonhoc>2</idMonhoc>
+            <idMonhoc>6</idMonhoc>
+        </idMonhocList>
     </lop>
 </classes>
-

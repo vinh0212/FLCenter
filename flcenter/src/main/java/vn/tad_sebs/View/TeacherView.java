@@ -772,7 +772,16 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
             FAddressSearchGV.setText(GVtable.getModel().getValueAt(row, 4).toString());
             FLevelSearchGV.setSelectedItem(GVtable.getModel().getValueAt(row, 5).toString());
             cbDpEdit.setSelectedIndex(Integer.parseInt(GVtable.getModel().getValueAt(row, 7).toString())-1);
-            FRoleSearchGV.setSelectedItem(GVtable.getModel().getValueAt(row, 6).toString());
+            String id = GVtable.getModel().getValueAt(row, 6).toString();
+            // set selected item for FRoleSearchGV ("id - name")
+            for (int i = 0; i < FRoleSearchGV.getItemCount(); i++) {
+                if (FRoleSearchGV.getItemAt(i).toString().startsWith(id)) {
+                    FRoleSearchGV.setSelectedIndex(i);
+                    break;
+                }
+                else FRoleSearchGV.setSelectedIndex(0);
+            }
+            
             
             // enable Edit and Delete buttons
             btnEditGV.setEnabled(true);
@@ -804,7 +813,13 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
             CbFGV.setSelected(true);
         FAddressSearchGV.setText(teacher.getAddress());
         FLevelSearchGV.setSelectedItem(teacher.getCapbacham());
-        FRoleSearchGV.setSelectedItem(teacher.getMon());
+        for (int i = 0; i < FRoleSearchGV.getItemCount(); i++) {
+            if (FRoleSearchGV.getItemAt(i).toString().startsWith(String.valueOf(teacher.getMon()))) {
+                FRoleSearchGV.setSelectedIndex(i);
+                break;
+            }
+            else FRoleSearchGV.setSelectedIndex(0);
+        }
         
         cbDpEdit.setSelectedIndex(teacher.getDp()-1);
         //enable Delete and edit button
@@ -885,7 +900,11 @@ ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.p
                 teacher.setSex("Nữ");
             teacher.setAddress(FAddressSearchGV.getText());
             teacher.setCapbacham(FLevelSearchGV.getSelectedItem().toString());
-            teacher.setMon(FRoleSearchGV.getSelectedItem().toString());
+            //substring id and name of FRoleSearchGV, then add the id
+            String role = FRoleSearchGV.getSelectedItem().toString().split(" - ")[0];
+            if (role == "Không có") teacher.setMon(0);
+            else teacher.setMon(Integer.parseInt(role));
+            
             
             teacher.setDp(cbDpEdit.getSelectedIndex() + 1);
             return teacher;

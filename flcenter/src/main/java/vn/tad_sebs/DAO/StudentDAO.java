@@ -57,7 +57,9 @@ public class StudentDAO {
                     s.setGioitinh(student.getGioitinh());
                     s.setAddress(student.getAddress());
                     s.setLop(student.getLop());
-                    s.setDiem(student.getDiem());
+                    s.setCourseTeacherMap(student.getCourseTeacherMap());
+                    
+
                     break;
                 }
                 
@@ -69,20 +71,7 @@ public class StudentDAO {
         }
     }
 
-    public void editB(Student student) {
-        try {
-            for (Student s : listStudents) {
-                if (s.getId() == student.getId()) {
-                    s.setDiem(student.getDiem());
-                    break;
-                }
-            }
-            sortListStudentsByID();
-            writeListStudents(listStudents);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    
 
     public boolean delete(Student student) {
         boolean isFound = false;
@@ -120,16 +109,7 @@ public class StudentDAO {
         });
     }
 
-    public void sortListStudentsByDiem() {
-        Collections.sort(listStudents, new Comparator<Student>() {
-            @Override
-            public int compare(Student s1, Student s2) {
-                if (s1.getDiem() >= s2.getDiem())
-                    return 1;
-                return -1;
-            }
-        });
-    }
+    
 
     public List<Student> getListStudents() {
         return listStudents;

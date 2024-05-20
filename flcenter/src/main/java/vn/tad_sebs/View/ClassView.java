@@ -22,6 +22,7 @@ import java.awt.*;
 
 import vn.tad_sebs.Controller.MainController;
 import vn.tad_sebs.Model.Lop;
+import vn.tad_sebs.Model.Monhoc;
 import vn.tad_sebs.Model.Student;
 import vn.tad_sebs.View.ClassStat;
 
@@ -61,7 +62,8 @@ public class ClassView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -72,6 +74,10 @@ public class ClassView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        btnEditSubsList = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tbSubsList = new javax.swing.JTable();
         txtIDClass = new javax.swing.JTextField();
         txtNameClass = new javax.swing.JTextField();
         txtSLClass = new javax.swing.JTextField();
@@ -86,6 +92,7 @@ public class ClassView extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         btnStatNum = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbListStudents = new javax.swing.JTable();
@@ -93,19 +100,12 @@ public class ClassView extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         cbChonlop = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        txtID1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        txtPoint = new javax.swing.JTextField();
-        btnUpdateCL = new javax.swing.JButton();
-        btnClearCL = new javax.swing.JButton();
         btnSortbyIDCL = new javax.swing.JButton();
         btnSortbyNameCL = new javax.swing.JButton();
         btnSortbyPtsCL = new javax.swing.JButton();
         cbFind = new javax.swing.JComboBox<>();
         txtFind = new javax.swing.JTextField();
         btnFind = new javax.swing.JButton();
-        btnStat = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -118,25 +118,26 @@ public class ClassView extends javax.swing.JFrame {
 
         tbClassList.setBackground(new java.awt.Color(102, 204, 255));
         tbClassList.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
+            new Object [][] {
 
-                },
-                new String[] {
-                        "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
-                }) {
-            Class[] types = new Class[] {
-                    java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            },
+            new String [] {
+                "ID", "Tên lớp", "Số lượng học viên", "Ghi chú"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
-            boolean[] canEdit = new boolean[] {
-                    false, false, false, false
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
+                return types [columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
+                return canEdit [columnIndex];
             }
         });
         tbClassList.setShowGrid(false);
@@ -148,71 +149,95 @@ public class ClassView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 255, 73));
         jLabel1.setText("ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 20, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 255, 73));
         jLabel2.setText("Số lượng học viên");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 150, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 255, 73));
-        jLabel3.setText("Ghi chú");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 190, -1, -1));
+        jLabel3.setText("Danh sách môn học");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 100, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 255, 73));
-        jLabel4.setText("Tên lớp");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 110, -1, -1));
+        jLabel4.setText("Tên khoá");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 255, 73));
+        jLabel8.setText("Ghi chú");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 290, -1, -1));
+
+        btnEditSubsList.setText("Sửa danh sách");
+        
+        jPanel1.add(btnEditSubsList, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 140, -1, -1));
+
+        tbSubsList.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(tbSubsList);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 100, 250, 160));
 
         txtIDClass.setEnabled(false);
-        jPanel1.add(txtIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 60, 170, -1));
+        jPanel1.add(txtIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 80, -1));
 
         txtNameClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameClassActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNameClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 110, 170, -1));
+        jPanel1.add(txtNameClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 60, 350, -1));
 
         txtSLClass.setEnabled(false);
-        jPanel1.add(txtSLClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 150, 170, -1));
+        jPanel1.add(txtSLClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, 80, -1));
 
         txtNoteClass.setColumns(20);
         txtNoteClass.setRows(5);
         jScrollPane2.setViewportView(txtNoteClass);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 190, 290, 120));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 290, 350, 120));
 
         btnAddClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnAddClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
         btnAddClass.setText("Thêm");
-        jPanel1.add(btnAddClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 320, -1, -1));
+        jPanel1.add(btnAddClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 420, -1, -1));
 
         btnEditClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnEditClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
         btnEditClass.setText("Chỉnh Sửa");
-        jPanel1.add(btnEditClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 320, -1, -1));
+        jPanel1.add(btnEditClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 420, -1, -1));
 
         btnDeleteClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnDeleteClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Delete.png"))); // NOI18N
         btnDeleteClass.setText("Xoá");
-        jPanel1.add(btnDeleteClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 320, -1, -1));
+        jPanel1.add(btnDeleteClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 420, -1, -1));
 
         btnClearClass.setFont(new java.awt.Font("VnTimes", 1, 14)); // NOI18N
         btnClearClass.setText("C");
-        jPanel1.add(btnClearClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 320, -1, -1));
+        jPanel1.add(btnClearClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 420, -1, -1));
 
         btnSortbyIDClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyIDClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyIDClass.setText("Sắp xếp theo ID");
-        jPanel1.add(btnSortbyIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 380, 170, 70));
+        jPanel1.add(btnSortbyIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 470, 170, 70));
 
         btnSortbySLClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbySLClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbySLClass.setText("Sắp xếp theo Số lượng học viên");
-        jPanel1.add(btnSortbySLClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 380, 250, 70));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 360, 510, 14));
+        jPanel1.add(btnSortbySLClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 470, 250, 70));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 460, 510, 14));
 
         btnStatNum.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnStatNum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/chart.png"))); // NOI18N
@@ -222,40 +247,44 @@ public class ClassView extends javax.swing.JFrame {
                 btnStatNumActionPerformed(evt);
             }
         });
-        jPanel1.add(btnStatNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 510, 440, 60));
+        jPanel1.add(btnStatNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 560, 440, 60));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLLH2.png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1370, 660));
 
-        jTabbedPane1.addTab("Danh sách lớp học", jPanel1);
+        jLabel12.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLKT2.png"))); // NOI18N
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 1340, 630));
+
+        jTabbedPane1.addTab("Danh sách khoá học", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tbListStudents.setBackground(new java.awt.Color(102, 204, 255));
         tbListStudents.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null, null },
-                        { null, null, null, null, null },
-                        { null, null, null, null, null },
-                        { null, null, null, null, null }
-                },
-                new String[] {
-                        "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
-                }) {
-            Class[] types = new Class[] {
-                    java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
-                    java.lang.Float.class
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
             };
-            boolean[] canEdit = new boolean[] {
-                    false, false, false, false, false
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
+                return types [columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
+                return canEdit [columnIndex];
             }
         });
         jScrollPane3.setViewportView(tbListStudents);
@@ -275,35 +304,6 @@ public class ClassView extends javax.swing.JFrame {
             }
         });
         jPanel2.add(cbChonlop, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 18, 386, 34));
-
-        jLabel6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 255, 73));
-        jLabel6.setText("ID");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 150, -1, -1));
-
-        txtID1.setEnabled(false);
-        jPanel2.add(txtID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 150, 96, -1));
-
-        jLabel7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 255, 73));
-        jLabel7.setText("Nhập điểm");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 190, -1, -1));
-
-        txtPoint.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPointActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtPoint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 190, 280, -1));
-
-        btnUpdateCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnUpdateCL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
-        btnUpdateCL.setText("Xác nhận");
-        jPanel2.add(btnUpdateCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 230, -1, 30));
-
-        btnClearCL.setFont(new java.awt.Font("VnTimes", 1, 14)); // NOI18N
-        btnClearCL.setText("C");
-        jPanel2.add(btnClearCL, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 230, -1, -1));
 
         btnSortbyIDCL.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyIDCL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
@@ -345,38 +345,34 @@ public class ClassView extends javax.swing.JFrame {
         btnFind.setText("Tìm kiếm");
         jPanel2.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(1243, 100, -1, -1));
 
-        btnStat.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnStat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/chart.png"))); // NOI18N
-        btnStat.setText("Thống kê điểm số");
-        btnStat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStatActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnStat, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 230, 200, -1));
-
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLLH2.png"))); // NOI18N
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1370, 660));
 
-        jTabbedPane1.addTab("Quản lý học viên từng lớp", jPanel2);
+        jTabbedPane1.addTab("Quản lý học viên từng khoá", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jTabbedPane1)
-                                .addContainerGap()));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jTabbedPane1)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1))
+        );
 
         setSize(new java.awt.Dimension(1380, 701));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_jButton1ActionPerformed
 
     private void btnStatNumActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnStatNumActionPerformed
         ClassStat classStat = new ClassStat();
@@ -462,13 +458,7 @@ public class ClassView extends javax.swing.JFrame {
         btnFind.addActionListener(listener);
     }
 
-    public void addUpdateCLListener(ActionListener listener) {
-        btnUpdateCL.addActionListener(listener);
-    }
-
-    public void addClearCLListener(ActionListener listener) {
-        btnClearCL.addActionListener(listener);
-    }
+    
 
     public void addSortCLbyIDListener(ActionListener listener) {
         btnSortbyIDCL.addActionListener(listener);
@@ -492,6 +482,10 @@ public class ClassView extends javax.swing.JFrame {
 
     public void addTabChangeListener(ChangeListener listener) {
         jTabbedPane1.addChangeListener(listener);
+    }
+
+    public void addEditSubsListListener(ActionListener listener) {
+        btnEditSubsList.addActionListener(listener);
     }
 
     private String[] columnNamesClassList = new String[] {
@@ -521,7 +515,7 @@ public class ClassView extends javax.swing.JFrame {
     }
 
     private String[] columnNamesStudentList = new String[] {
-            "ID", "Họ và tên", "Giới tính", "Quê quán", "Điểm số"
+            "ID", "Họ và tên", "Giới tính", "Quê quán"
     };
 
     public Lop getLopInfo() {
@@ -540,6 +534,18 @@ public class ClassView extends javax.swing.JFrame {
                 lop.setIdStudent(new ArrayList<>());
                 lop.setIdMonhoc(new ArrayList<>());
             }
+            
+
+            //get tbSubsList the ID of subject to idMonhoc
+
+            DefaultTableModel model = (DefaultTableModel) tbSubsList.getModel();
+            int size = model.getRowCount();
+            List<Integer> idMonhoc = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                idMonhoc.add((Integer) model.getValueAt(i, 0));
+            }
+            lop.setIdMonhoc(idMonhoc);
+
 
             return lop;
         } catch (Exception ex) {
@@ -573,25 +579,7 @@ public class ClassView extends javax.swing.JFrame {
         return true;
     }
 
-    public Student getStudentInfo() {
-        try {
-            Student student = new Student();
-
-            student.setId(Integer.parseInt(txtID1.getText()));
-
-            student.setDiem(Float.parseFloat(txtPoint.getText()));
-            student.setName("");
-            student.setGioitinh("");
-            student.setAddress("");
-
-            student.setLop(String.valueOf(getClassChoice()));
-            student.setDate("");
-            return student;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return null;
-    }
+    
 
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
@@ -613,39 +601,59 @@ public class ClassView extends javax.swing.JFrame {
 
     ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
 
-    public void clearStudentInfo() {
-        txtID1.setText("");
-        txtPoint.setText("");
-        // disable Edit and Delete buttons
-        btnUpdateCL.setEnabled(false);
+    private String[] columnNamesSubsList = new String[] {
+        "ID", "Tên môn", "Khoa"
+};
 
-        tbListStudents.clearSelection();
+    private List<Monhoc> listMonhoc;
+
+    public void getListMonhoc(List<Monhoc> monhocs)
+    {   
+        listMonhoc = monhocs;
+    } 
+
+    public int getSelectedClass()
+    {
+        return tbClassList.getSelectedRow();
     }
+    public void showClass(Lop lop) {
 
-    public void fillLopFromSelectedRow() {
-        int row = tbClassList.getSelectedRow();
-        if (row >= 0) {
-            txtIDClass.setText(tbClassList.getValueAt(row, 0).toString());
-            txtNameClass.setText(tbClassList.getValueAt(row, 1).toString());
-            txtSLClass.setText(tbClassList.getValueAt(row, 2).toString());
-            txtNoteClass.setText(tbClassList.getValueAt(row, 3).toString());
-            // enable Edit and Delete buttons
-            btnEditClass.setEnabled(true);
-            btnDeleteClass.setEnabled(true);
-            // disable Add button
-            btnAddClass.setEnabled(false);
-
+        txtIDClass.setText(String.valueOf(lop.getId()));
+        txtNameClass.setText(lop.getName());
+        if(lop.getIdStudent() == null)
+        {
+            txtSLClass.setText("0");
         }
-    }
-
-    public void fillStudentFromSelectedRow() {
-        int row = tbListStudents.getSelectedRow();
-        if (row >= 0) {
-            txtID1.setText(tbListStudents.getValueAt(row, 0).toString());
-            txtPoint.setText(tbListStudents.getValueAt(row, 4).toString());
-
-            btnUpdateCL.setEnabled(true);
+        else {
+            txtSLClass.setText(String.valueOf(lop.getIdStudent().size()));
         }
+        
+        txtNoteClass.setText(lop.getNote());
+        //get info of lop.idMonhoc() to tbSubsList
+        if(lop.getIdMonhoc() != null)
+        {
+            int size = lop.getIdMonhoc().size();
+            Object[][] data = new Object[size][3];
+            for (int i = 0; i < size; i++) {
+                for (Monhoc m : listMonhoc)
+                {
+                    if(m.getId() == lop.getIdMonhoc().get(i))
+                    {
+                        data[i][0] = m.getId();
+                        data[i][1] = m.getName();
+                        data[i][2] = m.getKhoa();
+                    }
+                }   
+            }
+            tbSubsList.setModel(new DefaultTableModel(data, columnNamesSubsList));
+        }
+        
+
+        // enable Edit and Delete buttons
+        btnEditClass.setEnabled(true);
+        btnDeleteClass.setEnabled(true);
+        // disable Add button
+        btnAddClass.setEnabled(false);
 
     }
 
@@ -655,10 +663,7 @@ public class ClassView extends javax.swing.JFrame {
 
     public void resetforTab2() {
 
-        txtID1.setText("");
-        txtPoint.setText("");
         tbListStudents.clearSelection();
-        btnUpdateCL.setEnabled(false);
 
     }
 
@@ -692,14 +697,14 @@ public class ClassView extends javax.swing.JFrame {
 
     public void showStudentList(List<Student> listStudents) {
         int size = listStudents.size();
-        Object[][] data = new Object[size][5];
+        Object[][] data = new Object[size][4];
 
         for (int i = 0; i < size; i++) {
             data[i][0] = listStudents.get(i).getId();
             data[i][1] = listStudents.get(i).getName();
             data[i][2] = listStudents.get(i).getGioitinh();
             data[i][3] = listStudents.get(i).getAddress();
-            data[i][4] = listStudents.get(i).getDiem();
+
         }
 
         tbListStudents.setModel(new DefaultTableModel(data, columnNamesStudentList));
@@ -787,57 +792,79 @@ public class ClassView extends javax.swing.JFrame {
         return cbFind.getSelectedIndex();
     }
 
-    public int getStudentID() {
-        return Integer.parseInt(txtID1.getText());
-    }
-
     public int getLopID() {
         return Integer.parseInt(txtIDClass.getText());
     }
 
+    public List<Monhoc> getSubsList()
+    {
+        List<Monhoc> list = new ArrayList<>();
+        DefaultTableModel model = (DefaultTableModel) tbSubsList.getModel();
+        int size = model.getRowCount();
+        for (int i = 0; i < size; i++) {
+            int id = (Integer) model.getValueAt(i, 0);
+            for (Monhoc m : listMonhoc)
+            {
+                if(m.getId() == id)
+                {
+                    list.add(m);
+                }
+            }
+        }
+        return list;
+    }
+
+    public void getEditedList(List<Monhoc> listMonhoc)
+    {
+        DefaultTableModel model = (DefaultTableModel) tbSubsList.getModel();
+        model.setRowCount(0);
+        for (Monhoc m : listMonhoc)
+        {
+            model.addRow(new Object[] {m.getId(), m.getName(), m.getKhoa()});
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddClass;
-    private javax.swing.JButton btnClearCL;
     private javax.swing.JButton btnClearClass;
     private javax.swing.JButton btnDeleteClass;
     private javax.swing.JButton btnEditClass;
+    private javax.swing.JButton btnEditSubsList;
     private javax.swing.JButton btnFind;
     private javax.swing.JButton btnSortbyIDCL;
     private javax.swing.JButton btnSortbyIDClass;
     private javax.swing.JButton btnSortbyNameCL;
     private javax.swing.JButton btnSortbyPtsCL;
     private javax.swing.JButton btnSortbySLClass;
-    private javax.swing.JButton btnStat;
     private javax.swing.JButton btnStatNum;
-    private javax.swing.JButton btnUpdateCL;
     private javax.swing.JComboBox<String> cbChonlop;
     private javax.swing.JComboBox<String> cbFind;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tbClassList;
     private javax.swing.JTable tbListStudents;
+    private javax.swing.JTable tbSubsList;
     private javax.swing.JTextField txtFind;
-    private javax.swing.JTextField txtID1;
     private javax.swing.JTextField txtIDClass;
     private javax.swing.JTextField txtNameClass;
     private javax.swing.JTextArea txtNoteClass;
-    private javax.swing.JTextField txtPoint;
     private javax.swing.JTextField txtSLClass;
     // End of variables declaration//GEN-END:variables
 }

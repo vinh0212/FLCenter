@@ -74,7 +74,7 @@ public class TeacherController {
             {
                 if(m.getKhoa() == value)
                 {
-                    subjects.add(m.getName());
+                    subjects.add(m.getId() + " - " + m.getName());
                 }
             }
 
@@ -218,12 +218,7 @@ public class TeacherController {
                         }
                         break;
                     
-                    case "Môn giảng dạy":
-                        for (Teacher t : oldlist) {
-                            if (t.getMon().toLowerCase().contains(value.toLowerCase()))                                list.add(t);
-                                list.add(t);
-                        }
-                        break;
+                    
                     
                     default:
                         break;
