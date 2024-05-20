@@ -10,7 +10,7 @@
             <id>6</id>
         </lop>
         <courseTeacherMap>
-            <CourseTeacherEntry>
+            <entries>
                 <courseId>6</courseId>
                 <teacherMap>
                     <entry>
@@ -19,14 +19,14 @@
                     </entry>
                     <entry>
                         <idMonhoc>2</idMonhoc>
-                        <idTeacher>13</idTeacher>
+                        <idTeacher>11</idTeacher>
                     </entry>
                     <entry>
                         <idMonhoc>6</idMonhoc>
                         <idTeacher>14</idTeacher>
                     </entry>
                 </teacherMap>
-            </CourseTeacherEntry>
+            </entries>
         </courseTeacherMap>
         <courseFeeMap>
             <entry>

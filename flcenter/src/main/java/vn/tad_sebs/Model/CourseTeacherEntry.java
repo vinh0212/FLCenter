@@ -1,10 +1,12 @@
 package vn.tad_sebs.Model;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 
@@ -14,8 +16,9 @@ public class CourseTeacherEntry {
     @XmlElement(name = "courseId")
     private Integer courseId;
 
-    @XmlElement(name = "teacherMap")
-    private HashMap<Integer, Integer> teacherMap;
+    @XmlElementWrapper(name = "teacherMap")
+    @XmlElement(name = "entry")
+    private List<Entry> teacherMap;
 
     public Integer getCourseId() {
         return courseId;
@@ -25,13 +28,15 @@ public class CourseTeacherEntry {
         this.courseId = courseId;
     }
 
-    public Map<Integer, Integer> getTeacherMap() {
+    public List<Entry> getTeacherMap() {
         return teacherMap;
     }
 
-    public void setTeacherMap(HashMap<Integer, Integer> teacherMap) {
+    public void setTeacherMap(List<Entry> teacherMap) {
         this.teacherMap = teacherMap;
     }
+
+    
 
     
 

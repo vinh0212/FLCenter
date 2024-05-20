@@ -22,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 
 import vn.tad_sebs.Model.CourseFeeEntry;
 import vn.tad_sebs.Model.CourseTeacherEntry;
+import vn.tad_sebs.Model.Entry;
 import vn.tad_sebs.Model.Lop;
 import vn.tad_sebs.Model.Monhoc;
 import vn.tad_sebs.Model.Student;
@@ -363,16 +364,17 @@ public class StudentView extends javax.swing.JFrame {
         int idTeacher = Integer.parseInt(cbSelectedGV.getSelectedItem().toString().split(" - ")[0]);
         int idMonhoc = Integer.parseInt(listMonhoc.getSelectedValue().split(" - ")[0]);
         System.out.println(editingPackage);
-        // Assuming courseTeacherEntries is the new List<CourseTeacherEntry>
+        
         for (CourseTeacherEntry entry : courseTeacherMap) {
             if (entry.getCourseId() == editingPackage) {
-                entry.getTeacherMap().put(idMonhoc, idTeacher);
-                System.out.println("Updated teacher for course " + editingPackage + " and subject " + idMonhoc + " to " + idTeacher);
-                break;
+                for (Entry teacherEntry : entry.getTeacherMap()) {
+                    if (teacherEntry.getIdMonhoc() == idMonhoc) {
+                        teacherEntry.setIdTeacher(idTeacher);
+                        break;
+                    }
+                }
             }
         }
-
-        
 
     }// GEN-LAST:event_btnGVSaveActionPerformed
 
@@ -518,7 +520,7 @@ public class StudentView extends javax.swing.JFrame {
     }
 
     private List<Integer> editingLop;
-    private List<CourseTeacherEntry> courseTeacherMap;
+    private List<CourseTeacherEntry> courseTeacherMap = new ArrayList<>();
 
     public void showStudent(Student student) {
         btnPrint.setEnabled(true);
@@ -565,9 +567,9 @@ public class StudentView extends javax.swing.JFrame {
 
         //print out the courseTeacherMap
         for (CourseTeacherEntry entry : courseTeacherMap) {
-            System.out.println("Course " + entry.getCourseId());
-            for (Map.Entry<Integer, Integer> teacherEntry : entry.getTeacherMap().entrySet()) {
-                System.out.println("Subject " + teacherEntry.getKey() + " - Teacher " + teacherEntry.getValue());
+            System.out.println("Course ID: " + entry.getCourseId());
+            for (Entry teacherEntry : entry.getTeacherMap()) {
+                System.out.println("Subject ID: " + teacherEntry.getIdMonhoc() + " - Teacher ID: " + teacherEntry.getIdTeacher());
             }
         }
 
@@ -638,8 +640,18 @@ public class StudentView extends javax.swing.JFrame {
         //set selection for cbSelectedGV, searching data in courseTeacherMap
         for (CourseTeacherEntry entry : courseTeacherMap) {
             if (entry.getCourseId() == editingPackage) {
-                for (Map.Entry<Integer, Integer> teacherEntry : entry.getTeacherMap().entrySet()) {
-                    cbSelectedGV.setSelectedItem(teacherEntry.getKey() + " - " + teacherEntry.getValue());
+                for (Entry teacherEntry : entry.getTeacherMap()) {
+                    if (teacherEntry.getIdMonhoc() == getSelectedSubject()) {
+                        String teacherName = "";
+                        for (Teacher teacher : teachersList) {
+                            if (teacher.getId() == teacherEntry.getIdTeacher()) {
+                                teacherName = teacher.getName();
+                                break;
+                            }
+                        }
+                        cbSelectedGV.setSelectedItem(teacherEntry.getIdTeacher() + " - " + teacherName);
+                        break;
+                    }
                 }
             }
         }

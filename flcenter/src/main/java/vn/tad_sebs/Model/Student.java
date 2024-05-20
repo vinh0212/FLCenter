@@ -28,7 +28,7 @@ public class Student implements Serializable {
     private List<Integer> lop;
 
     @XmlElementWrapper(name = "courseTeacherMap")
-    @XmlElement(name = "entry")
+    @XmlElement(name = "entries")
     private List<CourseTeacherEntry> courseTeacherMap;
 
     @XmlElementWrapper(name = "courseFeeMap")
