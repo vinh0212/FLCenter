@@ -262,6 +262,12 @@ public class MainView extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLMH.png"))); // NOI18N
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 210, 90));
+
+        QLHV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QLHVActionPerformed(evt);
+            }
+        });
         getContentPane().add(QLHV, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 210, 90));
         getContentPane().add(QLLH, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 210, 90));
         getContentPane().add(QLCBGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 210, 90));
@@ -327,6 +333,10 @@ public class MainView extends javax.swing.JFrame {
     private void OpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenActionPerformed
         openWebpage("https://github.com/vinh0212/FLCenter");
     }//GEN-LAST:event_OpenActionPerformed
+
+    private void QLHVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QLHVActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_QLHVActionPerformed
 ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
 
     public void addQLHVListener(ActionListener listener) {      
