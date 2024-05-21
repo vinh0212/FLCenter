@@ -110,7 +110,8 @@ public class LopDAO {
                 l.setName(lop.getName());
                 l.setNote(lop.getNote());
                 l.setIdMonhoc(lop.getIdMonhoc());
-                
+                l.setPrice(lop.getPrice());
+                l.setLength(lop.getLength());
             }
         }
         sortClassListbyID();
@@ -118,47 +119,52 @@ public class LopDAO {
     }
 
     public void addStudent(Student student) {
-        // Tìm lớp hiện tại của học sinh
-        Lop currentLop = null;
-        for (Lop l : listLops) {
-            if (l.getIdStudent() != null && l.getIdStudent().contains(student.getId())) {
-                currentLop = l;
-                break;
-            }
-        }
-
-        // Nếu học sinh đã có lớp
-        if (currentLop != null) {
-            // Nếu học sinh chưa có lớp nào khác
-            if (student.getLop() == null || student.getLop().isEmpty()) {
-                currentLop.getIdStudent().remove(Integer.valueOf(student.getId()));
-            } else {
-                // Nếu học sinh đã có lớp khác
-                currentLop.getIdStudent().remove(Integer.valueOf(student.getId()));
-                writeListLops(listLops);
-                return;
-            }
-        }
-
-        // Thêm học sinh vào lớp mới
-        for (Lop l : listLops) {
-            for (int id : student.getLop()) {
-                if (l.getId() == id) {
+        for (Integer sl : student.getLop()) {
+            for (Lop l : listLops) {
+                if (l.getId() == sl) {
                     if (l.getIdStudent() == null) {
                         l.setIdStudent(new ArrayList<>());
                     }
                     l.getIdStudent().add(student.getId());
-                    break;
                 }
             }
         }
         writeListLops(listLops);
     }
 
+    public void editStudent(Student student)
+    {
+        // Xóa học sinh khỏi lớp cũ
+        for (Integer sl : student.getLop()) {
+            for (Lop l : listLops) {
+                if (l.getId() == sl) {
+                    l.getIdStudent().remove(Integer.valueOf(student.getId()));
+                }
+            }
+        }
+
+        // Thêm học sinh vào lớp mới
+        for (Integer sl : student.getLop()) {
+            for (Lop l : listLops) {
+                if (l.getId() == sl) {
+                    if (l.getIdStudent() == null) {
+                        l.setIdStudent(new ArrayList<>());
+                    }
+                    l.getIdStudent().add(student.getId());
+                }
+            }
+        }
+
+        writeListLops(listLops);
+
+    }
+
     public void deleteStudent(Student student) {
-        for (Lop l : listLops) {
-            if (l.getIdStudent() != null && l.getIdStudent().contains(student.getId())) {
-                l.getIdStudent().remove(Integer.valueOf(student.getId()));
+        for (Integer sl : student.getLop()) {
+            for (Lop l : listLops) {
+                if (l.getId() == sl) {
+                    l.getIdStudent().remove(Integer.valueOf(student.getId()));
+                }
             }
         }
         writeListLops(listLops);

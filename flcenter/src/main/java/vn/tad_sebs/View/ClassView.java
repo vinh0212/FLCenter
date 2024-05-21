@@ -74,7 +74,11 @@ public class ClassView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        txtPrice = new javax.swing.JTextField();
+        cbLength = new javax.swing.JComboBox<>();
         btnEditSubsList = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         tbSubsList = new javax.swing.JTable();
@@ -144,36 +148,50 @@ public class ClassView extends javax.swing.JFrame {
         tbClassList.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(tbClassList);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 18, 820, 590));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 18, 600, 590));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 255, 73));
         jLabel1.setText("ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 255, 73));
         jLabel2.setText("Số lượng học viên");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 20, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 255, 73));
-        jLabel3.setText("Danh sách môn học");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 100, -1, -1));
+        jLabel3.setText("Thời gian");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 100, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 255, 73));
         jLabel4.setText("Tên khoá");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 255, 73));
+        jLabel6.setText("Giá");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 170, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 255, 73));
+        jLabel7.setText("Danh sách môn học");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 255, 73));
         jLabel8.setText("Ghi chú");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 290, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, -1, -1));
+        jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 220, 220, -1));
+
+        cbLength.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 tháng", "2 tháng", "3 tháng", "6 tháng", "1 năm" }));
+        jPanel1.add(cbLength, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 130, 220, -1));
 
         btnEditSubsList.setText("Sửa danh sách");
         
-        jPanel1.add(btnEditSubsList, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 140, -1, -1));
+        jPanel1.add(btnEditSubsList, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, -1, -1));
 
         tbSubsList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -188,17 +206,17 @@ public class ClassView extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tbSubsList);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 100, 250, 160));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 100, 250, 160));
 
         txtIDClass.setEnabled(false);
-        jPanel1.add(txtIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 80, -1));
+        jPanel1.add(txtIDClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 80, -1));
 
         txtNameClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameClassActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNameClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 60, 350, -1));
+        jPanel1.add(txtNameClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, 570, -1));
 
         txtSLClass.setEnabled(false);
         jPanel1.add(txtSLClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, 80, -1));
@@ -207,7 +225,7 @@ public class ClassView extends javax.swing.JFrame {
         txtNoteClass.setRows(5);
         jScrollPane2.setViewportView(txtNoteClass);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 290, 350, 120));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 290, 570, 120));
 
         btnAddClass.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnAddClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
@@ -546,6 +564,9 @@ public class ClassView extends javax.swing.JFrame {
             }
             lop.setIdMonhoc(idMonhoc);
 
+            lop.setPrice(Float.parseFloat(txtPrice.getText()));
+            lop.setLength(cbLength.getSelectedItem().toString());
+
 
             return lop;
         } catch (Exception ex) {
@@ -647,6 +668,9 @@ public class ClassView extends javax.swing.JFrame {
             }
             tbSubsList.setModel(new DefaultTableModel(data, columnNamesSubsList));
         }
+        
+        txtPrice.setText(String.valueOf(lop.getPrice()));
+        cbLength.setSelectedItem(lop.getLength());
         
 
         // enable Edit and Delete buttons
@@ -839,6 +863,7 @@ public class ClassView extends javax.swing.JFrame {
     private javax.swing.JButton btnStatNum;
     private javax.swing.JComboBox<String> cbChonlop;
     private javax.swing.JComboBox<String> cbFind;
+    private javax.swing.JComboBox<String> cbLength;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -847,6 +872,8 @@ public class ClassView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -865,6 +892,7 @@ public class ClassView extends javax.swing.JFrame {
     private javax.swing.JTextField txtIDClass;
     private javax.swing.JTextField txtNameClass;
     private javax.swing.JTextArea txtNoteClass;
+    private javax.swing.JTextField txtPrice;
     private javax.swing.JTextField txtSLClass;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,6 +16,8 @@ public class Lop implements Serializable {
     private int Id;
     private String Name;
     private String Note;
+    private float price;
+    private String length;
     
     @XmlElementWrapper(name = "idStudentList")
     @XmlElement(name = "idStudent")
@@ -34,13 +36,15 @@ public class Lop implements Serializable {
         this.Note = "";
     }
 
-    public Lop(int Id, String Name, List<Integer> idStudent, String Note, List<Integer> idMonhoc) {
+    public Lop(int Id, String Name, List<Integer> idStudent, String Note, List<Integer> idMonhoc, float price, String length) {
         super();
         this.Id = Id;
         this.Name = Name;
         this.idStudent = idStudent;
         this.Note = Note;
         this.idMonhoc = idMonhoc;
+        this.price = price;
+        this.length = length;
     }
 
     public int getId() {
@@ -83,4 +87,19 @@ public class Lop implements Serializable {
         this.idMonhoc = idMonhoc;
     }
     
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public String getLength() {
+        return length;
+    }
+
+    public void setLength(String length) {
+        this.length = length;
+    }
 }

@@ -486,10 +486,7 @@ public class StudentView extends javax.swing.JFrame {
         return Studenttable.getSelectedRow();
     }
 
-    public int getSelectedPackage() {
-        int row = tbPackageList.getSelectedRow();
-        return (int) tbPackageList.getValueAt(row, 0);
-    }
+    
 
     private List<Lop> listLop = new ArrayList<>();
 
@@ -506,15 +503,16 @@ public class StudentView extends javax.swing.JFrame {
         listSubs = list;
     }
 
-    public void showSubjects(Lop lop) {
+    public void showSubjects(List<Entry> list) {
         DefaultListModel<String> model = new DefaultListModel<>();
-        for (int id : lop.getIdMonhoc()) {
+        for (Entry entry : list) {
             for (Monhoc monhoc : listSubs) {
-                if (monhoc.getId() == id) {
-                    model.addElement(monhoc.getId() + " - " + monhoc.getName());
+                if (monhoc.getId() == entry.getIdMonhoc()) {
+                    model.addElement(entry.getIdMonhoc() + " - " + monhoc.getName());
                     break;
                 }
             }
+            
         }
         listMonhoc.setModel(model);
     }
@@ -627,6 +625,10 @@ public class StudentView extends javax.swing.JFrame {
         return FSearchStudent.getText().trim();
     }
 
+    public int getSelectedPackage() {
+        return Integer.parseInt(tbPackageList.getValueAt(tbPackageList.getSelectedRow(), 0).toString());
+    }
+
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
@@ -657,6 +659,19 @@ public class StudentView extends javax.swing.JFrame {
         }
 
     }
+
+    public void showListMonhoc(int id)
+    {
+        editingPackage = id;
+        for (CourseTeacherEntry entry : courseTeacherMap) {
+            if (entry.getCourseId() == id) {
+                showSubjects(entry.getTeacherMap());
+                break;
+            }
+        }
+    }
+
+    
 
     public int getSelectedSubject()
     {
@@ -716,6 +731,34 @@ public class StudentView extends javax.swing.JFrame {
         }
         return null;
 
+    }
+
+    public void clearStudentInfo()
+    {
+        FIDSearchStudent.setText("");
+        FNameSearchStudent.setText("");
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+            // Chuyển đổi chuỗi thành đối tượng Date
+            Date date = dateFormat.parse("01/01/2024");
+
+            // Thiết lập ngày cho JDateChooser
+            FDateSearchStudent.setDate(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
+        chkM.setSelected(true);
+        FAddressSearchStudent.setText("");
+        DefaultTableModel model = (DefaultTableModel) tbPackageList.getModel();
+        model.setRowCount(0);
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        listMonhoc.setModel(listModel);
+        BtnEditStudent.setEnabled(false);
+        BtnDeleteStudent.setEnabled(false);
+        btnPrint.setEnabled(false);
     }
 
     private boolean validateName() {

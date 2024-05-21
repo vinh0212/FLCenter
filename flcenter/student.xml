@@ -19,7 +19,7 @@
                     </entry>
                     <entry>
                         <idMonhoc>2</idMonhoc>
-                        <idTeacher>11</idTeacher>
+                        <idTeacher>13</idTeacher>
                     </entry>
                     <entry>
                         <idMonhoc>6</idMonhoc>
@@ -29,6 +29,59 @@
             </entries>
         </courseTeacherMap>
         <courseFeeMap>
+            <entry>
+                <courseId>6</courseId>
+                <fee>false</fee>
+            </entry>
+        </courseFeeMap>
+    </student>
+    <student>
+        <id>2</id>
+        <name>Vinh</name>
+        <Date>02/12/2004</Date>
+        <Address>Bình Phước</Address>
+        <Gioitinh>Nam</Gioitinh>
+        <lop>
+            <id>5</id>
+            <id>6</id>
+        </lop>
+        <courseTeacherMap>
+            <entries>
+                <courseId>5</courseId>
+                <teacherMap>
+                    <entry>
+                        <idMonhoc>1</idMonhoc>
+                        <idTeacher>12</idTeacher>
+                    </entry>
+                    <entry>
+                        <idMonhoc>2</idMonhoc>
+                        <idTeacher>13</idTeacher>
+                    </entry>
+                </teacherMap>
+            </entries>
+            <entries>
+                <courseId>6</courseId>
+                <teacherMap>
+                    <entry>
+                        <idMonhoc>1</idMonhoc>
+                        <idTeacher>12</idTeacher>
+                    </entry>
+                    <entry>
+                        <idMonhoc>2</idMonhoc>
+                        <idTeacher>13</idTeacher>
+                    </entry>
+                    <entry>
+                        <idMonhoc>6</idMonhoc>
+                        <idTeacher>14</idTeacher>
+                    </entry>
+                </teacherMap>
+            </entries>
+        </courseTeacherMap>
+        <courseFeeMap>
+            <entry>
+                <courseId>5</courseId>
+                <fee>true</fee>
+            </entry>
             <entry>
                 <courseId>6</courseId>
                 <fee>false</fee>
