@@ -48,8 +48,8 @@ public class ClassController {
         classView.addListTBClassSelectionListener(new ListTBClassSelectionListener());
         classView.addTabChangeListener(new TabChangeListener());
 
-        /*classView.addCbChonlopListener(new CbChonlopListener());
-        classView.addFindStudentListener(new FindStudentButtonListener());
+        classView.addCbChonlopListener(new CbChonlopListener());
+        /*classView.addFindStudentListener(new FindStudentButtonListener());
     
         classView.addSortCLbyIDListener(new SortCLByIDButtonListener());
         classView.addSortCLbyNameListener(new SortCLByNameButtonListener());
@@ -227,10 +227,13 @@ public class ClassController {
             int value = classView.getClassChoice();
             listStudentInClass.clear();
             List<Student> listStudent = studentDAO.getListStudents();
-
+            //kiểm tra tất cả các lớp của từng học sinh, nếu có lớp trùng với lớp cần tìm thì giữ lại
             for (Student s : listStudent) {
-                if (s.getLop().equals(String.valueOf(value))) {
-                    listStudentInClass.add(s);
+                for (Integer l : s.getLop()) {
+                    if (l == value) {
+                        listStudentInClass.add(s);
+                        break;
+                    }
                 }
             }
             classView.showStudentList(listStudentInClass);

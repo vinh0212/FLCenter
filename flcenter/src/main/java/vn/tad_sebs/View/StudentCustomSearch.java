@@ -435,7 +435,15 @@ public class StudentCustomSearch extends javax.swing.JPanel {
                     .collect(Collectors.toList());
         }
         if (isLop) {
-            list = list.stream().filter(s -> s.getLop().contains(lop)).collect(Collectors.toList());
+            //kiểm tra tất cả các lớp của từng học sinh, nếu có lớp trùng với lớp cần tìm thì giữ lại
+            list = list.stream().filter(s -> {
+                for (Integer l : s.getLop()) {
+                    if (String.valueOf(l).equals(lop)) {
+                        return true;
+                    }
+                }
+                return false;
+            }).collect(Collectors.toList());
         }
         if (isDate) {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
