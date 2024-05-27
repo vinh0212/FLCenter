@@ -31,7 +31,6 @@ public class MainView2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DX2 = new javax.swing.JButton();
         abOut2 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
@@ -42,11 +41,14 @@ public class MainView2 extends javax.swing.JFrame {
         Open = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        DX2 = new javax.swing.JButton();
         About2 = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         DHP = new javax.swing.JButton();
+        EDIT = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         DKKH = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -55,11 +57,6 @@ public class MainView2 extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(705, 600));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        DX2.setBackground(new java.awt.Color(0, 204, 102));
-        DX2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/out.png"))); // NOI18N
-        DX2.setText("Đăng xuất");
-        getContentPane().add(DX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 530, -1, 40));
 
         abOut2.setBorder(javax.swing.BorderFactory.createTitledBorder("About"));
         abOut2.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
@@ -115,7 +112,7 @@ public class MainView2 extends javax.swing.JFrame {
                 .addGroup(abOut2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                .addGap(87, 87, 87))
         );
         abOut2Layout.setVerticalGroup(
             abOut2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +124,12 @@ public class MainView2 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(abOut2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 400, 350));
+        getContentPane().add(abOut2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 400, 350));
+
+        DX2.setBackground(new java.awt.Color(0, 204, 102));
+        DX2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/out.png"))); // NOI18N
+        DX2.setText("Đăng xuất");
+        getContentPane().add(DX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 530, -1, 40));
 
         About2.setBackground(new java.awt.Color(0, 204, 102));
         About2.setFont(new java.awt.Font("Verdana", 2, 12)); // NOI18N
@@ -138,19 +140,23 @@ public class MainView2 extends javax.swing.JFrame {
                 About2ActionPerformed(evt);
             }
         });
-        getContentPane().add(About2, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 523, 90, 40));
+        getContentPane().add(About2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, 90, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/090.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 210, 130));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 210, 130));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(47, 147, 177));
         jLabel2.setText("CHƯƠNG TRÌNH QUẢN LÝ TRUNG TÂM NGOẠI NGỮ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 680, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 680, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel4.setText("ĐÓNG HỌC PHÍ");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, 40));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, 40));
+
+        jLabel6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel6.setText("CHỈNH SỬA THÔNG TIN");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, -1, -1));
 
         DHP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/pay.png"))); // NOI18N
         DHP.setBorder(null);
@@ -160,11 +166,15 @@ public class MainView2 extends javax.swing.JFrame {
                 DHPActionPerformed(evt);
             }
         });
-        getContentPane().add(DHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 230, 160));
+        getContentPane().add(DHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 230, 160));
+
+        EDIT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/EDITSTUDENT.png"))); // NOI18N
+        EDIT.setBorder(null);
+        getContentPane().add(EDIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 230, 160));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel5.setText("ĐĂNG KÝ KHÓA HỌC");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, -1, -1));
 
         DKKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/signup.jpg"))); // NOI18N
         DKKH.setBorder(null);
@@ -174,10 +184,10 @@ public class MainView2 extends javax.swing.JFrame {
                 DKKHActionPerformed(evt);
             }
         });
-        getContentPane().add(DKKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 230, 160));
+        getContentPane().add(DKKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 230, 160));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/menubackground.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -480, 700, 1550));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Menubackground2.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 780, 590));
 
         pack();
         setLocationRelativeTo(null);
@@ -218,6 +228,10 @@ openWebpage("https://github.com/vinh0212/FLCenter");
    public void addDHPListener(ActionListener listener)
     {
         DHP.addActionListener(listener);
+    }
+   public void addEDITListener(ActionListener listener)
+    {
+        EDIT.addActionListener(listener);
     }
    public void addDX2Listener(ActionListener listener) {      
         DX2.addActionListener(listener);
@@ -266,6 +280,7 @@ openWebpage("https://github.com/vinh0212/FLCenter");
     private javax.swing.JButton DHP;
     private javax.swing.JButton DKKH;
     private javax.swing.JButton DX2;
+    private javax.swing.JButton EDIT;
     private javax.swing.JButton Open;
     private javax.swing.JPanel abOut2;
     private javax.swing.JLabel jLabel1;
@@ -278,6 +293,7 @@ openWebpage("https://github.com/vinh0212/FLCenter");
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;

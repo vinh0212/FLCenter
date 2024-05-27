@@ -5,9 +5,9 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.*;
 import java.net.URI;    
+import vn.tad_sebs.View.DHPView;
 import vn.tad_sebs.View.LoginView;  
 import vn.tad_sebs.View.MainView2;
-import vn.tad_sebs.View.FeeView;
 import vn.tad_sebs.View.StudentView2;
 import vn.tad_sebs.View.StudentView;
 
@@ -34,7 +34,7 @@ public class MainController2 {
         public void actionPerformed(ActionEvent e) {
             // hiển thị màn hình quản lý học viên
             try {
-                FeeView studentView2 = new FeeView();
+                StudentView2 studentView2 = new StudentView2();
                 StudentController2 studentController2 = new StudentController2(studentView2);
                 studentController2.showStudentView2();
                 mainView2.dispose();
@@ -49,14 +49,27 @@ public class MainController2 {
         public void actionPerformed(ActionEvent e) {
             // hiển thị màn hình quản lý học viên
             try {
-                FeeView studentView2 = new FeeView();
-                StudentController2 studentController2 = new StudentController2(studentView2);
-                studentController2.showStudentView2();
+                DHPView DHPview = new DHPView();
+                DHPController DHPcontroller = new DHPController(DHPview);
+                DHPcontrollr.showDHPView();
                 mainView2.dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
+        }
+    }
+    class EDITListener implements ActionListener {
 
+        public void actionPerformed(ActionEvent e) {
+            // hiển thị màn hình quản lý học viên
+            try {
+                EditStudentView EditStudentview = new EditStudentView();
+                EditController Editcontroller = new EditController(EditStudentview);
+                Editcontroller.showEditStudentView();
+                mainView2.dispose();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
     public void showMainView2() {

@@ -41,12 +41,7 @@ public class StudentController2 {
         lopDao = new LopDAO();
         teacherDao = new TeacherDAO();
         subjectDao = new SubjectDAO();
-        studentView2.addSearchStudentListener(new SearchStudentListener());
-        studentView2.addListStudentSelectionListener(new ListStudentSelectionListener());
-        studentView2.addSortStudentByIDListener(new SortStudentByID());
-        studentView2.addSortStudentByNameListener(new SortStudentByName());
         studentView2.addAddStudentListener(new AddStudentListener());
-        studentView2.addSearchListener(new FilterListener());
         studentView2.addListPackageSelectionListener(new ListPackageSelectionListener());
         studentView2.addListMonhocSelectionListener(new ListMonhocSelectionListener());
         studentView2.addConfirmListener(new ConfirmListener());

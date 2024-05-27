@@ -99,7 +99,6 @@ public class StudentView extends javax.swing.JFrame {
         cbSelectedGV = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         listMonhoc = new javax.swing.JList<>();
-        BtnAddStudent = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -191,7 +190,7 @@ public class StudentView extends javax.swing.JFrame {
                 BtnEditStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnEditStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 440, -1, -1));
+        getContentPane().add(BtnEditStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 470, -1, -1));
         getContentPane().add(FNameSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 70, 163, 22));
 
         FAddressSearchStudent.addActionListener(new java.awt.event.ActionListener() {
@@ -248,9 +247,6 @@ public class StudentView extends javax.swing.JFrame {
         jScrollPane2.setViewportView(listMonhoc);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 260, 110, 160));
-
-        BtnAddStudent.setText("Thêm");
-        getContentPane().add(BtnAddStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 473, 110, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -811,7 +807,6 @@ public class StudentView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAddStudent;
     private javax.swing.JButton BtnDeleteStudent;
     private javax.swing.JButton BtnEditStudent;
     private javax.swing.JButton BtnSearchStudent;
