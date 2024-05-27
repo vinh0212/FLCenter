@@ -31,13 +31,12 @@ public class LoginView extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel8 = new javax.swing.JLabel();
         Password = new javax.swing.JPasswordField();
         Username = new javax.swing.JTextField();
-        RMB = new javax.swing.JCheckBox();
         Enter = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -93,11 +92,6 @@ public class LoginView extends javax.swing.JFrame {
         });
         getContentPane().add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 190, 20));
 
-        RMB.setFont(new java.awt.Font("Verdana", 1, 10)); // NOI18N
-        RMB.setForeground(new java.awt.Color(42, 177, 147));
-        RMB.setText("Remember password");
-        getContentPane().add(RMB, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
-
         Enter.setText("Sign in");
         Enter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Enter.addActionListener(new java.awt.event.ActionListener() {
@@ -122,14 +116,7 @@ public class LoginView extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 51));
-        try {
-            FileInputStream is = new FileInputStream(new File("VNLatinW.ttf"));
-            Font font = Font.createFont(Font.TRUETYPE_FONT, is);
-            font = font.deriveFont(Font.PLAIN, 18); // Set font size here
-            jLabel2.setFont(font);
-        } catch (FontFormatException | IOException e) {
-            e.printStackTrace();
-        }
+        jLabel2.setFont(new java.awt.Font("VNLATINW.TTF",1,18));
         jLabel2.setForeground(new java.awt.Color(47, 147, 177));
         jLabel2.setText("LOGIN");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
@@ -205,19 +192,6 @@ public class LoginView extends javax.swing.JFrame {
     public JPasswordField getPassword() {
         return Password;
     }
-
-    public boolean isRMBSelected() {
-        return RMB.isSelected();
-    }
-
-    public void setRMBSelected() {
-        RMB.setSelected(true);
-    }
-
-    public void setRMBDeselected() {
-        RMB.setSelected(false);
-    }
-
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
@@ -235,7 +209,6 @@ public class LoginView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Enter;
     private javax.swing.JPasswordField Password;
-    private javax.swing.JCheckBox RMB;
     private javax.swing.JTextField Username;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

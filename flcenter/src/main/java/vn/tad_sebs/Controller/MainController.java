@@ -24,7 +24,7 @@ public class MainController {
 
     public MainController(MainView mainView) {
         this.mainView = mainView;
-        mainView.addQLHVListener(new QLHVListener());
+    mainView.addQLHVListener(new QLHVListener());
         mainView.addQLLHListener(new QLLHListener());
         mainView.addQLCBGVListener(new QLCBGVListener());
         mainView.addQLCTHListener(new QLCTHListener());
@@ -113,23 +113,11 @@ public class MainController {
             }
         }
     }
-    private static Properties properties = new Properties();
-
     class DXListener implements ActionListener {
 
-        public void actionPerformed(ActionEvent e) {
-            String appDataPath = System.getenv("APPDATA");
-            String filePath = appDataPath + "/FLCenter/config.ini";
-            properties.setProperty("AutofillLogin", "0");
-            try (OutputStream out = new FileOutputStream(filePath)) {
-                    properties.store(out, null);
-                } catch (IOException ex) {
-                    Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
+        public void actionPerformed(ActionEvent e) {           
             mainView.dispose();
             LoginView view = new LoginView();
-            view.setRMBDeselected();
             LoginController controller = new LoginController(view);
             controller.showLoginView();
 

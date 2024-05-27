@@ -39,6 +39,7 @@
         <price>0.0</price>
         <idStudentList>
             <idStudent>2</idStudent>
+            <idStudent>8</idStudent>
         </idStudentList>
         <idMonhocList>
             <idMonhoc>1</idMonhoc>
@@ -54,6 +55,7 @@
         <idStudentList>
             <idStudent>1</idStudent>
             <idStudent>2</idStudent>
+            <idStudent>8</idStudent>
         </idStudentList>
         <idMonhocList>
             <idMonhoc>1</idMonhoc>

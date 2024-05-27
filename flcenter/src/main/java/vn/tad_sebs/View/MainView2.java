@@ -4,7 +4,9 @@
  */
 package vn.tad_sebs.View;
 
+import java.awt.Desktop;
 import java.awt.event.ActionListener;
+import java.net.URI;
 
 /**
  *
@@ -17,6 +19,7 @@ public class MainView2 extends javax.swing.JFrame {
      */
     public MainView2() {
         initComponents();
+        abOut2.setVisible(false);
     }
 
     /**
@@ -29,14 +32,6 @@ public class MainView2 extends javax.swing.JFrame {
     private void initComponents() {
 
         DX2 = new javax.swing.JButton();
-        About2 = new javax.swing.JToggleButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        DHP = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        DKKH = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         abOut2 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
@@ -47,65 +42,24 @@ public class MainView2 extends javax.swing.JFrame {
         Open = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        About2 = new javax.swing.JToggleButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        DHP = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        DKKH = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(705, 600));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         DX2.setBackground(new java.awt.Color(0, 204, 102));
         DX2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/out.png"))); // NOI18N
         DX2.setText("Đăng xuất");
         getContentPane().add(DX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 530, -1, 40));
-
-        About2.setBackground(new java.awt.Color(0, 204, 102));
-        About2.setFont(new java.awt.Font("Verdana", 2, 12)); // NOI18N
-        About2.setText("About");
-        About2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        About2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                About2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(About2, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 523, 90, 40));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/090.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 210, 130));
-
-        jLabel2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(47, 147, 177));
-        jLabel2.setText("CHƯƠNG TRÌNH QUẢN LÝ TRUNG TÂM NGOẠI NGỮ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 680, -1));
-
-        jLabel4.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel4.setText("ĐÓNG HỌC PHÍ");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, 40));
-
-        DHP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/pay.png"))); // NOI18N
-        DHP.setBorder(null);
-        DHP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        DHP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DHPActionPerformed(evt);
-            }
-        });
-        getContentPane().add(DHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 230, 160));
-
-        jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel5.setText("ĐĂNG KÝ KHÓA HỌC");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, -1));
-
-        DKKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/signup.jpg"))); // NOI18N
-        DKKH.setBorder(null);
-        DKKH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        DKKH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DKKHActionPerformed(evt);
-            }
-        });
-        getContentPane().add(DKKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 230, 160));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/menubackground.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -480, 700, 1550));
 
         abOut2.setBorder(javax.swing.BorderFactory.createTitledBorder("About"));
         abOut2.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
@@ -175,25 +129,83 @@ public class MainView2 extends javax.swing.JFrame {
 
         getContentPane().add(abOut2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 400, 350));
 
+        About2.setBackground(new java.awt.Color(0, 204, 102));
+        About2.setFont(new java.awt.Font("Verdana", 2, 12)); // NOI18N
+        About2.setText("About");
+        About2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        About2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                About2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(About2, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 523, 90, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/090.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 210, 130));
+
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(47, 147, 177));
+        jLabel2.setText("CHƯƠNG TRÌNH QUẢN LÝ TRUNG TÂM NGOẠI NGỮ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 680, -1));
+
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel4.setText("ĐÓNG HỌC PHÍ");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, 40));
+
+        DHP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/pay.png"))); // NOI18N
+        DHP.setBorder(null);
+        DHP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DHP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DHPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 230, 160));
+
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel5.setText("ĐĂNG KÝ KHÓA HỌC");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, -1));
+
+        DKKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/signup.jpg"))); // NOI18N
+        DKKH.setBorder(null);
+        DKKH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DKKH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DKKHActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DKKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 230, 160));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/menubackground.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -480, 700, 1550));
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void About2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_About2ActionPerformed
     if (About2.isSelected()) {
-                    //abOut.setVisible(true);
+                    abOut2.setVisible(true);
                     DKKH.setEnabled(false);
                     DHP.setEnabled(false);                  
                     DX2.setEnabled(false);
                 } else {
-                    //abOut.setVisible(false);
+                    abOut2.setVisible(false);
                     DKKH.setEnabled(true);
                     DHP.setEnabled(true);
                     DX2.setEnabled(true);
                 }
     }//GEN-LAST:event_About2ActionPerformed
 
+    private void openWebpage(String url) {
+        try {
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     private void OpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenActionPerformed
-
+openWebpage("https://github.com/vinh0212/FLCenter");
     }//GEN-LAST:event_OpenActionPerformed
 
     private void DHPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DHPActionPerformed

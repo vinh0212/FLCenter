@@ -9,6 +9,10 @@ public class UserDao {
                         && "admin".equals(user.getPassword())) {
                     return true;
                 }
+                else if ("staff".equals(user.getUserName()) 
+                        && "staff".equals(user.getPassword())) {
+                    return true;
+                }
             }
             return false;
         }

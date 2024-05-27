@@ -23,49 +23,46 @@ import vn.tad_sebs.DAO.CanboDAO;
 import vn.tad_sebs.DAO.LopDAO;
 import vn.tad_sebs.Model.Lop;
 import vn.tad_sebs.Model.Monhoc;
+import vn.tad_sebs.View.FeeView;
 
-public class StudentController {
+public class StudentController2 {
 
     private boolean isStudentSelectionChanged = false;
-    private StudentView studentView;
+    private FeeView studentView2;
     private StudentDAO studentDao;
     private LopDAO lopDao;
     private StudentCustomSearch filterView;
     private TeacherDAO teacherDao;
     private SubjectDAO subjectDao;
 
-    public StudentController(StudentView studentView) {
-        this.studentView = studentView;
+    public StudentController2(FeeView studentView2) {
+        this.studentView2 = studentView2;
         studentDao = new StudentDAO();
         lopDao = new LopDAO();
         teacherDao = new TeacherDAO();
         subjectDao = new SubjectDAO();
-        // studentView.addSaveGVListener(new SaveGVListener());
-        studentView.addEditStudentListener(new EditStudentListener());
-        studentView.addDeleteStudentListener(new DeleteStudentListener());
-        studentView.addClearStudentListener(new ClearStudentListener());
-        studentView.addSearchStudentListener(new SearchStudentListener());
-        studentView.addListStudentSelectionListener(new ListStudentSelectionListener());
-        studentView.addSortStudentByIDListener(new SortStudentByID());
-        studentView.addSortStudentByNameListener(new SortStudentByName());
-        studentView.addAddStudentListener(new AddStudentListener());
-        studentView.addSearchListener(new FilterListener());
-        studentView.addListPackageSelectionListener(new ListPackageSelectionListener());
-        studentView.addListMonhocSelectionListener(new ListMonhocSelectionListener());
-        studentView.addConfirmListener(new ConfirmListener());
+        studentView2.addSearchStudentListener(new SearchStudentListener());
+        studentView2.addListStudentSelectionListener(new ListStudentSelectionListener());
+        studentView2.addSortStudentByIDListener(new SortStudentByID());
+        studentView2.addSortStudentByNameListener(new SortStudentByName());
+        studentView2.addAddStudentListener(new AddStudentListener());
+        studentView2.addSearchListener(new FilterListener());
+        studentView2.addListPackageSelectionListener(new ListPackageSelectionListener());
+        studentView2.addListMonhocSelectionListener(new ListMonhocSelectionListener());
+        studentView2.addConfirmListener(new ConfirmListener());
     }
     
 
-    public void showStudentView() {
+    public void showStudentView2() {
         List<Student> studentList = studentDao.getListStudents();
         List<Lop> lopList = lopDao.getListLops();
         List<Teacher> teacherList = teacherDao.getListTeachers();
         List<Monhoc> subjectList = subjectDao.getListSubjects();
-        studentView.getListLops(lopList);
-        studentView.showListStudents(studentList);
+        studentView2.getListLops(lopList);
+        studentView2.showListStudents(studentList);
 
-        studentView.getListSubjects(subjectList);
-        studentView.setVisible(true);
+        studentView2.getListSubjects(subjectList);
+        studentView2.setVisible(true);
         
     }
 
@@ -78,20 +75,23 @@ public class StudentController {
 
             // Perform action...
 
-            int id = studentView.getSelectedPackage();
-            studentView.showListMonhoc(id);
+            int id = studentView2.getSelectedPackage();
+            studentView2.showListMonhoc(id);
         }
 
     }
-    class ClearStudentListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            
-        }
-
-    }
+    
     class AddStudentListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            
+            Student student = studentView2.getStudentInfo();
+            if (student != null) {
+                studentDao.add(student);
+                lopDao.addStudent(student);
+                studentView2.showStudent(student);
+                studentView2.showListStudents(studentDao.getListStudents());
+                studentView2.showMessage("Thêm thành công!");
+            }
+
         }
 
     }
@@ -110,7 +110,7 @@ public class StudentController {
 
             // Perform action...
 
-            int id = studentView.getSelectedSubject();
+            int id = studentView2.getSelectedSubject();
             // lọc giáo viên với cùng idMonhoc
             List<Teacher> teacherList = teacherDao.getListTeachers();
             List<Teacher> list = new ArrayList<>();
@@ -119,7 +119,7 @@ public class StudentController {
                     list.add(t);
                 }
             }
-            studentView.showListGV(list);
+            studentView2.showListGV(list);
         }
 
     }
@@ -133,10 +133,10 @@ public class StudentController {
                 public void onOkButtonClick(List<Student> students) {
                     // Hiển thị dữ liệu students ở đây
                     if (students.isEmpty()) {
-                        studentView.showMessage("Không tìm thấy!");
+                        studentView2.showMessage("Không tìm thấy!");
                         return;
                     }
-                    studentView.showListStudents(students);
+                    studentView2.showListStudents(students);
                 }
             });
             filterView.doDialog();
@@ -149,7 +149,7 @@ public class StudentController {
             }
             filterView.setVisible(true);
 
-            studentView.addWindowListener(new WindowAdapter() {
+            studentView2.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
                     if (filterView != null) {
@@ -160,46 +160,16 @@ public class StudentController {
 
         }
     }
-
-    class SaveGVListener implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-            Student student = studentView.getStudentInfo();
-            if (student != null) {
-                studentDao.add(student);
-                lopDao.addStudent(student);
-                studentView.showStudent(student);
-                studentView.showListStudents(studentDao.getListStudents());
-                studentView.showMessage("Thêm thành công!");
-            }
-
-        }
-    }
-
     class EditStudentListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            Student student = studentView.getStudentInfo();
+            Student student = studentView2.getStudentInfo();
             if (student != null) {
                 studentDao.edit(student);
                 lopDao.editStudent(student);
                 // studentView.clearStudentInfo();
-                studentView.showListStudents(studentDao.getListStudents());
-                studentView.showMessage("Sửa thành công!");
-            }
-        }
-    }
-
-    class DeleteStudentListener implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-            Student student = studentView.getStudentInfo();
-            if (student != null) {
-                studentDao.delete(student);
-                lopDao.deleteStudent(student);
-                // studentView.clearStudentInfo();
-                studentView.showListStudents(studentDao.getListStudents());
-                studentView.showMessage("Xóa thành công!");
+                studentView2.showListStudents(studentDao.getListStudents());
+                studentView2.showMessage("Sửa thành công!");
             }
         }
     }
@@ -217,10 +187,10 @@ public class StudentController {
 
         public void valueChanged(ListSelectionEvent e) {
 
-            int row = studentView.getSelectedRow();
+            int row = studentView2.getSelectedRow();
             if (row != -1) {
                 Student student = studentDao.getListStudents().get(row);
-                studentView.showStudent(student);
+                studentView2.showStudent(student);
             }
         }
     }
@@ -228,18 +198,18 @@ public class StudentController {
     class SearchStudentListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            String criteria = studentView.getSelectedText();
-            String value = studentView.getSearchBox();
+            String criteria = studentView2.getSelectedText();
+            String value = studentView2.getSearchBox();
             List<Student> list = new ArrayList<>();
             List<Student> oldlist = studentDao.getListStudents();
 
             if ("".equals(value)) {
-                studentView.showListStudents(oldlist);
+                studentView2.showListStudents(oldlist);
                 return;
             } else {
                 switch (criteria) {
                     case "ID":
-                        if (!studentView.validateIDSearch())
+                        if (!studentView2.validateIDSearch())
                             return;
                         for (Student s : oldlist) {
                             if (s.getId() == Integer.parseInt(value)) {
@@ -278,11 +248,11 @@ public class StudentController {
                     default:
                         break;
                 }
-                studentView.showListStudents(list);
+                studentView2.showListStudents(list);
             }
             if (list.isEmpty()) {
-                studentView.showMessage("Không tìm thấy!");
-                studentView.showListStudents(oldlist);
+                studentView2.showMessage("Không tìm thấy!");
+                studentView2.showListStudents(oldlist);
             }
 
         }
@@ -292,14 +262,14 @@ public class StudentController {
     class SortStudentByID implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             studentDao.sortListStudentsByID();
-            studentView.showListStudents(studentDao.getListStudents());
+            studentView2.showListStudents(studentDao.getListStudents());
         }
     }
 
     class SortStudentByName implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             studentDao.sortListStudentsByName();
-            studentView.showListStudents(studentDao.getListStudents());
+            studentView2.showListStudents(studentDao.getListStudents());
         }
     }
 
