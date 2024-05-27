@@ -8,7 +8,7 @@ import java.net.URI;
 import vn.tad_sebs.View.LoginView;  
 import vn.tad_sebs.View.MainView2;
 import vn.tad_sebs.View.FeeView;
-import vn.tad_sebs.View.FeeView;
+import vn.tad_sebs.View.StudentView2;
 import vn.tad_sebs.View.StudentView;
 
 public class MainController2 {

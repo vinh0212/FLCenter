@@ -23,7 +23,7 @@ import vn.tad_sebs.DAO.CanboDAO;
 import vn.tad_sebs.DAO.LopDAO;
 import vn.tad_sebs.Model.Lop;
 import vn.tad_sebs.Model.Monhoc;
-import vn.tad_sebs.View.FeeView;
+import vn.tad_sebs.View.StudentView2;
 
 public class StudentController2 {
 
@@ -35,7 +35,7 @@ public class StudentController2 {
     private TeacherDAO teacherDao;
     private SubjectDAO subjectDao;
 
-    public StudentController2(FeeView studentView2) {
+    public StudentController2(StudentView2 studentView2) {
         this.studentView2 = studentView2;
         studentDao = new StudentDAO();
         lopDao = new LopDAO();
