@@ -97,7 +97,7 @@ public class StudentView2 extends javax.swing.JFrame {
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jButton2 = new javax.swing.JButton();
+        btnNext1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -116,24 +116,25 @@ public class StudentView2 extends javax.swing.JFrame {
         btnPull = new javax.swing.JButton();
         btnPush = new javax.swing.JButton();
         btnCheck = new javax.swing.JButton();
+        Back2 = new javax.swing.JButton();
+        Next2 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         Step3 = new javax.swing.JLayeredPane();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listMonhoc = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        BtnAddStudent = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbPackageList = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnGVSave = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Back3 = new javax.swing.JButton();
         cbSelectedGV = new javax.swing.JComboBox<>();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel24 = new javax.swing.JLabel();
+        Next3 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         Step4 = new javax.swing.JLayeredPane();
         jLabel26 = new javax.swing.JLabel();
@@ -148,14 +149,14 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         FDateSearchStudentStep4 = new com.toedter.calendar.JDateChooser();
-        BtnAddStudent1 = new javax.swing.JButton();
+        BtnAddStudentNew = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         tbPackageList1 = new javax.swing.JTable();
         chkMStep4 = new javax.swing.JCheckBox();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         btnGVSave1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Back4 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         FNameSearchStudentStep4 = new javax.swing.JTextField();
         FIDSearchStudentStep4 = new javax.swing.JTextField();
@@ -204,8 +205,8 @@ public class StudentView2 extends javax.swing.JFrame {
         Step1.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, -1, -1));
         Step1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
 
-        jButton2.setText("Tiếp tục");
-        Step1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1152, 713, 90, 30));
+        btnNext1.setText("Tiếp tục");
+        Step1.add(btnNext1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 710, 90, 30));
 
         jLabel18.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(51, 255, 73));
@@ -286,17 +287,18 @@ public class StudentView2 extends javax.swing.JFrame {
         btnCheck.setText("Xác nhận");
         Step2.add(btnCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, -1, -1));
 
+        Back2.setText("Trở lại");
+        Step2.add(Back2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, -1, -1));
+
+        Next2.setText("Tiếp tục");
+        Step2.add(Next2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 720, -1, -1));
+
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
         Step2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
 
         getContentPane().add(Step2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
 
         Step3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 255, 73));
-        jLabel3.setText("KIỂM TRA LẠI THÔNG TIN !!!");
-        Step3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 540, -1, 30));
 
         listMonhoc.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -317,9 +319,6 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(51, 255, 73));
         jLabel13.setText("Giáo viên được chọn");
         Step3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 190, -1));
-
-        BtnAddStudent.setText("Thêm");
-        Step3.add(BtnAddStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 610, 110, 30));
 
         tbPackageList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -357,8 +356,8 @@ public class StudentView2 extends javax.swing.JFrame {
         });
         Step3.add(btnGVSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 290, -1, -1));
 
-        jButton1.setText("Trở lại");
-        Step3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, -1, 30));
+        Back3.setText("Trở lại");
+        Step3.add(Back3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, -1, 30));
 
         cbSelectedGV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Step3.add(cbSelectedGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 200, 140, 70));
@@ -372,10 +371,11 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel24.setText("THÊM GIÁO VIÊN VÀ KIỂM TRA LẠI THÔNG TIN");
         Step3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, -1, -1));
 
+        Next3.setText("Tiếp tục");
+        Step3.add(Next3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 730, -1, -1));
+
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
         Step3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1260, 750));
-
-        getContentPane().add(Step3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
 
         Step4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -443,8 +443,8 @@ public class StudentView2 extends javax.swing.JFrame {
         FDateSearchStudentStep4.setDateFormatString("dd/MM/yyyy");
         Step4.add(FDateSearchStudentStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 163, -1));
 
-        BtnAddStudent1.setText("Thêm");
-        Step4.add(BtnAddStudent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 610, 110, 30));
+        BtnAddStudentNew.setText("Thêm");
+        Step4.add(BtnAddStudentNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 610, 110, 30));
 
         tbPackageList1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -487,8 +487,8 @@ public class StudentView2 extends javax.swing.JFrame {
         });
         Step4.add(btnGVSave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 370, -1, -1));
 
-        jButton3.setText("Trở lại");
-        Step4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, -1, 30));
+        Back4.setText("Trở lại");
+        Step4.add(Back4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, -1, 30));
 
         jLabel35.setBackground(new java.awt.Color(255, 255, 255));
         jLabel35.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -520,7 +520,9 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
         Step4.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1240, 740));
 
-        getContentPane().add(Step4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
+        Step3.add(Step4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
+
+        getContentPane().add(Step3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
 
         pack();
         setLocationRelativeTo(null);
@@ -877,12 +879,16 @@ public class StudentView2 extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAddStudent;
-    private javax.swing.JButton BtnAddStudent1;
+    private javax.swing.JButton Back2;
+    private javax.swing.JButton Back3;
+    private javax.swing.JButton Back4;
+    private javax.swing.JButton BtnAddStudentNew;
     private javax.swing.JTextField FAddressSearchStudentStep4;
     private com.toedter.calendar.JDateChooser FDateSearchStudentStep4;
     private javax.swing.JTextField FIDSearchStudentStep4;
     private javax.swing.JTextField FNameSearchStudentStep4;
+    private javax.swing.JButton Next2;
+    private javax.swing.JButton Next3;
     private javax.swing.JLayeredPane Step1;
     private javax.swing.JLayeredPane Step2;
     private javax.swing.JLayeredPane Step3;
@@ -891,6 +897,7 @@ public class StudentView2 extends javax.swing.JFrame {
     private javax.swing.JButton btnGVSave;
     private javax.swing.JButton btnGVSave1;
     private javax.swing.ButtonGroup btnGroup;
+    private javax.swing.JButton btnNext1;
     private javax.swing.JButton btnPull;
     private javax.swing.JButton btnPush;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -898,9 +905,6 @@ public class StudentView2 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbSelectedGV1;
     private javax.swing.JCheckBox chkFStep4;
     private javax.swing.JCheckBox chkMStep4;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private com.toedter.calendar.JDateChooser jDateChooser1;
@@ -923,7 +927,6 @@ public class StudentView2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
