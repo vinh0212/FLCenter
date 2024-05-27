@@ -377,6 +377,8 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
         Step3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1260, 750));
 
+        getContentPane().add(Step3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
+
         Step4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel26.setBackground(new java.awt.Color(255, 255, 255));
@@ -520,9 +522,7 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
         Step4.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1240, 740));
 
-        Step3.add(Step4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
-
-        getContentPane().add(Step3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
+        getContentPane().add(Step4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
 
         pack();
         setLocationRelativeTo(null);
