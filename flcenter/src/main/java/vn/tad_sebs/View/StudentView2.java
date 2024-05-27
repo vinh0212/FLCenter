@@ -97,7 +97,7 @@ public class StudentView2 extends javax.swing.JFrame {
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        btnNext1 = new javax.swing.JButton();
+        Next1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -205,8 +205,8 @@ public class StudentView2 extends javax.swing.JFrame {
         Step1.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, -1, -1));
         Step1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
 
-        btnNext1.setText("Tiếp tục");
-        Step1.add(btnNext1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 710, 90, 30));
+        Next1.setText("Tiếp tục");
+        Step1.add(Next1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 710, 90, 30));
 
         jLabel18.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(51, 255, 73));
@@ -318,7 +318,7 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(51, 255, 73));
         jLabel13.setText("Giáo viên được chọn");
-        Step3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 190, -1));
+        Step3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 190, -1));
 
         tbPackageList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -887,6 +887,7 @@ public class StudentView2 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser FDateSearchStudentStep4;
     private javax.swing.JTextField FIDSearchStudentStep4;
     private javax.swing.JTextField FNameSearchStudentStep4;
+    private javax.swing.JButton Next1;
     private javax.swing.JButton Next2;
     private javax.swing.JButton Next3;
     private javax.swing.JLayeredPane Step1;
@@ -897,7 +898,6 @@ public class StudentView2 extends javax.swing.JFrame {
     private javax.swing.JButton btnGVSave;
     private javax.swing.JButton btnGVSave1;
     private javax.swing.ButtonGroup btnGroup;
-    private javax.swing.JButton btnNext1;
     private javax.swing.JButton btnPull;
     private javax.swing.JButton btnPush;
     private javax.swing.ButtonGroup buttonGroup1;
