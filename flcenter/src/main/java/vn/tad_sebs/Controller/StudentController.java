@@ -28,6 +28,7 @@ public class StudentController {
 
     private boolean isStudentSelectionChanged = false;
     private StudentView studentView;
+
     private StudentDAO studentDao;
     private LopDAO lopDao;
     private StudentCustomSearch filterView;
@@ -43,18 +44,17 @@ public class StudentController {
         // studentView.addSaveGVListener(new SaveGVListener());
         studentView.addEditStudentListener(new EditStudentListener());
         studentView.addDeleteStudentListener(new DeleteStudentListener());
-        studentView.addClearStudentListener(new ClearStudentListener());
+        // studentView.addClearListener(new ClearStudentListener());
         studentView.addSearchStudentListener(new SearchStudentListener());
         studentView.addListStudentSelectionListener(new ListStudentSelectionListener());
         studentView.addSortStudentByIDListener(new SortStudentByID());
         studentView.addSortStudentByNameListener(new SortStudentByName());
-        studentView.addAddStudentListener(new AddStudentListener());
+
         studentView.addSearchListener(new FilterListener());
         studentView.addListPackageSelectionListener(new ListPackageSelectionListener());
         studentView.addListMonhocSelectionListener(new ListMonhocSelectionListener());
-        studentView.addConfirmListener(new ConfirmListener());
+
     }
-    
 
     public void showStudentView() {
         List<Student> studentList = studentDao.getListStudents();
@@ -66,7 +66,6 @@ public class StudentController {
 
         studentView.getListSubjects(subjectList);
         studentView.setVisible(true);
-        
     }
 
     class ListPackageSelectionListener implements ListSelectionListener {
@@ -83,24 +82,7 @@ public class StudentController {
         }
 
     }
-    class ClearStudentListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            
-        }
 
-    }
-    class AddStudentListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            
-        }
-
-    }
-    class ConfirmListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            
-        }
-
-    }
     class ListMonhocSelectionListener implements ListSelectionListener {
         public void valueChanged(ListSelectionEvent e) {
             // Only perform action if this is the final event in a series of related events
