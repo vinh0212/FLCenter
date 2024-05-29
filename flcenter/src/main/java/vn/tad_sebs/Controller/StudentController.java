@@ -49,9 +49,9 @@ public class StudentController {
         studentView.addListStudentSelectionListener(new ListStudentSelectionListener());
         studentView.addSortStudentByIDListener(new SortStudentByID());
         studentView.addSortStudentByNameListener(new SortStudentByName());
-
+        studentView.addEditGVListener(new EditGVListener());
         studentView.addSearchListener(new FilterListener());
-        studentView.addListPackageSelectionListener(new ListPackageSelectionListener());
+        
         studentView.addListMonhocSelectionListener(new ListMonhocSelectionListener());
 
     }
@@ -68,17 +68,23 @@ public class StudentController {
         studentView.setVisible(true);
     }
 
-    class ListPackageSelectionListener implements ListSelectionListener {
-        public void valueChanged(ListSelectionEvent e) {
-            // Only perform action if this is the final event in a series of related events
-            if (e.getValueIsAdjusting()) {
-                return;
+    class EditGVListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+         
+            
+            // Perform action...
+            int id = studentView.getSelectedPackage();
+            // remove action listener on listMonhoc
+            ListSelectionListener[] listeners = studentView.getListMonhoc().getListSelectionListeners();
+            for (ListSelectionListener l : listeners) {
+                studentView.getListMonhoc().removeListSelectionListener(l);
             }
 
-            // Perform action...
-
-            int id = studentView.getSelectedPackage();
             studentView.showListMonhoc(id);
+
+            // add action listener on listMonhoc
+            studentView.addListMonhocSelectionListener(new ListMonhocSelectionListener());
+            studentView.hidePackageRelated();
         }
 
     }

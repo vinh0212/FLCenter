@@ -4,42 +4,62 @@
         <Id>1</Id>
         <Name>AT2</Name>
         <Note></Note>
-        <price>0.0</price>
-        <idStudentList/>
-        <idMonhocList/>
+        <price>450000.0</price>
+        <length>6 tháng</length>
+        <idStudentList>
+            <idStudent>9</idStudent>
+        </idStudentList>
+        <idMonhocList>
+            <idMonhoc>1</idMonhoc>
+            <idMonhoc>2</idMonhoc>
+            <idMonhoc>3</idMonhoc>
+        </idMonhocList>
     </lop>
     <lop>
         <Id>2</Id>
         <Name>AT1</Name>
         <Note></Note>
-        <price>0.0</price>
+        <price>500000.0</price>
+        <length>6 tháng</length>
         <idStudentList/>
-        <idMonhocList/>
+        <idMonhocList>
+            <idMonhoc>4</idMonhoc>
+            <idMonhoc>5</idMonhoc>
+            <idMonhoc>6</idMonhoc>
+        </idMonhocList>
     </lop>
     <lop>
         <Id>3</Id>
         <Name>UT1</Name>
         <Note></Note>
-        <price>0.0</price>
+        <price>70000.0</price>
+        <length>2 tháng</length>
         <idStudentList/>
-        <idMonhocList/>
+        <idMonhocList>
+            <idMonhoc>3</idMonhoc>
+        </idMonhocList>
     </lop>
     <lop>
         <Id>4</Id>
         <Name>CT1</Name>
         <Note></Note>
-        <price>0.0</price>
+        <price>50000.0</price>
+        <length>1 tháng</length>
         <idStudentList/>
-        <idMonhocList/>
+        <idMonhocList>
+            <idMonhoc>1</idMonhoc>
+            <idMonhoc>3</idMonhoc>
+        </idMonhocList>
     </lop>
     <lop>
         <Id>5</Id>
         <Name>HT</Name>
         <Note></Note>
-        <price>0.0</price>
+        <price>200000.0</price>
+        <length>1 tháng</length>
         <idStudentList>
-            <idStudent>2</idStudent>
-            <idStudent>8</idStudent>
+            <idStudent>1</idStudent>
+            <idStudent>9</idStudent>
         </idStudentList>
         <idMonhocList>
             <idMonhoc>1</idMonhoc>
@@ -53,9 +73,8 @@
         <price>500000.0</price>
         <length>3 tháng</length>
         <idStudentList>
+            <idStudent>10</idStudent>
             <idStudent>1</idStudent>
-            <idStudent>2</idStudent>
-            <idStudent>8</idStudent>
         </idStudentList>
         <idMonhocList>
             <idMonhoc>1</idMonhoc>

@@ -6,8 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.net.URI;    
 import vn.tad_sebs.View.DHPView;
+import vn.tad_sebs.View.EditStudentView;
 import vn.tad_sebs.View.LoginView;  
 import vn.tad_sebs.View.MainView2;
+import vn.tad_sebs.View.SearchStudentView;
 import vn.tad_sebs.View.StudentView2;
 import vn.tad_sebs.View.StudentView;
 
@@ -18,6 +20,7 @@ public class MainController2 {
         mainView2.addDKKHListener(new DKKHListener());
         mainView2.addDHPListener(new DHPListener());
         mainView2.addDX2Listener(new DX2Listener());
+        mainView2.addEDITListener(new EDITListener());
     }
     class DX2Listener implements ActionListener {
 
@@ -47,11 +50,11 @@ public class MainController2 {
     class DHPListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            // hiển thị màn hình quản lý học viên
             try {
-                DHPView DHPview = new DHPView();
-                DHPController DHPcontroller = new DHPController(DHPview);
-                DHPcontrollr.showDHPView();
+                SearchStudentView searchStudentView = new SearchStudentView(1);
+                searchStudentView.showList();
+                searchStudentView.setVisible(true);
+                
                 mainView2.dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -63,9 +66,10 @@ public class MainController2 {
         public void actionPerformed(ActionEvent e) {
             // hiển thị màn hình quản lý học viên
             try {
-                EditStudentView EditStudentview = new EditStudentView();
-                EditController Editcontroller = new EditController(EditStudentview);
-                Editcontroller.showEditStudentView();
+                SearchStudentView searchStudentView = new SearchStudentView(0);
+                searchStudentView.showList();
+                searchStudentView.setVisible(true);
+                
                 mainView2.dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();

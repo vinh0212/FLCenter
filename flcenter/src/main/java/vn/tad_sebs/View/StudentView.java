@@ -80,7 +80,7 @@ public class StudentView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         btnGroup = new javax.swing.ButtonGroup();
@@ -101,9 +101,11 @@ public class StudentView extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         listMonhoc = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
+        btnEditGV = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        btnDone = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -130,26 +132,26 @@ public class StudentView extends javax.swing.JFrame {
 
         Studenttable.setBackground(new java.awt.Color(174, 228, 255));
         Studenttable.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
+            new Object [][] {
 
-                },
-                new String[] {
-                        "ID", "Họ và tên", "Ngày sinh", "Giới tính", "Quê quán", "Lớp", "Giáo viên chủ nhiệm", "Điểm"
-                }) {
-            Class[] types = new Class[] {
-                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
-                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+            },
+            new String [] {
+                "ID", "Họ và tên", "Ngày sinh", "Giới tính", "Quê quán", "Lớp", "Giáo viên chủ nhiệm", "Điểm"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
             };
-            boolean[] canEdit = new boolean[] {
-                    false, false, false, false, false, false, false, false
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
+                return types [columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
+                return canEdit [columnIndex];
             }
         });
         Studenttable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -176,7 +178,7 @@ public class StudentView extends javax.swing.JFrame {
                 BtnDeleteStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnDeleteStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 420, 90, -1));
+        getContentPane().add(BtnDeleteStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 520, 110, -1));
 
         BtnEditStudent.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         BtnEditStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
@@ -186,7 +188,7 @@ public class StudentView extends javax.swing.JFrame {
                 BtnEditStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnEditStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 420, -1, -1));
+        getContentPane().add(BtnEditStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 470, -1, -1));
         getContentPane().add(FNameSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 70, 163, 22));
 
         FAddressSearchStudent.addActionListener(new java.awt.event.ActionListener() {
@@ -194,12 +196,10 @@ public class StudentView extends javax.swing.JFrame {
                 FAddressSearchStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(FAddressSearchStudent,
-                new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 120, 163, -1));
+        getContentPane().add(FAddressSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 120, 163, -1));
 
         CbbSeacrchStudent.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        CbbSeacrchStudent
-                .setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Lớp", "Quê quán" }));
+        CbbSeacrchStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Tên", "Lớp", "Quê quán" }));
         getContentPane().add(CbbSeacrchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 18, -1, 30));
 
         FSearchStudent.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -220,34 +220,22 @@ public class StudentView extends javax.swing.JFrame {
         getContentPane().add(BtnSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 17, 90, 30));
 
         tbPackageList.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null }
-                },
-                new String[] {
-                        "Title 1", "Title 2", "Title 3", "Title 4"
-                }));
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
         jScrollPane3.setViewportView(tbPackageList);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 290, 270));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 290, 270));
 
-        cbSelectedGV.setModel(
-                new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(cbSelectedGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 200, 140, 70));
 
-        listMonhoc.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-
-            public int getSize() {
-                return strings.length;
-            }
-
-            public String getElementAt(int i) {
-                return strings[i];
-            }
-        });
         jScrollPane2.setViewportView(listMonhoc);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 200, 110, 160));
@@ -257,6 +245,9 @@ public class StudentView extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(51, 225, 73));
         jLabel2.setText("ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, 30, -1));
+
+        btnEditGV.setText("Sửa giáo viên của khoá");
+        getContentPane().add(btnEditGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 490, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -275,6 +266,14 @@ public class StudentView extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(51, 255, 73));
         jLabel10.setText("Giới tính");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 120, 70, -1));
+
+        btnDone.setText("Hoàn tất");
+        btnDone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoneActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 380, -1, -1));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -311,17 +310,17 @@ public class StudentView extends javax.swing.JFrame {
         btnSortbyid.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyid.setText("Sắp xếp theo ID");
-        getContentPane().add(btnSortbyid, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 520, 170, 60));
+        getContentPane().add(btnSortbyid, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 570, 170, 60));
 
         btnSortbyName.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyName.setText("Sắp xếp theo Tên");
-        getContentPane().add(btnSortbyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 610, 170, 60));
+        getContentPane().add(btnSortbyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 650, 170, 60));
 
         btnSortbyDiem.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnSortbyDiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Sort.png"))); // NOI18N
         btnSortbyDiem.setLabel("Sắp xếp theo Điểm");
-        getContentPane().add(btnSortbyDiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 520, 180, 60));
+        getContentPane().add(btnSortbyDiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 570, 180, 60));
 
         FDateSearchStudent.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(FDateSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 70, 163, -1));
@@ -334,7 +333,7 @@ public class StudentView extends javax.swing.JFrame {
                 btnPrintActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 610, 180, 60));
+        getContentPane().add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 650, 180, 60));
 
         btnGroup.add(chkM);
         chkM.setForeground(new java.awt.Color(255, 255, 255));
@@ -357,6 +356,10 @@ public class StudentView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
+        hideTeacherRelated();
+    }//GEN-LAST:event_btnDoneActionPerformed
+
     public int editingPackage;
 
     private void btnGVSaveActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnGVSaveActionPerformed
@@ -376,6 +379,8 @@ public class StudentView extends javax.swing.JFrame {
             }
         }
 
+        showMessage("Đã sửa xong cho môn này!");
+
     }// GEN-LAST:event_btnGVSaveActionPerformed
 
     ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
@@ -389,6 +394,10 @@ public class StudentView extends javax.swing.JFrame {
             model.addElement(teacher.getId() + " - " + teacher.getName());
         }
         cbSelectedGV.setModel(model);
+    }
+
+    public JList getListMonhoc() {
+        return listMonhoc;
     }
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPrintActionPerformed
@@ -617,6 +626,12 @@ public class StudentView extends javax.swing.JFrame {
         listMonhoc.addListSelectionListener(listener);
     }
 
+    public void addEditGVListener( ActionListener listener) {
+        btnEditGV.addActionListener(listener);
+    }
+
+    
+
     public String getSelectedText() {
         return CbbSeacrchStudent.getSelectedItem().toString();
     }
@@ -671,6 +686,34 @@ public class StudentView extends javax.swing.JFrame {
         }
     }
 
+    public void hidePackageRelated()
+    {
+        
+        
+        tbPackageList.setEnabled(false);
+        
+        btnEditGV.setEnabled(false);
+        BtnEditStudent.setEnabled(false);
+
+        listMonhoc.setEnabled(true);
+        cbSelectedGV.setEnabled(true);
+        btnGVSave.setEnabled(true);
+        btnDone.setEnabled(true);
+
+
+    }
+
+    public void hideTeacherRelated()
+    {
+        listMonhoc.setEnabled(false);
+        cbSelectedGV.setEnabled(false);
+        btnGVSave.setEnabled(false);
+        btnDone.setEnabled(false);
+
+        tbPackageList.setEnabled(true);
+        btnEditGV.setEnabled(true);
+        BtnEditStudent.setEnabled(true);
+    }
     
 
     public int getSelectedSubject()
@@ -806,6 +849,8 @@ public class StudentView extends javax.swing.JFrame {
     private javax.swing.JTextField FSearchStudent;
     private javax.swing.JTable Studenttable;
     private javax.swing.JButton btnCustomFind;
+    private javax.swing.JButton btnDone;
+    private javax.swing.JButton btnEditGV;
     private javax.swing.JButton btnGVSave;
     private javax.swing.ButtonGroup btnGroup;
     private javax.swing.JButton btnPrint;

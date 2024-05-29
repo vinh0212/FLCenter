@@ -19,6 +19,8 @@ import java.util.Map;
 
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 import vn.tad_sebs.Model.CourseFeeEntry;
 import vn.tad_sebs.Model.CourseTeacherEntry;
@@ -53,12 +55,21 @@ import vn.tad_sebs.Model.User;
  */
 public class StudentView2 extends javax.swing.JFrame {
 
-  
+    private Student student;
+
     public StudentView2() {
-        
+
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        chkMStep3.setSelected(true);
+        listMonhoc.setEnabled(false);
+        cbSelectedGV.setEnabled(false);
+        btnGVSave.setEnabled(false);
+        btnDone.setEnabled(false);
+
+        student = new Student();
+        Step2.setVisible(false);
+        Step3.setVisible(false);
+        Step4.setVisible(false);
 
         this.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -68,7 +79,7 @@ public class StudentView2 extends javax.swing.JFrame {
                 mainController2.showMainView2();
             }
         });
-        
+
     }
 
     /**
@@ -82,31 +93,32 @@ public class StudentView2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         btnGroup = new javax.swing.ButtonGroup();
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         Step1 = new javax.swing.JLayeredPane();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        txtName = new javax.swing.JTextField();
+        txtAddress = new javax.swing.JTextField();
+        chkM = new javax.swing.JCheckBox();
+        chkF = new javax.swing.JCheckBox();
+        txtDate = new com.toedter.calendar.JDateChooser();
         Next1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         Step2 = new javax.swing.JLayeredPane();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tbPackageListStep2 = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtPackInfo = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         listInv = new javax.swing.JList<>();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -115,15 +127,16 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         btnPull = new javax.swing.JButton();
         btnPush = new javax.swing.JButton();
-        btnCheck = new javax.swing.JButton();
         Back2 = new javax.swing.JButton();
         Next2 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         Step3 = new javax.swing.JLayeredPane();
+        btnDone = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         listMonhoc = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        btnEditGV = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbPackageList = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
@@ -132,37 +145,28 @@ public class StudentView2 extends javax.swing.JFrame {
         Back3 = new javax.swing.JButton();
         cbSelectedGV = new javax.swing.JComboBox<>();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel24 = new javax.swing.JLabel();
+        txtGVInfo = new javax.swing.JTextArea();
         Next3 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         Step4 = new javax.swing.JLayeredPane();
-        jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        listMonhoc1 = new javax.swing.JList<>();
+        TeacherTree = new javax.swing.JTree();
         jLabel29 = new javax.swing.JLabel();
         FAddressSearchStudentStep4 = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         chkFStep4 = new javax.swing.JCheckBox();
         jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
         FDateSearchStudentStep4 = new com.toedter.calendar.JDateChooser();
         BtnAddStudentNew = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
-        tbPackageList1 = new javax.swing.JTable();
+        tbPackageListStep4 = new javax.swing.JTable();
         chkMStep4 = new javax.swing.JCheckBox();
         jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        btnGVSave1 = new javax.swing.JButton();
         Back4 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         FNameSearchStudentStep4 = new javax.swing.JTextField();
-        FIDSearchStudentStep4 = new javax.swing.JTextField();
-        cbSelectedGV1 = new javax.swing.JComboBox<>();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
 
@@ -190,22 +194,31 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel16.setText("Quê quán");
         Step1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 540, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtNameActionPerformed(evt);
             }
         });
-        Step1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 240, -1));
-        Step1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, 250, -1));
+        Step1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 240, -1));
+        Step1.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, 250, -1));
 
-        jCheckBox2.setText("Nam");
-        Step1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, -1, -1));
+        buttonGroup2.add(chkM);
+        chkM.setText("Nam");
+        Step1.add(chkM, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, -1, -1));
 
-        jCheckBox3.setText("Nữ");
-        Step1.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, -1, -1));
-        Step1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
+        buttonGroup2.add(chkF);
+        chkF.setText("Nữ");
+        Step1.add(chkF, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, -1, -1));
+
+        txtDate.setDateFormatString("dd/MM/yyyy");
+        Step1.add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
 
         Next1.setText("Tiếp tục");
+        Next1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Next1ActionPerformed(evt);
+            }
+        });
         Step1.add(Next1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 710, 90, 30));
 
         jLabel18.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
@@ -224,50 +237,26 @@ public class StudentView2 extends javax.swing.JFrame {
 
         Step2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tbPackageListStep2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "Tên khóa", "Chi phí", "Giáo viên"
-            }
-        ));
-        jScrollPane4.setViewportView(tbPackageListStep2);
-
-        Step2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 300, 250));
-
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 255, 73));
         jLabel7.setText("ĐĂNG KÝ THÔNG TIN HỌC VIÊN MỚI");
         Step2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
-        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel19.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(51, 255, 73));
-        jLabel19.setText("Khoá học đã đăng ký");
-        Step2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 190, -1));
-
         jLabel21.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel21.setText("ĐĂNG KÝ KHÓA HỌC");
         Step2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
 
-        listInv.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        txtPackInfo.setColumns(20);
+        txtPackInfo.setRows(5);
+        txtPackInfo.setEnabled(false);
+        jScrollPane4.setViewportView(txtPackInfo);
+
+        Step2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 540, 260));
+
         jScrollPane1.setViewportView(listInv);
 
         Step2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 140, 260));
 
-        listChoose.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane6.setViewportView(listChoose);
 
         Step2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 140, 250));
@@ -284,13 +273,20 @@ public class StudentView2 extends javax.swing.JFrame {
         btnPush.setText(">>");
         Step2.add(btnPush, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 60, 20));
 
-        btnCheck.setText("Xác nhận");
-        Step2.add(btnCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, -1, -1));
-
         Back2.setText("Trở lại");
+        Back2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back2ActionPerformed(evt);
+            }
+        });
         Step2.add(Back2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, -1, -1));
 
         Next2.setText("Tiếp tục");
+        Next2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Next2ActionPerformed(evt);
+            }
+        });
         Step2.add(Next2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 720, -1, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
@@ -300,11 +296,14 @@ public class StudentView2 extends javax.swing.JFrame {
 
         Step3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        listMonhoc.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        btnDone.setText("Hoàn tất");
+        btnDone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoneActionPerformed(evt);
+            }
         });
+        Step3.add(btnDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 400, 90, -1));
+
         jScrollPane2.setViewportView(listMonhoc);
 
         Step3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 110, 160));
@@ -319,6 +318,9 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(51, 255, 73));
         jLabel13.setText("Giáo viên được chọn");
         Step3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 190, -1));
+
+        btnEditGV.setText("Chỉnh sủa giáo viên cho khoá");
+        Step3.add(btnEditGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 210, -1));
 
         tbPackageList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -345,7 +347,7 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 255, 73));
         jLabel5.setText("-->");
-        Step3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 230, 30, -1));
+        Step3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, 30, -1));
 
         btnGVSave.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnGVSave.setText("Lưu");
@@ -354,25 +356,36 @@ public class StudentView2 extends javax.swing.JFrame {
                 btnGVSaveActionPerformed(evt);
             }
         });
-        Step3.add(btnGVSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 290, -1, -1));
+        Step3.add(btnGVSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, -1, -1));
 
         Back3.setText("Trở lại");
+        Back3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back3ActionPerformed(evt);
+            }
+        });
         Step3.add(Back3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, -1, 30));
 
-        cbSelectedGV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Step3.add(cbSelectedGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 200, 140, 70));
+        cbSelectedGV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSelectedGVActionPerformed(evt);
+            }
+        });
+        Step3.add(cbSelectedGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 140, 70));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane7.setViewportView(jTextArea1);
+        txtGVInfo.setColumns(20);
+        txtGVInfo.setRows(5);
+        jScrollPane7.setViewportView(txtGVInfo);
 
         Step3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 200, -1, 250));
 
-        jLabel24.setText("THÊM GIÁO VIÊN VÀ KIỂM TRA LẠI THÔNG TIN");
-        Step3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, -1, -1));
-
         Next3.setText("Tiếp tục");
-        Step3.add(Next3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 730, -1, -1));
+        Next3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Next3ActionPerformed(evt);
+            }
+        });
+        Step3.add(Next3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 710, -1, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
         Step3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1260, 750));
@@ -380,12 +393,6 @@ public class StudentView2 extends javax.swing.JFrame {
         getContentPane().add(Step3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
 
         Step4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel26.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel26.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(51, 225, 73));
-        jLabel26.setText("ID");
-        Step4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 30, -1));
 
         jLabel27.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(51, 255, 73));
@@ -398,14 +405,9 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel28.setText("Ngày sinh");
         Step4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 90, -1));
 
-        listMonhoc1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane5.setViewportView(listMonhoc1);
+        jScrollPane5.setViewportView(TeacherTree);
 
-        Step4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 250, 110, 160));
+        Step4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 200, 330, 270));
 
         jLabel29.setBackground(new java.awt.Color(255, 255, 255));
         jLabel29.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -436,19 +438,13 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel31.setText("ĐĂNG KÝ THÔNG TIN HỌC VIÊN MỚI");
         Step4.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
-        jLabel32.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel32.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(51, 255, 73));
-        jLabel32.setText("Giáo viên được chọn");
-        Step4.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 220, 190, -1));
-
         FDateSearchStudentStep4.setDateFormatString("dd/MM/yyyy");
         Step4.add(FDateSearchStudentStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 163, -1));
 
         BtnAddStudentNew.setText("Thêm");
         Step4.add(BtnAddStudentNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 610, 110, 30));
 
-        tbPackageList1.setModel(new javax.swing.table.DefaultTableModel(
+        tbPackageListStep4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -459,7 +455,7 @@ public class StudentView2 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane8.setViewportView(tbPackageList1);
+        jScrollPane8.setViewportView(tbPackageListStep4);
 
         Step4.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 280, 250));
 
@@ -474,22 +470,12 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel33.setText("Khoá học đã đăng ký");
         Step4.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 190, -1));
 
-        jLabel34.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel34.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(51, 255, 73));
-        jLabel34.setText("-->");
-        Step4.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 320, 30, -1));
-
-        btnGVSave1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnGVSave1.setText("Lưu");
-        btnGVSave1.addActionListener(new java.awt.event.ActionListener() {
+        Back4.setText("Trở lại");
+        Back4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGVSave1ActionPerformed(evt);
+                Back4ActionPerformed(evt);
             }
         });
-        Step4.add(btnGVSave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 370, -1, -1));
-
-        Back4.setText("Trở lại");
         Step4.add(Back4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, -1, 30));
 
         jLabel35.setBackground(new java.awt.Color(255, 255, 255));
@@ -498,23 +484,6 @@ public class StudentView2 extends javax.swing.JFrame {
         jLabel35.setText("Họ và tên");
         Step4.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 80, -1));
         Step4.add(FNameSearchStudentStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 163, 22));
-
-        FIDSearchStudentStep4.setEnabled(false);
-        FIDSearchStudentStep4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FIDSearchStudentStep4ActionPerformed(evt);
-            }
-        });
-        Step4.add(FIDSearchStudentStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 80, -1));
-
-        cbSelectedGV1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Step4.add(cbSelectedGV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 290, 140, 70));
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane9.setViewportView(jTextArea2);
-
-        Step4.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 180, -1, 250));
 
         jLabel36.setText("THÊM GIÁO VIÊN VÀ KIỂM TRA LẠI THÔNG TIN");
         Step4.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, -1, -1));
@@ -528,25 +497,128 @@ public class StudentView2 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void btnDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoneActionPerformed
+        hideTeacherRelated();
+    }//GEN-LAST:event_btnDoneActionPerformed
 
-    private void FAddressSearchStudentStep4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FAddressSearchStudentStep4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FAddressSearchStudentStep4ActionPerformed
+    private void cbSelectedGVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSelectedGVActionPerformed
+        showTeacherInfo();
+    }//GEN-LAST:event_cbSelectedGVActionPerformed
 
-    private void btnGVSave1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGVSave1ActionPerformed
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnGVSave1ActionPerformed
+    }// GEN-LAST:event_txtNameActionPerformed
 
-    private void FIDSearchStudentStep4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FIDSearchStudentStep4ActionPerformed
+    private void FAddressSearchStudentStep4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_FAddressSearchStudentStep4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FIDSearchStudentStep4ActionPerformed
+    }// GEN-LAST:event_FAddressSearchStudentStep4ActionPerformed
 
-    private void btnGVSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGVSaveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGVSaveActionPerformed
+    private void Next1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Next1ActionPerformed
+        student.setName(txtName.getText());
+        student.setAddress(txtAddress.getText());
+        student.setDate(new SimpleDateFormat("dd/MM/yyyy").format(txtDate.getDate()));
+        student.setGioitinh(chkM.isSelected() ? "Nam" : "Nữ");
+        Step1.setVisible(false);
+        Step2.setVisible(true);
+        this.getLayeredPane().moveToFront(Step2);
+    }// GEN-LAST:event_Next1ActionPerformed
+
+    private void Next2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Next2ActionPerformed
+        int rowCount = listChoose.getModel().getSize();
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < rowCount; i++) {
+
+            list.add(Integer.parseInt(listChoose.getModel().getElementAt(i).split(" - ")[0]));
+
+        }
+        student.setLop(list);
+        // get data for tbPackageList
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(columnPackageNames);
+        for (int i = 0; i < student.getLop().size(); i++) {
+            for (Lop lop : listLop) {
+                if (lop.getId() == student.getLop().get(i)) {
+                    model.addRow(new Object[] { lop.getId(), lop.getName() });
+                }
+            }
+        }
+        tbPackageList.setModel(model);
+
+        // add courseId and its idMonhoc to courseTeacherMap
+        for (int i = 0; i < student.getLop().size(); i++) {
+            CourseTeacherEntry entry = new CourseTeacherEntry();
+            entry.setCourseId(student.getLop().get(i));
+            List<Entry> teacherMap = new ArrayList<>();
+            
+                for (Lop lop : listLop) {
+                    if (lop.getId() == student.getLop().get(i)) {
+                        for (Integer idMon : lop.getIdMonhoc()) {
+                            Entry teacherEntry = new Entry();
+                            teacherEntry.setIdMonhoc(idMon);
+                            for (Teacher teacher : listTeacher) {
+                                if (teacher.getMon() == idMon) {
+                                    teacherEntry.setIdTeacher(teacher.getId());
+                                    break;
+                                }
+                            }
+                            teacherMap.add(teacherEntry);
+                        }
+                    }
+                }
+
+            entry.setTeacherMap(teacherMap);
+            courseTeacherMap.add(entry);
+        }
+
+        // add data to courseFeeMap
+        List<CourseFeeEntry> courseFeeMap = new ArrayList<>();
+        for (int i = 0; i < student.getLop().size(); i++) {
+            CourseFeeEntry entry = new CourseFeeEntry();
+            entry.setCourseId(student.getLop().get(i));
+            entry.setFee(false);
+            courseFeeMap.add(entry);
+        }
+        student.setCourseFeeMap(courseFeeMap);
+
+        Step2.setVisible(false);
+        Step3.setVisible(true);
+        this.getLayeredPane().moveToFront(Step3);
+    }// GEN-LAST:event_Next2ActionPerformed
+
+    private void Back2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Back2ActionPerformed
+
+        student.setLop(new ArrayList<>());
+        Step2.setVisible(false);
+        Step1.setVisible(true);
+        this.getLayeredPane().moveToFront(Step1);
+    }// GEN-LAST:event_Back2ActionPerformed
+
+    private void Next3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Next3ActionPerformed
+        student.setCourseTeacherMap(courseTeacherMap);
+        Step3.setVisible(false);
+        Step4.setVisible(true);
+        showStudent();
+        this.getLayeredPane().moveToFront(Step4);
+    }// GEN-LAST:event_Next3ActionPerformed
+
+    private void Back3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Back3ActionPerformed
+        courseTeacherMap.clear();
+        tbPackageList.setModel(new DefaultTableModel());
+        student.setCourseTeacherMap(courseTeacherMap);
+        Step3.setVisible(false);
+        listMonhoc.setEnabled(true);
+        cbSelectedGV.setEnabled(true);
+        btnGVSave.setEnabled(true);
+        btnDone.setEnabled(true);
+        Step2.setVisible(true);
+        this.getLayeredPane().moveToFront(Step2);
+    }// GEN-LAST:event_Back3ActionPerformed
+
+    private void Back4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Back4ActionPerformed
+        Step4.setVisible(false);
+        Step3.setVisible(true);
+        this.getLayeredPane().moveToFront(Step3);
+    }// GEN-LAST:event_Back4ActionPerformed
 
     public int editingPackage;
 
@@ -555,7 +627,7 @@ public class StudentView2 extends javax.swing.JFrame {
         int idTeacher = Integer.parseInt(cbSelectedGV.getSelectedItem().toString().split(" - ")[0]);
         int idMonhoc = Integer.parseInt(listMonhoc.getSelectedValue().split(" - ")[0]);
         System.out.println(editingPackage);
-        
+
         for (CourseTeacherEntry entry : courseTeacherMap) {
             if (entry.getCourseId() == editingPackage) {
                 for (Entry teacherEntry : entry.getTeacherMap()) {
@@ -566,6 +638,8 @@ public class StudentView2 extends javax.swing.JFrame {
                 }
             }
         }
+
+        showMessage("Đã chọn giáo viên cho môn học!");
 
     }// GEN-LAST:event_btnGVSaveActionPerformed
 
@@ -605,6 +679,7 @@ public class StudentView2 extends javax.swing.JFrame {
     private void FIDSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_FIDSearchStudentActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_FIDSearchStudentActionPerformed
+
     private void FAddressSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_FAddressSearchStudentActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_FAddressSearchStudentActionPerformed
@@ -612,15 +687,9 @@ public class StudentView2 extends javax.swing.JFrame {
     private void FTeacherSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_FTeacherSearchStudentActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_FTeacherSearchStudentActionPerformed
-        
-    private List<Lop> listLop = new ArrayList<>();
-
-    public void getListLops(List<Lop> list) {
-        listLop = list;
-    }
 
     private String[] columnPackageNames = new String[] {
-            "ID", "Tên khoá", "Chi phí","Giáo viên" };
+            "ID", "Tên khoá" };
 
     private List<Monhoc> listSubs = new ArrayList<>();
 
@@ -628,26 +697,65 @@ public class StudentView2 extends javax.swing.JFrame {
         listSubs = list;
     }
 
-    public void showSubjects(List<Entry> list) {
+    private List<Lop> listLop = new ArrayList<>();
+
+    public void getListLops(List<Lop> list) {
+        listLop = list;
+    }
+
+    public void showPackagesFromData(List<Lop> listLops) {
+        // add to listInv
         DefaultListModel<String> model = new DefaultListModel<>();
-        for (Entry entry : list) {
-            for (Monhoc monhoc : listSubs) {
-                if (monhoc.getId() == entry.getIdMonhoc()) {
-                    model.addElement(entry.getIdMonhoc() + " - " + monhoc.getName());
-                    break;
+        for (Lop lop : listLops) {
+            model.addElement(lop.getId() + " - " + lop.getName());
+        }
+        listInv.setModel(model);
+    }
+
+    public JList<String> getListInv() {
+        return listInv;
+    }
+
+    public JList<String> getListChoose() {
+        return listChoose;
+    }
+
+    public void moveSelectedItems(JList<String> sourceList, JList<String> destinationList) {
+        // Get selected index
+        int index = sourceList.getSelectedIndex();
+        if (index != -1) {
+            // Get selected item
+            String selectedItem = sourceList.getSelectedValue();
+
+            // Create new DefaultListModel for destinationList and add selected item
+            DefaultListModel<String> destinationModel = new DefaultListModel<>();
+            for (int i = 0; i < destinationList.getModel().getSize(); i++) {
+                destinationModel.addElement(destinationList.getModel().getElementAt(i));
+            }
+            destinationModel.addElement(selectedItem);
+            destinationList.setModel(destinationModel);
+
+            // Create new DefaultListModel for sourceList and remove selected item
+            DefaultListModel<String> sourceModel = new DefaultListModel<>();
+            for (int i = 0; i < sourceList.getModel().getSize(); i++) {
+                if (i != index) {
+                    sourceModel.addElement(sourceList.getModel().getElementAt(i));
                 }
             }
-            
+            sourceList.setModel(sourceModel);
         }
-        listMonhoc.setModel(model);
     }
 
     private List<Integer> editingLop;
     private List<CourseTeacherEntry> courseTeacherMap = new ArrayList<>();
 
-    public void showStudent(Student student) {
-        FIDSearchStudentStep3.setText(String.valueOf(student.getId()));
-        FNameSearchStudentStep3.setText(student.getName());
+    public void resetStudent() {
+        student = new Student();
+    }
+
+    public void showStudent() {
+
+        FNameSearchStudentStep4.setText(student.getName());
 
         String dateString = student.getDate();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -657,49 +765,64 @@ public class StudentView2 extends javax.swing.JFrame {
             Date date = dateFormat.parse(dateString);
 
             // Thiết lập ngày cho JDateChooser
-            FDateSearchStudentStep3.setDate(date);
+            FDateSearchStudentStep4.setDate(date);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        editingLop = student.getLop();
-        courseTeacherMap = student.getCourseTeacherMap();
         if (student.getGioitinh().equals("Nam")) {
-            chkMStep3.setSelected(true);
+            chkMStep4.setSelected(true);
         } else
-            chkFStep3.setSelected(true);
-        FAddressSearchStudentStep3.setText(student.getAddress());
+            chkFStep4.setSelected(true);
+        FAddressSearchStudentStep4.setText(student.getAddress());
 
-        List<CourseFeeEntry> courseFeeMap = student.getCourseFeeMap();
-
+        // get data for tbPackageListStep4
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columnPackageNames);
+        for (int i = 0; i < student.getLop().size(); i++) {
+            for (Lop lop : listLop) {
+                if (lop.getId() == student.getLop().get(i)) {
+                    model.addRow(new Object[] { lop.getId(), lop.getName() });
+                }
+            }
+        }
+        tbPackageListStep4.setModel(model);
 
-        for (CourseFeeEntry entry : courseFeeMap) {
+        // put courseTeacherMap to TeacherTree
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode("Danh sách giáo viên đã chọn theo khoá");
+        for (CourseTeacherEntry entry : courseTeacherMap) {
+            // get Lop name having entry.getCourseId()
+            String lopName = "";
             for (Lop lop : listLop) {
                 if (lop.getId() == entry.getCourseId()) {
-                    model.addRow(new Object[] {
-                            lop.getId(), lop.getName(), entry.getFee() == false ? "Chưa đóng" : "Đã đóng"
-                    });
+                    lopName = lop.getName();
                     break;
                 }
             }
-
-        }
-        tbPackageList.setModel(model);
-
-        //print out the courseTeacherMap
-        for (CourseTeacherEntry entry : courseTeacherMap) {
-            System.out.println("Course ID: " + entry.getCourseId());
+            DefaultMutableTreeNode courseNode = new DefaultMutableTreeNode(entry.getCourseId() + " - " + lopName);
+            // get subject's name and teacher's name from entry.getTeacherMap()
             for (Entry teacherEntry : entry.getTeacherMap()) {
-                System.out.println("Subject ID: " + teacherEntry.getIdMonhoc() + " - Teacher ID: " + teacherEntry.getIdTeacher());
+                String subjectName = "";
+                for (Monhoc monhoc : listSubs) {
+                    if (monhoc.getId() == teacherEntry.getIdMonhoc()) {
+                        subjectName = monhoc.getName();
+                        break;
+                    }
+                }
+                String teacherName = "";
+                for (Teacher teacher : listTeacher) {
+                    if (teacher.getId() == teacherEntry.getIdTeacher()) {
+                        teacherName = teacher.getName();
+                        break;
+                    }
+                }
+                DefaultMutableTreeNode teacherNode = new DefaultMutableTreeNode(
+                        "(" + teacherEntry.getIdTeacher() + ") " + teacherName + " - " + subjectName);
+                courseNode.add(teacherNode);
             }
+            root.add(courseNode);
         }
-            FNameSearchStudentStep3.setEnabled(false);
-            FDateSearchStudentStep3.setEnabled(false);
-            chkMStep3.setEnabled(false);
-            chkFStep3.setEnabled(false);
-            FAddressSearchStudentStep3.setEnabled(false);
-            BtnAddStudent.setEnabled(false);
+        TeacherTree.setModel(new DefaultTreeModel(root));
+
         // enable Delete and edit button
 
     }
@@ -708,15 +831,75 @@ public class StudentView2 extends javax.swing.JFrame {
         tbPackageList.getSelectionModel().addListSelectionListener(listener);
     }
 
-    public void addAddStudentListener(ActionListener listener) {
-        BtnAddStudent.addActionListener(listener);
-    }
-    public void addConfirmListener(ActionListener listener) {
-        btnCheck.addActionListener(listener);
-    }
-
     public void addListMonhocSelectionListener(ListSelectionListener listener) {
         listMonhoc.addListSelectionListener(listener);
+    }
+    
+    public void addListInvSelectionListener(ListSelectionListener listener) {
+        listInv.addListSelectionListener(listener);
+    }
+
+    public void addListChooseSelectionListener(ListSelectionListener listener) {
+        listChoose.addListSelectionListener(listener);
+    }
+
+    public int getSelectedPackageFromListInv() {
+        if(listInv.getSelectedIndex() == -1)
+        return -1;
+        
+        return Integer.parseInt(listInv.getSelectedValue().split(" - ")[0]);
+    }
+
+    public int getSelectedPackageFromListChoose() {
+        if(listChoose.getSelectedIndex() == -1)
+        return -1;
+        
+        return Integer.parseInt(listChoose.getSelectedValue().split(" - ")[0]);
+    }
+    public void showPackageInfo(Lop lop)
+    {
+        //thông tin bao gồm: tên khoá, các môn học trong khoá, thời gian khoá học, giá của khoá
+        String info = "Tên khoá: " + lop.getName() + "\n";
+        info += "Các môn học trong khoá: \n";
+        for (Integer idMon : lop.getIdMonhoc()) {
+            for (Monhoc monhoc : listSubs) {
+                if (monhoc.getId() == idMon) {
+                    info += monhoc.getName() + "\n";
+                    break;
+                }
+            }
+        }
+        info += "Thời gian: " + lop.getLength() + "\n";
+        info += "Giá: " + lop.getPrice() + "\n";
+        txtPackInfo.setText(info);
+    }
+    
+    
+
+    public void showTeacherInfo()
+    {
+        //get id from cbSelectedGV
+        if(cbSelectedGV.getSelectedItem() == null)
+            return;
+        int id = Integer.parseInt(cbSelectedGV.getSelectedItem().toString().split(" - ")[0]);
+        for (Teacher teacher : listTeacher)
+        {
+            if (teacher.getId() == id)
+            {
+                //hiển thị tất cả thông tin thuộc tính của giáo viên
+
+                String info = "ID: " + teacher.getId() + "\n";
+                info += "Tên: " + teacher.getName() + "\n";
+                info += "Ngày sinh: " + teacher.getDate() + "\n";
+                info += "Giới tính: " + teacher.getSex() + "\n";
+                info += "Địa chỉ: " + teacher.getAddress() + "\n";
+                info += "Cấp bậc hàm: " + teacher.getCapbacham();
+
+                txtGVInfo.setText(info);
+                break;
+            }
+        }
+        
     }
 
     public int getSelectedPackage() {
@@ -733,7 +916,7 @@ public class StudentView2 extends javax.swing.JFrame {
             cbSelectedGV.addItem(teacher.getId() + " - " + teacher.getName());
         }
 
-        //set selection for cbSelectedGV, searching data in courseTeacherMap
+        // set selection for cbSelectedGV, searching data in courseTeacherMap
         for (CourseTeacherEntry entry : courseTeacherMap) {
             if (entry.getCourseId() == editingPackage) {
                 for (Entry teacherEntry : entry.getTeacherMap()) {
@@ -754,129 +937,157 @@ public class StudentView2 extends javax.swing.JFrame {
 
     }
 
-    public void showListMonhoc(int id)
-    {
+    public void showListMonhoc(int id) {
         editingPackage = id;
         for (CourseTeacherEntry entry : courseTeacherMap) {
             if (entry.getCourseId() == id) {
-                showSubjects(entry.getTeacherMap());
+                // get Lop with id
+                Lop edLop = null;
+                for (Lop lop : listLop) {
+                    if (lop.getId() == id) {
+                        edLop = lop;
+                        break;
+                    }
+                }
+                DefaultListModel<String> model = new DefaultListModel<>();
+                for (Integer m : edLop.getIdMonhoc()) {
+                    for (Monhoc monhoc : listSubs) {
+                        if (monhoc.getId() == m) {
+                            model.addElement(monhoc.getId() + " - " + monhoc.getName());
+                            break;
+                        }
+                    }
+                }
+                listMonhoc.setModel(model);
                 break;
             }
         }
     }
-     
-    public int getSelectedSubject()
-    {
+
+    public int getSelectedSubject() {
         return Integer.parseInt(listMonhoc.getSelectedValue().toString().split(" - ")[0]);
     }
 
-    
-
     public Student getStudentInfo() {
-        if (!validateName() || !validateAddress())
-            return null;
-        try {
 
-            Student student = new Student();
-            if (FIDSearchStudentStep3.getText() != null && !"".equals(FIDSearchStudentStep3.getText())) {
-                student.setId(Integer.parseInt(FIDSearchStudentStep3.getText()));
-            }
-
-            student.setName(FNameSearchStudentStep3.getText());
-
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-            student.setDate(dateFormat.format(FDateSearchStudentStep3.getDate()));
-
-            if (chkMStep3.isSelected() == true)
-                student.setGioitinh("Nam");
-            else
-                student.setGioitinh("Nữ");
-
-            student.setAddress(FAddressSearchStudentStep3.getText());
-            student.setLop(editingLop);
-
-            /*
-             * Map<Integer, Boolean> courseFeeMap = new HashMap<>();
-             * List<CourseFeeEntry> courseFeeEntries = new ArrayList<>();
-             * 
-             * DefaultTableModel model = (DefaultTableModel) tbPackageList.getModel();
-             * int rowCount = model.getRowCount();
-             * for (int i = 0; i < rowCount; i++) {
-             * int id = (int) model.getValueAt(i, 0);
-             * boolean fee = (boolean) model.getValueAt(i, 2);
-             * courseFeeMap.put(id, fee);
-             * 
-             * // Create a CourseFeeEntry for each row and add it to the list
-             * CourseFeeEntry entry = new CourseFeeEntry();
-             * entry.setCourseId(id);
-             * entry.setFee(fee);
-             * courseFeeEntries.add(entry);
-             * }
-             * 
-             * student.setCourseFeeMap(courseFeeEntries);
-             */
-            student.setCourseTeacherMap(courseTeacherMap);
-
-            return student;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return null;
+        return student;
 
     }
 
-//    public void clearStudentInfo()
-//    {
-//        FIDSearchStudentStep3.setText("");
-//        FNameSearchStudentStep3.setText("");
-//        
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-//
-//        try {
-//            // Chuyển đổi chuỗi thành đối tượng Date
-//            Date date = dateFormat.parse("01/01/2024");
-//
-//            // Thiết lập ngày cho JDateChooser
-//            FDateSearchStudentStep3.setDate(date);
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
+    public void addBack2Listener(ActionListener listener) {
+        Back2.addActionListener(listener);
+    }
+
+    public void addNext1Listener(ActionListener listener) {
+        Next1.addActionListener(listener);
+    }
+
+    public void addNext2Listener(ActionListener listener) {
+        Next2.addActionListener(listener);
+    }
+
+    public void addBack3Listener(ActionListener listener) {
+        Back3.addActionListener(listener);
+    }
+
+    public void addNext3Listener(ActionListener listener) {
+        Next3.addActionListener(listener);
+    }
+
+    public void addBack4Listener(ActionListener listener) {
+        Back4.addActionListener(listener);
+    }
+
+    public void addAddStudentListener(ActionListener listener) {
+        BtnAddStudentNew.addActionListener(listener);
+    }
+
+    public void addPushListener(ActionListener listener) {
+        btnPush.addActionListener(listener);
+    }
+
+    public void addPullListener(ActionListener listener) {
+        btnPull.addActionListener(listener);
+    }
+
+    public void addEditGVListener( ActionListener listener) {
+        btnEditGV.addActionListener(listener);
+    }
+
+    public JList getListMonhoc() {
+        return listMonhoc;
+    }
+
+    public void hidePackageRelated()
+    {
         
-//        chkMStep3.setSelected(true);
-//        FAddressSearchStudentStep3.setText("");
-//        DefaultTableModel model = (DefaultTableModel) tbPackageList.getModel();
-//        model.setRowCount(0);
-//        DefaultListModel<String> listModel = new DefaultListModel<>();
-//        listMonhoc.setModel(listModel);
-//        FNameSearchStudentStep3.setEnabled(true);
-//        FDateSearchStudentStep3.setEnabled(true);
-//        chkMStep3.setEnabled(true);
-//        chkFStep3.setEnabled(true);
-//        FAddressSearchStudentStep3.setEnabled(true);
-//        BtnAddStudent.setEnabled(true);
-//        
-//    }
+        
+        tbPackageList.setEnabled(false);
+        
+        btnEditGV.setEnabled(false);
+        
 
-    private boolean validateName() {
-        String name = FNameSearchStudentStep3.getText();
-        if (name == null || name.isEmpty()) {
-            FNameSearchStudentStep3.requestFocus();
-            showMessage("Tên không được để trống");
-            return false;
-        }
-        return true;
+        listMonhoc.setEnabled(true);
+        cbSelectedGV.setEnabled(true);
+        btnGVSave.setEnabled(true);
+        btnDone.setEnabled(true);
+
+
     }
 
-    private boolean validateAddress() {
-        String address = FAddressSearchStudentStep3.getText();
-        if (address == null || address.isEmpty()) {
-            FAddressSearchStudentStep3.requestFocus();
-            showMessage("Quê quán không được để trống");
-            return false;
-        }
-        return true;
+    public void hideTeacherRelated()
+    {
+        listMonhoc.setEnabled(false);
+        cbSelectedGV.setEnabled(false);
+        btnGVSave.setEnabled(false);
+        btnDone.setEnabled(false);
+
+        tbPackageList.setEnabled(true);
+        btnEditGV.setEnabled(true);
+        
     }
 
+    // public void clearStudentInfo()
+    // {
+    // FIDSearchStudentStep3.setText("");
+    // FNameSearchStudentStep3.setText("");
+    //
+    // SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    //
+    // try {
+    // // Chuyển đổi chuỗi thành đối tượng Date
+    // Date date = dateFormat.parse("01/01/2024");
+    //
+    // // Thiết lập ngày cho JDateChooser
+    // FDateSearchStudentStep3.setDate(date);
+    // } catch (ParseException e) {
+    // e.printStackTrace();
+    // }
+
+    // chkMStep3.setSelected(true);
+    // FAddressSearchStudentStep3.setText("");
+    // DefaultTableModel model = (DefaultTableModel) tbPackageList.getModel();
+    // model.setRowCount(0);
+    // DefaultListModel<String> listModel = new DefaultListModel<>();
+    // listMonhoc.setModel(listModel);
+    // FNameSearchStudentStep3.setEnabled(true);
+    // FDateSearchStudentStep3.setEnabled(true);
+    // chkMStep3.setEnabled(true);
+    // chkFStep3.setEnabled(true);
+    // FAddressSearchStudentStep3.setEnabled(true);
+    // BtnAddStudent.setEnabled(true);
+    //
+    // }
+
+    /*
+     * private boolean validateName() {
+     * 
+     * }
+     * 
+     * private boolean validateAddress() {
+     * 
+     * }
+     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back2;
@@ -885,7 +1096,6 @@ public class StudentView2 extends javax.swing.JFrame {
     private javax.swing.JButton BtnAddStudentNew;
     private javax.swing.JTextField FAddressSearchStudentStep4;
     private com.toedter.calendar.JDateChooser FDateSearchStudentStep4;
-    private javax.swing.JTextField FIDSearchStudentStep4;
     private javax.swing.JTextField FNameSearchStudentStep4;
     private javax.swing.JButton Next1;
     private javax.swing.JButton Next2;
@@ -894,20 +1104,20 @@ public class StudentView2 extends javax.swing.JFrame {
     private javax.swing.JLayeredPane Step2;
     private javax.swing.JLayeredPane Step3;
     private javax.swing.JLayeredPane Step4;
-    private javax.swing.JButton btnCheck;
+    private javax.swing.JTree TeacherTree;
+    private javax.swing.JButton btnDone;
+    private javax.swing.JButton btnEditGV;
     private javax.swing.JButton btnGVSave;
-    private javax.swing.JButton btnGVSave1;
     private javax.swing.ButtonGroup btnGroup;
     private javax.swing.JButton btnPull;
     private javax.swing.JButton btnPush;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cbSelectedGV;
-    private javax.swing.JComboBox<String> cbSelectedGV1;
+    private javax.swing.JCheckBox chkF;
     private javax.swing.JCheckBox chkFStep4;
+    private javax.swing.JCheckBox chkM;
     private javax.swing.JCheckBox chkMStep4;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -916,22 +1126,17 @@ public class StudentView2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
@@ -947,17 +1152,15 @@ public class StudentView2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JList<String> listChoose;
     private javax.swing.JList<String> listInv;
     private javax.swing.JList<String> listMonhoc;
-    private javax.swing.JList<String> listMonhoc1;
     private javax.swing.JTable tbPackageList;
-    private javax.swing.JTable tbPackageList1;
-    private javax.swing.JTable tbPackageListStep2;
+    private javax.swing.JTable tbPackageListStep4;
+    private javax.swing.JTextField txtAddress;
+    private com.toedter.calendar.JDateChooser txtDate;
+    private javax.swing.JTextArea txtGVInfo;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextArea txtPackInfo;
     // End of variables declaration//GEN-END:variables
 }

@@ -28,7 +28,7 @@ import vn.tad_sebs.View.StudentView2;
 public class StudentController2 {
 
     private boolean isStudentSelectionChanged = false;
-    private FeeView studentView2;
+    private StudentView2 studentView2;
     private StudentDAO studentDao;
     private LopDAO lopDao;
     private StudentCustomSearch filterView;
@@ -42,9 +42,15 @@ public class StudentController2 {
         teacherDao = new TeacherDAO();
         subjectDao = new SubjectDAO();
         studentView2.addAddStudentListener(new AddStudentListener());
-        studentView2.addListPackageSelectionListener(new ListPackageSelectionListener());
+        studentView2.addEditGVListener(new EditGVListener());
         studentView2.addListMonhocSelectionListener(new ListMonhocSelectionListener());
-        studentView2.addConfirmListener(new ConfirmListener());
+        //add push and pull listener
+        studentView2.addPullListener(new PullListener());
+        studentView2.addPushListener(new PushListener());
+        studentView2.addListChooseSelectionListener(new ListChooseSelectionListener());
+        studentView2.addListInvSelectionListener(new ListInvSelectionListener());
+        
+        
     }
     
 
@@ -54,24 +60,79 @@ public class StudentController2 {
         List<Teacher> teacherList = teacherDao.getListTeachers();
         List<Monhoc> subjectList = subjectDao.getListSubjects();
         studentView2.getListLops(lopList);
-        studentView2.showListStudents(studentList);
-
+        studentView2.showPackagesFromData(lopList);
+        studentView2.getListTeachers(teacherList);
         studentView2.getListSubjects(subjectList);
         studentView2.setVisible(true);
         
     }
 
-    class ListPackageSelectionListener implements ListSelectionListener {
+    class ListChooseSelectionListener implements ListSelectionListener {
         public void valueChanged(ListSelectionEvent e) {
-            // Only perform action if this is the final event in a series of related events
-            if (e.getValueIsAdjusting()) {
+
+            
+            //if studentView2.getSelectedPackageFromListChoose() is null, return
+
+            /* if (studentView2.getSelectedPackageFromListChoose() == -1) {
                 return;
+            } */
+            for (Lop lop : lopDao.getListLops())
+                if (lop.getId() == studentView2.getSelectedPackageFromListChoose()) {
+                    studentView2.showPackageInfo(lop);
+                    break;
+                }
+        }
+    }
+
+    class ListInvSelectionListener implements ListSelectionListener {
+        public void valueChanged(ListSelectionEvent e) {
+            
+            /* if (studentView2.getSelectedPackageFromListInv() == -1) {
+                return;
+            } */
+            for (Lop lop : lopDao.getListLops())
+                if (lop.getId() == studentView2.getSelectedPackageFromListInv()) {
+                    studentView2.showPackageInfo(lop);
+                    break;
+                }
+        }
+    }
+
+    class PullListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            studentView2.moveSelectedItems(studentView2.getListChoose(), studentView2.getListInv());
+            if(studentView2.getListChoose().getModel().getSize() > 0)
+            studentView2.getListChoose().setSelectedIndex(0);
+        }
+
+    }
+
+    class PushListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            studentView2.moveSelectedItems(studentView2.getListInv(), studentView2.getListChoose());
+            if(studentView2.getListInv().getModel().getSize() > 0)
+            studentView2.getListInv().setSelectedIndex(0);
+        }
+
+    }
+
+    class EditGVListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+         
+            
+            // Perform action...
+            int id = studentView2.getSelectedPackage();
+            // remove action listener on listMonhoc
+            ListSelectionListener[] listeners = studentView2.getListMonhoc().getListSelectionListeners();
+            for (ListSelectionListener l : listeners) {
+                studentView2.getListMonhoc().removeListSelectionListener(l);
             }
 
-            // Perform action...
-
-            int id = studentView2.getSelectedPackage();
             studentView2.showListMonhoc(id);
+
+            // add action listener on listMonhoc
+            studentView2.addListMonhocSelectionListener(new ListMonhocSelectionListener());
+            studentView2.hidePackageRelated();
         }
 
     }
@@ -82,20 +143,12 @@ public class StudentController2 {
             if (student != null) {
                 studentDao.add(student);
                 lopDao.addStudent(student);
-                studentView2.showStudent(student);
-                studentView2.showListStudents(studentDao.getListStudents());
                 studentView2.showMessage("Thêm thành công!");
             }
-
         }
 
     }
-    class ConfirmListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            
-        }
-
-    }
+    
     class ListMonhocSelectionListener implements ListSelectionListener {
         public void valueChanged(ListSelectionEvent e) {
             // Only perform action if this is the final event in a series of related events
@@ -121,7 +174,7 @@ public class StudentController2 {
 
     class FilterListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            filterView = new StudentCustomSearch();
+            /* filterView = new StudentCustomSearch();
 
             filterView.setOnOkButtonClickListener(new StudentCustomSearch.OnOkButtonClickListener() {
                 @Override
@@ -151,21 +204,21 @@ public class StudentController2 {
                         filterView.dispose();
                     }
                 }
-            });
+            }); */
 
         }
     }
     class EditStudentListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            Student student = studentView2.getStudentInfo();
+            /* Student student = studentView2.getStudentInfo();
             if (student != null) {
                 studentDao.edit(student);
                 lopDao.editStudent(student);
                 // studentView.clearStudentInfo();
                 studentView2.showListStudents(studentDao.getListStudents());
                 studentView2.showMessage("Sửa thành công!");
-            }
+            } */
         }
     }
 
@@ -182,18 +235,18 @@ public class StudentController2 {
 
         public void valueChanged(ListSelectionEvent e) {
 
-            int row = studentView2.getSelectedRow();
+            /* int row = studentView2.getSelectedRow();
             if (row != -1) {
                 Student student = studentDao.getListStudents().get(row);
                 studentView2.showStudent(student);
-            }
+            } */
         }
     }
 
     class SearchStudentListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            String criteria = studentView2.getSelectedText();
+            /* String criteria = studentView2.getSelectedText();
             String value = studentView2.getSearchBox();
             List<Student> list = new ArrayList<>();
             List<Student> oldlist = studentDao.getListStudents();
@@ -249,23 +302,11 @@ public class StudentController2 {
                 studentView2.showMessage("Không tìm thấy!");
                 studentView2.showListStudents(oldlist);
             }
-
+ */
         }
 
     }
 
-    class SortStudentByID implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            studentDao.sortListStudentsByID();
-            studentView2.showListStudents(studentDao.getListStudents());
-        }
-    }
-
-    class SortStudentByName implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            studentDao.sortListStudentsByName();
-            studentView2.showListStudents(studentDao.getListStudents());
-        }
-    }
+    
 
 }
