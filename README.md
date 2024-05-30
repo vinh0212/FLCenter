@@ -1,4 +1,4 @@
-# Ứng dụng Quản lý Trung tâm ngoại ngữ FLCenter v1.0
+# Ứng dụng Quản lý Trung tâm ngoại ngữ FLCenter v1.1
 
 ## Mô tả
    Ứng dụng giúp bạn theo dõi và quản lý trung tâm ngoại ngữ một cách hiệu quả và chặt chẽ.
