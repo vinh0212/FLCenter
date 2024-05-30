@@ -6,9 +6,8 @@
         <Note></Note>
         <price>450000.0</price>
         <length>6 tháng</length>
-        <idStudentList>
-            <idStudent>2</idStudent>
-        </idStudentList>
+        
+        <idStudentList/>
         <idMonhocList>
             <idMonhoc>1</idMonhoc>
             <idMonhoc>2</idMonhoc>
@@ -62,7 +61,6 @@
         <price>200000.0</price>
         <length>1 tháng</length>
         <idStudentList>
-            <idStudent>1</idStudent>
             <idStudent>2</idStudent>
         </idStudentList>
         <idMonhocList>
