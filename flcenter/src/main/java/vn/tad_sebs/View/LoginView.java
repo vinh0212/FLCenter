@@ -116,7 +116,14 @@ public class LoginView extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 51));
-        jLabel2.setFont(new java.awt.Font("VNLATINW.TTF",1,18));
+        try {
+            FileInputStream is = new FileInputStream(new File("VNLatinW.ttf"));
+            Font font = Font.createFont(Font.TRUETYPE_FONT, is);
+            font = font.deriveFont(Font.PLAIN, 18); // Set font size here
+            jLabel2.setFont(font);
+        } catch (FontFormatException | IOException e) {
+            e.printStackTrace();
+        }
         jLabel2.setForeground(new java.awt.Color(47, 147, 177));
         jLabel2.setText("LOGIN");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));

@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -19,6 +20,7 @@ import java.util.Map;
 
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 import vn.tad_sebs.Model.CourseFeeEntry;
 import vn.tad_sebs.Model.CourseTeacherEntry;
@@ -34,10 +36,19 @@ import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
@@ -407,34 +418,71 @@ public class StudentView extends javax.swing.JFrame {
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPrintActionPerformed
         Student student = getStudentInfo();
+        TableModel model = tbPackageList.getModel();
 
         try {
-            // Open the template PDF
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader("template.pdf"),
-                    new PdfWriter("StudentInfo" + student.getId() + "-" + student.getName() + ".pdf"));
+            Document document = new Document();
+                // Tạo một PdfWriter
+                PdfWriter.getInstance(document, new FileOutputStream("StudentInfo-" + student.getId() + "-" + student.getName() + ".pdf"));
+                // Mở Document
+                document.open();
 
-            // Get the form from the document
-            PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+                // Tạo một font chung
+                Font font = FontFactory.getFont(FontFactory.TIMES, 14);
 
-            // Create a new font
-            PdfFont font = PdfFontFactory.createFont("vuArial.ttf", "Identity-H");
+                // Tạo tiêu đề với font lớn hơn và đậm
+                Paragraph title = new Paragraph("THONG TIN HOC VIEN", FontFactory.getFont(FontFactory.TIMES_BOLD, 18));
+                title.setAlignment(Element.ALIGN_CENTER);
+                document.add(title);
 
-            // Fill the form fields
-            Map<String, PdfFormField> fields = form.getAllFormFields();
-            fields.get("name").setValue(student.getName()).setFont(font);
-            fields.get("dob").setValue(student.getDate()).setFont(font);
-            fields.get("sex").setValue(student.getGioitinh()).setFont(font);
+                // Thêm thông tin học viên
+                document.add(new Chunk("\n"));
+                document.add(new Paragraph("1. Thong tin hoc vien", FontFactory.getFont(FontFactory.TIMES_BOLD, 16)));
+                document.add(new Paragraph("Ho ten: " + student.getName(), font));
+                document.add(new Paragraph("Ngay sinh: " + student.getDate(), font));
+                document.add(new Paragraph("Gioi tinh: " + student.getGioitinh(), font));
+                document.add(new Paragraph("Dia chi: " + student.getAddress(), font));
 
-            fields.get("address").setValue(student.getAddress()).setFont(font);
+                // Thêm chi tiết hóa đơn
+                document.add(new Chunk("\n"));
+                document.add(new Paragraph("2. Chi tiet cac khoa hoc", FontFactory.getFont(FontFactory.TIMES_BOLD, 16)));
 
-            fields.get("id").setValue(String.valueOf(student.getId())).setFont(font);
+                // Tạo bảng cho chi tiết hóa đơn
+                PdfPTable table = new PdfPTable(3); // 3 columns
+                table.setWidthPercentage(100); // Full Width
+                table.setSpacingBefore(10f); // Space before table
+                table.setSpacingAfter(10f); // Space after table
 
-            // Close the document
-            pdfDoc.close();
+                // Set Column widths
+                float[] columnWidths = { 1f, 2f, 1f };
+                table.setWidths(columnWidths);
+
+                table.addCell("STT");
+                table.addCell("Ten khoa hoc");
+                table.addCell("Trang thai");
+
+                for (int i = 0; i < model.getRowCount(); i++) {
+                    table.addCell(String.valueOf(i + 1));
+                    table.addCell(String.valueOf(model.getValueAt(i, 1)));
+                    table.addCell(String.valueOf(model.getValueAt(i, 2)) == "Chưa đóng" ? "Chua dong" : "Da dong");
+                }
+
+                document.add(table);
+
+                
+
+                // thêm hàng chữ ký cho người lập hoá đơn và người thanh toán, cùng 1 hàng
+
+                
+                // Đóng Document
+                document.close();
 
             showMessage("Đã xuất xong thông tin học viên. Kiểm tra trong thư mục của chương trình");
         } catch (IOException ex) {
             ex.printStackTrace();
+        } catch (DocumentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
     }// GEN-LAST:event_btnPrintActionPerformed
 

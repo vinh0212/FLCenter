@@ -161,7 +161,7 @@
           <Color blue="33" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new java.awt.Font(&quot;VNLATINW.TTF&quot;,1,18)" type="code"/>
+          <Connection code="new java.awt.Font(&quot;VNLatinW.TTF&quot;,1,18)" type="code"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="b1" green="93" red="2f" type="rgb"/>
