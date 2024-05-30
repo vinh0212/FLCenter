@@ -190,20 +190,24 @@ public class ClassView extends javax.swing.JFrame {
         jPanel1.add(cbLength, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 130, 220, -1));
 
         btnEditSubsList.setText("Sửa danh sách");
-        
         jPanel1.add(btnEditSubsList, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, -1, -1));
 
         tbSubsList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Tên môn", "Khoa"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane4.setViewportView(tbSubsList);
 
         jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 100, 250, 160));
@@ -611,6 +615,11 @@ public class ClassView extends javax.swing.JFrame {
         txtNameClass.setText("");
         txtSLClass.setText("");
         txtNoteClass.setText("");
+        txtPrice.setText("");
+        cbLength.setSelectedIndex(0);
+        DefaultTableModel model = (DefaultTableModel) tbSubsList.getModel();
+        model.setRowCount(0);
+        
         // disable Edit and Delete buttons
         btnEditClass.setEnabled(false);
         btnDeleteClass.setEnabled(false);
@@ -696,6 +705,10 @@ public class ClassView extends javax.swing.JFrame {
         txtNameClass.setText("");
         txtSLClass.setText("");
         txtNoteClass.setText("");
+        txtPrice.setText("");
+        cbLength.setSelectedIndex(0);
+        DefaultTableModel model = (DefaultTableModel) tbSubsList.getModel();
+        model.setRowCount(0);
         tbClassList.clearSelection();
         // disable Edit and Delete buttons
         btnEditClass.setEnabled(false);
@@ -825,6 +838,7 @@ public class ClassView extends javax.swing.JFrame {
         List<Monhoc> list = new ArrayList<>();
         DefaultTableModel model = (DefaultTableModel) tbSubsList.getModel();
         int size = model.getRowCount();
+        if(size == 0) return new ArrayList<>();
         for (int i = 0; i < size; i++) {
             int id = (Integer) model.getValueAt(i, 0);
             for (Monhoc m : listMonhoc)

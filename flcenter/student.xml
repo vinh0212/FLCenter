@@ -31,36 +31,25 @@
         <courseFeeMap>
             <entry>
                 <courseId>6</courseId>
-                <fee>false</fee>
+                <fee>true</fee>
             </entry>
         </courseFeeMap>
     </student>
     <student>
-        <id>9</id>
-        <name>Jonathan Davis</name>
-        <Date>29/05/2024</Date>
-        <Address>USA</Address>
+        <id>2</id>
+        <name>Sumani</name>
+        <Date>20/05/2005</Date>
+        <Address>AG</Address>
         <Gioitinh>Nam</Gioitinh>
         <lop>
+            <id>6</id>
+            <id>4</id>
             <id>5</id>
-            <id>1</id>
+            <id>2</id>
         </lop>
         <courseTeacherMap>
             <entries>
-                <courseId>5</courseId>
-                <teacherMap>
-                    <entry>
-                        <idMonhoc>1</idMonhoc>
-                        <idTeacher>12</idTeacher>
-                    </entry>
-                    <entry>
-                        <idMonhoc>2</idMonhoc>
-                        <idTeacher>13</idTeacher>
-                    </entry>
-                </teacherMap>
-            </entries>
-            <entries>
-                <courseId>1</courseId>
+                <courseId>6</courseId>
                 <teacherMap>
                     <entry>
                         <idMonhoc>1</idMonhoc>
@@ -71,19 +60,70 @@
                         <idTeacher>11</idTeacher>
                     </entry>
                     <entry>
+                        <idMonhoc>6</idMonhoc>
+                        <idTeacher>14</idTeacher>
+                    </entry>
+                </teacherMap>
+            </entries>
+            <entries>
+                <courseId>4</courseId>
+                <teacherMap>
+                    <entry>
+                        <idMonhoc>1</idMonhoc>
+                        <idTeacher>12</idTeacher>
+                    </entry>
+                    <entry>
                         <idMonhoc>3</idMonhoc>
                         <idTeacher>4</idTeacher>
+                    </entry>
+                </teacherMap>
+            </entries>
+            <entries>
+                <courseId>5</courseId>
+                <teacherMap>
+                    <entry>
+                        <idMonhoc>1</idMonhoc>
+                        <idTeacher>12</idTeacher>
+                    </entry>
+                    <entry>
+                        <idMonhoc>2</idMonhoc>
+                        <idTeacher>11</idTeacher>
+                    </entry>
+                </teacherMap>
+            </entries>
+            <entries>
+                <courseId>2</courseId>
+                <teacherMap>
+                    <entry>
+                        <idMonhoc>4</idMonhoc>
+                        <idTeacher>15</idTeacher>
+                    </entry>
+                    <entry>
+                        <idMonhoc>5</idMonhoc>
+                        <idTeacher>3</idTeacher>
+                    </entry>
+                    <entry>
+                        <idMonhoc>6</idMonhoc>
+                        <idTeacher>14</idTeacher>
                     </entry>
                 </teacherMap>
             </entries>
         </courseTeacherMap>
         <courseFeeMap>
             <entry>
+                <courseId>6</courseId>
+                <fee>false</fee>
+            </entry>
+            <entry>
+                <courseId>4</courseId>
+                <fee>false</fee>
+            </entry>
+            <entry>
                 <courseId>5</courseId>
                 <fee>false</fee>
             </entry>
             <entry>
-                <courseId>1</courseId>
+                <courseId>2</courseId>
                 <fee>false</fee>
             </entry>
         </courseFeeMap>

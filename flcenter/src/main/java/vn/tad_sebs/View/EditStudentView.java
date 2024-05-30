@@ -12,6 +12,7 @@ import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JList;
 import javax.swing.table.DefaultTableModel;
 
@@ -37,6 +38,7 @@ public class EditStudentView extends javax.swing.JFrame {
      */
     public EditStudentView() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         listMonhoc.setEnabled(false);
         cbSelectedGV.setEnabled(false);
@@ -45,10 +47,10 @@ public class EditStudentView extends javax.swing.JFrame {
 
         this.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
-            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-                MainView2 mainView2 = new MainView2();
-                MainController2 mainController2 = new MainController2(mainView2);
-                mainController2.showMainView2();
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                SearchStudentView searchStudentView = new SearchStudentView(0);
+                searchStudentView.showList();
+                searchStudentView.setVisible(true);
             }
         });
     }
@@ -64,6 +66,7 @@ public class EditStudentView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel2 = new javax.swing.JLabel();
         FIDSearchStudent = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -95,6 +98,9 @@ public class EditStudentView extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CHỈNH SỬA THÔNG TIN");
+        setIconImage(icon.getImage());
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -116,13 +122,14 @@ public class EditStudentView extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(51, 255, 73));
         jLabel12.setText("Họ và tên");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 80, -1));
-        getContentPane().add(FNameSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 163, 22));
+        getContentPane().add(FNameSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 163, 30));
 
         FDateSearchStudent.setDateFormatString("dd/MM/yyyy");
-        getContentPane().add(FDateSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 163, -1));
+        getContentPane().add(FDateSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 163, 30));
 
+        btnDone.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnDone.setText("Hoàn tất");
-        getContentPane().add(btnDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, -1, -1));
+        getContentPane().add(btnDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -136,7 +143,7 @@ public class EditStudentView extends javax.swing.JFrame {
         jLabel10.setText("Giới tính");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 70, -1));
 
-        chkM.setBackground(new java.awt.Color(0, 0, 0));
+        buttonGroup1.add(chkM);
         chkM.setForeground(new java.awt.Color(255, 255, 255));
         chkM.setText("Nam");
         chkM.addActionListener(new java.awt.event.ActionListener() {
@@ -146,16 +153,18 @@ public class EditStudentView extends javax.swing.JFrame {
         });
         getContentPane().add(chkM, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 80, -1));
 
-        chkF.setBackground(new java.awt.Color(0, 0, 0));
+        buttonGroup1.add(chkF);
         chkF.setForeground(new java.awt.Color(255, 255, 255));
         chkF.setText("Nữ");
         getContentPane().add(chkF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 70, -1));
 
+        btnDelete.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnDelete.setText("Xoá khoá");
-        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 570, 80, 30));
+        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 570, 100, 30));
 
+        btnConfirm.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnConfirm.setText("Sửa giáo viên của khoá");
-        getContentPane().add(btnConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 170, 30));
+        getContentPane().add(btnConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, 230, 30));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -168,7 +177,7 @@ public class EditStudentView extends javax.swing.JFrame {
                 FAddressSearchStudentActionPerformed(evt);
             }
         });
-        getContentPane().add(FAddressSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 163, -1));
+        getContentPane().add(FAddressSearchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 182, 163, 30));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 255, 73));
@@ -178,7 +187,7 @@ public class EditStudentView extends javax.swing.JFrame {
         btnAddtoPkgList.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnAddtoPkgList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
         btnAddtoPkgList.setText("Thêm");
-        getContentPane().add(btnAddtoPkgList, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, -1, -1));
+        getContentPane().add(btnAddtoPkgList, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, -1, -1));
 
         getContentPane().add(cbRemPkg, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 160, -1));
 
@@ -186,13 +195,13 @@ public class EditStudentView extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 255, 73));
         jLabel11.setText("Khoá học đã đăng ký");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 190, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 190, -1));
 
         jLabel13.setBackground(new java.awt.Color(255, 255, 255));
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(51, 255, 73));
         jLabel13.setText("Giáo viên được chọn");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 190, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 190, -1));
 
         tbPackageList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -207,19 +216,19 @@ public class EditStudentView extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbPackageList);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 280, 250));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 370, 250));
 
         jScrollPane2.setViewportView(listMonhoc);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 110, 120));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 110, 120));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 255, 73));
         jLabel5.setText("-->");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 30, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 30, -1));
 
-        getContentPane().add(cbSelectedGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 140, 70));
+        getContentPane().add(cbSelectedGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, 140, 70));
 
         btnGVSave.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnGVSave.setText("Chọn GV");
@@ -228,7 +237,7 @@ public class EditStudentView extends javax.swing.JFrame {
                 btnGVSaveActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGVSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 410, -1, -1));
+        getContentPane().add(btnGVSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, -1, -1));
 
         BtnEditStudent.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         BtnEditStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Edit.png"))); // NOI18N
@@ -250,12 +259,13 @@ public class EditStudentView extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 760, 610));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void FIDSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_FIDSearchStudentActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_FIDSearchStudentActionPerformed
-
+ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
     private void FAddressSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_FAddressSearchStudentActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_FAddressSearchStudentActionPerformed
@@ -628,6 +638,7 @@ public class EditStudentView extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDone;
     private javax.swing.JButton btnGVSave;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbRemPkg;
     private javax.swing.JComboBox<String> cbSelectedGV;
     private javax.swing.JCheckBox chkF;

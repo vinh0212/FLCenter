@@ -8,6 +8,8 @@
         <length>6 tháng</length>
         <idStudentList>
             <idStudent>9</idStudent>
+            <idStudent>2</idStudent>
+            <idStudent>2</idStudent>
         </idStudentList>
         <idMonhocList>
             <idMonhoc>1</idMonhoc>
@@ -21,7 +23,9 @@
         <Note></Note>
         <price>500000.0</price>
         <length>6 tháng</length>
-        <idStudentList/>
+        <idStudentList>
+            <idStudent>2</idStudent>
+        </idStudentList>
         <idMonhocList>
             <idMonhoc>4</idMonhoc>
             <idMonhoc>5</idMonhoc>
@@ -45,7 +49,9 @@
         <Note></Note>
         <price>50000.0</price>
         <length>1 tháng</length>
-        <idStudentList/>
+        <idStudentList>
+            <idStudent>2</idStudent>
+        </idStudentList>
         <idMonhocList>
             <idMonhoc>1</idMonhoc>
             <idMonhoc>3</idMonhoc>
@@ -60,6 +66,7 @@
         <idStudentList>
             <idStudent>1</idStudent>
             <idStudent>9</idStudent>
+            <idStudent>2</idStudent>
         </idStudentList>
         <idMonhocList>
             <idMonhoc>1</idMonhoc>
@@ -75,6 +82,9 @@
         <idStudentList>
             <idStudent>10</idStudent>
             <idStudent>1</idStudent>
+            <idStudent>2</idStudent>
+            <idStudent>2</idStudent>
+            <idStudent>2</idStudent>
         </idStudentList>
         <idMonhocList>
             <idMonhoc>1</idMonhoc>

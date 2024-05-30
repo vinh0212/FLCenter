@@ -71,6 +71,23 @@ public class StudentDAO {
         }
     }
 
+    public void editFee(Student student) {
+        try {
+            for (Student s : listStudents) {
+                if (s.getId() == student.getId()) {
+                    
+                    s.setCourseFeeMap(student.getCourseFeeMap());
+
+                    break;
+                }
+            }
+            sortListStudentsByID();
+            writeListStudents(listStudents);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     
 
     public boolean delete(Student student) {

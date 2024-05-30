@@ -7,6 +7,7 @@ package vn.tad_sebs.View;
 import java.awt.Desktop;
 import java.awt.event.ActionListener;
 import java.net.URI;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -54,7 +55,9 @@ public class MainView2 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(705, 600));
+        setTitle("MENU");
+        setIconImage(icon.getImage());
+        setPreferredSize(new java.awt.Dimension(782, 602));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -129,10 +132,12 @@ public class MainView2 extends javax.swing.JFrame {
         DX2.setBackground(new java.awt.Color(0, 204, 102));
         DX2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/out.png"))); // NOI18N
         DX2.setText("Đăng xuất");
+        DX2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(DX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 530, -1, 40));
 
         About2.setBackground(new java.awt.Color(0, 204, 102));
         About2.setFont(new java.awt.Font("Verdana", 2, 12)); // NOI18N
+        About2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/info.png"))); // NOI18N
         About2.setText("About");
         About2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         About2.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +145,7 @@ public class MainView2 extends javax.swing.JFrame {
                 About2ActionPerformed(evt);
             }
         });
-        getContentPane().add(About2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, 90, 40));
+        getContentPane().add(About2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 530, 110, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/090.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 210, 130));
@@ -170,7 +175,8 @@ public class MainView2 extends javax.swing.JFrame {
 
         EDIT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/EDITSTUDENT.png"))); // NOI18N
         EDIT.setBorder(null);
-        getContentPane().add(EDIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 230, 160));
+        EDIT.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(EDIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 230, 160));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel5.setText("ĐĂNG KÝ KHÓA HỌC");
@@ -187,7 +193,7 @@ public class MainView2 extends javax.swing.JFrame {
         getContentPane().add(DKKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 230, 160));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Menubackground2.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 780, 590));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 790, 590));
 
         pack();
         setLocationRelativeTo(null);
@@ -199,11 +205,13 @@ public class MainView2 extends javax.swing.JFrame {
                     DKKH.setEnabled(false);
                     DHP.setEnabled(false);                  
                     DX2.setEnabled(false);
+                    EDIT.setEnabled(false);
                 } else {
                     abOut2.setVisible(false);
                     DKKH.setEnabled(true);
                     DHP.setEnabled(true);
                     DX2.setEnabled(true);
+                    EDIT.setEnabled(true);
                 }
     }//GEN-LAST:event_About2ActionPerformed
 
@@ -225,6 +233,7 @@ openWebpage("https://github.com/vinh0212/FLCenter");
     {
         DKKH.addActionListener(listener);
     }
+   ImageIcon icon = new ImageIcon((getClass().getResource("/vn/tad_sebs/icon/icon.png")));
    public void addDHPListener(ActionListener listener)
     {
         DHP.addActionListener(listener);

@@ -113,7 +113,7 @@ public class StudentView2 extends javax.swing.JFrame {
         Next1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         Step2 = new javax.swing.JLayeredPane();
         jLabel7 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -147,6 +147,7 @@ public class StudentView2 extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         txtGVInfo = new javax.swing.JTextArea();
         Next3 = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         Step4 = new javax.swing.JLayeredPane();
         jLabel27 = new javax.swing.JLabel();
@@ -167,160 +168,195 @@ public class StudentView2 extends javax.swing.JFrame {
         Back4 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         FNameSearchStudentStep4 = new javax.swing.JTextField();
-        jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("QUẢN LÝ HỌC VIÊN");
+        setTitle("ĐĂNG KÝ KHÓA HỌC");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(icon.getImage());
-        setMinimumSize(new java.awt.Dimension(1366, 768));
+        setMinimumSize(new java.awt.Dimension(900, 600));
+        setPreferredSize(new java.awt.Dimension(900, 600));
         setResizable(false);
-        setSize(new java.awt.Dimension(0, 0));
+        setSize(new java.awt.Dimension(900, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Step1.setPreferredSize(new java.awt.Dimension(1240, 740));
+        Step1.setMinimumSize(new java.awt.Dimension(800, 670));
+        Step1.setPreferredSize(new java.awt.Dimension(900, 600));
         Step1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel9.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 255, 73));
         jLabel9.setText("Họ và tên");
-        Step1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, -1));
+        Step1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, 10));
 
+        jLabel14.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(51, 255, 73));
         jLabel14.setText("Ngày sinh");
-        Step1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, -1));
+        Step1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, -1, -1));
 
+        jLabel15.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(51, 255, 73));
         jLabel15.setText("Giới tính");
-        Step1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, -1, -1));
+        Step1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
 
+        jLabel16.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(51, 255, 73));
         jLabel16.setText("Quê quán");
-        Step1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 540, -1, -1));
+        Step1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, -1, -1));
 
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
             }
         });
-        Step1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 240, -1));
-        Step1.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, 250, -1));
+        Step1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 192, 240, 30));
+        Step1.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 442, 250, 30));
 
         buttonGroup2.add(chkM);
+        chkM.setForeground(new java.awt.Color(255, 255, 255));
         chkM.setText("Nam");
-        Step1.add(chkM, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, -1, -1));
+        chkM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkMActionPerformed(evt);
+            }
+        });
+        Step1.add(chkM, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, -1));
 
         buttonGroup2.add(chkF);
+        chkF.setForeground(new java.awt.Color(255, 255, 255));
         chkF.setText("Nữ");
-        Step1.add(chkF, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, -1, -1));
+        chkF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkFActionPerformed(evt);
+            }
+        });
+        Step1.add(chkF, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, -1, -1));
 
         txtDate.setDateFormatString("dd/MM/yyyy");
-        Step1.add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
+        Step1.add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 272, -1, 30));
 
+        Next1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         Next1.setText("Tiếp tục");
         Next1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Next1ActionPerformed(evt);
             }
         });
-        Step1.add(Next1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 710, 90, 30));
+        Step1.add(Next1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 530, 90, 30));
 
         jLabel18.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(51, 255, 73));
         jLabel18.setText("ĐĂNG KÝ THÔNG TIN HỌC VIÊN MỚI");
-        Step1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
+        Step1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel20.setText("ĐĂNG KÝ THÔNG TIN CÁ NHÂN");
-        Step1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, -1, -1));
+        Step1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
 
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
-        Step1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
+        Step1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
 
-        getContentPane().add(Step1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
+        getContentPane().add(Step1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        Step2.setPreferredSize(new java.awt.Dimension(900, 600));
         Step2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 255, 73));
         jLabel7.setText("ĐĂNG KÝ THÔNG TIN HỌC VIÊN MỚI");
-        Step2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
+        Step2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel21.setText("ĐĂNG KÝ KHÓA HỌC");
-        Step2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
+        Step2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, -1));
 
         txtPackInfo.setColumns(20);
         txtPackInfo.setRows(5);
         txtPackInfo.setEnabled(false);
         jScrollPane4.setViewportView(txtPackInfo);
 
-        Step2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 540, 260));
+        Step2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 350, 260));
 
         jScrollPane1.setViewportView(listInv);
 
-        Step2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 140, 260));
+        Step2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 140, 260));
 
         jScrollPane6.setViewportView(listChoose);
 
-        Step2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 140, 250));
+        Step2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 140, 260));
 
+        jLabel22.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(51, 255, 73));
         jLabel22.setText("KHÓA HỌC HIỆN CÓ");
-        Step2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+        Step2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
 
+        jLabel23.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(51, 255, 73));
         jLabel23.setText("KHÓA HỌC ĐÃ CHỌN");
-        Step2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, -1, -1));
+        Step2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
 
+        btnPull.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnPull.setText("<<");
-        Step2.add(btnPull, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 60, 20));
+        Step2.add(btnPull, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 60, 30));
 
+        btnPush.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnPush.setText(">>");
-        Step2.add(btnPush, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 60, 20));
+        Step2.add(btnPush, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 60, 30));
 
+        Back2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         Back2.setText("Trở lại");
         Back2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Back2ActionPerformed(evt);
             }
         });
-        Step2.add(Back2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, -1, -1));
+        Step2.add(Back2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, -1, 30));
 
+        Next2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         Next2.setText("Tiếp tục");
         Next2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Next2ActionPerformed(evt);
             }
         });
-        Step2.add(Next2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 720, -1, -1));
+        Step2.add(Next2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 530, -1, 30));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
-        Step2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
+        Step2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
 
-        getContentPane().add(Step2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
+        getContentPane().add(Step2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        Step3.setPreferredSize(new java.awt.Dimension(900, 600));
         Step3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnDone.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnDone.setText("Hoàn tất");
         btnDone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDoneActionPerformed(evt);
             }
         });
-        Step3.add(btnDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 400, 90, -1));
+        Step3.add(btnDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 90, -1));
 
         jScrollPane2.setViewportView(listMonhoc);
 
-        Step3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 110, 160));
+        Step3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 110, 160));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 255, 73));
         jLabel1.setText("ĐĂNG KÝ THÔNG TIN HỌC VIÊN MỚI");
-        Step3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
+        Step3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
 
         jLabel13.setBackground(new java.awt.Color(255, 255, 255));
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(51, 255, 73));
         jLabel13.setText("Giáo viên được chọn");
-        Step3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 190, -1));
+        Step3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 190, -1));
 
-        btnEditGV.setText("Chỉnh sủa giáo viên cho khoá");
-        Step3.add(btnEditGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 210, -1));
+        btnEditGV.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnEditGV.setText("Chỉnh sửa giáo viên cho khoá");
+        Step3.add(btnEditGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 220, -1));
 
         tbPackageList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -335,19 +371,19 @@ public class StudentView2 extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbPackageList);
 
-        Step3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 410, 320));
+        Step3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 410, 320));
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 255, 73));
         jLabel11.setText("Khoá học đã đăng ký");
-        Step3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 190, -1));
+        Step3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 190, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 255, 73));
         jLabel5.setText("-->");
-        Step3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, 30, -1));
+        Step3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 30, -1));
 
         btnGVSave.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         btnGVSave.setText("Lưu");
@@ -356,93 +392,101 @@ public class StudentView2 extends javax.swing.JFrame {
                 btnGVSaveActionPerformed(evt);
             }
         });
-        Step3.add(btnGVSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, -1, -1));
+        Step3.add(btnGVSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, -1, -1));
 
+        Back3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         Back3.setText("Trở lại");
         Back3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Back3ActionPerformed(evt);
             }
         });
-        Step3.add(Back3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, -1, 30));
+        Step3.add(Back3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, -1, 30));
 
         cbSelectedGV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbSelectedGVActionPerformed(evt);
             }
         });
-        Step3.add(cbSelectedGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 140, 70));
+        Step3.add(cbSelectedGV, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 240, 140, 70));
 
         txtGVInfo.setColumns(20);
         txtGVInfo.setRows(5);
         jScrollPane7.setViewportView(txtGVInfo);
 
-        Step3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 200, -1, 250));
+        Step3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 240, 110, 250));
 
+        Next3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         Next3.setText("Tiếp tục");
         Next3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Next3ActionPerformed(evt);
             }
         });
-        Step3.add(Next3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 710, -1, -1));
+        Step3.add(Next3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 530, 80, 30));
+
+        jLabel24.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel24.setText("LỰA CHỌN GIÁO VIÊN");
+        Step3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
-        Step3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1260, 750));
+        Step3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
 
-        getContentPane().add(Step3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
+        getContentPane().add(Step3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Step4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel27.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(51, 255, 73));
         jLabel27.setText("KIỂM TRA LẠI THÔNG TIN !!!");
-        Step4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 540, -1, 30));
+        Step4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, -1, 30));
 
         jLabel28.setBackground(new java.awt.Color(255, 255, 255));
         jLabel28.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(51, 255, 73));
         jLabel28.setText("Ngày sinh");
-        Step4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 90, -1));
+        Step4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 90, -1));
 
         jScrollPane5.setViewportView(TeacherTree);
 
-        Step4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 200, 330, 270));
+        Step4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 170, 210, 270));
 
         jLabel29.setBackground(new java.awt.Color(255, 255, 255));
         jLabel29.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(51, 255, 73));
         jLabel29.setText("Giới tính");
-        Step4.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 70, -1));
+        Step4.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 70, -1));
 
         FAddressSearchStudentStep4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FAddressSearchStudentStep4ActionPerformed(evt);
             }
         });
-        Step4.add(FAddressSearchStudentStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, 163, -1));
+        Step4.add(FAddressSearchStudentStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 392, 163, 30));
 
         jLabel30.setBackground(new java.awt.Color(255, 255, 255));
         jLabel30.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(51, 255, 73));
         jLabel30.setText("Quê quán");
-        Step4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 80, -1));
+        Step4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 80, -1));
 
         btnGroup.add(chkFStep4);
         chkFStep4.setForeground(new java.awt.Color(255, 255, 255));
         chkFStep4.setText("Nữ");
-        Step4.add(chkFStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 70, -1));
+        Step4.add(chkFStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 70, -1));
 
         jLabel31.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(51, 255, 73));
         jLabel31.setText("ĐĂNG KÝ THÔNG TIN HỌC VIÊN MỚI");
-        Step4.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
+        Step4.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
 
         FDateSearchStudentStep4.setDateFormatString("dd/MM/yyyy");
-        Step4.add(FDateSearchStudentStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 163, -1));
+        Step4.add(FDateSearchStudentStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 332, 163, 30));
 
+        BtnAddStudentNew.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnAddStudentNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/Add.png"))); // NOI18N
         BtnAddStudentNew.setText("Thêm");
-        Step4.add(BtnAddStudentNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 610, 110, 30));
+        Step4.add(BtnAddStudentNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 510, 110, 40));
 
         tbPackageListStep4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -457,41 +501,39 @@ public class StudentView2 extends javax.swing.JFrame {
         ));
         jScrollPane8.setViewportView(tbPackageListStep4);
 
-        Step4.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 280, 250));
+        Step4.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 280, 250));
 
         btnGroup.add(chkMStep4);
         chkMStep4.setForeground(new java.awt.Color(255, 255, 255));
         chkMStep4.setText("Nam");
-        Step4.add(chkMStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 80, -1));
+        Step4.add(chkMStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 80, -1));
 
         jLabel33.setBackground(new java.awt.Color(255, 255, 255));
         jLabel33.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(51, 255, 73));
         jLabel33.setText("Khoá học đã đăng ký");
-        Step4.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 190, -1));
+        Step4.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 190, -1));
 
+        Back4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         Back4.setText("Trở lại");
         Back4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Back4ActionPerformed(evt);
             }
         });
-        Step4.add(Back4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, -1, 30));
+        Step4.add(Back4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, -1, 30));
 
         jLabel35.setBackground(new java.awt.Color(255, 255, 255));
         jLabel35.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(51, 255, 73));
         jLabel35.setText("Họ và tên");
-        Step4.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 80, -1));
-        Step4.add(FNameSearchStudentStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 163, 22));
-
-        jLabel36.setText("THÊM GIÁO VIÊN VÀ KIỂM TRA LẠI THÔNG TIN");
-        Step4.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, -1, -1));
+        Step4.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 80, -1));
+        Step4.add(FNameSearchStudentStep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 212, 163, 30));
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vn/tad_sebs/icon/QLHV2.png"))); // NOI18N
-        Step4.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1240, 740));
+        Step4.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
 
-        getContentPane().add(Step4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 740));
+        getContentPane().add(Step4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -504,6 +546,14 @@ public class StudentView2 extends javax.swing.JFrame {
     private void cbSelectedGVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSelectedGVActionPerformed
         showTeacherInfo();
     }//GEN-LAST:event_cbSelectedGVActionPerformed
+
+    private void chkFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkFActionPerformed
+
+    private void chkMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkMActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
@@ -672,10 +722,6 @@ public class StudentView2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }// GEN-LAST:event_BtnSearchStudentActionPerformed
 
-    private void chkFActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_chkFActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_chkFActionPerformed
-
     private void FIDSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_FIDSearchStudentActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_FIDSearchStudentActionPerformed
@@ -788,7 +834,7 @@ public class StudentView2 extends javax.swing.JFrame {
         tbPackageListStep4.setModel(model);
 
         // put courseTeacherMap to TeacherTree
-        DefaultMutableTreeNode root = new DefaultMutableTreeNode("Danh sách giáo viên đã chọn theo khoá");
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode("Danh sách giáo viên đã chọn");
         for (CourseTeacherEntry entry : courseTeacherMap) {
             // get Lop name having entry.getCourseId()
             String lopName = "";
@@ -1126,11 +1172,12 @@ public class StudentView2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -1138,7 +1185,6 @@ public class StudentView2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;

@@ -20,16 +20,15 @@
 ### Đăng nhập
 ![Image alt text](images/loginmd.png)
   - Nhập đầy đủ thông tin đăng nhập từ nhà phát triển cung cấp
-  - Tick chọn Remember password để ghi nhớ cho lần đăng nhập kế tiếp
   - Sign in để đăng nhập 
 
-### Chức năng
+### Chức năng của admin
 
 ![Image alt text](images/menumd.png)
 
 #### Quản lý học viên
 ![Image alt text](images/QLHVmd.png)
-  - Quản lý thông tin của toàn bộ học viên các lớp ( bao gồm việc sắp xếp, thêm, xóa, chỉnh sửa, tìm kiếm thông tin học viên)
+  - Quản lý thông tin của toàn bộ học viên các lớp ( bao gồm việc sắp xếp, xóa, chỉnh sửa, tìm kiếm thông tin học viên)
   - In thông tin của một học viên bất kì (PDF)
 ![Image alt text](images/printmd.png)
 
@@ -41,21 +40,18 @@
 ![Image alt text](images/QLKTmd.png)
   - Quản lý thông tin của các kỳ thi ( bao gồm việc sắp xếp , thêm , xóa, chỉnh sửa, tìm kiếm thông tin các kỳ thi)
 
-#### Quản lý lớp học
+#### Quản lý khóa học
 
-##### Danh sách lớp học
+##### Danh sách khóa học
 ![Image alt text](images/DSLHmd.png)
   - Quản lý số lượng của các lớp học  ( bao gồm việc sắp xếp, thêm, xóa, chỉnh sửa số lượng học viên) và quản lý tất cả các lớp của trung tâm
-  - Thống kê số lượng học viên theo lớp
+  - Thống kê số lượng học viên theo khóa
 ![Image alt text](images/chart2md.png)
 
 
-##### Quản lý học viên từng lớp
+##### Quản lý học viên từng khóa
 ![Image alt text](images/QLHVTLmd.png)
   - Quản lý thông tin của các học viên theo từng lớp ( bao gồm việc sắp xếp, thêm, xóa, chỉnh sửa, nhập điểm, tìm kiếm thông tin học viên)
-  - Thống kê điểm số của từng lớp
-![Image alt text](images/chart1md.png)
-  - Từ đây, có thể lưu lại ảnh (nhấp chuột phải -> Copy / Save As)
 
 ### Quản lý tài liệu
 ![Image alt text](images/QLTLmd.png)
@@ -72,6 +68,33 @@
 
 #### About 
   - Thông tin về tác giả và các mã nguồn
+
+### Chức năng của staff
+![Image alt text](images/menu2md.png)
+
+#### Đăng ký khóa học
+- Với 4 bước đăng ký cực đơn giản
+![Image alt text](images/step1.png)
+  - Đăng ký thông tin cá nhân
+![Image alt text](images/step2.png)
+  - Đăng ký khóa học
+![Image alt text](images/step3.png)
+  - Lựa chọn giáo viên	
+![Image alt text](images/step4.png)
+  - Kiểm tra lại toàn bộ thông tin và hoàn tất đăng ký
+
+#### Đóng học phí
+![Image alt text](images/Searchmd.png)
+  - Tìm kiếm và lựa chọn học viên cần đăng ký 
+![Image alt text](images/DHPmd.png)
+  - Lựa chọn các gói muốn đóng và nháy nút thanh toán
+
+#### Chỉnh sửa  thông tin học viên
+![Image alt text](images/Searchmd.png)
+  - Tìm kiếm và lựa chọn học viên cần chỉnh sửa
+![Image alt text](images/Editmd.png)
+  - Chỉnh sửa thông tin học viên
+
 
 ## Cấu trúc Thư mục
 - `java/`: Chứa mã nguồn của ứng dụng.
