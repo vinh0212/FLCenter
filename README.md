@@ -70,7 +70,7 @@
 #### About 
   - Thông tin về tác giả và các mã nguồn
 
-### Chức năng của staff
+### Chức năng của học viên
 ![Image alt text](images/menu2md.png)
 
 #### Đăng ký khóa học
